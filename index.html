@@ -1,0 +1,1895 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Jaydeep Singh | Author & Creator</title>
+
+<meta name="description" content="The official creative space of Jaydeep Singh — author of Echoes of Destiny. Stories, ideas, creativity and the journey behind the words.">
+
+<!-- ================= APP / PWA ================= -->
+
+<link rel="manifest" href="manifest.json">
+
+<meta name="theme-color" content="#070707">
+
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root{
+    --bg:#070707;
+    --bg2:#0d0d0d;
+    --text:#f5f2ea;
+    --muted:#a7a39b;
+    --gold:#d7b56d;
+    --gold2:#f0d49a;
+    --line:rgba(255,255,255,.10);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:Inter,Arial,sans-serif;
+    overflow-x:hidden;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+.container{
+    width:min(1120px,90%);
+    margin:auto;
+}
+
+
+/* ================= NAVBAR ================= */
+
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+    padding:22px 0;
+    background:linear-gradient(
+        to bottom,
+        rgba(0,0,0,.85),
+        transparent
+    );
+    transition:.4s;
+}
+
+.nav-inner{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    font-family:"Cormorant Garamond",serif;
+    font-size:27px;
+    font-weight:600;
+    letter-spacing:2px;
+}
+
+.logo span{
+    color:var(--gold);
+}
+
+.nav-links{
+    display:flex;
+    gap:28px;
+    list-style:none;
+    font-size:13px;
+    color:#d8d5ce;
+}
+
+.nav-links a{
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:var(--gold2);
+}
+
+.menu{
+    display:none;
+    font-size:25px;
+    cursor:pointer;
+}
+
+
+/* ================= HERO ================= */
+
+.hero{
+    min-height:100vh;
+    position:relative;
+    display:flex;
+    align-items:center;
+    overflow:hidden;
+
+    background:
+    radial-gradient(
+        circle at 75% 40%,
+        rgba(215,181,109,.12),
+        transparent 30%
+    ),
+
+    radial-gradient(
+        circle at 20% 80%,
+        rgba(255,255,255,.05),
+        transparent 25%
+    ),
+
+    #070707;
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background:
+    linear-gradient(
+        90deg,
+        rgba(0,0,0,.9),
+        rgba(0,0,0,.45),
+        rgba(0,0,0,.88)
+    ),
+
+    repeating-linear-gradient(
+        90deg,
+        transparent 0,
+        transparent 120px,
+        rgba(255,255,255,.018) 121px
+    );
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    padding-top:80px;
+}
+
+.eyebrow{
+    color:var(--gold);
+    text-transform:uppercase;
+    letter-spacing:5px;
+    font-size:11px;
+    margin-bottom:25px;
+}
+
+.hero h1{
+    font-family:"Cormorant Garamond",serif;
+    font-size:clamp(62px,10vw,125px);
+    line-height:.82;
+    font-weight:500;
+    max-width:850px;
+    letter-spacing:-3px;
+}
+
+.hero h1 span{
+    color:var(--gold2);
+    font-style:italic;
+}
+
+.hero-sub{
+    max-width:560px;
+    color:#b9b5ad;
+    font-size:15px;
+    line-height:1.9;
+    margin-top:35px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:14px;
+    margin-top:35px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:14px 25px;
+    border:1px solid var(--gold);
+    font-size:12px;
+    letter-spacing:1px;
+    transition:.3s;
+    display:inline-block;
+}
+
+.btn.primary{
+    background:var(--gold);
+    color:#080808;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 12px 35px rgba(215,181,109,.15);
+}
+
+.hero-number{
+    position:absolute;
+    right:7%;
+    bottom:8%;
+    color:rgba(255,255,255,.12);
+    font-family:"Cormorant Garamond",serif;
+    font-size:180px;
+    line-height:1;
+    user-select:none;
+}
+
+
+/* ================= COMMON ================= */
+
+section{
+    padding:120px 0;
+    position:relative;
+}
+
+.section-label{
+    color:var(--gold);
+    text-transform:uppercase;
+    letter-spacing:4px;
+    font-size:10px;
+    margin-bottom:15px;
+}
+
+.section-title{
+    font-family:"Cormorant Garamond",serif;
+    font-size:clamp(42px,6vw,72px);
+    line-height:.95;
+    font-weight:500;
+}
+
+.section-intro{
+    color:var(--muted);
+    max-width:600px;
+    line-height:1.9;
+    font-size:14px;
+    margin-top:22px;
+}
+
+
+/* ================= BOOK ================= */
+
+.book-section{
+    background:#0a0a0a;
+}
+
+.book-grid{
+    margin-top:65px;
+    display:grid;
+    grid-template-columns:360px 1fr;
+    gap:75px;
+    align-items:center;
+}
+
+.book-cover{
+    aspect-ratio:2/3;
+    position:relative;
+    background:#111;
+    border:1px solid rgba(215,181,109,.35);
+
+    box-shadow:
+    25px 30px 70px rgba(0,0,0,.7),
+    inset 0 0 70px rgba(215,181,109,.05);
+
+    overflow:hidden;
+}
+
+.book-cover img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.book-cover::after{
+    content:"";
+    position:absolute;
+    inset:15px;
+    border:1px solid rgba(215,181,109,.25);
+    pointer-events:none;
+}
+
+.book-info h3{
+    font-family:"Cormorant Garamond",serif;
+    font-size:52px;
+    font-weight:500;
+}
+
+.book-info h3 span{
+    color:var(--gold2);
+    font-style:italic;
+}
+
+.book-info p{
+    color:var(--muted);
+    line-height:1.9;
+    margin:22px 0;
+    font-size:14px;
+}
+
+.book-meta{
+    display:flex;
+    gap:45px;
+    margin:30px 0;
+
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+
+    padding:20px 0;
+}
+
+.book-meta div{
+    display:flex;
+    flex-direction:column;
+    gap:5px;
+}
+
+.book-meta strong{
+    color:var(--gold2);
+    font-family:"Cormorant Garamond",serif;
+    font-size:25px;
+}
+
+.book-meta span{
+    color:#777;
+    font-size:9px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+
+.book-buttons{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+
+/* ================= CHAPTERS ================= */
+
+.chapters{
+    background:#080808;
+}
+
+.chapter-list{
+    margin-top:60px;
+    border-top:1px solid var(--line);
+}
+
+.chapter{
+    display:grid;
+    grid-template-columns:90px 1fr auto;
+    gap:25px;
+    align-items:center;
+
+    padding:30px 5px;
+
+    border-bottom:1px solid var(--line);
+
+    transition:.4s;
+}
+
+.chapter:hover{
+    padding-left:18px;
+    background:rgba(255,255,255,.015);
+}
+
+.chapter-number{
+    color:var(--gold);
+    font-family:"Cormorant Garamond",serif;
+    font-size:24px;
+}
+
+.chapter h3{
+    font-family:"Cormorant Garamond",serif;
+    font-size:29px;
+    font-weight:500;
+}
+
+.chapter p{
+    color:#777;
+    font-size:11px;
+    margin-top:5px;
+}
+
+.chapter-arrow{
+    color:var(--gold);
+    font-size:20px;
+}
+
+
+/* ================= QUOTE ================= */
+
+.quote{
+    min-height:60vh;
+    display:flex;
+    align-items:center;
+    text-align:center;
+
+    background:
+    radial-gradient(
+        circle at center,
+        rgba(215,181,109,.09),
+        transparent 38%
+    ),
+    #090909;
+}
+
+.quote-content{
+    max-width:900px;
+    margin:auto;
+}
+
+.quote-mark{
+    color:var(--gold);
+    font-family:"Cormorant Garamond",serif;
+    font-size:90px;
+    line-height:.5;
+}
+
+.quote blockquote{
+    font-family:"Cormorant Garamond",serif;
+    font-size:clamp(34px,5vw,62px);
+    line-height:1.05;
+    margin:25px 0;
+    font-style:italic;
+}
+
+.quote small{
+    color:#777;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    font-size:9px;
+}
+
+
+/* ================= ABOUT ================= */
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:80px;
+    align-items:center;
+}
+
+.about-art{
+    height:470px;
+    background:#111;
+    border:1px solid var(--line);
+    position:relative;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    overflow:hidden;
+}
+
+.about-art img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.about-text p{
+    color:var(--muted);
+    font-size:14px;
+    line-height:2;
+    margin-top:25px;
+}
+
+.signature{
+    font-family:"Cormorant Garamond",serif;
+    font-style:italic;
+    color:var(--gold2);
+    font-size:31px;
+    margin-top:30px;
+}
+
+
+/* ================= JOURNEY ================= */
+
+.journey{
+    background:#0a0a0a;
+}
+
+.timeline{
+    margin-top:60px;
+    position:relative;
+}
+
+.timeline::before{
+    content:"";
+    position:absolute;
+
+    left:50%;
+    top:0;
+    bottom:0;
+
+    width:1px;
+
+    background:var(--line);
+}
+
+.timeline-item{
+    width:50%;
+    padding:25px 50px;
+    position:relative;
+}
+
+.timeline-item:nth-child(even){
+    margin-left:50%;
+}
+
+.timeline-item::after{
+    content:"";
+
+    position:absolute;
+
+    width:8px;
+    height:8px;
+
+    border:1px solid var(--gold);
+    border-radius:50%;
+
+    background:#080808;
+
+    top:34px;
+}
+
+.timeline-item:nth-child(odd)::after{
+    right:-5px;
+}
+
+.timeline-item:nth-child(even)::after{
+    left:-4px;
+}
+
+.timeline-year{
+    color:var(--gold);
+    font-size:10px;
+    letter-spacing:3px;
+}
+
+.timeline-item h3{
+    font-family:"Cormorant Garamond",serif;
+    font-size:31px;
+    margin:10px 0;
+}
+
+.timeline-item p{
+    color:#777;
+    font-size:12px;
+    line-height:1.8;
+}
+
+
+/* ================= PROJECTS ================= */
+
+.projects-grid{
+    margin-top:60px;
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+
+    gap:18px;
+}
+
+.project{
+    min-height:290px;
+    padding:30px;
+
+    border:1px solid var(--line);
+    background:#0c0c0c;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+
+    transition:.4s;
+
+    position:relative;
+    overflow:hidden;
+}
+
+.project::before{
+    content:"";
+
+    position:absolute;
+
+    width:180px;
+    height:180px;
+
+    border-radius:50%;
+
+    background:rgba(215,181,109,.08);
+
+    top:-70px;
+    right:-60px;
+
+    transition:.5s;
+}
+
+.project:hover{
+    transform:translateY(-8px);
+    border-color:rgba(215,181,109,.35);
+}
+
+.project:hover::before{
+    transform:scale(1.5);
+}
+
+.project-number{
+    color:var(--gold);
+    font-size:10px;
+    letter-spacing:3px;
+    margin-bottom:auto;
+}
+
+.project h3{
+    font-family:"Cormorant Garamond",serif;
+    font-size:34px;
+    font-weight:500;
+    position:relative;
+}
+
+.project p{
+    color:#777;
+    font-size:11px;
+    line-height:1.7;
+    margin-top:8px;
+    position:relative;
+}
+
+
+/* ================= CONTACT ================= */
+
+.contact{
+    text-align:center;
+
+    background:
+    radial-gradient(
+        circle at center,
+        rgba(215,181,109,.08),
+        transparent 40%
+    );
+}
+
+.contact .section-intro{
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.contact-link{
+    display:inline-block;
+
+    margin-top:40px;
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:clamp(28px,5vw,52px);
+
+    color:var(--gold2);
+
+    border-bottom:1px solid rgba(215,181,109,.4);
+
+    padding-bottom:5px;
+}
+
+.social-links{
+    display:flex;
+    justify-content:center;
+    gap:14px;
+    margin-top:35px;
+    flex-wrap:wrap;
+}
+
+.social-btn{
+    padding:13px 22px;
+
+    border:1px solid var(--line);
+
+    color:#d8d5ce;
+
+    font-size:10px;
+
+    letter-spacing:2px;
+
+    transition:.3s;
+}
+
+.social-btn:hover{
+    border-color:var(--gold);
+    color:var(--gold2);
+    transform:translateY(-3px);
+}
+
+
+/* ================= FOOTER ================= */
+
+footer{
+    border-top:1px solid var(--line);
+    padding:30px 0;
+    color:#666;
+    font-size:10px;
+}
+
+.footer-inner{
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.footer-links{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.footer-links a:hover{
+    color:var(--gold);
+}
+
+
+/* ================= ANIMATION ================= */
+
+.reveal{
+    opacity:0;
+    transform:translateY(30px);
+    transition:1s ease;
+}
+
+.reveal.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+
+/* ================= MOBILE ================= */
+
+@media(max-width:800px){
+
+    .nav-links{
+        display:none;
+
+        position:absolute;
+
+        top:70px;
+        left:5%;
+
+        width:90%;
+
+        background:#0d0d0d;
+
+        border:1px solid var(--line);
+
+        padding:20px;
+
+        flex-direction:column;
+
+        gap:18px;
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    .menu{
+        display:block;
+    }
+
+    .hero{
+        min-height:92vh;
+    }
+
+    .hero h1{
+        font-size:67px;
+        letter-spacing:-2px;
+    }
+
+    .hero-number{
+        font-size:100px;
+        right:0;
+        bottom:12%;
+    }
+
+    section{
+        padding:85px 0;
+    }
+
+    .book-grid,
+    .about-grid{
+        grid-template-columns:1fr;
+        gap:45px;
+    }
+
+    .book-cover{
+        width:260px;
+        margin:auto;
+    }
+
+    .book-info h3{
+        font-size:43px;
+    }
+
+    .book-meta{
+        gap:25px;
+    }
+
+    .book-buttons{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .chapter{
+        grid-template-columns:45px 1fr 20px;
+        gap:12px;
+    }
+
+    .chapter h3{
+        font-size:24px;
+    }
+
+    .about-art{
+        height:400px;
+    }
+
+    .timeline::before{
+        left:8px;
+    }
+
+    .timeline-item,
+    .timeline-item:nth-child(even){
+
+        width:100%;
+
+        margin-left:0;
+
+        padding-left:35px;
+
+        padding-right:0;
+    }
+
+    .timeline-item::after,
+    .timeline-item:nth-child(odd)::after,
+    .timeline-item:nth-child(even)::after{
+
+        left:4px;
+        right:auto;
+    }
+
+    .projects-grid{
+        grid-template-columns:1fr;
+    }
+
+    .footer-inner{
+        flex-direction:column;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================= NAVIGATION ================= -->
+
+<nav>
+
+<div class="container nav-inner">
+
+<a href="#home" class="logo">
+JAYDEEP<span>.</span>
+</a>
+
+<ul class="nav-links" id="navLinks">
+
+<li>
+<a href="#home">Home</a>
+</li>
+
+<li>
+<a href="#book">The Book</a>
+</li>
+
+<li>
+<a href="#about">About</a>
+</li>
+
+<li>
+<a href="#journey">Journey</a>
+</li>
+
+<li>
+<a href="#projects">Projects</a>
+</li>
+
+<li>
+<a href="#contact">Contact</a>
+</li>
+
+</ul>
+
+<div class="menu" onclick="toggleMenu()">
+☰
+</div>
+
+</div>
+
+</nav>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+<div class="container hero-content reveal">
+
+<div class="eyebrow">
+Author • Creator • Dreamer
+</div>
+
+<h1>
+Stories<br>
+that <span>stay.</span>
+</h1>
+
+<p class="hero-sub">
+Some stories are written with ink.
+Some are written with memories.
+And some are written by the journey itself.
+Welcome to my world.
+</p>
+
+<div class="hero-buttons">
+
+<a href="#book" class="btn primary">
+EXPLORE THE BOOK
+</a>
+
+<a href="#about" class="btn">
+ENTER MY WORLD
+</a>
+
+</div>
+
+</div>
+
+<div class="hero-number">
+01
+</div>
+
+</section>
+
+
+<!-- ================= BOOK ================= -->
+
+<section class="book-section" id="book">
+
+<div class="container">
+
+<div class="section-label reveal">
+Featured Work
+</div>
+
+<h2 class="section-title reveal">
+A story born<br>
+from <i>life.</i>
+</h2>
+
+<p class="section-intro reveal">
+Echoes of Destiny is more than a book.
+It is a collection of memories, lessons,
+emotions and moments that quietly shape who we become.
+</p>
+
+
+<div class="book-grid">
+
+
+<div class="book-cover reveal">
+
+<img
+src="book-cover.jpg"
+alt="Echoes of Destiny book cover"
+>
+
+</div>
+
+
+<div class="book-info reveal">
+
+<h3>
+Echoes <span>of Destiny</span>
+</h3>
+
+<p>
+A journey through childhood, dreams, expectations,
+relationships, silence, loss, hope and the courage
+to keep moving forward.
+</p>
+
+<p>
+Every chapter carries an echo — a moment that once felt small,
+but later became a part of the person we were meant to become.
+</p>
+
+
+<div class="book-meta">
+
+<div>
+
+<strong>11</strong>
+
+<span>
+Chapters
+</span>
+
+</div>
+
+
+<div>
+
+<strong>∞</strong>
+
+<span>
+Memories
+</span>
+
+</div>
+
+
+<div>
+
+<strong>1</strong>
+
+<span>
+Journey
+</span>
+
+</div>
+
+</div>
+
+
+<!-- FLIPBOOK BUTTONS -->
+
+<div class="book-buttons">
+
+<a
+href="https://heyzine.com/flip-book/906fcadc5a.html"
+class="btn primary"
+target="_blank"
+rel="noopener noreferrer"
+>
+
+READ ENGLISH FLIPBOOK
+
+</a>
+
+
+<a
+href="https://heyzine.com/flip-book/52a6fa844d.html"
+class="btn"
+target="_blank"
+rel="noopener noreferrer"
+>
+
+हिंदी FLIPBOOK
+
+</a>
+
+</div>
+
+
+<!-- PDF BUTTONS -->
+
+<div
+class="book-buttons"
+style="margin-top:12px;"
+>
+
+<a
+href="echoes-of-destiny-english.pdf"
+class="btn"
+target="_blank"
+rel="noopener noreferrer"
+>
+
+ENGLISH PDF
+
+</a>
+
+
+<a
+href="echoes-of-destiny-hindi.pdf"
+class="btn"
+target="_blank"
+rel="noopener noreferrer"
+>
+
+HINDI PDF
+
+</a>
+
+</div>
+
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= CHAPTERS ================= -->
+
+<section class="chapters" id="chapters">
+
+<div class="container">
+
+<div class="section-label reveal">
+Inside the Book
+</div>
+
+<h2 class="section-title reveal">
+The chapters<br>
+behind the <i>echoes.</i>
+</h2>
+
+
+<div class="chapter-list">
+
+
+<div class="chapter reveal">
+
+<div class="chapter-number">
+01
+</div>
+
+<div>
+
+<h3>
+Before I Knew the World
+</h3>
+
+<p>
+Where every story quietly begins.
+</p>
+
+</div>
+
+<div class="chapter-arrow">
+→
+</div>
+
+</div>
+
+
+<div class="chapter reveal">
+
+<div class="chapter-number">
+02
+</div>
+
+<div>
+
+<h3>
+Lessons Beyond the Blackboard
+</h3>
+
+<p>
+The lessons no classroom could teach.
+</p>
+
+</div>
+
+<div class="chapter-arrow">
+→
+</div>
+
+</div>
+
+
+<div class="chapter reveal">
+
+<div class="chapter-number">
+03
+</div>
+
+<div>
+
+<h3>
+The Silent Battles
+</h3>
+
+<p>
+The struggles nobody could see.
+</p>
+
+</div>
+
+<div class="chapter-arrow">
+→
+</div>
+
+</div>
+
+
+<div class="chapter reveal">
+
+<div class="chapter-number">
+04
+</div>
+
+<div>
+
+<h3>
+The Age of First Feelings
+</h3>
+
+<p>
+When emotions became memories.
+</p>
+
+</div>
+
+<div class="chapter-arrow">
+→
+</div>
+
+</div>
+
+
+<div class="chapter reveal">
+
+<div class="chapter-number">
+05
+</div>
+
+<div>
+
+<h3>
+The Unwritten Tomorrow
+</h3>
+
+<p>
+Learning to walk toward the unknown.
+</p>
+
+</div>
+
+<div class="chapter-arrow">
+→
+</div>
+
+</div>
+
+
+<div class="chapter reveal">
+
+<div class="chapter-number">
+06
+</div>
+
+<div>
+
+<h3>
+More Chapters to Come
+</h3>
+
+<p>
+The story is still being written.
+</p>
+
+</div>
+
+<div class="chapter-arrow">
+→
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= QUOTE ================= -->
+
+<section class="quote">
+
+<div class="container quote-content reveal">
+
+<div class="quote-mark">
+“
+</div>
+
+<blockquote>
+Maybe destiny does not write our story.
+Maybe we write it —
+one choice at a time.
+</blockquote>
+
+<small>
+— Echoes of Destiny
+</small>
+
+</div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about">
+
+<div class="container">
+
+<div class="about-grid">
+
+
+<div class="about-art reveal">
+
+<img
+src="profile.jpg"
+alt="Jaydeep Singh — Author & Creator"
+>
+
+</div>
+
+
+<div class="about-text reveal">
+
+<div class="section-label">
+Behind the Words
+</div>
+
+<h2 class="section-title">
+Meet the person<br>
+behind the <i>story.</i>
+</h2>
+
+
+<!-- JAYDEEP'S QUOTE -->
+
+<p>
+Life is full of problems, and only you are its solution.
+</p>
+
+
+<p>
+I am Jaydeep Singh — a learner, creator and storyteller
+who believes that ordinary moments can hold extraordinary meaning.
+</p>
+
+
+<div class="signature">
+Jaydeep Singh
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= JOURNEY ================= -->
+
+<section class="journey" id="journey">
+
+<div class="container">
+
+<div class="section-label reveal">
+The Journey
+</div>
+
+<h2 class="section-title reveal">
+Still becoming<br>
+who I am <i>meant to be.</i>
+</h2>
+
+
+<div class="timeline">
+
+
+<div class="timeline-item reveal">
+
+<div class="timeline-year">
+CHAPTER ONE
+</div>
+
+<h3>
+The Beginning
+</h3>
+
+<p>
+A childhood filled with small moments,
+quiet evenings and dreams that had not yet found their names.
+</p>
+
+</div>
+
+
+<div class="timeline-item reveal">
+
+<div class="timeline-year">
+CHAPTER TWO
+</div>
+
+<h3>
+Learning
+</h3>
+
+<p>
+Discovering that education is not limited to books,
+classrooms or examinations.
+</p>
+
+</div>
+
+
+<div class="timeline-item reveal">
+
+<div class="timeline-year">
+CHAPTER THREE
+</div>
+
+<h3>
+Finding a Voice
+</h3>
+
+<p>
+Understanding that your story becomes powerful
+when you finally find the courage to tell it.
+</p>
+
+</div>
+
+
+<div class="timeline-item reveal">
+
+<div class="timeline-year">
+TODAY
+</div>
+
+<h3>
+Creating
+</h3>
+
+<p>
+Writing, designing, learning and building —
+one idea at a time.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= PROJECTS ================= -->
+
+<section id="projects">
+
+<div class="container">
+
+<div class="section-label reveal">
+Beyond the Book
+</div>
+
+<h2 class="section-title reveal">
+Ideas become<br>
+<i>something real.</i>
+</h2>
+
+<p class="section-intro reveal">
+The book is only one part of the journey.
+This space will also grow with creative work,
+visual projects, videos and future ideas.
+</p>
+
+
+<div class="projects-grid">
+
+
+<div class="project reveal">
+
+<div class="project-number">
+01 / WRITING
+</div>
+
+<h3>
+Stories & Words
+</h3>
+
+<p>
+Personal stories, reflections and ideas
+that deserve to be remembered.
+</p>
+
+</div>
+
+
+<div class="project reveal">
+
+<div class="project-number">
+02 / VISUALS
+</div>
+
+<h3>
+Creative Work
+</h3>
+
+<p>
+Visual concepts, designs and experiments
+built from imagination.
+</p>
+
+</div>
+
+
+<div class="project reveal">
+
+<div class="project-number">
+03 / VIDEO
+</div>
+
+<h3>
+Visual Stories
+</h3>
+
+<p>
+Cinematic videos created to make an idea
+feel rather than simply see.
+</p>
+
+</div>
+
+
+<div class="project reveal">
+
+<div class="project-number">
+04 / LEARNING
+</div>
+
+<h3>
+Things I Learn
+</h3>
+
+<p>
+Knowledge, experiments and lessons
+collected along the way.
+</p>
+
+</div>
+
+
+<div class="project reveal">
+
+<div class="project-number">
+05 / FUTURE
+</div>
+
+<h3>
+Coming Soon
+</h3>
+
+<p>
+New projects are already waiting
+to become part of the story.
+</p>
+
+</div>
+
+
+<div class="project reveal">
+
+<div class="project-number">
+06 / UNKNOWN
+</div>
+
+<h3>
+Something More
+</h3>
+
+<p>
+Some chapters are better left unwritten
+until the right moment.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section class="contact" id="contact">
+
+<div class="container reveal">
+
+<div class="section-label">
+Let's Connect
+</div>
+
+<h2 class="section-title">
+Every story begins<br>
+with a <i>conversation.</i>
+</h2>
+
+<p class="section-intro">
+For collaborations, creative ideas, feedback about the book,
+or simply to say hello.
+</p>
+
+
+<a
+href="mailto:jaydeepsingh3631@gmail.com"
+class="contact-link"
+>
+
+Say Hello →
+
+</a>
+
+
+<div class="social-links">
+
+
+<a
+href="https://www.instagram.com/jaydeepsingh._/"
+class="social-btn"
+target="_blank"
+rel="noopener noreferrer"
+>
+
+INSTAGRAM
+
+</a>
+
+
+<a
+href="https://youtube.com/@jaydeepzx"
+class="social-btn"
+target="_blank"
+rel="noopener noreferrer"
+>
+
+YOUTUBE
+
+</a>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<div class="container footer-inner">
+
+
+<div>
+© 2026 Jaydeep Singh. All rights reserved.
+</div>
+
+
+<div class="footer-links">
+
+<a href="#home">
+Home
+</a>
+
+<a href="#book">
+Book
+</a>
+
+<a href="#about">
+About
+</a>
+
+<a href="#contact">
+Contact
+</a>
+
+<a
+href="https://www.instagram.com/jaydeepsingh._/"
+target="_blank"
+rel="noopener noreferrer"
+>
+Instagram
+</a>
+
+<a
+href="https://youtube.com/@jaydeepzx"
+target="_blank"
+rel="noopener noreferrer"
+>
+YouTube
+</a>
+
+</div>
+
+</div>
+
+</footer>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+
+/* MOBILE MENU */
+
+function toggleMenu(){
+
+    document
+    .getElementById("navLinks")
+    .classList
+    .toggle("active");
+
+}
+
+
+/* CLOSE MOBILE MENU */
+
+document
+.querySelectorAll(".nav-links a")
+.forEach(function(link){
+
+    link.addEventListener("click",function(){
+
+        document
+        .getElementById("navLinks")
+        .classList
+        .remove("active");
+
+    });
+
+});
+
+
+/* SCROLL REVEAL */
+
+const observer = new IntersectionObserver(
+
+function(entries){
+
+    entries.forEach(function(entry){
+
+        if(entry.isIntersecting){
+
+            entry.target.classList.add("show");
+
+        }
+
+    });
+
+},
+
+{
+    threshold:0.12
+}
+
+);
+
+
+document
+.querySelectorAll(".reveal")
+.forEach(function(element){
+
+    observer.observe(element);
+
+});
+
+
+/* NAVBAR EFFECT */
+
+window.addEventListener("scroll",function(){
+
+    const nav = document.querySelector("nav");
+
+    if(window.scrollY > 50){
+
+        nav.style.background =
+        "rgba(7,7,7,.92)";
+
+        nav.style.backdropFilter =
+        "blur(12px)";
+
+    }
+
+    else{
+
+        nav.style.background =
+        "linear-gradient(to bottom,rgba(0,0,0,.85),transparent)";
+
+        nav.style.backdropFilter =
+        "none";
+
+    }
+
+});
+
+
+/* ================= PWA SERVICE WORKER ================= */
+
+if("serviceWorker" in navigator){
+
+    window.addEventListener("load",function(){
+
+        navigator.serviceWorker
+        .register("./service-worker.js")
+        .then(function(){
+
+            console.log(
+                "Service Worker registered successfully."
+            );
+
+        })
+        .catch(function(error){
+
+            console.log(
+                "Service Worker registration failed:",
+                error
+            );
+
+        });
+
+    });
+
+}
+
+</script>
+
+
+</body>
+</html>
