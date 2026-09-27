@@ -2,583 +2,1610 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#ffffff">
-  <meta name="description" content="Jaydeep Singh — Author, Mentor & Creator">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  >
+
+  <meta
+    name="theme-color"
+    content="#b58a43"
+  >
+
+  <meta
+    name="description"
+    content="Official app of Jaydeep Singh — Author, Mentor & Creator."
+  >
+
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta
+    name="apple-mobile-web-app-status-bar-style"
+    content="default"
+  >
+
+  <link rel="manifest" href="manifest.json">
 
   <title>Jaydeep Singh | Author · Mentor · Creator</title>
 
   <style>
+    /* =========================================================
+       JAYDEEP SINGH APP
+       Premium Light Cinematic PWA
+       ========================================================= */
+
+    :root {
+      --bg: #f8f5ee;
+      --bg-2: #fffdf8;
+      --surface: rgba(255, 255, 255, 0.88);
+      --surface-solid: #ffffff;
+
+      --ink: #17191d;
+      --muted: #686b73;
+
+      --gold: #b58a43;
+      --gold-dark: #8e682e;
+      --gold-soft: #f3e8d1;
+
+      --navy: #172b46;
+      --navy-soft: #eaf0f7;
+
+      --blue: #416c9f;
+      --blue-soft: #eaf1fa;
+
+      --green: #198754;
+      --green-soft: #e9f7ef;
+
+      --line: rgba(23, 25, 29, 0.09);
+
+      --shadow:
+        0 18px 50px rgba(28, 35, 48, 0.09);
+
+      --shadow-small:
+        0 8px 24px rgba(28, 35, 48, 0.08);
+
+      --radius-xl: 30px;
+      --radius-lg: 22px;
+      --radius-md: 16px;
+
+      --nav-height: 76px;
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #ffffff;
-      color: #171717;
-      line-height: 1.6;
+      font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Arial,
+        sans-serif;
+
+      color: var(--ink);
+      background:
+        radial-gradient(
+          circle at 5% 0%,
+          rgba(181, 138, 67, 0.13),
+          transparent 27%
+        ),
+        radial-gradient(
+          circle at 100% 15%,
+          rgba(65, 108, 159, 0.11),
+          transparent 28%
+        ),
+        var(--bg);
+
+      min-height: 100vh;
+      overflow-x: hidden;
+      padding-bottom: calc(var(--nav-height) + 15px);
     }
 
     button,
     a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    button {
       font: inherit;
     }
 
     a {
-      text-decoration: none;
       color: inherit;
+      text-decoration: none;
     }
 
-    .hidden {
-      display: none !important;
+    img {
+      max-width: 100%;
+      display: block;
     }
 
-    /* SPLASH */
+    ::selection {
+      background: var(--gold);
+      color: #fff;
+    }
+
+    /* =========================================================
+       SPLASH
+       ========================================================= */
 
     #splash {
       position: fixed;
       inset: 0;
-      background: #111111;
-      color: #ffffff;
       z-index: 9999;
+
       display: flex;
       align-items: center;
       justify-content: center;
-      text-align: center;
-      animation: splashOut 0.8s ease 2.8s forwards;
+
+      background:
+        radial-gradient(
+          circle at center,
+          #263a55 0%,
+          #172333 45%,
+          #10161f 100%
+        );
+
+      color: #fff;
+
+      transition:
+        opacity 0.8s ease,
+        visibility 0.8s ease;
+    }
+
+    #splash.hide {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
     }
 
     .splash-content {
-      animation: splashIn 1.2s ease;
+      width: min(90%, 420px);
+      text-align: center;
+      animation: splashEnter 1.4s ease both;
     }
 
-    .diya {
-      font-size: 52px;
-      margin-bottom: 22px;
-      animation: flameGlow 1.5s ease-in-out infinite alternate;
+    .splash-logo {
+      width: 116px;
+      height: 116px;
+      margin: 0 auto 26px;
+
+      object-fit: cover;
+      border-radius: 50%;
+
+      box-shadow:
+        0 0 0 1px rgba(211, 167, 91, 0.6),
+        0 0 50px rgba(211, 167, 91, 0.22);
     }
 
     .splash-name {
-      font-size: 28px;
+      font-size: clamp(27px, 7vw, 40px);
+      letter-spacing: 0.13em;
       font-weight: 700;
-      letter-spacing: 3px;
     }
 
     .splash-role {
-      margin-top: 8px;
+      margin-top: 10px;
+
       font-size: 11px;
-      letter-spacing: 3px;
-      opacity: 0.7;
-    }
-
-    @keyframes splashIn {
-      from {
-        opacity: 0;
-        transform: translateY(15px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes flameGlow {
-      from {
-        transform: scale(0.95);
-        filter: brightness(0.9);
-      }
-      to {
-        transform: scale(1.08);
-        filter: brightness(1.25);
-      }
-    }
-
-    @keyframes splashOut {
-      to {
-        opacity: 0;
-        visibility: hidden;
-      }
-    }
-
-    /* APP */
-
-    #app {
-      min-height: 100vh;
-      padding-bottom: 90px;
-    }
-
-    header {
-      padding: 22px 20px 10px;
-      background: #ffffff;
-    }
-
-    .topbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      max-width: 900px;
-      margin: auto;
-    }
-
-    .brand {
-      font-size: 20px;
-      font-weight: 800;
-      letter-spacing: 1px;
-    }
-
-    .brand span {
-      display: block;
-      font-size: 9px;
-      font-weight: 500;
-      letter-spacing: 2px;
-      color: #777777;
-      margin-top: 2px;
-    }
-
-    .menu-btn {
-      border: 1px solid #e5e5e5;
-      background: #ffffff;
-      width: 42px;
-      height: 42px;
-      border-radius: 12px;
-      cursor: pointer;
-      font-size: 20px;
-    }
-
-    main {
-      max-width: 900px;
-      margin: auto;
-      padding: 10px 20px 30px;
-    }
-
-    .screen {
-      animation: pageIn 0.25s ease;
-    }
-
-    @keyframes pageIn {
-      from {
-        opacity: 0;
-        transform: translateY(8px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* HOME */
-
-    .hero {
-      padding: 35px 0 28px;
-    }
-
-    .hero small {
-      color: #777777;
-      font-size: 12px;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-    }
-
-    .hero h1 {
-      font-size: clamp(32px, 8vw, 56px);
-      line-height: 1.05;
-      margin: 10px 0;
-      letter-spacing: -1.5px;
-    }
-
-    .hero p {
-      color: #666666;
-      max-width: 600px;
-      font-size: 15px;
-    }
-
-    .profile-box {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      margin-top: 25px;
-      padding: 18px;
-      border: 1px solid #eeeeee;
-      border-radius: 18px;
-      background: #fafafa;
-    }
-
-    .profile-box img {
-      width: 72px;
-      height: 72px;
-      object-fit: cover;
-      border-radius: 50%;
-      background: #eeeeee;
-    }
-
-    .profile-box strong {
-      display: block;
-      font-size: 18px;
-    }
-
-    .profile-box span {
-      color: #777777;
-      font-size: 13px;
-    }
-
-    /* FEATURED BOOK */
-
-    .section-title {
-      font-size: 22px;
-      margin: 32px 0 15px;
-    }
-
-    .book-card {
-      display: grid;
-      grid-template-columns: 130px 1fr;
-      gap: 20px;
-      padding: 18px;
-      border: 1px solid #e8e8e8;
-      border-radius: 20px;
-      background: #ffffff;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.05);
-    }
-
-    .book-card img {
-      width: 130px;
-      height: 185px;
-      object-fit: cover;
-      border-radius: 8px;
-      background: #eeeeee;
-    }
-
-    .book-card h3 {
-      font-size: 20px;
-      line-height: 1.25;
-      margin-bottom: 8px;
-    }
-
-    .book-card p {
-      color: #666666;
-      font-size: 13px;
-    }
-
-    .btn {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 10px 16px;
-      border-radius: 10px;
-      background: #171717;
-      color: #ffffff;
-      font-size: 13px;
+      letter-spacing: 0.22em;
+      color: #dfc48f;
       font-weight: 600;
     }
 
-    /* HOME GRID */
+    .splash-line {
+      width: 70px;
+      height: 1px;
+      margin: 22px auto 0;
 
-    .home-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-      margin-top: 20px;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        #d6aa5f,
+        transparent
+      );
     }
 
-    .home-card {
-      border: 1px solid #eeeeee;
-      background: #ffffff;
-      border-radius: 16px;
-      padding: 20px;
-      cursor: pointer;
-      transition: 0.2s;
+    @keyframes splashEnter {
+      from {
+        opacity: 0;
+        transform: translateY(16px) scale(0.97);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
     }
 
-    .home-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+    /* =========================================================
+       APP HEADER
+       ========================================================= */
+
+    .app-header {
+      position: sticky;
+      top: 0;
+      z-index: 500;
+
+      height: 70px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      padding:
+        0 18px;
+
+      background: rgba(255, 253, 248, 0.84);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+
+      border-bottom: 1px solid var(--line);
     }
 
-    .home-card h3 {
-      font-size: 16px;
-      margin-bottom: 5px;
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
     }
 
-    .home-card p {
-      font-size: 12px;
-      color: #777777;
+    .brand-logo {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      object-fit: cover;
+
+      box-shadow:
+        0 4px 14px rgba(181, 138, 67, 0.18);
     }
 
-    /* PAGE HEADER */
-
-    .page-head {
-      padding: 25px 0 10px;
-    }
-
-    .back-btn {
-      border: 0;
-      background: transparent;
-      color: #666666;
-      cursor: pointer;
-      margin-bottom: 15px;
-      padding: 0;
-    }
-
-    .page-head h1 {
-      font-size: 32px;
-    }
-
-    .page-head p {
-      color: #777777;
+    .brand-text strong {
+      display: block;
       font-size: 14px;
-      margin-top: 5px;
+      letter-spacing: 0.08em;
     }
 
-    /* SUBJECTS */
+    .brand-text span {
+      display: block;
+      margin-top: 2px;
 
-    .subject-grid {
+      font-size: 8px;
+      letter-spacing: 0.13em;
+      color: var(--gold-dark);
+      font-weight: 700;
+    }
+
+    .menu-button {
+      width: 44px;
+      height: 44px;
+
+      display: grid;
+      place-items: center;
+
+      border: 1px solid var(--line);
+      border-radius: 14px;
+
+      background: rgba(255,255,255,0.72);
+
+      cursor: pointer;
+
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .menu-button:active {
+      transform: scale(0.94);
+    }
+
+    .menu-lines {
+      width: 19px;
+    }
+
+    .menu-lines span {
+      display: block;
+      height: 1.5px;
+      margin: 4px 0;
+
+      background: var(--ink);
+      border-radius: 2px;
+    }
+
+    /* =========================================================
+       MAIN
+       ========================================================= */
+
+    main {
+      width: min(100%, 900px);
+      margin: auto;
+      padding: 22px 16px 30px;
+    }
+
+    .screen {
+      display: none;
+      animation: screenIn 0.4s ease both;
+    }
+
+    .screen.active {
+      display: block;
+    }
+
+    @keyframes screenIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* =========================================================
+       HERO
+       ========================================================= */
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+
+      padding: 30px 24px;
+
+      border-radius: var(--radius-xl);
+
+      background:
+        radial-gradient(
+          circle at 95% 10%,
+          rgba(181, 138, 67, 0.24),
+          transparent 31%
+        ),
+        radial-gradient(
+          circle at 0% 100%,
+          rgba(65, 108, 159, 0.15),
+          transparent 33%
+        ),
+        linear-gradient(
+          135deg,
+          #fffdf9,
+          #f4efe4
+        );
+
+      border: 1px solid rgba(181, 138, 67, 0.18);
+
+      box-shadow: var(--shadow);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+
+      width: 190px;
+      height: 190px;
+
+      right: -75px;
+      bottom: -95px;
+
+      border-radius: 50%;
+
+      border: 1px solid rgba(181, 138, 67, 0.18);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+
+      padding: 7px 11px;
+
+      border-radius: 100px;
+
+      background: rgba(255,255,255,0.76);
+      border: 1px solid rgba(181,138,67,0.2);
+
+      color: var(--gold-dark);
+
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow-dot {
+      width: 6px;
+      height: 6px;
+
+      border-radius: 50%;
+      background: var(--gold);
+    }
+
+    .hero h1 {
+      margin-top: 18px;
+
+      max-width: 650px;
+
+      font-size: clamp(34px, 9vw, 62px);
+      line-height: 0.98;
+      letter-spacing: -0.04em;
+    }
+
+    .hero h1 span {
+      color: var(--gold-dark);
+    }
+
+    .hero-description {
+      max-width: 570px;
+
+      margin-top: 17px;
+
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+
+      margin-top: 24px;
+    }
+
+    .button {
+      min-height: 46px;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+
+      padding: 0 17px;
+
+      border-radius: 14px;
+
+      border: 1px solid transparent;
+
+      font-size: 13px;
+      font-weight: 750;
+
+      cursor: pointer;
+
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .button:active {
+      transform: scale(0.97);
+    }
+
+    .button-primary {
+      color: #fff;
+
+      background:
+        linear-gradient(
+          135deg,
+          #c59a52,
+          #9d7134
+        );
+
+      box-shadow:
+        0 9px 24px rgba(181,138,67,0.22);
+    }
+
+    .button-secondary {
+      color: var(--navy);
+
+      background: rgba(255,255,255,0.72);
+
+      border-color: rgba(23,43,70,0.1);
+    }
+
+    /* =========================================================
+       SECTION HEADERS
+       ========================================================= */
+
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+
+      margin: 30px 2px 14px;
+    }
+
+    .section-heading h2 {
+      font-size: 23px;
+      letter-spacing: -0.025em;
+    }
+
+    .section-heading p {
+      margin-top: 5px;
+
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .section-heading a {
+      color: var(--gold-dark);
+      font-size: 12px;
+      font-weight: 750;
+    }
+
+    /* =========================================================
+       BOOK
+       ========================================================= */
+
+    .book-card {
+      position: relative;
+      overflow: hidden;
+
+      display: grid;
+      grid-template-columns: 135px 1fr;
+      gap: 20px;
+
+      padding: 18px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #fff,
+          #faf5eb
+        );
+
+      border: 1px solid rgba(181,138,67,0.16);
+      border-radius: var(--radius-lg);
+
+      box-shadow: var(--shadow-small);
+    }
+
+    .book-card::before {
+      content: "";
+
+      position: absolute;
+      top: -70px;
+      right: -70px;
+
+      width: 180px;
+      height: 180px;
+
+      border-radius: 50%;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(181,138,67,0.14),
+          transparent 65%
+        );
+    }
+
+    .book-cover-wrap {
+      position: relative;
+      z-index: 1;
+    }
+
+    .book-cover {
+      width: 100%;
+      aspect-ratio: 0.67;
+
+      object-fit: cover;
+
+      border-radius: 9px;
+
+      box-shadow:
+        8px 13px 26px rgba(30,34,40,0.18);
+    }
+
+    .book-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .tag {
+      display: inline-block;
+
+      padding: 6px 9px;
+
+      border-radius: 8px;
+
+      background: var(--gold-soft);
+      color: var(--gold-dark);
+
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+    }
+
+    .book-content h3 {
+      margin-top: 11px;
+
+      font-size: 21px;
+      line-height: 1.12;
+    }
+
+    .book-subtitle {
+      margin-top: 8px;
+
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .book-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+
+      margin-top: 13px;
+    }
+
+    .meta-pill {
+      padding: 6px 8px;
+
+      border-radius: 8px;
+
+      background: #f2f4f7;
+
+      color: #565b64;
+
+      font-size: 9px;
+      font-weight: 700;
+    }
+
+    .book-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+
+      margin-top: 16px;
+    }
+
+    .small-button {
+      min-height: 38px;
+
+      padding: 0 12px;
+
+      border-radius: 11px;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      font-size: 11px;
+      font-weight: 750;
+    }
+
+    .amazon-button {
+      background: var(--navy);
+      color: #fff;
+    }
+
+    .play-button {
+      background: var(--gold-soft);
+      color: var(--gold-dark);
+    }
+
+    .coming-button {
+      background: #f0f1f3;
+      color: #777b83;
+    }
+
+    /* =========================================================
+       QUICK GRID
+       ========================================================= */
+
+    .quick-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 12px;
-      margin-top: 20px;
     }
 
-    .subject {
-      border: 1px solid #eeeeee;
-      border-radius: 16px;
+    .quick-card {
+      position: relative;
+      overflow: hidden;
+
+      min-height: 135px;
+
       padding: 18px;
-      background: #ffffff;
+
+      border-radius: 19px;
+
+      background: var(--surface-solid);
+      border: 1px solid var(--line);
+
+      box-shadow: var(--shadow-small);
+
+      cursor: pointer;
+
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
     }
 
-    .subject h3 {
-      font-size: 16px;
+    .quick-card:active {
+      transform: scale(0.98);
     }
 
-    .subject p {
-      font-size: 12px;
-      color: #777777;
-      margin-top: 5px;
+    .quick-card::after {
+      content: "";
+
+      position: absolute;
+
+      width: 85px;
+      height: 85px;
+
+      right: -35px;
+      bottom: -35px;
+
+      border-radius: 50%;
+
+      background: rgba(181,138,67,0.1);
     }
 
-    /* CONTENT CARDS */
-
-    .content-card {
-      border: 1px solid #eeeeee;
-      border-radius: 16px;
-      padding: 18px;
-      margin-top: 12px;
-      background: #ffffff;
+    .quick-number {
+      color: var(--gold);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.1em;
     }
 
-    .content-card h3 {
+    .quick-card h3 {
+      margin-top: 22px;
+
       font-size: 17px;
     }
 
-    .content-card p {
-      font-size: 13px;
-      color: #777777;
+    .quick-card p {
       margin-top: 5px;
+
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.45;
     }
 
-    /* SOCIAL */
+    .quick-card.blue {
+      background:
+        linear-gradient(
+          145deg,
+          #fff,
+          #edf3fa
+        );
+    }
+
+    .quick-card.gold {
+      background:
+        linear-gradient(
+          145deg,
+          #fff,
+          #faf1df
+        );
+    }
+
+    .quick-card.green {
+      background:
+        linear-gradient(
+          145deg,
+          #fff,
+          #eef8f1
+        );
+    }
+
+    .quick-card.purple {
+      background:
+        linear-gradient(
+          145deg,
+          #fff,
+          #f1eef9
+        );
+    }
+
+    /* =========================================================
+       PROFILE
+       ========================================================= */
+
+    .profile-card {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+
+      padding: 18px;
+
+      background: var(--surface-solid);
+      border: 1px solid var(--line);
+
+      border-radius: var(--radius-lg);
+
+      box-shadow: var(--shadow-small);
+    }
+
+    .profile-image {
+      width: 78px;
+      height: 78px;
+
+      flex: 0 0 78px;
+
+      object-fit: cover;
+
+      border-radius: 50%;
+
+      border: 3px solid #fff;
+
+      box-shadow:
+        0 0 0 1px rgba(181,138,67,0.4),
+        0 8px 20px rgba(20,30,40,0.12);
+    }
+
+    .profile-card h3 {
+      font-size: 18px;
+    }
+
+    .profile-card p {
+      margin-top: 5px;
+
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    /* =========================================================
+       SOCIAL
+       ========================================================= */
 
     .social-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-      margin-top: 20px;
+      gap: 11px;
     }
 
     .social-card {
       display: flex;
       align-items: center;
-      gap: 13px;
-      padding: 17px;
-      border: 1px solid #eeeeee;
-      border-radius: 15px;
-      background: #ffffff;
-      transition: 0.2s;
+      gap: 12px;
+
+      min-height: 70px;
+
+      padding: 12px 14px;
+
+      border-radius: 17px;
+
+      background: rgba(255,255,255,0.88);
+      border: 1px solid var(--line);
+
+      box-shadow: 0 7px 22px rgba(28,35,48,0.06);
+
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
     }
 
-    .social-card:hover {
-      box-shadow: 0 7px 20px rgba(0,0,0,0.06);
+    .social-card:active {
+      transform: scale(0.98);
     }
 
     .social-icon {
-      width: 42px;
-      height: 42px;
+      width: 40px;
+      height: 40px;
+
+      flex: 0 0 40px;
+
+      display: grid;
+      place-items: center;
+
       border-radius: 12px;
-      background: #f4f4f4;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 18px;
-      font-weight: 700;
+    }
+
+    .social-icon svg {
+      width: 23px;
+      height: 23px;
+    }
+
+    .instagram-icon {
+      background:
+        linear-gradient(
+          135deg,
+          #feda75,
+          #d62976 55%,
+          #4f5bd5
+        );
+    }
+
+    .youtube-icon {
+      background: #ff0033;
+    }
+
+    .whatsapp-icon {
+      background: #25d366;
+    }
+
+    .email-icon {
+      background: var(--navy);
     }
 
     .social-card strong {
-      font-size: 14px;
+      display: block;
+      font-size: 12px;
     }
 
     .social-card span {
       display: block;
-      color: #888888;
+
+      margin-top: 3px;
+
+      color: var(--muted);
+      font-size: 9px;
+    }
+
+    /* =========================================================
+       INNER SCREENS
+       ========================================================= */
+
+    .page-title {
+      padding: 10px 2px 20px;
+    }
+
+    .page-title .eyebrow {
+      margin-bottom: 13px;
+    }
+
+    .page-title h1 {
+      font-size: 35px;
+      letter-spacing: -0.04em;
+    }
+
+    .page-title p {
+      margin-top: 8px;
+
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .subject-grid,
+    .service-grid,
+    .project-grid,
+    .creative-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .info-card {
+      padding: 18px;
+
+      border-radius: 19px;
+
+      background: var(--surface-solid);
+      border: 1px solid var(--line);
+
+      box-shadow: var(--shadow-small);
+    }
+
+    .info-card .card-number {
+      font-size: 9px;
+      color: var(--gold-dark);
+      font-weight: 800;
+      letter-spacing: 0.1em;
+    }
+
+    .info-card h3 {
+      margin-top: 17px;
+      font-size: 16px;
+    }
+
+    .info-card p {
+      margin-top: 6px;
+
+      color: var(--muted);
       font-size: 11px;
+      line-height: 1.55;
     }
 
-    /* MENU */
-
-    #sideMenu {
-      position: fixed;
-      top: 0;
-      right: -280px;
-      width: 270px;
-      height: 100%;
-      background: #ffffff;
-      z-index: 5000;
-      box-shadow: -5px 0 30px rgba(0,0,0,0.12);
-      padding: 25px;
-      transition: 0.3s;
+    .info-card.blue-card {
+      background: linear-gradient(145deg, #fff, #eef4fb);
     }
 
-    #sideMenu.open {
-      right: 0;
+    .info-card.gold-card {
+      background: linear-gradient(145deg, #fff, #fbf2e1);
     }
 
-    .menu-close {
-      border: 0;
-      background: transparent;
-      font-size: 25px;
-      cursor: pointer;
-      float: right;
+    .info-card.green-card {
+      background: linear-gradient(145deg, #fff, #edf8f1);
     }
 
-    .menu-list {
-      clear: both;
-      padding-top: 45px;
+    .info-card.purple-card {
+      background: linear-gradient(145deg, #fff, #f3effb);
     }
 
-    .menu-list button {
-      display: block;
-      width: 100%;
-      text-align: left;
-      border: 0;
-      background: transparent;
-      padding: 13px 0;
-      border-bottom: 1px solid #eeeeee;
-      cursor: pointer;
+    /* =========================================================
+       VIDEOS
+       ========================================================= */
+
+    .video-card {
+      overflow: hidden;
+
+      background: #fff;
+
+      border: 1px solid var(--line);
+      border-radius: 20px;
+
+      box-shadow: var(--shadow-small);
+    }
+
+    .video-top {
+      min-height: 130px;
+
+      display: grid;
+      place-items: center;
+
+      background:
+        radial-gradient(
+          circle at 20% 20%,
+          rgba(181,138,67,0.3),
+          transparent 35%
+        ),
+        linear-gradient(
+          135deg,
+          #182d48,
+          #355e88
+        );
+    }
+
+    .video-play {
+      width: 55px;
+      height: 55px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 50%;
+
+      background: #fff;
+      color: #d9002f;
+
+      box-shadow:
+        0 10px 25px rgba(0,0,0,0.16);
+    }
+
+    .video-play svg {
+      width: 22px;
+      height: 22px;
+      margin-left: 2px;
+    }
+
+    .video-info {
+      padding: 15px;
+    }
+
+    .video-info h3 {
       font-size: 15px;
     }
 
-    /* BOTTOM NAV */
+    .video-info p {
+      margin-top: 5px;
 
-    .bottom-nav {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 68px;
-      background: rgba(255,255,255,0.97);
-      border-top: 1px solid #eeeeee;
-      display: flex;
-      justify-content: center;
-      z-index: 4000;
-    }
-
-    .bottom-inner {
-      width: 100%;
-      max-width: 500px;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-    }
-
-    .bottom-nav button {
-      border: 0;
-      background: transparent;
-      color: #777777;
-      cursor: pointer;
+      color: var(--muted);
       font-size: 11px;
+      line-height: 1.45;
     }
 
-    .bottom-nav button.active {
-      color: #111111;
-      font-weight: 700;
+    .video-info a {
+      display: inline-flex;
+
+      margin-top: 12px;
+
+      color: var(--gold-dark);
+
+      font-size: 11px;
+      font-weight: 800;
     }
 
-    .nav-mark {
-      display: block;
-      width: 6px;
-      height: 6px;
-      background: #111111;
+    /* =========================================================
+       UPDATES
+       ========================================================= */
+
+    .timeline {
+      position: relative;
+
+      padding-left: 20px;
+    }
+
+    .timeline::before {
+      content: "";
+
+      position: absolute;
+      left: 5px;
+      top: 7px;
+      bottom: 7px;
+
+      width: 1px;
+
+      background:
+        linear-gradient(
+          to bottom,
+          var(--gold),
+          rgba(181,138,67,0.08)
+        );
+    }
+
+    .timeline-item {
+      position: relative;
+
+      margin-bottom: 15px;
+
+      padding: 16px;
+
+      border-radius: 17px;
+
+      background: #fff;
+      border: 1px solid var(--line);
+
+      box-shadow: var(--shadow-small);
+    }
+
+    .timeline-item::before {
+      content: "";
+
+      position: absolute;
+
+      left: -20px;
+      top: 22px;
+
+      width: 9px;
+      height: 9px;
+
       border-radius: 50%;
-      margin: 0 auto 5px;
-      opacity: 0;
+
+      background: var(--gold);
+
+      box-shadow:
+        0 0 0 4px var(--bg);
     }
 
-    .bottom-nav button.active .nav-mark {
-      opacity: 1;
+    .timeline-date {
+      color: var(--gold-dark);
+
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
     }
 
-    /* ABOUT */
-
-    .about-text {
-      margin-top: 20px;
+    .timeline-item h3 {
+      margin-top: 8px;
+      font-size: 15px;
     }
 
-    .about-text p {
-      color: #555555;
-      font-size: 14px;
-      margin-bottom: 16px;
+    .timeline-item p {
+      margin-top: 5px;
+
+      color: var(--muted);
+
+      font-size: 11px;
+      line-height: 1.55;
+    }
+
+    /* =========================================================
+       ABOUT
+       ========================================================= */
+
+    .about-card {
+      padding: 22px;
+
+      background:
+        linear-gradient(
+          145deg,
+          #fff,
+          #f7f1e5
+        );
+
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(181,138,67,0.16);
+
+      box-shadow: var(--shadow-small);
+    }
+
+    .about-card h2 {
+      font-size: 23px;
+    }
+
+    .about-card p {
+      margin-top: 13px;
+
+      color: #555962;
+
+      font-size: 13px;
+      line-height: 1.75;
     }
 
     .quote {
-      border-left: 3px solid #111111;
-      padding-left: 15px;
-      margin-top: 25px;
-      font-style: italic;
-      color: #444444;
+      margin-top: 21px;
+
+      padding: 17px;
+
+      border-left: 3px solid var(--gold);
+
+      background: rgba(181,138,67,0.07);
+
+      border-radius: 0 13px 13px 0;
+
+      color: var(--ink);
+
+      font-size: 14px;
+      line-height: 1.55;
+      font-weight: 650;
     }
 
-    /* MOBILE */
+    .quote small {
+      display: block;
 
-    @media (max-width: 600px) {
+      margin-top: 8px;
 
-      main {
-        padding-left: 16px;
-        padding-right: 16px;
+      color: var(--gold-dark);
+
+      font-size: 10px;
+      font-weight: 750;
+    }
+
+    /* =========================================================
+       CONTACT / INSTALL
+       ========================================================= */
+
+    .install-card {
+      padding: 20px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #172b46,
+          #294a6d
+        );
+
+      color: #fff;
+
+      border-radius: var(--radius-lg);
+
+      box-shadow:
+        0 18px 40px rgba(23,43,70,0.18);
+    }
+
+    .install-card h3 {
+      font-size: 19px;
+    }
+
+    .install-card p {
+      margin-top: 7px;
+
+      color: rgba(255,255,255,0.72);
+
+      font-size: 11px;
+      line-height: 1.5;
+    }
+
+    #installBtn {
+      margin-top: 15px;
+
+      background: #fff;
+      color: var(--navy);
+    }
+
+    /* =========================================================
+       SIDE MENU
+       ========================================================= */
+
+    .menu-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+
+      background: rgba(10,17,27,0.25);
+
+      opacity: 0;
+      visibility: hidden;
+
+      transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+    }
+
+    .menu-overlay.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .side-menu {
+      position: absolute;
+
+      top: 0;
+      right: 0;
+
+      width: min(88%, 360px);
+      height: 100%;
+
+      padding:
+        22px 18px;
+
+      background:
+        linear-gradient(
+          180deg,
+          #fffdf8,
+          #f5f0e6
+        );
+
+      box-shadow:
+        -20px 0 50px rgba(10,17,27,0.13);
+
+      transform: translateX(100%);
+
+      transition:
+        transform 0.35s cubic-bezier(.2,.8,.2,1);
+
+      overflow-y: auto;
+    }
+
+    .menu-overlay.open .side-menu {
+      transform: translateX(0);
+    }
+
+    .menu-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      padding-bottom: 20px;
+
+      border-bottom: 1px solid var(--line);
+    }
+
+    .menu-brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+    }
+
+    .menu-brand img {
+      width: 44px;
+      height: 44px;
+
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .menu-brand strong {
+      display: block;
+      font-size: 14px;
+    }
+
+    .menu-brand span {
+      display: block;
+
+      margin-top: 3px;
+
+      color: var(--gold-dark);
+
+      font-size: 8px;
+      letter-spacing: 0.1em;
+      font-weight: 750;
+    }
+
+    .close-menu {
+      width: 40px;
+      height: 40px;
+
+      border: 1px solid var(--line);
+      border-radius: 12px;
+
+      background: #fff;
+
+      cursor: pointer;
+
+      font-size: 20px;
+      line-height: 1;
+    }
+
+    .menu-list {
+      margin-top: 17px;
+    }
+
+    .menu-item {
+      width: 100%;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      padding: 14px 10px;
+
+      border: 0;
+      border-bottom: 1px solid var(--line);
+
+      background: transparent;
+
+      text-align: left;
+
+      cursor: pointer;
+    }
+
+    .menu-item span:first-child {
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .menu-arrow {
+      color: var(--gold-dark);
+      font-size: 15px;
+    }
+
+    /* =========================================================
+       BOTTOM NAV
+       ========================================================= */
+
+    .bottom-nav {
+      position: fixed;
+      left: 50%;
+      bottom: 12px;
+
+      z-index: 700;
+
+      width: min(calc(100% - 22px), 570px);
+
+      transform: translateX(-50%);
+
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+
+      padding: 7px;
+
+      border-radius: 22px;
+
+      background: rgba(255,255,255,0.9);
+
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+
+      border: 1px solid rgba(23,25,29,0.08);
+
+      box-shadow:
+        0 16px 45px rgba(28,35,48,0.15);
+    }
+
+    .nav-button {
+      min-height: 57px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+
+      border: 0;
+      border-radius: 16px;
+
+      background: transparent;
+
+      color: #767a82;
+
+      cursor: pointer;
+    }
+
+    .nav-button.active {
+      color: var(--gold-dark);
+
+      background:
+        linear-gradient(
+          135deg,
+          #fbf1df,
+          #f7e9cf
+        );
+    }
+
+    .nav-symbol {
+      font-size: 17px;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .nav-label {
+      font-size: 9px;
+      font-weight: 750;
+    }
+
+    /* =========================================================
+       EMPTY / COMING SOON
+       ========================================================= */
+
+    .coming-card {
+      padding: 30px 20px;
+
+      text-align: center;
+
+      background: #fff;
+
+      border: 1px solid var(--line);
+      border-radius: 20px;
+
+      box-shadow: var(--shadow-small);
+    }
+
+    .coming-card h3 {
+      font-size: 19px;
+    }
+
+    .coming-card p {
+      max-width: 440px;
+
+      margin: 8px auto 0;
+
+      color: var(--muted);
+
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    /* =========================================================
+       RESPONSIVE
+       ========================================================= */
+
+    @media (min-width: 650px) {
+      .quick-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .quick-card {
+        min-height: 160px;
+      }
+
+      .social-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .subject-grid,
+      .service-grid,
+      .project-grid,
+      .creative-grid {
+        grid-template-columns: repeat(3, 1fr);
       }
 
       .book-card {
-        grid-template-columns: 100px 1fr;
-        gap: 15px;
+        grid-template-columns: 180px 1fr;
+        padding: 24px;
       }
 
-      .book-card img {
-        width: 100px;
-        height: 145px;
-      }
-
-      .book-card h3 {
-        font-size: 16px;
-      }
-
-      .book-card p {
-        font-size: 12px;
-      }
-
-      .home-grid,
-      .subject-grid,
-      .social-grid {
-        grid-template-columns: repeat(2, 1fr);
+      .book-content h3 {
+        font-size: 28px;
       }
     }
 
-    @media (max-width: 390px) {
-
-      .home-grid,
-      .subject-grid,
-      .social-grid {
-        grid-template-columns: 1fr;
+    @media (max-width: 420px) {
+      .book-card {
+        grid-template-columns: 112px 1fr;
+        gap: 14px;
       }
 
-      .profile-box {
-        padding: 14px;
+      .book-content h3 {
+        font-size: 18px;
+      }
+
+      .social-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
       }
     }
   </style>
@@ -586,241 +1613,564 @@
 
 <body>
 
-  <!-- SPLASH -->
+  <!-- =======================================================
+       SPLASH
+       ======================================================= -->
 
   <div id="splash">
     <div class="splash-content">
-      <div class="diya">🪔</div>
-      <div class="splash-name">JAYDEEP SINGH</div>
-      <div class="splash-role">AUTHOR · MENTOR · CREATOR</div>
+
+      <!-- Real uploaded logo/icon -->
+      <img
+        class="splash-logo"
+        src="icons/icon-512.png"
+        alt="Jaydeep Singh logo"
+      >
+
+      <div class="splash-name">
+        JAYDEEP SINGH
+      </div>
+
+      <div class="splash-role">
+        AUTHOR · MENTOR · CREATOR
+      </div>
+
+      <div class="splash-line"></div>
+
     </div>
   </div>
 
-  <!-- SIDE MENU -->
 
-  <aside id="sideMenu">
+  <!-- =======================================================
+       APP HEADER
+       ======================================================= -->
 
-    <button class="menu-close" onclick="closeMenu()">×</button>
+  <header class="app-header">
 
-    <div class="menu-list">
+    <button
+      class="brand"
+      onclick="showScreen('home')"
+      style="border:0;background:none;cursor:pointer;text-align:left;"
+      aria-label="Go to home"
+    >
 
-      <button onclick="showScreen('home'); closeMenu();">
-        Home
-      </button>
+      <img
+        class="brand-logo"
+        src="icons/icon-192.png"
+        alt="Jaydeep Singh"
+      >
 
-      <button onclick="showScreen('books'); closeMenu();">
-        Books
-      </button>
+      <div class="brand-text">
+        <strong>JAYDEEP SINGH</strong>
+        <span>AUTHOR · MENTOR · CREATOR</span>
+      </div>
 
-      <button onclick="showScreen('learning'); closeMenu();">
-        Learning
-      </button>
+    </button>
 
-      <button onclick="showScreen('videos'); closeMenu();">
-        Videos
-      </button>
+    <button
+      class="menu-button"
+      onclick="openMenu()"
+      aria-label="Open menu"
+    >
+      <div class="menu-lines">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </button>
 
-      <button onclick="showScreen('creative'); closeMenu();">
-        Creative
-      </button>
+  </header>
 
-      <button onclick="showScreen('projects'); closeMenu();">
-        Projects
-      </button>
 
-      <button onclick="showScreen('services'); closeMenu();">
-        Services
-      </button>
+  <!-- =======================================================
+       MAIN
+       ======================================================= -->
 
-      <button onclick="showScreen('updates'); closeMenu();">
-        Updates
-      </button>
+  <main>
 
-      <button onclick="showScreen('about'); closeMenu();">
-        About
-      </button>
 
-    </div>
+    <!-- =====================================================
+         HOME
+         ===================================================== -->
 
-  </aside>
+    <section
+      id="home"
+      class="screen active"
+    >
 
-  <!-- APP -->
+      <div class="hero">
 
-  <div id="app">
-
-    <header>
-
-      <div class="topbar">
-
-        <div class="brand">
-          JAYDEEP SINGH
-          <span>AUTHOR · MENTOR · CREATOR</span>
+        <div class="eyebrow">
+          <span class="eyebrow-dot"></span>
+          Official App
         </div>
 
-        <button class="menu-btn" onclick="openMenu()">☰</button>
+        <h1>
+          Write.<br>
+          <span>Teach.</span><br>
+          Create.
+        </h1>
+
+        <p class="hero-description">
+          Explore books, learning, videos, creative work,
+          projects and everything Jaydeep Singh is building.
+        </p>
+
+        <div class="hero-actions">
+
+          <button
+            class="button button-primary"
+            onclick="showScreen('books')"
+          >
+            Explore My Book
+          </button>
+
+          <button
+            class="button button-secondary"
+            onclick="showScreen('learning')"
+          >
+            Start Learning
+          </button>
+
+        </div>
 
       </div>
 
-    </header>
 
-    <main>
+      <!-- Featured Book -->
 
-      <!-- HOME -->
+      <div class="section-heading">
+        <div>
+          <h2>Featured Book</h2>
+          <p>The debut book by Jaydeep Singh</p>
+        </div>
 
-      <section id="home" class="screen">
+        <a href="#" onclick="showScreen('books');return false;">
+          View all
+        </a>
+      </div>
 
-        <div class="hero">
 
-          <small>Welcome</small>
+      <article class="book-card">
 
-          <h1>
-            Jaydeep Singh
-          </h1>
+        <div class="book-cover-wrap">
 
-          <p>
-            Author, mentor and creator exploring books,
-            education, creativity and technology.
+          <img
+            class="book-cover"
+            src="book-cover.jpg"
+            alt="Echoes of Destiny book cover"
+            loading="lazy"
+          >
+
+        </div>
+
+        <div class="book-content">
+
+          <span class="tag">
+            ENGLISH EDITION · AVAILABLE
+          </span>
+
+          <h3>
+            Echoes of Destiny
+          </h3>
+
+          <p class="book-subtitle">
+            The Untold Story of Our Generation
           </p>
 
-          <div class="profile-box">
+          <div class="book-meta">
 
-            <img
-              src="assets/profile.jpg"
-              alt="Jaydeep Singh"
+            <span class="meta-pill">
+              By Jaydeep Singh
+            </span>
+
+            <span class="meta-pill">
+              MRP ₹169
+            </span>
+
+          </div>
+
+          <div class="book-buttons">
+
+            <a
+              class="small-button amazon-button"
+              href="https://amzn.in/d/03OMX68u"
+              target="_blank"
+              rel="noopener"
             >
+              Amazon
+            </a>
 
-            <div>
-              <strong>Jaydeep Singh</strong>
-              <span>Author · Mentor · Creator</span>
-            </div>
+            <a
+              class="small-button play-button"
+              href="https://play.google.com/store/books/details/Jaydeep_Singh_Echoes_Of_Destiny?id=5_0MEgAAQBAJ"
+              target="_blank"
+              rel="noopener"
+            >
+              Google Play
+            </a>
 
           </div>
 
         </div>
 
-        <h2 class="section-title">
-          Featured Book
-        </h2>
+      </article>
 
-        <div class="book-card">
 
-          <img
-            src="assets/book-cover.jpg"
-            alt="Echoes of Destiny book cover"
-          >
+      <!-- Quick Navigation -->
+
+      <div class="section-heading">
+        <div>
+          <h2>Explore</h2>
+          <p>Choose where you want to go</p>
+        </div>
+      </div>
+
+
+      <div class="quick-grid">
+
+        <div
+          class="quick-card gold"
+          onclick="showScreen('learning')"
+        >
+          <div class="quick-number">01</div>
+          <h3>Learning</h3>
+          <p>Subjects, lectures, notes and practice.</p>
+        </div>
+
+        <div
+          class="quick-card blue"
+          onclick="showScreen('videos')"
+        >
+          <div class="quick-number">02</div>
+          <h3>Videos</h3>
+          <p>Teaching, educational and creative videos.</p>
+        </div>
+
+        <div
+          class="quick-card green"
+          onclick="showScreen('creative')"
+        >
+          <div class="quick-number">03</div>
+          <h3>Creative</h3>
+          <p>Designs, editing, graphics and ideas.</p>
+        </div>
+
+        <div
+          class="quick-card purple"
+          onclick="showScreen('projects')"
+        >
+          <div class="quick-number">04</div>
+          <h3>Projects</h3>
+          <p>Websites, apps, PWA and new experiments.</p>
+        </div>
+
+      </div>
+
+
+      <!-- Profile -->
+
+      <div class="section-heading">
+        <div>
+          <h2>About the Creator</h2>
+        </div>
+
+        <a
+          href="#"
+          onclick="showScreen('about');return false;"
+        >
+          More
+        </a>
+      </div>
+
+
+      <div class="profile-card">
+
+        <img
+          class="profile-image"
+          src="profile.jpg"
+          alt="Jaydeep Singh"
+          loading="lazy"
+        >
+
+        <div>
+          <h3>Jaydeep Singh</h3>
+
+          <p>
+            Author, mentor, creator and student exploring
+            learning, writing, technology and creativity.
+          </p>
+        </div>
+
+      </div>
+
+
+      <!-- Social -->
+
+      <div class="section-heading">
+        <div>
+          <h2>Connect</h2>
+          <p>Follow or get in touch</p>
+        </div>
+      </div>
+
+
+      <div class="social-grid">
+
+        <!-- Instagram -->
+
+        <a
+          class="social-card"
+          href="https://www.instagram.com/jaydeepsingh._?stkn=dWs4cnU0cnlpd2xt"
+          target="_blank"
+          rel="noopener"
+          aria-label="Open Instagram"
+        >
+
+          <div class="social-icon instagram-icon">
+
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="white"
+              stroke-width="1.9"
+            >
+              <rect x="3" y="3" width="18" height="18" rx="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle
+                cx="17.5"
+                cy="6.5"
+                r="1"
+                fill="white"
+                stroke="none"
+              />
+            </svg>
+
+          </div>
 
           <div>
+            <strong>Instagram</strong>
+            <span>Follow</span>
+          </div>
 
-            <h3>
-              Echoes of Destiny
-            </h3>
+        </a>
 
-            <p>
-              The Untold Story of Our Generation
-            </p>
 
-            <p style="margin-top:10px;">
-              A debut motivational and inspirational book
-              inspired by experiences, emotions, dreams,
-              struggles and the journey of growing up.
-            </p>
+        <!-- YouTube -->
 
-            <button
-              class="btn"
-              onclick="showScreen('books')"
+        <a
+          class="social-card"
+          href="https://www.youtube.com/@Jaydeepzx"
+          target="_blank"
+          rel="noopener"
+          aria-label="Open YouTube"
+        >
+
+          <div class="social-icon youtube-icon">
+
+            <svg
+              viewBox="0 0 24 24"
+              fill="white"
             >
-              Explore Book
-            </button>
+              <path d="M21.6 7.2a2.9 2.9 0 0 0-2.04-2.05C17.76 4.67 12 4.67 12 4.67s-5.76 0-7.56.48A2.9 2.9 0 0 0 2.4 7.2C1.92 9 1.92 12 1.92 12s0 3 .48 4.8a2.9 2.9 0 0 0 2.04 2.05c1.8.48 7.56.48 7.56.48s5.76 0 7.56-.48a2.9 2.9 0 0 0 2.04-2.05c.48-1.8.48-4.8.48-4.8s0-3-.48-4.8Z"/>
+              <path
+                d="m10 15.5 5-3.5-5-3.5v7Z"
+                fill="#ff0033"
+              />
+            </svg>
 
           </div>
 
+          <div>
+            <strong>YouTube</strong>
+            <span>Watch videos</span>
+          </div>
+
+        </a>
+
+
+        <!-- WhatsApp -->
+
+        <a
+          class="social-card"
+          href="https://wa.me/919525572534"
+          target="_blank"
+          rel="noopener"
+          aria-label="Open WhatsApp"
+        >
+
+          <div class="social-icon whatsapp-icon">
+
+            <svg
+              viewBox="0 0 24 24"
+              fill="white"
+            >
+              <path d="M12 2a9.8 9.8 0 0 0-8.46 14.77L2 22l5.39-1.5A9.8 9.8 0 1 0 12 2Zm0 17.9a8.08 8.08 0 0 1-4.12-1.13l-.3-.18-3.2.89.9-3.11-.2-.32A8.08 8.08 0 1 1 12 19.9Zm4.43-6.08c-.24-.12-1.42-.7-1.64-.78-.22-.08-.38-.12-.54.12-.16.24-.62.78-.76.94-.14.16-.28.18-.52.06-.24-.12-1-.37-1.9-1.18-.7-.62-1.18-1.38-1.32-1.62-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.47-.4-.41-.54-.42h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.33.98 2.49c.12.16 1.69 2.58 4.09 3.62.57.25 1.02.4 1.37.51.58.18 1.1.15 1.51.09.46-.07 1.42-.58 1.62-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"/>
+            </svg>
+
+          </div>
+
+          <div>
+            <strong>WhatsApp</strong>
+            <span>Message directly</span>
+          </div>
+
+        </a>
+
+
+        <!-- Email -->
+
+        <a
+          class="social-card"
+          href="mailto:jaydeepsingh3631@gmail.com"
+          aria-label="Send email"
+        >
+
+          <div class="social-icon email-icon">
+
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="white"
+              stroke-width="1.7"
+            >
+              <rect
+                x="3"
+                y="5"
+                width="18"
+                height="14"
+                rx="2.5"
+              />
+
+              <path d="m4 7 8 6 8-6"/>
+            </svg>
+
+          </div>
+
+          <div>
+            <strong>Email</strong>
+            <span>Send a message</span>
+          </div>
+
+        </a>
+
+      </div>
+
+
+      <!-- Install -->
+
+      <div class="section-heading">
+        <div>
+          <h2>Install the App</h2>
+          <p>Keep Jaydeep Singh one tap away</p>
+        </div>
+      </div>
+
+
+      <div class="install-card">
+
+        <h3>
+          Make it part of your phone.
+        </h3>
+
+        <p>
+          Install this website as an app for a cleaner,
+          faster experience.
+        </p>
+
+        <button
+          id="installBtn"
+          class="button"
+          style="display:none;"
+        >
+          Install App
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         BOOKS
+         ===================================================== -->
+
+    <section
+      id="books"
+      class="screen"
+    >
+
+      <div class="page-title">
+
+        <div class="eyebrow">
+          <span class="eyebrow-dot"></span>
+          Books
         </div>
 
-        <div class="home-grid">
+        <h1>My Books</h1>
 
-          <div
-            class="home-card"
-            onclick="showScreen('learning')"
-          >
-            <h3>Learning</h3>
-            <p>Subjects, lectures, notes and practice.</p>
-          </div>
+        <p>
+          Writing, experiences and ideas turned into stories.
+        </p>
 
-          <div
-            class="home-card"
-            onclick="showScreen('videos')"
-          >
-            <h3>Videos</h3>
-            <p>Educational and creative videos.</p>
-          </div>
-
-          <div
-            class="home-card"
-            onclick="showScreen('creative')"
-          >
-            <h3>Creative</h3>
-            <p>Design, editing and creative work.</p>
-          </div>
-
-          <div
-            class="home-card"
-            onclick="showScreen('projects')"
-          >
-            <h3>Projects</h3>
-            <p>Websites, apps and experiments.</p>
-          </div>
-
-        </div>
-
-      </section>
+      </div>
 
 
-      <!-- BOOKS -->
+      <article class="book-card">
 
-      <section id="books" class="screen hidden">
-
-        <div class="page-head">
-
-          <button
-            class="back-btn"
-            onclick="showScreen('home')"
-          >
-            ← Back
-          </button>
-
-          <h1>Books</h1>
-
-          <p>
-            Explore Jaydeep Singh's books and publications.
-          </p>
-
-        </div>
-
-        <div class="book-card">
+        <div class="book-cover-wrap">
 
           <img
-            src="assets/book-cover.jpg"
+            class="book-cover"
+            src="book-cover.jpg"
             alt="Echoes of Destiny"
           >
 
-          <div>
+        </div>
 
-            <h3>
-              Echoes of Destiny
-            </h3>
+        <div class="book-content">
 
-            <p>
-              The Untold Story of Our Generation
-            </p>
+          <span class="tag">
+            DEBUT BOOK
+          </span>
 
-            <p style="margin-top:10px;">
-              A debut inspirational book for the young
-              generation, exploring childhood, family,
-              dreams, struggles, emotions and hope.
-            </p>
+          <h3>
+            Echoes of Destiny
+          </h3>
+
+          <p class="book-subtitle">
+            The Untold Story of Our Generation
+          </p>
+
+          <p
+            style="
+              margin-top:12px;
+              color:#666a72;
+              font-size:12px;
+              line-height:1.6;
+            "
+          >
+            A motivational and inspirational journey through
+            childhood, family, dreams, struggles, emotions,
+            hope and the experiences that shape a generation.
+          </p>
+
+          <div class="book-meta">
+
+            <span class="meta-pill">
+              English Edition
+            </span>
+
+            <span class="meta-pill">
+              ₹169
+            </span>
+
+          </div>
+
+          <div class="book-buttons">
 
             <a
-              class="btn"
+              class="small-button amazon-button"
               href="https://amzn.in/d/03OMX68u"
               target="_blank"
               rel="noopener"
@@ -828,646 +2178,1082 @@
               Buy on Amazon
             </a>
 
-            <br>
-
             <a
-              class="btn"
+              class="small-button play-button"
               href="https://play.google.com/store/books/details/Jaydeep_Singh_Echoes_Of_Destiny?id=5_0MEgAAQBAJ"
               target="_blank"
               rel="noopener"
             >
-              Read on Google Play
+              Google Play
             </a>
 
+            <span class="small-button coming-button">
+              Hindi · Coming Soon
+            </span>
+
+            <span class="small-button coming-button">
+              Flipkart · Coming Soon
+            </span>
+
           </div>
 
         </div>
 
-        <div class="content-card">
+      </article>
 
-          <h3>Hindi Edition</h3>
+
+      <div style="height:15px;"></div>
+
+      <div class="coming-card">
+
+        <h3>More books are coming.</h3>
+
+        <p>
+          Future publications will appear here as they become
+          available.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         LEARNING
+         ===================================================== -->
+
+    <section
+      id="learning"
+      class="screen"
+    >
+
+      <div class="page-title">
+
+        <div class="eyebrow">
+          <span class="eyebrow-dot"></span>
+          Mentor
+        </div>
+
+        <h1>Learning</h1>
+
+        <p>
+          Learning content for Classes 6–12, competitive-exam
+          aspirants and curious learners.
+        </p>
+
+      </div>
+
+
+      <div class="subject-grid">
+
+        <div class="info-card gold-card">
+          <div class="card-number">01</div>
+          <h3>English</h3>
+          <p>Grammar, vocabulary, comprehension and communication.</p>
+        </div>
+
+        <div class="info-card blue-card">
+          <div class="card-number">02</div>
+          <h3>Mathematics</h3>
+          <p>Concepts, problem solving and exam-oriented practice.</p>
+        </div>
+
+        <div class="info-card green-card">
+          <div class="card-number">03</div>
+          <h3>Science</h3>
+          <p>Clear explanations of important scientific concepts.</p>
+        </div>
+
+        <div class="info-card purple-card">
+          <div class="card-number">04</div>
+          <h3>History</h3>
+          <p>Events, movements, people and historical understanding.</p>
+        </div>
+
+        <div class="info-card blue-card">
+          <div class="card-number">05</div>
+          <h3>Political Science</h3>
+          <p>Constitution, institutions, democracy and political ideas.</p>
+        </div>
+
+        <div class="info-card gold-card">
+          <div class="card-number">06</div>
+          <h3>Reasoning</h3>
+          <p>Logical thinking, patterns and competitive-exam practice.</p>
+        </div>
+
+      </div>
+
+
+      <div class="section-heading">
+        <div>
+          <h2>Lecture Structure</h2>
+          <p>Content will grow with the platform.</p>
+        </div>
+      </div>
+
+
+      <div class="coming-card">
+
+        <h3>
+          Chapter → Lecture → Video → Notes → Practice
+        </h3>
+
+        <p>
+          New lectures, PDFs, notes and practice questions
+          can be added here as the learning library grows.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         VIDEOS
+         ===================================================== -->
+
+    <section
+      id="videos"
+      class="screen"
+    >
+
+      <div class="page-title">
+
+        <div class="eyebrow">
+          <span class="eyebrow-dot"></span>
+          Watch
+        </div>
+
+        <h1>Videos</h1>
+
+        <p>
+          Teaching, educational, book and creative videos.
+        </p>
+
+      </div>
+
+
+      <div class="video-card">
+
+        <div class="video-top">
+
+          <div class="video-play">
+
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M8 5v14l11-7L8 5Z"/>
+            </svg>
+
+          </div>
+
+        </div>
+
+        <div class="video-info">
+
+          <h3>
+            Jaydeep Singh on YouTube
+          </h3>
 
           <p>
-            Hindi edition — Coming Soon
-          </p>
-
-        </div>
-
-        <div class="content-card">
-
-          <h3>Flipkart</h3>
-
-          <p>
-            Availability — Coming Soon
-          </p>
-
-        </div>
-
-      </section>
-
-
-      <!-- LEARNING -->
-
-      <section id="learning" class="screen hidden">
-
-        <div class="page-head">
-
-          <button
-            class="back-btn"
-            onclick="showScreen('home')"
-          >
-            ← Back
-          </button>
-
-          <h1>Learning</h1>
-
-          <p>
-            Learning resources for students and competitive-exam aspirants.
-          </p>
-
-        </div>
-
-        <div class="subject-grid">
-
-          <div class="subject">
-            <h3>English</h3>
-            <p>Grammar, vocabulary and communication.</p>
-          </div>
-
-          <div class="subject">
-            <h3>Mathematics</h3>
-            <p>Concepts, problems and practice.</p>
-          </div>
-
-          <div class="subject">
-            <h3>Science</h3>
-            <p>Physics, Chemistry and general science.</p>
-          </div>
-
-          <div class="subject">
-            <h3>History</h3>
-            <p>History lessons and study material.</p>
-          </div>
-
-          <div class="subject">
-            <h3>Political Science</h3>
-            <p>Concepts, chapters and explanations.</p>
-          </div>
-
-          <div class="subject">
-            <h3>Reasoning</h3>
-            <p>Logical and analytical practice.</p>
-          </div>
-
-        </div>
-
-        <div class="content-card">
-
-          <h3>Lecture → Notes → Practice</h3>
-
-          <p>
-            Future learning content can be organised by
-            chapter, lecture, video, notes, PDF and practice questions.
-          </p>
-
-        </div>
-
-      </section>
-
-
-      <!-- VIDEOS -->
-
-      <section id="videos" class="screen hidden">
-
-        <div class="page-head">
-
-          <button
-            class="back-btn"
-            onclick="showScreen('home')"
-          >
-            ← Back
-          </button>
-
-          <h1>Videos</h1>
-
-          <p>
-            Teaching, educational, book and creative videos.
-          </p>
-
-        </div>
-
-        <div class="content-card">
-
-          <h3>YouTube Channel</h3>
-
-          <p>
-            Educational and creative videos by Jaydeep Singh.
+            Explore teaching, educational, book and creative
+            content on the official channel.
           </p>
 
           <a
-            class="btn"
             href="https://www.youtube.com/@Jaydeepzx"
             target="_blank"
             rel="noopener"
           >
-            Open YouTube
+            Open YouTube Channel →
           </a>
 
         </div>
 
-        <div class="content-card">
+      </div>
+
+
+      <div class="section-heading">
+        <div>
+          <h2>Categories</h2>
+          <p>More videos will appear here.</p>
+        </div>
+      </div>
+
+
+      <div class="subject-grid">
+
+        <div class="info-card blue-card">
+          <div class="card-number">01</div>
           <h3>Teaching</h3>
-          <p>Teaching videos will appear here.</p>
+          <p>Lessons and concept-based educational videos.</p>
         </div>
 
-        <div class="content-card">
+        <div class="info-card gold-card">
+          <div class="card-number">02</div>
           <h3>Educational</h3>
-          <p>Educational videos will appear here.</p>
+          <p>Learning-focused videos for students and aspirants.</p>
         </div>
 
-        <div class="content-card">
+        <div class="info-card purple-card">
+          <div class="card-number">03</div>
           <h3>Book</h3>
-          <p>Book-related videos will appear here.</p>
+          <p>Echoes of Destiny and author-related content.</p>
         </div>
 
-        <div class="content-card">
+        <div class="info-card green-card">
+          <div class="card-number">04</div>
           <h3>Creative</h3>
-          <p>Creative videos will appear here.</p>
+          <p>Design, editing, technology and creative experiments.</p>
         </div>
 
-        <div class="content-card">
+        <div class="info-card gold-card">
+          <div class="card-number">05</div>
           <h3>Shorts</h3>
-          <p>Short-form videos will appear here.</p>
+          <p>Short-form ideas, lessons and creative moments.</p>
         </div>
 
-      </section>
-
-
-      <!-- CREATIVE -->
-
-      <section id="creative" class="screen hidden">
-
-        <div class="page-head">
-
-          <button
-            class="back-btn"
-            onclick="showScreen('home')"
-          >
-            ← Back
-          </button>
-
-          <h1>Creative</h1>
-
-          <p>
-            Design and digital creative work.
-          </p>
-
+        <div class="info-card blue-card">
+          <div class="card-number">06</div>
+          <h3>Other</h3>
+          <p>Everything that does not fit another category.</p>
         </div>
 
-        <div class="content-card">
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CREATIVE
+         ===================================================== -->
+
+    <section
+      id="creative"
+      class="screen"
+    >
+
+      <div class="page-title">
+
+        <div class="eyebrow">
+          <span class="eyebrow-dot"></span>
+          Creative
+        </div>
+
+        <h1>Creative Work</h1>
+
+        <p>
+          Designs, editing and digital creative work.
+        </p>
+
+      </div>
+
+
+      <div class="creative-grid">
+
+        <div class="info-card gold-card">
+          <div class="card-number">01</div>
           <h3>Posters</h3>
-          <p>Creative poster designs will appear here.</p>
+          <p>Promotional and social media poster designs.</p>
         </div>
 
-        <div class="content-card">
+        <div class="info-card blue-card">
+          <div class="card-number">02</div>
           <h3>Thumbnails</h3>
-          <p>Thumbnail designs will appear here.</p>
+          <p>Clean, readable and engaging video thumbnails.</p>
         </div>
 
-        <div class="content-card">
+        <div class="info-card purple-card">
+          <div class="card-number">03</div>
           <h3>Video Editing</h3>
-          <p>Video editing projects will appear here.</p>
+          <p>Short videos, reels and creative edits.</p>
         </div>
 
-        <div class="content-card">
-          <h3>Book Promotions</h3>
-          <p>Book promotional designs will appear here.</p>
+        <div class="info-card green-card">
+          <div class="card-number">04</div>
+          <h3>Book Promotion</h3>
+          <p>Promotional designs and launch creatives.</p>
         </div>
 
-        <div class="content-card">
-          <h3>Social Media Designs</h3>
-          <p>Social media graphics will appear here.</p>
+        <div class="info-card blue-card">
+          <div class="card-number">05</div>
+          <h3>Social Designs</h3>
+          <p>Graphics created for digital platforms.</p>
         </div>
 
-      </section>
-
-
-      <!-- PROJECTS -->
-
-      <section id="projects" class="screen hidden">
-
-        <div class="page-head">
-
-          <button
-            class="back-btn"
-            onclick="showScreen('home')"
-          >
-            ← Back
-          </button>
-
-          <h1>Projects</h1>
-
-          <p>
-            Websites, apps, publishing and creative experiments.
-          </p>
-
+        <div class="info-card gold-card">
+          <div class="card-number">06</div>
+          <h3>UI & Design</h3>
+          <p>Interfaces, layouts and digital experiences.</p>
         </div>
 
-        <div class="content-card">
+      </div>
+
+
+      <div style="height:15px;"></div>
+
+      <div class="coming-card">
+
+        <h3>
+          Creative portfolio coming here.
+        </h3>
+
+        <p>
+          Real creative projects and designs will be added
+          as the portfolio grows.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         PROJECTS
+         ===================================================== -->
+
+    <section
+      id="projects"
+      class="screen"
+    >
+
+      <div class="page-title">
+
+        <div class="eyebrow">
+          <span class="eyebrow-dot"></span>
+          Projects
+        </div>
+
+        <h1>Projects</h1>
+
+        <p>
+          Websites, apps, publishing and education projects.
+        </p>
+
+      </div>
+
+
+      <div class="project-grid">
+
+        <div class="info-card blue-card">
+          <div class="card-number">01</div>
           <h3>Websites</h3>
-          <p>Website projects will appear here.</p>
+          <p>Personal, creator and project websites.</p>
         </div>
 
-        <div class="content-card">
+        <div class="info-card gold-card">
+          <div class="card-number">02</div>
           <h3>Apps</h3>
-          <p>Application projects will appear here.</p>
+          <p>Mobile-first digital applications and experiments.</p>
         </div>
 
-        <div class="content-card">
+        <div class="info-card purple-card">
+          <div class="card-number">03</div>
           <h3>PWA</h3>
-          <p>Progressive web app projects will appear here.</p>
+          <p>Installable web applications for modern devices.</p>
         </div>
 
-        <div class="content-card">
+        <div class="info-card green-card">
+          <div class="card-number">04</div>
           <h3>Publishing</h3>
-          <p>Publishing projects will appear here.</p>
+          <p>Books, digital editions and publishing projects.</p>
         </div>
 
-        <div class="content-card">
-          <h3>Education Projects</h3>
-          <p>Education-related projects will appear here.</p>
+        <div class="info-card blue-card">
+          <div class="card-number">05</div>
+          <h3>Education</h3>
+          <p>Learning resources and educational experiments.</p>
         </div>
 
-      </section>
+        <div class="info-card gold-card">
+          <div class="card-number">06</div>
+          <h3>Experiments</h3>
+          <p>New ideas, technology and creative exploration.</p>
+        </div>
+
+      </div>
+
+    </section>
 
 
-      <!-- SERVICES -->
+    <!-- =====================================================
+         UPDATES
+         ===================================================== -->
 
-      <section id="services" class="screen hidden">
+    <section
+      id="updates"
+      class="screen"
+    >
 
-        <div class="page-head">
+      <div class="page-title">
 
-          <button
-            class="back-btn"
-            onclick="showScreen('home')"
-          >
-            ← Back
-          </button>
+        <div class="eyebrow">
+          <span class="eyebrow-dot"></span>
+          Updates
+        </div>
 
-          <h1>Services</h1>
+        <h1>What's New</h1>
+
+        <p>
+          New videos, lectures, books, projects and announcements.
+        </p>
+
+      </div>
+
+
+      <div class="timeline">
+
+        <div class="timeline-item">
+
+          <div class="timeline-date">
+            September 2026
+          </div>
+
+          <h3>
+            Jaydeep Singh App
+          </h3>
 
           <p>
-            Creative and digital services.
+            The new official app is being developed to bring
+            books, learning, videos, creative work and projects
+            together.
           </p>
 
         </div>
 
-        <div class="content-card">
-          <h3>Reel Editing</h3>
-          <p>Short-form video editing.</p>
+
+        <div class="timeline-item">
+
+          <div class="timeline-date">
+            September 2026
+          </div>
+
+          <h3>
+            Echoes of Destiny
+          </h3>
+
+          <p>
+            The debut book is available through Amazon and
+            Google Play Books.
+          </p>
+
         </div>
 
-        <div class="content-card">
+
+        <div class="timeline-item">
+
+          <div class="timeline-date">
+            Coming Soon
+          </div>
+
+          <h3>
+            More Learning Content
+          </h3>
+
+          <p>
+            New subjects, lectures, notes and practice resources
+            will be added to the learning section.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         SERVICES
+         ===================================================== -->
+
+    <section
+      id="services"
+      class="screen"
+    >
+
+      <div class="page-title">
+
+        <div class="eyebrow">
+          <span class="eyebrow-dot"></span>
+          Services
+        </div>
+
+        <h1>Creative Services</h1>
+
+        <p>
+          Digital and creative work for individuals, creators
+          and projects.
+        </p>
+
+      </div>
+
+
+      <div class="service-grid">
+
+        <div class="info-card gold-card">
+          <div class="card-number">01</div>
+          <h3>Reel Editing</h3>
+          <p>Short-form video editing for social media.</p>
+        </div>
+
+        <div class="info-card blue-card">
+          <div class="card-number">02</div>
           <h3>Video Editing</h3>
           <p>Editing for educational and creative videos.</p>
         </div>
 
-        <div class="content-card">
-          <h3>Poster & Thumbnail</h3>
-          <p>Social media posters and thumbnails.</p>
+        <div class="info-card purple-card">
+          <div class="card-number">03</div>
+          <h3>Poster Design</h3>
+          <p>Promotional and social media graphics.</p>
         </div>
 
-        <div class="content-card">
-          <h3>PDF & PPT</h3>
-          <p>Document and presentation creation.</p>
+        <div class="info-card green-card">
+          <div class="card-number">04</div>
+          <h3>Thumbnail</h3>
+          <p>Clean and readable YouTube thumbnails.</p>
         </div>
 
-        <div class="content-card">
-          <h3>Website & PWA</h3>
-          <p>Simple websites and progressive web applications.</p>
+        <div class="info-card blue-card">
+          <div class="card-number">05</div>
+          <h3>PDF</h3>
+          <p>PDF creation and document design.</p>
         </div>
 
-        <div class="content-card">
+        <div class="info-card gold-card">
+          <div class="card-number">06</div>
+          <h3>PPT</h3>
+          <p>Presentation design for educational and creative use.</p>
+        </div>
+
+        <div class="info-card purple-card">
+          <div class="card-number">07</div>
+          <h3>Website</h3>
+          <p>Modern websites for creators and projects.</p>
+        </div>
+
+        <div class="info-card green-card">
+          <div class="card-number">08</div>
+          <h3>PWA</h3>
+          <p>Installable web applications and digital experiences.</p>
+        </div>
+
+        <div class="info-card blue-card">
+          <div class="card-number">09</div>
           <h3>Other Creative Work</h3>
           <p>Custom digital and creative projects.</p>
         </div>
 
-      </section>
+      </div>
 
 
-      <!-- UPDATES -->
+      <div style="height:15px;"></div>
 
-      <section id="updates" class="screen hidden">
+      <a
+        class="button button-primary"
+        href="https://wa.me/919525572534"
+        target="_blank"
+        rel="noopener"
+        style="width:100%;"
+      >
+        Request a Service
+      </a>
 
-        <div class="page-head">
+    </section>
 
-          <button
-            class="back-btn"
-            onclick="showScreen('home')"
-          >
-            ← Back
-          </button>
 
-          <h1>Updates</h1>
+    <!-- =====================================================
+         ABOUT
+         ===================================================== -->
 
-          <p>
-            Latest news and announcements.
-          </p>
+    <section
+      id="about"
+      class="screen"
+    >
 
+      <div class="page-title">
+
+        <div class="eyebrow">
+          <span class="eyebrow-dot"></span>
+          About
         </div>
 
-        <div class="content-card">
-          <h3>New updates</h3>
-          <p>
-            New videos, lectures, books and projects will appear here.
-          </p>
-        </div>
+        <h1>Jaydeep Singh</h1>
 
-      </section>
+        <p>
+          Author · Mentor · Creator
+        </p>
+
+      </div>
 
 
-      <!-- ABOUT -->
+      <div class="about-card">
 
-      <section id="about" class="screen hidden">
+        <h2>
+          About Jaydeep Singh
+        </h2>
 
-        <div class="page-head">
+        <p>
+          Jaydeep Singh is an author, mentor, creator, and a
+          student who believes that learning and growth are
+          lifelong journeys. His work is shaped by curiosity,
+          observation, creativity, and the everyday experiences
+          that quietly influence who we become.
+        </p>
 
-          <button
-            class="back-btn"
-            onclick="showScreen('home')"
-          >
-            ← Back
-          </button>
+        <p>
+          As an author, Jaydeep made his debut with
+          <em>Echoes of Destiny: The Untold Story of Our Generation</em>,
+          a book inspired by childhood, family, dreams, struggles,
+          emotions, hope, and the experiences of growing up.
+        </p>
 
-          <h1>About</h1>
+        <p>
+          As a mentor, he is passionate about sharing knowledge
+          with students and learners. His teaching interests
+          include English, Mathematics, Science, History,
+          Political Science, and Reasoning.
+        </p>
 
-        </div>
+        <p>
+          As a creator, Jaydeep explores videos, digital content,
+          design, technology, websites, apps, and new creative
+          projects. He sees every project as an opportunity to
+          learn something new and create something meaningful.
+        </p>
 
-        <div class="about-text">
+        <p>
+          His journey is still unfolding — from writing his
+          first book to teaching, creating, experimenting with
+          technology, and building new ideas.
+        </p>
 
-          <p>
-            Jaydeep Singh is an author, mentor, creator,
-            and a student who believes that learning and
-            growth are lifelong journeys.
-          </p>
+        <div class="quote">
 
-          <p>
-            His work is shaped by curiosity, observation,
-            creativity and the everyday experiences that
-            quietly influence who we become.
-          </p>
+          “Life is full of problems,
+          and only you are its solution.”
 
-          <p>
-            As an author, Jaydeep made his debut with
-            <strong>Echoes of Destiny: The Untold Story of Our Generation</strong>,
-            a book inspired by childhood, family, dreams,
-            struggles, emotions, hope and the experiences
-            of growing up.
-          </p>
-
-          <p>
-            As a mentor, he is passionate about sharing
-            knowledge with students and learners. His
-            teaching interests include English, Mathematics,
-            Science, History, Political Science and Reasoning.
-          </p>
-
-          <p>
-            As a creator, Jaydeep explores videos, digital
-            content, design, technology, websites, apps
-            and new creative projects.
-          </p>
-
-          <p>
-            His journey is still unfolding — from writing
-            his first book to teaching, creating,
-            experimenting with technology and building
-            new ideas.
-          </p>
-
-          <div class="quote">
-            “Life is full of problems, and only you are its solution.”
-            <br>
+          <small>
             — Jaydeep Singh
+          </small>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+  <!-- =======================================================
+       SIDE MENU
+       ======================================================= -->
+
+  <div
+    id="menuOverlay"
+    class="menu-overlay"
+    onclick="closeMenu(event)"
+  >
+
+    <aside
+      class="side-menu"
+      onclick="event.stopPropagation()"
+    >
+
+      <div class="menu-top">
+
+        <div class="menu-brand">
+
+          <img
+            src="icons/icon-192.png"
+            alt="Jaydeep Singh"
+          >
+
+          <div>
+            <strong>Jaydeep Singh</strong>
+            <span>AUTHOR · MENTOR · CREATOR</span>
           </div>
 
         </div>
 
-        <h2 class="section-title">
-          Connect
-        </h2>
+        <button
+          class="close-menu"
+          onclick="closeMenu()"
+          aria-label="Close menu"
+        >
+          ×
+        </button>
 
-        <div class="social-grid">
-
-          <!-- EMAIL: ADDRESS HIDDEN -->
-
-          <a
-            class="social-card"
-            href="mailto:jaydeepsingh3631@gmail.com"
-          >
-
-            <div class="social-icon">
-              @
-            </div>
-
-            <div>
-              <strong>Email</strong>
-              <span>Send an email</span>
-            </div>
-
-          </a>
+      </div>
 
 
-          <!-- WHATSAPP: NUMBER HIDDEN -->
+      <nav class="menu-list">
 
-          <a
-            class="social-card"
-            href="https://wa.me/919525572534"
-            target="_blank"
-            rel="noopener"
-          >
+        <button
+          class="menu-item"
+          onclick="navigateMenu('home')"
+        >
+          <span>Home</span>
+          <span class="menu-arrow">›</span>
+        </button>
 
-            <div class="social-icon">
-              W
-            </div>
+        <button
+          class="menu-item"
+          onclick="navigateMenu('books')"
+        >
+          <span>Books</span>
+          <span class="menu-arrow">›</span>
+        </button>
 
-            <div>
-              <strong>WhatsApp</strong>
-              <span>Message directly</span>
-            </div>
+        <button
+          class="menu-item"
+          onclick="navigateMenu('learning')"
+        >
+          <span>Learning</span>
+          <span class="menu-arrow">›</span>
+        </button>
 
-          </a>
+        <button
+          class="menu-item"
+          onclick="navigateMenu('videos')"
+        >
+          <span>Videos</span>
+          <span class="menu-arrow">›</span>
+        </button>
 
+        <button
+          class="menu-item"
+          onclick="navigateMenu('creative')"
+        >
+          <span>Creative</span>
+          <span class="menu-arrow">›</span>
+        </button>
 
-          <!-- INSTAGRAM -->
+        <button
+          class="menu-item"
+          onclick="navigateMenu('projects')"
+        >
+          <span>Projects</span>
+          <span class="menu-arrow">›</span>
+        </button>
 
-          <a
-            class="social-card"
-            href="https://www.instagram.com/jaydeepsingh._?stkn=dWs4cnU0cnlpd2xt"
-            target="_blank"
-            rel="noopener"
-          >
+        <button
+          class="menu-item"
+          onclick="navigateMenu('updates')"
+        >
+          <span>Updates</span>
+          <span class="menu-arrow">›</span>
+        </button>
 
-            <div class="social-icon">
-              ◎
-            </div>
+        <button
+          class="menu-item"
+          onclick="navigateMenu('services')"
+        >
+          <span>Services</span>
+          <span class="menu-arrow">›</span>
+        </button>
 
-            <div>
-              <strong>Instagram</strong>
-              <span>Follow on Instagram</span>
-            </div>
+        <button
+          class="menu-item"
+          onclick="navigateMenu('about')"
+        >
+          <span>About</span>
+          <span class="menu-arrow">›</span>
+        </button>
 
-          </a>
+      </nav>
 
-
-          <!-- YOUTUBE -->
-
-          <a
-            class="social-card"
-            href="https://www.youtube.com/@Jaydeepzx"
-            target="_blank"
-            rel="noopener"
-          >
-
-            <div class="social-icon">
-              ▶
-            </div>
-
-            <div>
-              <strong>YouTube</strong>
-              <span>Watch videos</span>
-            </div>
-
-          </a>
-
-        </div>
-
-      </section>
-
-    </main>
+    </aside>
 
   </div>
 
 
-  <!-- BOTTOM NAV -->
+  <!-- =======================================================
+       BOTTOM NAV
+       ======================================================= -->
 
   <nav class="bottom-nav">
 
-    <div class="bottom-inner">
+    <button
+      class="nav-button active"
+      data-screen="home"
+      onclick="showScreen('home')"
+    >
+      <span class="nav-symbol">⌂</span>
+      <span class="nav-label">Home</span>
+    </button>
 
-      <button
-        id="nav-home"
-        class="active"
-        onclick="showScreen('home')"
-      >
-        <span class="nav-mark"></span>
-        Home
-      </button>
+    <button
+      class="nav-button"
+      data-screen="books"
+      onclick="showScreen('books')"
+    >
+      <span class="nav-symbol">▤</span>
+      <span class="nav-label">Books</span>
+    </button>
 
-      <button
-        id="nav-books"
-        onclick="showScreen('books')"
-      >
-        <span class="nav-mark"></span>
-        Books
-      </button>
+    <button
+      class="nav-button"
+      data-screen="learning"
+      onclick="showScreen('learning')"
+    >
+      <span class="nav-symbol">◇</span>
+      <span class="nav-label">Learn</span>
+    </button>
 
-      <button
-        id="nav-learning"
-        onclick="showScreen('learning')"
-      >
-        <span class="nav-mark"></span>
-        Learning
-      </button>
-
-      <button
-        id="nav-about"
-        onclick="showScreen('about')"
-      >
-        <span class="nav-mark"></span>
-        About
-      </button>
-
-    </div>
+    <button
+      class="nav-button"
+      data-screen="about"
+      onclick="showScreen('about')"
+    >
+      <span class="nav-symbol">JS</span>
+      <span class="nav-label">About</span>
+    </button>
 
   </nav>
 
 
+  <!-- =======================================================
+       JAVASCRIPT
+       ======================================================= -->
+
   <script>
 
-    const screens = [
-      "home",
-      "books",
-      "learning",
-      "videos",
-      "creative",
-      "projects",
-      "services",
-      "updates",
-      "about"
-    ];
+    /* -------------------------------------------------------
+       Splash
+       ------------------------------------------------------- */
 
-    function showScreen(name) {
+    window.addEventListener("load", function () {
 
-      screens.forEach(function(id) {
+      setTimeout(function () {
 
-        const screen = document.getElementById(id);
+        const splash = document.getElementById("splash");
 
-        if (screen) {
-          screen.classList.add("hidden");
+        if (splash) {
+          splash.classList.add("hide");
+        }
+
+      }, 2600);
+
+    });
+
+
+    /* -------------------------------------------------------
+       Screen Navigation
+       ------------------------------------------------------- */
+
+    function showScreen(screenId) {
+
+      const screens =
+        document.querySelectorAll(".screen");
+
+      screens.forEach(function (screen) {
+
+        screen.classList.remove("active");
+
+      });
+
+
+      const target =
+        document.getElementById(screenId);
+
+      if (target) {
+
+        target.classList.add("active");
+
+      }
+
+
+      const navButtons =
+        document.querySelectorAll(".nav-button");
+
+      navButtons.forEach(function (button) {
+
+        button.classList.remove("active");
+
+        if (
+          button.getAttribute("data-screen")
+          === screenId
+        ) {
+
+          button.classList.add("active");
+
         }
 
       });
 
-      const selected = document.getElementById(name);
-
-      if (selected) {
-        selected.classList.remove("hidden");
-      }
-
-      document.querySelectorAll(".bottom-nav button")
-        .forEach(function(button) {
-          button.classList.remove("active");
-        });
-
-      const navButton = document.getElementById("nav-" + name);
-
-      if (navButton) {
-        navButton.classList.add("active");
-      }
 
       window.scrollTo({
         top: 0,
         behavior: "smooth"
       });
+
+
+      closeMenu();
     }
 
+
+    /* -------------------------------------------------------
+       Side Menu
+       ------------------------------------------------------- */
 
     function openMenu() {
-      document.getElementById("sideMenu")
-        .classList.add("open");
+
+      const overlay =
+        document.getElementById("menuOverlay");
+
+      if (overlay) {
+        overlay.classList.add("open");
+      }
+
+      document.body.style.overflow = "hidden";
     }
 
 
-    function closeMenu() {
-      document.getElementById("sideMenu")
-        .classList.remove("open");
+    function closeMenu(event) {
+
+      if (
+        event &&
+        event.target &&
+        event.target.id !== "menuOverlay"
+      ) {
+        return;
+      }
+
+      const overlay =
+        document.getElementById("menuOverlay");
+
+      if (overlay) {
+        overlay.classList.remove("open");
+      }
+
+      document.body.style.overflow = "";
     }
 
 
-    window.addEventListener("load", function() {
+    function navigateMenu(screenId) {
 
-      setTimeout(function() {
+      showScreen(screenId);
 
-        const splash = document.getElementById("splash");
+      closeMenu();
 
-        if (splash) {
-          splash.style.display = "none";
+    }
+
+
+    document.addEventListener(
+      "keydown",
+      function (event) {
+
+        if (event.key === "Escape") {
+          closeMenu();
         }
 
-      }, 3800);
+      }
+    );
 
-    });
+
+    /* -------------------------------------------------------
+       PWA Install
+       ------------------------------------------------------- */
+
+    let deferredPrompt = null;
+
+    const installBtn =
+      document.getElementById("installBtn");
+
+
+    window.addEventListener(
+      "beforeinstallprompt",
+      function (event) {
+
+        event.preventDefault();
+
+        deferredPrompt = event;
+
+        if (installBtn) {
+          installBtn.style.display = "inline-flex";
+        }
+
+      }
+    );
+
+
+    if (installBtn) {
+
+      installBtn.addEventListener(
+        "click",
+        async function () {
+
+          if (!deferredPrompt) {
+            return;
+          }
+
+          deferredPrompt.prompt();
+
+          await deferredPrompt.userChoice;
+
+          deferredPrompt = null;
+
+          installBtn.style.display = "none";
+
+        }
+      );
+
+    }
+
+
+    window.addEventListener(
+      "appinstalled",
+      function () {
+
+        deferredPrompt = null;
+
+        if (installBtn) {
+          installBtn.style.display = "none";
+        }
+
+        console.log(
+          "Jaydeep Singh App installed."
+        );
+
+      }
+    );
+
+
+    /* -------------------------------------------------------
+       Service Worker
+       ------------------------------------------------------- */
+
+    if ("serviceWorker" in navigator) {
+
+      window.addEventListener(
+        "load",
+        function () {
+
+          navigator.serviceWorker
+            .register("./service-worker.js")
+            .then(function (registration) {
+
+              console.log(
+                "Service Worker registered:",
+                registration.scope
+              );
+
+            })
+            .catch(function (error) {
+
+              console.error(
+                "Service Worker registration failed:",
+                error
+              );
+
+            });
+
+        }
+      );
+
+    }
 
   </script>
 
