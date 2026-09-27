@@ -1,18 +1,11 @@
-const CACHE_NAME = "jaydeep-singh-app-v2";
+const CACHE_NAME = "jaydeep-singh-app-v3";
 
 const FILES_TO_CACHE = [
   "./",
   "./index.html",
-  "./manifest.json",
-
-  // Images
-  "./assets/profile.jpg",
-  "./assets/book-cover.jpg",
-  "./assets/icon-192.png",
-  "./assets/icon-512.png"
+  "./manifest.json"
 ];
 
-// INSTALL
 self.addEventListener("install", event => {
   event.waitUntil(
     caches.open(CACHE_NAME)
@@ -21,7 +14,6 @@ self.addEventListener("install", event => {
   );
 });
 
-// ACTIVATE
 self.addEventListener("activate", event => {
   event.waitUntil(
     caches.keys().then(keys =>
@@ -34,11 +26,10 @@ self.addEventListener("activate", event => {
   );
 });
 
-// FETCH
 self.addEventListener("fetch", event => {
   event.respondWith(
-    caches.match(event.request).then(cachedResponse => {
-      return cachedResponse || fetch(event.request);
+    caches.match(event.request).then(cached => {
+      return cached || fetch(event.request);
     })
   );
 });
