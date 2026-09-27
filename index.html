@@ -3,79 +3,59 @@
 <head>
   <meta charset="UTF-8">
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
-  >
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
-  <meta
-    name="theme-color"
-    content="#b58a43"
-  >
-
-  <meta
-    name="description"
-    content="Official app of Jaydeep Singh — Author, Mentor & Creator."
-  >
-
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta
-    name="apple-mobile-web-app-status-bar-style"
-    content="default"
-  >
+  <meta name="theme-color" content="#f8f3e8">
+  <meta name="description"
+        content="Jaydeep Singh — Author, Mentor & Creator">
 
   <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
 
   <title>Jaydeep Singh | Author · Mentor · Creator</title>
 
   <style>
     /* =========================================================
        JAYDEEP SINGH APP
-       Premium Light Cinematic PWA
-       ========================================================= */
+       FINAL LIGHT CINEMATIC DESIGN
+    ========================================================= */
 
     :root {
-      --bg: #f8f5ee;
-      --bg-2: #fffdf8;
-      --surface: rgba(255, 255, 255, 0.88);
-      --surface-solid: #ffffff;
+      --bg: #f7f4ed;
+      --surface: #fffdf9;
+      --surface-2: #f3eee3;
 
       --ink: #17191d;
-      --muted: #686b73;
+      --muted: #72757b;
 
-      --gold: #b58a43;
-      --gold-dark: #8e682e;
-      --gold-soft: #f3e8d1;
+      --gold: #b88a3b;
+      --gold-dark: #8f6828;
+      --gold-soft: #f3e5c8;
 
       --navy: #172b46;
-      --navy-soft: #eaf0f7;
+      --navy-2: #27496f;
 
-      --blue: #416c9f;
-      --blue-soft: #eaf1fa;
+      --green: #20c86b;
+      --instagram-1: #f9ce34;
+      --instagram-2: #ee2a7b;
+      --instagram-3: #6228d7;
+      --youtube: #ff0033;
 
-      --green: #198754;
-      --green-soft: #e9f7ef;
+      --border: rgba(23, 25, 29, 0.08);
+      --shadow: 0 18px 45px rgba(36, 32, 24, 0.09);
+      --shadow-soft: 0 8px 25px rgba(36, 32, 24, 0.07);
 
-      --line: rgba(23, 25, 29, 0.09);
-
-      --shadow:
-        0 18px 50px rgba(28, 35, 48, 0.09);
-
-      --shadow-small:
-        0 8px 24px rgba(28, 35, 48, 0.08);
-
-      --radius-xl: 30px;
+      --radius-xl: 28px;
       --radius-lg: 22px;
-      --radius-md: 16px;
-
-      --nav-height: 76px;
+      --radius-md: 17px;
     }
 
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+      -webkit-tap-highlight-color: transparent;
     }
 
     html {
@@ -92,32 +72,32 @@
         Arial,
         sans-serif;
 
-      color: var(--ink);
       background:
         radial-gradient(
-          circle at 5% 0%,
-          rgba(181, 138, 67, 0.13),
-          transparent 27%
+          circle at 10% 0%,
+          rgba(214, 178, 108, 0.10),
+          transparent 28%
         ),
         radial-gradient(
-          circle at 100% 15%,
-          rgba(65, 108, 159, 0.11),
+          circle at 100% 20%,
+          rgba(91, 126, 164, 0.08),
           transparent 28%
         ),
         var(--bg);
 
+      color: var(--ink);
       min-height: 100vh;
       overflow-x: hidden;
-      padding-bottom: calc(var(--nav-height) + 15px);
     }
 
     button,
     a {
-      -webkit-tap-highlight-color: transparent;
+      font: inherit;
     }
 
     button {
-      font: inherit;
+      border: 0;
+      cursor: pointer;
     }
 
     a {
@@ -126,18 +106,13 @@
     }
 
     img {
-      max-width: 100%;
       display: block;
-    }
-
-    ::selection {
-      background: var(--gold);
-      color: #fff;
+      max-width: 100%;
     }
 
     /* =========================================================
        SPLASH
-       ========================================================= */
+    ========================================================= */
 
     #splash {
       position: fixed;
@@ -151,189 +126,464 @@
       background:
         radial-gradient(
           circle at center,
-          #263a55 0%,
-          #172333 45%,
-          #10161f 100%
+          #243b58 0%,
+          #111c2c 46%,
+          #0a111b 100%
         );
 
-      color: #fff;
-
-      transition:
-        opacity 0.8s ease,
-        visibility 0.8s ease;
+      color: white;
+      overflow: hidden;
     }
 
     #splash.hide {
-      opacity: 0;
-      visibility: hidden;
+      animation: splashOut 0.8s ease forwards;
       pointer-events: none;
     }
 
-    .splash-content {
-      width: min(90%, 420px);
+    .splash-inner {
+      width: min(90%, 430px);
       text-align: center;
-      animation: splashEnter 1.4s ease both;
+      position: relative;
     }
 
-    .splash-logo {
-      width: 116px;
-      height: 116px;
-      margin: 0 auto 26px;
+    .splash-glow {
+      position: absolute;
+      width: 240px;
+      height: 240px;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -58%);
 
-      object-fit: cover;
-      border-radius: 50%;
+      background: radial-gradient(
+        circle,
+        rgba(218, 169, 73, 0.28),
+        rgba(218, 169, 73, 0.08) 38%,
+        transparent 70%
+      );
+
+      filter: blur(8px);
+      animation: glowPulse 2.3s ease-in-out infinite;
+    }
+
+    .diya-wrap {
+      position: relative;
+      width: 150px;
+      height: 150px;
+      margin: 0 auto 32px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .diya {
+      position: relative;
+      width: 88px;
+      height: 42px;
+
+      background: linear-gradient(
+        180deg,
+        #d7a54e,
+        #9c6721
+      );
+
+      border-radius: 0 0 55px 55px / 0 0 35px 35px;
 
       box-shadow:
-        0 0 0 1px rgba(211, 167, 91, 0.6),
-        0 0 50px rgba(211, 167, 91, 0.22);
+        0 9px 20px rgba(0,0,0,0.35),
+        inset 0 2px 5px rgba(255,255,255,0.28);
+
+      animation: diyaAppear 1s ease both;
+    }
+
+    .diya::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: -14px;
+      transform: translateX(-50%);
+
+      width: 70px;
+      height: 22px;
+
+      background: linear-gradient(
+        180deg,
+        #edc271,
+        #b57928
+      );
+
+      border-radius: 50%;
+    }
+
+    .flame {
+      position: absolute;
+      left: 50%;
+      top: -70px;
+      transform: translateX(-50%);
+
+      width: 31px;
+      height: 55px;
+
+      background:
+        radial-gradient(
+          ellipse at center bottom,
+          #fff9cf 0%,
+          #ffd66d 32%,
+          #f39b29 64%,
+          transparent 68%
+        );
+
+      border-radius: 50% 50% 45% 45%;
+      filter: drop-shadow(0 0 17px rgba(255, 188, 67, 0.9));
+
+      transform-origin: bottom center;
+
+      animation:
+        flameIn 1s 0.25s ease both,
+        flameMove 1.1s 1.2s ease-in-out infinite;
+    }
+
+    .flame::after {
+      content: "";
+      position: absolute;
+
+      left: 50%;
+      bottom: 6px;
+      transform: translateX(-50%);
+
+      width: 11px;
+      height: 25px;
+
+      background: #fffce5;
+      border-radius: 50%;
+      filter: blur(1px);
+    }
+
+    .splash-symbol {
+      margin-top: 22px;
+      font-size: 20px;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.9s ease forwards;
     }
 
     .splash-name {
-      font-size: clamp(27px, 7vw, 40px);
-      letter-spacing: 0.13em;
-      font-weight: 700;
+      margin-top: 23px;
+
+      font-size: clamp(25px, 7vw, 36px);
+      font-weight: 800;
+      letter-spacing: 0.15em;
+
+      opacity: 0;
+      animation: fadeUp 0.8s 1.05s ease forwards;
     }
 
     .splash-role {
       margin-top: 10px;
 
+      color: #e1bd77;
       font-size: 11px;
-      letter-spacing: 0.22em;
-      color: #dfc48f;
-      font-weight: 600;
+      font-weight: 700;
+      letter-spacing: 0.28em;
+
+      opacity: 0;
+      animation: fadeUp 0.8s 1.25s ease forwards;
     }
 
-    .splash-line {
-      width: 70px;
-      height: 1px;
-      margin: 22px auto 0;
-
-      background: linear-gradient(
-        90deg,
-        transparent,
-        #d6aa5f,
-        transparent
-      );
-    }
-
-    @keyframes splashEnter {
+    @keyframes diyaAppear {
       from {
         opacity: 0;
-        transform: translateY(16px) scale(0.97);
+        transform: translateY(18px) scale(0.85);
       }
-
       to {
         opacity: 1;
         transform: translateY(0) scale(1);
       }
     }
 
+    @keyframes flameIn {
+      from {
+        opacity: 0;
+        transform: translateX(-50%) scale(0.25);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(-50%) scale(1);
+      }
+    }
+
+    @keyframes flameMove {
+      0%,100% {
+        transform: translateX(-50%) rotate(-2deg) scaleY(1);
+      }
+      50% {
+        transform: translateX(-50%) rotate(2deg) scaleY(1.08);
+      }
+    }
+
+    @keyframes glowPulse {
+      0%,100% {
+        opacity: .65;
+        transform: translate(-50%, -58%) scale(.9);
+      }
+      50% {
+        opacity: 1;
+        transform: translate(-50%, -58%) scale(1.08);
+      }
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes splashOut {
+      to {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+
     /* =========================================================
        APP HEADER
-       ========================================================= */
+    ========================================================= */
 
     .app-header {
       position: sticky;
       top: 0;
       z-index: 500;
 
-      height: 70px;
+      height: 78px;
 
       display: flex;
       align-items: center;
       justify-content: space-between;
 
       padding:
-        0 18px;
+        10px 20px;
 
-      background: rgba(255, 253, 248, 0.84);
+      background: rgba(255, 253, 249, 0.92);
       backdrop-filter: blur(18px);
       -webkit-backdrop-filter: blur(18px);
 
-      border-bottom: 1px solid var(--line);
+      border-bottom: 1px solid var(--border);
     }
 
     .brand {
       display: flex;
       align-items: center;
-      gap: 11px;
+      gap: 12px;
+      min-width: 0;
     }
 
-    .brand-logo {
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
+    .brand-photo {
+      width: 52px;
+      height: 52px;
+
       object-fit: cover;
 
+      border-radius: 50%;
+
+      border: 2px solid rgba(184, 138, 59, 0.32);
+
       box-shadow:
-        0 4px 14px rgba(181, 138, 67, 0.18);
+        0 5px 16px rgba(0,0,0,.08);
+
+      background: #eee7da;
     }
 
-    .brand-text strong {
-      display: block;
-      font-size: 14px;
-      letter-spacing: 0.08em;
+    .brand-text {
+      min-width: 0;
     }
 
-    .brand-text span {
-      display: block;
-      margin-top: 2px;
+    .brand-name {
+      font-size: 17px;
+      font-weight: 850;
+      letter-spacing: .05em;
+      white-space: nowrap;
+    }
 
-      font-size: 8px;
-      letter-spacing: 0.13em;
+    .brand-role {
+      margin-top: 3px;
+
       color: var(--gold-dark);
-      font-weight: 700;
+
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .14em;
+      white-space: nowrap;
     }
 
-    .menu-button {
-      width: 44px;
-      height: 44px;
+    .menu-btn {
+      width: 50px;
+      height: 50px;
 
       display: grid;
       place-items: center;
 
-      border: 1px solid var(--line);
-      border-radius: 14px;
+      border-radius: 17px;
 
-      background: rgba(255,255,255,0.72);
+      background: rgba(255,255,255,.75);
+      border: 1px solid var(--border);
 
-      cursor: pointer;
+      box-shadow: var(--shadow-soft);
 
-      transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
+      transition: .2s ease;
     }
 
-    .menu-button:active {
-      transform: scale(0.94);
+    .menu-btn:active {
+      transform: scale(.94);
     }
 
     .menu-lines {
-      width: 19px;
+      width: 23px;
+      display: grid;
+      gap: 5px;
     }
 
     .menu-lines span {
-      display: block;
-      height: 1.5px;
-      margin: 4px 0;
-
+      height: 2px;
+      width: 100%;
       background: var(--ink);
-      border-radius: 2px;
+      border-radius: 4px;
+    }
+
+    /* =========================================================
+       MENU
+    ========================================================= */
+
+    .menu-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 800;
+
+      background: rgba(14, 21, 31, .28);
+      backdrop-filter: blur(3px);
+
+      opacity: 0;
+      pointer-events: none;
+
+      transition: .25s ease;
+    }
+
+    .menu-backdrop.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .side-menu {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+
+      z-index: 900;
+
+      width: min(88vw, 370px);
+
+      padding:
+        25px 20px
+        calc(25px + env(safe-area-inset-bottom));
+
+      background:
+        linear-gradient(
+          150deg,
+          #fffdf9,
+          #f4ead8
+        );
+
+      border-left: 1px solid var(--border);
+
+      box-shadow: -20px 0 60px rgba(0,0,0,.13);
+
+      transform: translateX(105%);
+      transition: transform .3s cubic-bezier(.2,.8,.2,1);
+
+      overflow-y: auto;
+    }
+
+    .side-menu.open {
+      transform: translateX(0);
+    }
+
+    .menu-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      margin-bottom: 28px;
+    }
+
+    .menu-title {
+      font-size: 22px;
+      font-weight: 850;
+    }
+
+    .menu-close {
+      width: 44px;
+      height: 44px;
+
+      border-radius: 14px;
+
+      background: #fff;
+      border: 1px solid var(--border);
+
+      font-size: 24px;
+    }
+
+    .menu-links {
+      display: grid;
+      gap: 10px;
+    }
+
+    .menu-link {
+      width: 100%;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      padding: 16px 17px;
+
+      background: rgba(255,255,255,.7);
+
+      border: 1px solid var(--border);
+      border-radius: 16px;
+
+      font-weight: 700;
+      text-align: left;
+
+      transition: .2s ease;
+    }
+
+    .menu-link:active {
+      transform: scale(.98);
+    }
+
+    .menu-arrow {
+      color: var(--gold-dark);
+      font-size: 20px;
     }
 
     /* =========================================================
        MAIN
-       ========================================================= */
+    ========================================================= */
 
     main {
-      width: min(100%, 900px);
-      margin: auto;
-      padding: 22px 16px 30px;
+      padding-bottom: 120px;
     }
 
     .screen {
       display: none;
-      animation: screenIn 0.4s ease both;
+      padding: 22px 18px 30px;
+      max-width: 980px;
+      margin: 0 auto;
+      animation: screenIn .3s ease;
     }
 
     .screen.active {
@@ -343,7 +593,7 @@
     @keyframes screenIn {
       from {
         opacity: 0;
-        transform: translateY(10px);
+        transform: translateY(8px);
       }
 
       to {
@@ -353,290 +603,290 @@
     }
 
     /* =========================================================
-       HERO
-       ========================================================= */
+       HOME HERO
+    ========================================================= */
 
     .hero {
       position: relative;
       overflow: hidden;
 
-      padding: 30px 24px;
+      padding: 31px 25px;
+
+      min-height: 300px;
 
       border-radius: var(--radius-xl);
 
       background:
         radial-gradient(
-          circle at 95% 10%,
-          rgba(181, 138, 67, 0.24),
-          transparent 31%
+          circle at 90% 5%,
+          rgba(194, 157, 91, .28),
+          transparent 30%
         ),
         radial-gradient(
-          circle at 0% 100%,
-          rgba(65, 108, 159, 0.15),
-          transparent 33%
+          circle at 10% 90%,
+          rgba(69, 101, 137, .12),
+          transparent 32%
         ),
         linear-gradient(
           135deg,
-          #fffdf9,
-          #f4efe4
+          #fffdf8,
+          #f5eddf
         );
 
-      border: 1px solid rgba(181, 138, 67, 0.18);
+      border: 1px solid rgba(184,138,59,.15);
 
       box-shadow: var(--shadow);
     }
 
+    .hero::before {
+      content: "";
+
+      position: absolute;
+      right: -80px;
+      bottom: -100px;
+
+      width: 260px;
+      height: 260px;
+
+      border: 1px solid rgba(184,138,59,.18);
+      border-radius: 50%;
+    }
+
     .hero::after {
       content: "";
+
       position: absolute;
+      right: 25px;
+      bottom: 28px;
 
-      width: 190px;
-      height: 190px;
+      width: 90px;
+      height: 1px;
 
-      right: -75px;
-      bottom: -95px;
-
-      border-radius: 50%;
-
-      border: 1px solid rgba(181, 138, 67, 0.18);
+      background: linear-gradient(
+        90deg,
+        transparent,
+        var(--gold)
+      );
     }
 
     .eyebrow {
+      position: relative;
+      z-index: 2;
+
       display: inline-flex;
       align-items: center;
-      gap: 7px;
+      gap: 8px;
 
-      padding: 7px 11px;
+      padding: 8px 12px;
 
-      border-radius: 100px;
+      border-radius: 30px;
 
-      background: rgba(255,255,255,0.76);
-      border: 1px solid rgba(181,138,67,0.2);
+      background: rgba(255,255,255,.72);
+      border: 1px solid rgba(184,138,59,.18);
 
       color: var(--gold-dark);
 
       font-size: 10px;
-      font-weight: 800;
-      letter-spacing: 0.12em;
+      font-weight: 850;
+      letter-spacing: .12em;
       text-transform: uppercase;
     }
 
     .eyebrow-dot {
       width: 6px;
       height: 6px;
-
       border-radius: 50%;
       background: var(--gold);
     }
 
     .hero h1 {
-      margin-top: 18px;
+      position: relative;
+      z-index: 2;
 
-      max-width: 650px;
+      margin-top: 22px;
 
-      font-size: clamp(34px, 9vw, 62px);
-      line-height: 0.98;
-      letter-spacing: -0.04em;
+      max-width: 610px;
+
+      font-size: clamp(35px, 9vw, 65px);
+      line-height: .98;
+      letter-spacing: -.045em;
     }
 
     .hero h1 span {
       color: var(--gold-dark);
     }
 
-    .hero-description {
-      max-width: 570px;
+    .hero p {
+      position: relative;
+      z-index: 2;
 
-      margin-top: 17px;
+      margin-top: 20px;
+
+      max-width: 600px;
 
       color: var(--muted);
+
       font-size: 15px;
-      line-height: 1.7;
+      line-height: 1.65;
     }
 
     .hero-actions {
+      position: relative;
+      z-index: 2;
+
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
 
-      margin-top: 24px;
+      margin-top: 25px;
     }
 
-    .button {
-      min-height: 46px;
+    .btn {
+      min-height: 48px;
 
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 9px;
 
-      padding: 0 17px;
+      padding: 0 19px;
 
-      border-radius: 14px;
+      border-radius: 15px;
 
-      border: 1px solid transparent;
+      font-weight: 800;
 
-      font-size: 13px;
-      font-weight: 750;
-
-      cursor: pointer;
-
-      transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
+      transition: .2s ease;
     }
 
-    .button:active {
-      transform: scale(0.97);
+    .btn:active {
+      transform: scale(.97);
     }
 
-    .button-primary {
-      color: #fff;
-
+    .btn-gold {
       background:
         linear-gradient(
           135deg,
-          #c59a52,
-          #9d7134
+          #c99b4b,
+          #a87529
         );
 
+      color: white;
+
       box-shadow:
-        0 9px 24px rgba(181,138,67,0.22);
+        0 9px 22px rgba(166,117,41,.22);
     }
 
-    .button-secondary {
+    .btn-light {
+      background: rgba(255,255,255,.86);
       color: var(--navy);
 
-      background: rgba(255,255,255,0.72);
-
-      border-color: rgba(23,43,70,0.1);
+      border: 1px solid var(--border);
     }
 
     /* =========================================================
-       SECTION HEADERS
-       ========================================================= */
+       SECTION HEADINGS
+    ========================================================= */
 
     .section-heading {
       display: flex;
       align-items: end;
       justify-content: space-between;
 
-      margin: 30px 2px 14px;
+      gap: 15px;
+
+      margin: 35px 4px 14px;
     }
 
     .section-heading h2 {
-      font-size: 23px;
-      letter-spacing: -0.025em;
+      font-size: 25px;
+      letter-spacing: -.025em;
     }
 
     .section-heading p {
       margin-top: 5px;
-
       color: var(--muted);
-      font-size: 12px;
+      font-size: 13px;
     }
 
-    .section-heading a {
+    .view-all {
       color: var(--gold-dark);
-      font-size: 12px;
-      font-weight: 750;
+      font-size: 13px;
+      font-weight: 800;
+      white-space: nowrap;
     }
 
     /* =========================================================
-       BOOK
-       ========================================================= */
+       BOOK CARD
+    ========================================================= */
 
     .book-card {
-      position: relative;
-      overflow: hidden;
-
       display: grid;
-      grid-template-columns: 135px 1fr;
+      grid-template-columns: 145px 1fr;
       gap: 20px;
 
       padding: 18px;
 
-      background:
-        linear-gradient(
-          135deg,
-          #fff,
-          #faf5eb
-        );
+      background: rgba(255,253,249,.95);
 
-      border: 1px solid rgba(181,138,67,0.16);
-      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
 
-      box-shadow: var(--shadow-small);
-    }
+      box-shadow: var(--shadow);
 
-    .book-card::before {
-      content: "";
-
-      position: absolute;
-      top: -70px;
-      right: -70px;
-
-      width: 180px;
-      height: 180px;
-
-      border-radius: 50%;
-
-      background:
-        radial-gradient(
-          circle,
-          rgba(181,138,67,0.14),
-          transparent 65%
-        );
-    }
-
-    .book-cover-wrap {
-      position: relative;
-      z-index: 1;
+      overflow: hidden;
     }
 
     .book-cover {
-      width: 100%;
-      aspect-ratio: 0.67;
+      width: 145px;
+      aspect-ratio: 2 / 3;
 
       object-fit: cover;
 
-      border-radius: 9px;
+      border-radius: 15px;
 
       box-shadow:
-        8px 13px 26px rgba(30,34,40,0.18);
+        0 14px 28px rgba(0,0,0,.18);
+
+      background: #e9e1d4;
     }
 
-    .book-content {
-      position: relative;
-      z-index: 2;
+    .book-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-width: 0;
     }
 
-    .tag {
-      display: inline-block;
+    .badge {
+      display: inline-flex;
+      align-self: flex-start;
 
-      padding: 6px 9px;
+      padding: 7px 10px;
 
-      border-radius: 8px;
+      border-radius: 9px;
 
       background: var(--gold-soft);
+
       color: var(--gold-dark);
 
       font-size: 9px;
-      font-weight: 800;
-      letter-spacing: 0.08em;
+      font-weight: 850;
+      letter-spacing: .08em;
+      text-transform: uppercase;
     }
 
-    .book-content h3 {
-      margin-top: 11px;
+    .book-info h3 {
+      margin-top: 13px;
 
-      font-size: 21px;
-      line-height: 1.12;
+      font-size: 22px;
+      line-height: 1.15;
     }
 
     .book-subtitle {
-      margin-top: 8px;
+      margin-top: 6px;
 
       color: var(--muted);
-      font-size: 12px;
+
+      font-size: 13px;
       line-height: 1.5;
     }
 
@@ -649,59 +899,54 @@
     }
 
     .meta-pill {
-      padding: 6px 8px;
+      padding: 6px 9px;
 
       border-radius: 8px;
 
-      background: #f2f4f7;
+      background: #f2f2f2;
 
-      color: #565b64;
+      color: #64666b;
 
-      font-size: 9px;
+      font-size: 10px;
       font-weight: 700;
     }
 
-    .book-buttons {
+    .book-actions {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
 
-      margin-top: 16px;
+      margin-top: 14px;
     }
 
-    .small-button {
-      min-height: 38px;
+    .small-btn {
+      min-height: 40px;
 
-      padding: 0 12px;
+      padding: 0 14px;
 
-      border-radius: 11px;
+      border-radius: 12px;
 
       display: inline-flex;
       align-items: center;
       justify-content: center;
 
-      font-size: 11px;
-      font-weight: 750;
+      font-size: 12px;
+      font-weight: 800;
     }
 
-    .amazon-button {
+    .amazon-btn {
       background: var(--navy);
-      color: #fff;
+      color: white;
     }
 
-    .play-button {
+    .play-btn {
       background: var(--gold-soft);
       color: var(--gold-dark);
     }
 
-    .coming-button {
-      background: #f0f1f3;
-      color: #777b83;
-    }
-
     /* =========================================================
-       QUICK GRID
-       ========================================================= */
+       QUICK CARDS
+    ========================================================= */
 
     .quick-grid {
       display: grid;
@@ -713,899 +958,764 @@
       position: relative;
       overflow: hidden;
 
-      min-height: 135px;
+      min-height: 155px;
 
-      padding: 18px;
+      padding: 20px;
 
-      border-radius: 19px;
+      border-radius: 22px;
 
-      background: var(--surface-solid);
-      border: 1px solid var(--line);
+      border: 1px solid var(--border);
 
-      box-shadow: var(--shadow-small);
+      box-shadow: var(--shadow-soft);
 
-      cursor: pointer;
+      background: white;
 
-      transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
+      transition: .2s ease;
     }
 
     .quick-card:active {
-      transform: scale(0.98);
+      transform: scale(.98);
     }
 
     .quick-card::after {
       content: "";
 
       position: absolute;
+      width: 105px;
+      height: 105px;
 
-      width: 85px;
-      height: 85px;
-
-      right: -35px;
-      bottom: -35px;
+      right: -40px;
+      bottom: -45px;
 
       border-radius: 50%;
 
-      background: rgba(181,138,67,0.1);
+      background: rgba(184,138,59,.08);
     }
 
     .quick-number {
-      color: var(--gold);
-      font-size: 10px;
-      font-weight: 800;
-      letter-spacing: 0.1em;
+      color: var(--gold-dark);
+
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .1em;
     }
 
     .quick-card h3 {
-      margin-top: 22px;
+      margin-top: 35px;
 
-      font-size: 17px;
+      font-size: 20px;
     }
 
     .quick-card p {
-      margin-top: 5px;
+      margin-top: 6px;
 
       color: var(--muted);
-      font-size: 11px;
+
+      font-size: 12px;
       line-height: 1.45;
     }
 
-    .quick-card.blue {
+    .quick-learning {
       background:
         linear-gradient(
-          145deg,
-          #fff,
-          #edf3fa
+          135deg,
+          #fffdf9,
+          #eef5f1
         );
     }
 
-    .quick-card.gold {
+    .quick-videos {
       background:
         linear-gradient(
-          145deg,
-          #fff,
-          #faf1df
+          135deg,
+          #fffdf9,
+          #f4f0e7
         );
     }
 
-    .quick-card.green {
+    .quick-creative {
       background:
         linear-gradient(
-          145deg,
-          #fff,
-          #eef8f1
+          135deg,
+          #fffdf9,
+          #eef4f8
         );
     }
 
-    .quick-card.purple {
+    .quick-projects {
       background:
         linear-gradient(
-          145deg,
-          #fff,
-          #f1eef9
+          135deg,
+          #fffdf9,
+          #f4eff9
         );
     }
 
     /* =========================================================
-       PROFILE
-       ========================================================= */
+       ABOUT HOME
+    ========================================================= */
 
-    .profile-card {
+    .about-card {
       display: flex;
       align-items: center;
-      gap: 16px;
+      gap: 18px;
 
-      padding: 18px;
+      padding: 20px;
 
-      background: var(--surface-solid);
-      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
 
-      border-radius: var(--radius-lg);
+      background: white;
+      border: 1px solid var(--border);
 
-      box-shadow: var(--shadow-small);
+      box-shadow: var(--shadow-soft);
     }
 
-    .profile-image {
-      width: 78px;
-      height: 78px;
+    .about-photo {
+      width: 105px;
+      height: 105px;
 
-      flex: 0 0 78px;
+      flex: 0 0 105px;
 
       object-fit: cover;
 
       border-radius: 50%;
 
-      border: 3px solid #fff;
+      border: 3px solid white;
 
-      box-shadow:
-        0 0 0 1px rgba(181,138,67,0.4),
-        0 8px 20px rgba(20,30,40,0.12);
+      outline: 1px solid rgba(184,138,59,.32);
+
+      box-shadow: 0 10px 25px rgba(0,0,0,.12);
+
+      background: #eee7da;
     }
 
-    .profile-card h3 {
-      font-size: 18px;
+    .about-card h3 {
+      font-size: 22px;
     }
 
-    .profile-card p {
-      margin-top: 5px;
+    .about-card p {
+      margin-top: 7px;
 
       color: var(--muted);
-      font-size: 12px;
-      line-height: 1.5;
+
+      font-size: 14px;
+      line-height: 1.55;
     }
 
     /* =========================================================
-       SOCIAL
-       ========================================================= */
+       SOCIAL CARDS
+    ========================================================= */
 
     .social-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 11px;
+      gap: 12px;
     }
 
     .social-card {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 14px;
 
-      min-height: 70px;
+      padding: 17px;
 
-      padding: 12px 14px;
+      border-radius: 19px;
 
-      border-radius: 17px;
+      background: white;
 
-      background: rgba(255,255,255,0.88);
-      border: 1px solid var(--line);
+      border: 1px solid var(--border);
 
-      box-shadow: 0 7px 22px rgba(28,35,48,0.06);
+      box-shadow: var(--shadow-soft);
 
-      transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
+      transition: .2s ease;
     }
 
     .social-card:active {
-      transform: scale(0.98);
+      transform: scale(.98);
     }
 
     .social-icon {
-      width: 40px;
-      height: 40px;
+      width: 62px;
+      height: 62px;
 
-      flex: 0 0 40px;
+      flex: 0 0 62px;
 
       display: grid;
       place-items: center;
 
-      border-radius: 12px;
+      border-radius: 17px;
+
+      overflow: hidden;
     }
 
     .social-icon svg {
-      width: 23px;
-      height: 23px;
+      width: 36px;
+      height: 36px;
     }
 
     .instagram-icon {
       background:
         linear-gradient(
           135deg,
-          #feda75,
-          #d62976 55%,
-          #4f5bd5
+          var(--instagram-1),
+          var(--instagram-2),
+          var(--instagram-3)
         );
     }
 
     .youtube-icon {
-      background: #ff0033;
+      background: var(--youtube);
     }
 
     .whatsapp-icon {
-      background: #25d366;
+      background: var(--green);
     }
 
     .email-icon {
       background: var(--navy);
     }
 
-    .social-card strong {
+    .social-text strong {
       display: block;
-      font-size: 12px;
+      font-size: 15px;
     }
 
-    .social-card span {
+    .social-text span {
       display: block;
 
       margin-top: 3px;
 
       color: var(--muted);
-      font-size: 9px;
-    }
 
-    /* =========================================================
-       INNER SCREENS
-       ========================================================= */
-
-    .page-title {
-      padding: 10px 2px 20px;
-    }
-
-    .page-title .eyebrow {
-      margin-bottom: 13px;
-    }
-
-    .page-title h1 {
-      font-size: 35px;
-      letter-spacing: -0.04em;
-    }
-
-    .page-title p {
-      margin-top: 8px;
-
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.6;
-    }
-
-    .subject-grid,
-    .service-grid,
-    .project-grid,
-    .creative-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-    }
-
-    .info-card {
-      padding: 18px;
-
-      border-radius: 19px;
-
-      background: var(--surface-solid);
-      border: 1px solid var(--line);
-
-      box-shadow: var(--shadow-small);
-    }
-
-    .info-card .card-number {
-      font-size: 9px;
-      color: var(--gold-dark);
-      font-weight: 800;
-      letter-spacing: 0.1em;
-    }
-
-    .info-card h3 {
-      margin-top: 17px;
-      font-size: 16px;
-    }
-
-    .info-card p {
-      margin-top: 6px;
-
-      color: var(--muted);
       font-size: 11px;
-      line-height: 1.55;
-    }
-
-    .info-card.blue-card {
-      background: linear-gradient(145deg, #fff, #eef4fb);
-    }
-
-    .info-card.gold-card {
-      background: linear-gradient(145deg, #fff, #fbf2e1);
-    }
-
-    .info-card.green-card {
-      background: linear-gradient(145deg, #fff, #edf8f1);
-    }
-
-    .info-card.purple-card {
-      background: linear-gradient(145deg, #fff, #f3effb);
     }
 
     /* =========================================================
-       VIDEOS
-       ========================================================= */
+       INSTALL CARD
+    ========================================================= */
 
-    .video-card {
-      overflow: hidden;
+    .install-card {
+      padding: 25px;
 
-      background: #fff;
-
-      border: 1px solid var(--line);
-      border-radius: 20px;
-
-      box-shadow: var(--shadow-small);
-    }
-
-    .video-top {
-      min-height: 130px;
-
-      display: grid;
-      place-items: center;
+      border-radius: 25px;
 
       background:
         radial-gradient(
-          circle at 20% 20%,
-          rgba(181,138,67,0.3),
-          transparent 35%
+          circle at 90% 0%,
+          rgba(206,169,96,.23),
+          transparent 30%
         ),
         linear-gradient(
           135deg,
-          #182d48,
-          #355e88
-        );
-    }
-
-    .video-play {
-      width: 55px;
-      height: 55px;
-
-      display: grid;
-      place-items: center;
-
-      border-radius: 50%;
-
-      background: #fff;
-      color: #d9002f;
-
-      box-shadow:
-        0 10px 25px rgba(0,0,0,0.16);
-    }
-
-    .video-play svg {
-      width: 22px;
-      height: 22px;
-      margin-left: 2px;
-    }
-
-    .video-info {
-      padding: 15px;
-    }
-
-    .video-info h3 {
-      font-size: 15px;
-    }
-
-    .video-info p {
-      margin-top: 5px;
-
-      color: var(--muted);
-      font-size: 11px;
-      line-height: 1.45;
-    }
-
-    .video-info a {
-      display: inline-flex;
-
-      margin-top: 12px;
-
-      color: var(--gold-dark);
-
-      font-size: 11px;
-      font-weight: 800;
-    }
-
-    /* =========================================================
-       UPDATES
-       ========================================================= */
-
-    .timeline {
-      position: relative;
-
-      padding-left: 20px;
-    }
-
-    .timeline::before {
-      content: "";
-
-      position: absolute;
-      left: 5px;
-      top: 7px;
-      bottom: 7px;
-
-      width: 1px;
-
-      background:
-        linear-gradient(
-          to bottom,
-          var(--gold),
-          rgba(181,138,67,0.08)
-        );
-    }
-
-    .timeline-item {
-      position: relative;
-
-      margin-bottom: 15px;
-
-      padding: 16px;
-
-      border-radius: 17px;
-
-      background: #fff;
-      border: 1px solid var(--line);
-
-      box-shadow: var(--shadow-small);
-    }
-
-    .timeline-item::before {
-      content: "";
-
-      position: absolute;
-
-      left: -20px;
-      top: 22px;
-
-      width: 9px;
-      height: 9px;
-
-      border-radius: 50%;
-
-      background: var(--gold);
-
-      box-shadow:
-        0 0 0 4px var(--bg);
-    }
-
-    .timeline-date {
-      color: var(--gold-dark);
-
-      font-size: 9px;
-      font-weight: 800;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .timeline-item h3 {
-      margin-top: 8px;
-      font-size: 15px;
-    }
-
-    .timeline-item p {
-      margin-top: 5px;
-
-      color: var(--muted);
-
-      font-size: 11px;
-      line-height: 1.55;
-    }
-
-    /* =========================================================
-       ABOUT
-       ========================================================= */
-
-    .about-card {
-      padding: 22px;
-
-      background:
-        linear-gradient(
-          145deg,
-          #fff,
-          #f7f1e5
-        );
-
-      border-radius: var(--radius-lg);
-      border: 1px solid rgba(181,138,67,0.16);
-
-      box-shadow: var(--shadow-small);
-    }
-
-    .about-card h2 {
-      font-size: 23px;
-    }
-
-    .about-card p {
-      margin-top: 13px;
-
-      color: #555962;
-
-      font-size: 13px;
-      line-height: 1.75;
-    }
-
-    .quote {
-      margin-top: 21px;
-
-      padding: 17px;
-
-      border-left: 3px solid var(--gold);
-
-      background: rgba(181,138,67,0.07);
-
-      border-radius: 0 13px 13px 0;
-
-      color: var(--ink);
-
-      font-size: 14px;
-      line-height: 1.55;
-      font-weight: 650;
-    }
-
-    .quote small {
-      display: block;
-
-      margin-top: 8px;
-
-      color: var(--gold-dark);
-
-      font-size: 10px;
-      font-weight: 750;
-    }
-
-    /* =========================================================
-       CONTACT / INSTALL
-       ========================================================= */
-
-    .install-card {
-      padding: 20px;
-
-      background:
-        linear-gradient(
-          135deg,
           #172b46,
-          #294a6d
+          #294e76
         );
 
-      color: #fff;
-
-      border-radius: var(--radius-lg);
+      color: white;
 
       box-shadow:
-        0 18px 40px rgba(23,43,70,0.18);
+        0 20px 45px rgba(23,43,70,.18);
     }
 
     .install-card h3 {
-      font-size: 19px;
+      font-size: 23px;
     }
 
     .install-card p {
       margin-top: 7px;
 
-      color: rgba(255,255,255,0.72);
+      color: rgba(255,255,255,.72);
+
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .install-btn {
+      margin-top: 17px;
+
+      background: white;
+      color: var(--navy);
+
+      padding: 12px 17px;
+
+      border-radius: 12px;
+
+      font-weight: 850;
+    }
+
+    .install-note {
+      display: none;
+
+      margin-top: 13px;
+
+      padding: 12px;
+
+      border-radius: 12px;
+
+      background: rgba(255,255,255,.09);
+
+      color: rgba(255,255,255,.8);
 
       font-size: 11px;
       line-height: 1.5;
     }
 
-    #installBtn {
-      margin-top: 15px;
-
-      background: #fff;
-      color: var(--navy);
+    .install-note.show {
+      display: block;
     }
 
     /* =========================================================
-       SIDE MENU
-       ========================================================= */
+       INTERNAL SCREEN HEADER / BACK
+    ========================================================= */
 
-    .menu-overlay {
-      position: fixed;
-      inset: 0;
-      z-index: 1000;
+    .screen-top {
+      display: flex;
+      align-items: center;
+      gap: 12px;
 
-      background: rgba(10,17,27,0.25);
-
-      opacity: 0;
-      visibility: hidden;
-
-      transition:
-        opacity 0.3s ease,
-        visibility 0.3s ease;
+      margin-bottom: 25px;
     }
 
-    .menu-overlay.open {
-      opacity: 1;
-      visibility: visible;
+    .back-btn {
+      width: 45px;
+      height: 45px;
+
+      flex: 0 0 45px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 14px;
+
+      background: white;
+
+      border: 1px solid var(--border);
+
+      box-shadow: var(--shadow-soft);
+
+      color: var(--ink);
+
+      font-size: 24px;
     }
 
-    .side-menu {
-      position: absolute;
+    .screen-title h1 {
+      font-size: 28px;
+      letter-spacing: -.03em;
+    }
 
-      top: 0;
-      right: 0;
+    .screen-title p {
+      margin-top: 4px;
 
-      width: min(88%, 360px);
-      height: 100%;
+      color: var(--muted);
 
-      padding:
-        22px 18px;
+      font-size: 12px;
+    }
+
+    /* =========================================================
+       INTERNAL CARDS
+    ========================================================= */
+
+    .content-grid {
+      display: grid;
+      gap: 13px;
+    }
+
+    .content-card {
+      padding: 20px;
+
+      border-radius: 21px;
+
+      background: white;
+
+      border: 1px solid var(--border);
+
+      box-shadow: var(--shadow-soft);
+    }
+
+    .content-card h3 {
+      font-size: 18px;
+    }
+
+    .content-card p {
+      margin-top: 7px;
+
+      color: var(--muted);
+
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    .subject-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .subject-card {
+      padding: 18px;
+
+      min-height: 125px;
+
+      border-radius: 19px;
 
       background:
         linear-gradient(
-          180deg,
-          #fffdf8,
-          #f5f0e6
+          135deg,
+          #ffffff,
+          #f3eee4
         );
 
-      box-shadow:
-        -20px 0 50px rgba(10,17,27,0.13);
+      border: 1px solid var(--border);
 
-      transform: translateX(100%);
-
-      transition:
-        transform 0.35s cubic-bezier(.2,.8,.2,1);
-
-      overflow-y: auto;
+      box-shadow: var(--shadow-soft);
     }
 
-    .menu-overlay.open .side-menu {
-      transform: translateX(0);
+    .subject-card:nth-child(2n) {
+      background:
+        linear-gradient(
+          135deg,
+          #ffffff,
+          #eef4f8
+        );
     }
 
-    .menu-top {
+    .subject-card h3 {
+      margin-top: 26px;
+      font-size: 17px;
+    }
+
+    .subject-card span {
+      display: block;
+
+      margin-top: 4px;
+
+      color: var(--muted);
+
+      font-size: 11px;
+    }
+
+    .coming {
+      display: inline-flex;
+
+      margin-top: 12px;
+
+      padding: 6px 9px;
+
+      border-radius: 8px;
+
+      background: #f2eee6;
+
+      color: var(--gold-dark);
+
+      font-size: 9px;
+      font-weight: 850;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    /* =========================================================
+       SERVICE CARDS
+    ========================================================= */
+
+    .service-card {
       display: flex;
       align-items: center;
       justify-content: space-between;
 
-      padding-bottom: 20px;
-
-      border-bottom: 1px solid var(--line);
+      gap: 15px;
     }
 
-    .menu-brand {
-      display: flex;
-      align-items: center;
-      gap: 11px;
+    .service-left h3 {
+      font-size: 17px;
     }
 
-    .menu-brand img {
-      width: 44px;
-      height: 44px;
+    .service-left p {
+      margin-top: 4px;
+    }
+
+    .service-arrow {
+      color: var(--gold-dark);
+      font-size: 23px;
+    }
+
+    /* =========================================================
+       PROJECT / UPDATE
+    ========================================================= */
+
+    .project-card,
+    .update-card {
+      position: relative;
+    }
+
+    .status {
+      display: inline-flex;
+
+      padding: 6px 9px;
+
+      border-radius: 8px;
+
+      background: #edf5ee;
+
+      color: #3c7047;
+
+      font-size: 9px;
+      font-weight: 850;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+
+    .date {
+      color: var(--gold-dark);
+
+      font-size: 10px;
+      font-weight: 800;
+    }
+
+    /* =========================================================
+       ABOUT FULL
+    ========================================================= */
+
+    .about-full {
+      padding: 25px;
+
+      background:
+        linear-gradient(
+          145deg,
+          white,
+          #f4eee2
+        );
+
+      border: 1px solid var(--border);
+
+      border-radius: var(--radius-xl);
+
+      box-shadow: var(--shadow);
+    }
+
+    .about-full-photo {
+      width: 110px;
+      height: 110px;
+
+      object-fit: cover;
 
       border-radius: 50%;
-      object-fit: cover;
+
+      margin-bottom: 20px;
+
+      border: 3px solid white;
+      outline: 1px solid rgba(184,138,59,.3);
+
+      box-shadow: 0 12px 28px rgba(0,0,0,.12);
     }
 
-    .menu-brand strong {
-      display: block;
+    .about-full h2 {
+      font-size: 27px;
+    }
+
+    .about-full p {
+      margin-top: 14px;
+
+      color: #65686e;
+
       font-size: 14px;
+      line-height: 1.75;
     }
 
-    .menu-brand span {
-      display: block;
+    .quote {
+      margin-top: 22px;
 
-      margin-top: 3px;
+      padding: 18px;
 
-      color: var(--gold-dark);
+      border-left: 3px solid var(--gold);
 
-      font-size: 8px;
-      letter-spacing: 0.1em;
-      font-weight: 750;
-    }
+      background: rgba(184,138,59,.07);
 
-    .close-menu {
-      width: 40px;
-      height: 40px;
+      border-radius: 0 14px 14px 0;
 
-      border: 1px solid var(--line);
-      border-radius: 12px;
+      color: var(--navy);
 
-      background: #fff;
-
-      cursor: pointer;
-
-      font-size: 20px;
-      line-height: 1;
-    }
-
-    .menu-list {
-      margin-top: 17px;
-    }
-
-    .menu-item {
-      width: 100%;
-
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-
-      padding: 14px 10px;
-
-      border: 0;
-      border-bottom: 1px solid var(--line);
-
-      background: transparent;
-
-      text-align: left;
-
-      cursor: pointer;
-    }
-
-    .menu-item span:first-child {
-      font-size: 13px;
       font-weight: 700;
-    }
-
-    .menu-arrow {
-      color: var(--gold-dark);
-      font-size: 15px;
+      line-height: 1.6;
     }
 
     /* =========================================================
        BOTTOM NAV
-       ========================================================= */
+    ========================================================= */
 
     .bottom-nav {
       position: fixed;
-      left: 50%;
-      bottom: 12px;
 
-      z-index: 700;
+      left: 14px;
+      right: 14px;
 
-      width: min(calc(100% - 22px), 570px);
+      bottom:
+        calc(12px + env(safe-area-inset-bottom));
 
-      transform: translateX(-50%);
+      z-index: 600;
 
       display: grid;
       grid-template-columns: repeat(4, 1fr);
 
       padding: 7px;
 
-      border-radius: 22px;
+      background: rgba(255,255,255,.92);
 
-      background: rgba(255,255,255,0.9);
+      border: 1px solid rgba(23,25,29,.08);
 
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-
-      border: 1px solid rgba(23,25,29,0.08);
+      border-radius: 25px;
 
       box-shadow:
-        0 16px 45px rgba(28,35,48,0.15);
+        0 15px 45px rgba(0,0,0,.12);
+
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
     }
 
-    .nav-button {
-      min-height: 57px;
+    .nav-item {
+      min-height: 62px;
 
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 4px;
 
-      border: 0;
-      border-radius: 16px;
+      gap: 5px;
+
+      border-radius: 19px;
 
       background: transparent;
 
-      color: #767a82;
+      color: #777a7f;
 
-      cursor: pointer;
-    }
-
-    .nav-button.active {
-      color: var(--gold-dark);
-
-      background:
-        linear-gradient(
-          135deg,
-          #fbf1df,
-          #f7e9cf
-        );
-    }
-
-    .nav-symbol {
-      font-size: 17px;
-      font-weight: 800;
-      line-height: 1;
-    }
-
-    .nav-label {
-      font-size: 9px;
+      font-size: 10px;
       font-weight: 750;
+
+      transition: .2s ease;
     }
 
-    /* =========================================================
-       EMPTY / COMING SOON
-       ========================================================= */
-
-    .coming-card {
-      padding: 30px 20px;
-
-      text-align: center;
-
-      background: #fff;
-
-      border: 1px solid var(--line);
-      border-radius: 20px;
-
-      box-shadow: var(--shadow-small);
+    .nav-item.active {
+      background: #f7ead0;
+      color: var(--gold-dark);
     }
 
-    .coming-card h3 {
+    .nav-icon {
       font-size: 19px;
-    }
-
-    .coming-card p {
-      max-width: 440px;
-
-      margin: 8px auto 0;
-
-      color: var(--muted);
-
-      font-size: 12px;
-      line-height: 1.6;
+      line-height: 1;
     }
 
     /* =========================================================
        RESPONSIVE
-       ========================================================= */
+    ========================================================= */
 
-    @media (min-width: 650px) {
-      .quick-grid {
-        grid-template-columns: repeat(4, 1fr);
+    @media (max-width: 620px) {
+
+      .book-card {
+        grid-template-columns: 118px 1fr;
+        gap: 15px;
+      }
+
+      .book-cover {
+        width: 118px;
+      }
+
+      .book-info h3 {
+        font-size: 19px;
+      }
+
+      .about-card {
+        align-items: flex-start;
+      }
+
+      .about-photo {
+        width: 85px;
+        height: 85px;
+        flex-basis: 85px;
+      }
+    }
+
+    @media (max-width: 430px) {
+
+      .app-header {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+
+      .brand-photo {
+        width: 47px;
+        height: 47px;
+      }
+
+      .brand-name {
+        font-size: 15px;
+      }
+
+      .brand-role {
+        font-size: 8px;
+      }
+
+      .screen {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+
+      .hero {
+        padding: 27px 21px;
+      }
+
+      .quick-grid,
+      .social-grid {
+        gap: 9px;
       }
 
       .quick-card {
-        min-height: 160px;
+        min-height: 145px;
+        padding: 17px;
       }
 
-      .social-grid {
-        grid-template-columns: repeat(4, 1fr);
-      }
-
-      .subject-grid,
-      .service-grid,
-      .project-grid,
-      .creative-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-
-      .book-card {
-        grid-template-columns: 180px 1fr;
-        padding: 24px;
-      }
-
-      .book-content h3 {
-        font-size: 28px;
-      }
-    }
-
-    @media (max-width: 420px) {
-      .book-card {
-        grid-template-columns: 112px 1fr;
-        gap: 14px;
-      }
-
-      .book-content h3 {
+      .quick-card h3 {
         font-size: 18px;
       }
 
-      .social-grid {
-        grid-template-columns: 1fr 1fr;
+      .social-card {
+        padding: 13px;
+        gap: 10px;
       }
-    }
 
-    @media (prefers-reduced-motion: reduce) {
-      *,
-      *::before,
-      *::after {
-        scroll-behavior: auto !important;
-        animation-duration: 0.01ms !important;
-        transition-duration: 0.01ms !important;
+      .social-icon {
+        width: 53px;
+        height: 53px;
+        flex-basis: 53px;
+      }
+
+      .social-icon svg {
+        width: 31px;
+        height: 31px;
+      }
+
+      .book-card {
+        grid-template-columns: 105px 1fr;
+        padding: 13px;
+      }
+
+      .book-cover {
+        width: 105px;
+      }
+
+      .book-info h3 {
+        font-size: 17px;
+      }
+
+      .book-subtitle {
+        font-size: 11px;
+      }
+
+      .meta-pill {
+        font-size: 9px;
+      }
+
+      .small-btn {
+        padding: 0 10px;
+        font-size: 10px;
       }
     }
   </style>
@@ -1615,17 +1725,23 @@
 
   <!-- =======================================================
        SPLASH
-       ======================================================= -->
+  ======================================================== -->
 
   <div id="splash">
-    <div class="splash-content">
 
-      <!-- Real uploaded logo/icon -->
-      <img
-        class="splash-logo"
-        src="icons/icon-512.png"
-        alt="Jaydeep Singh logo"
-      >
+    <div class="splash-inner">
+
+      <div class="splash-glow"></div>
+
+      <div class="diya-wrap">
+
+        <div class="diya">
+          <div class="flame"></div>
+        </div>
+
+      </div>
+
+      <div class="splash-symbol">🙏</div>
 
       <div class="splash-name">
         JAYDEEP SINGH
@@ -1635,48 +1751,158 @@
         AUTHOR · MENTOR · CREATOR
       </div>
 
-      <div class="splash-line"></div>
-
     </div>
+
   </div>
 
 
   <!-- =======================================================
-       APP HEADER
-       ======================================================= -->
+       MENU BACKDROP
+  ======================================================== -->
+
+  <div
+    class="menu-backdrop"
+    id="menuBackdrop"
+    onclick="closeMenu()">
+  </div>
+
+
+  <!-- =======================================================
+       SIDE MENU
+  ======================================================== -->
+
+  <aside class="side-menu" id="sideMenu">
+
+    <div class="menu-head">
+
+      <div class="menu-title">
+        Menu
+      </div>
+
+      <button
+        class="menu-close"
+        onclick="closeMenu()"
+        aria-label="Close menu">
+        ×
+      </button>
+
+    </div>
+
+    <div class="menu-links">
+
+      <button
+        class="menu-link"
+        onclick="goTo('home')">
+        <span>Home</span>
+        <span class="menu-arrow">›</span>
+      </button>
+
+      <button
+        class="menu-link"
+        onclick="goTo('books')">
+        <span>Books</span>
+        <span class="menu-arrow">›</span>
+      </button>
+
+      <button
+        class="menu-link"
+        onclick="goTo('learning')">
+        <span>Learning</span>
+        <span class="menu-arrow">›</span>
+      </button>
+
+      <button
+        class="menu-link"
+        onclick="goTo('videos')">
+        <span>Videos</span>
+        <span class="menu-arrow">›</span>
+      </button>
+
+      <button
+        class="menu-link"
+        onclick="goTo('creative')">
+        <span>Creative</span>
+        <span class="menu-arrow">›</span>
+      </button>
+
+      <button
+        class="menu-link"
+        onclick="goTo('projects')">
+        <span>Projects</span>
+        <span class="menu-arrow">›</span>
+      </button>
+
+      <button
+        class="menu-link"
+        onclick="goTo('updates')">
+        <span>Updates</span>
+        <span class="menu-arrow">›</span>
+      </button>
+
+      <button
+        class="menu-link"
+        onclick="goTo('services')">
+        <span>Services</span>
+        <span class="menu-arrow">›</span>
+      </button>
+
+      <button
+        class="menu-link"
+        onclick="goTo('about')">
+        <span>About Jaydeep</span>
+        <span class="menu-arrow">›</span>
+      </button>
+
+    </div>
+
+  </aside>
+
+
+  <!-- =======================================================
+       HEADER
+  ======================================================== -->
 
   <header class="app-header">
 
     <button
       class="brand"
-      onclick="showScreen('home')"
-      style="border:0;background:none;cursor:pointer;text-align:left;"
+      onclick="goTo('home')"
       aria-label="Go to home"
-    >
+      style="background:none;border:0;text-align:left;">
 
+      <!-- CURRENT FILE PATH: profile.jpg -->
       <img
-        class="brand-logo"
-        src="icons/icon-192.png"
+        class="brand-photo"
+        src="profile.jpg"
         alt="Jaydeep Singh"
-      >
+        onerror="this.style.visibility='hidden';">
 
       <div class="brand-text">
-        <strong>JAYDEEP SINGH</strong>
-        <span>AUTHOR · MENTOR · CREATOR</span>
+
+        <div class="brand-name">
+          JAYDEEP SINGH
+        </div>
+
+        <div class="brand-role">
+          AUTHOR · MENTOR · CREATOR
+        </div>
+
       </div>
 
     </button>
 
+
     <button
-      class="menu-button"
+      class="menu-btn"
       onclick="openMenu()"
-      aria-label="Open menu"
-    >
+      aria-label="Open menu">
+
       <div class="menu-lines">
         <span></span>
         <span></span>
         <span></span>
       </div>
+
     </button>
 
   </header>
@@ -1684,51 +1910,48 @@
 
   <!-- =======================================================
        MAIN
-       ======================================================= -->
+  ======================================================== -->
 
   <main>
 
 
     <!-- =====================================================
          HOME
-         ===================================================== -->
+    ====================================================== -->
 
     <section
       id="home"
-      class="screen active"
-    >
+      class="screen active">
 
       <div class="hero">
 
         <div class="eyebrow">
           <span class="eyebrow-dot"></span>
-          Official App
+          OFFICIAL APP
         </div>
 
         <h1>
-          Write.<br>
-          <span>Teach.</span><br>
-          Create.
+          A place for
+          <span>ideas, learning</span>
+          & creation.
         </h1>
 
-        <p class="hero-description">
-          Explore books, learning, videos, creative work,
-          projects and everything Jaydeep Singh is building.
+        <p>
+          Explore Jaydeep Singh's books, learning content,
+          videos, creative work, projects and latest updates.
         </p>
 
         <div class="hero-actions">
 
           <button
-            class="button button-primary"
-            onclick="showScreen('books')"
-          >
+            class="btn btn-gold"
+            onclick="goTo('books')">
             Explore My Book
           </button>
 
           <button
-            class="button button-secondary"
-            onclick="showScreen('learning')"
-          >
+            class="btn btn-light"
+            onclick="goTo('learning')">
             Start Learning
           </button>
 
@@ -1737,36 +1960,36 @@
       </div>
 
 
-      <!-- Featured Book -->
+      <!-- FEATURED BOOK -->
 
       <div class="section-heading">
+
         <div>
           <h2>Featured Book</h2>
           <p>The debut book by Jaydeep Singh</p>
         </div>
 
-        <a href="#" onclick="showScreen('books');return false;">
+        <button
+          class="view-all"
+          onclick="goTo('books')">
           View all
-        </a>
+        </button>
+
       </div>
 
 
-      <article class="book-card">
+      <div class="book-card">
 
-        <div class="book-cover-wrap">
+        <!-- CURRENT FILE PATH: book-cover.jpg -->
+        <img
+          class="book-cover"
+          src="book-cover.jpg"
+          alt="Echoes of Destiny book cover"
+          loading="lazy">
 
-          <img
-            class="book-cover"
-            src="book-cover.jpg"
-            alt="Echoes of Destiny book cover"
-            loading="lazy"
-          >
+        <div class="book-info">
 
-        </div>
-
-        <div class="book-content">
-
-          <span class="tag">
+          <span class="badge">
             ENGLISH EDITION · AVAILABLE
           </span>
 
@@ -1790,23 +2013,21 @@
 
           </div>
 
-          <div class="book-buttons">
+          <div class="book-actions">
 
             <a
-              class="small-button amazon-button"
+              class="small-btn amazon-btn"
               href="https://amzn.in/d/03OMX68u"
               target="_blank"
-              rel="noopener"
-            >
+              rel="noopener">
               Amazon
             </a>
 
             <a
-              class="small-button play-button"
+              class="small-btn play-btn"
               href="https://play.google.com/store/books/details/Jaydeep_Singh_Echoes_Of_Destiny?id=5_0MEgAAQBAJ"
               target="_blank"
-              rel="noopener"
-            >
+              rel="noopener">
               Google Play
             </a>
 
@@ -1814,118 +2035,149 @@
 
         </div>
 
-      </article>
+      </div>
 
 
-      <!-- Quick Navigation -->
+      <!-- EXPLORE -->
 
       <div class="section-heading">
+
         <div>
           <h2>Explore</h2>
-          <p>Choose where you want to go</p>
+          <p>Choose what you want to explore</p>
         </div>
+
       </div>
 
 
       <div class="quick-grid">
 
-        <div
-          class="quick-card gold"
-          onclick="showScreen('learning')"
-        >
-          <div class="quick-number">01</div>
+        <button
+          class="quick-card quick-learning"
+          onclick="goTo('learning')">
+
+          <span class="quick-number">01</span>
+
           <h3>Learning</h3>
-          <p>Subjects, lectures, notes and practice.</p>
-        </div>
 
-        <div
-          class="quick-card blue"
-          onclick="showScreen('videos')"
-        >
-          <div class="quick-number">02</div>
+          <p>
+            Subjects, lectures, notes and educational content.
+          </p>
+
+        </button>
+
+
+        <button
+          class="quick-card quick-videos"
+          onclick="goTo('videos')">
+
+          <span class="quick-number">02</span>
+
           <h3>Videos</h3>
-          <p>Teaching, educational and creative videos.</p>
-        </div>
 
-        <div
-          class="quick-card green"
-          onclick="showScreen('creative')"
-        >
-          <div class="quick-number">03</div>
+          <p>
+            Teaching, educational, book and creative videos.
+          </p>
+
+        </button>
+
+
+        <button
+          class="quick-card quick-creative"
+          onclick="goTo('creative')">
+
+          <span class="quick-number">03</span>
+
           <h3>Creative</h3>
-          <p>Designs, editing, graphics and ideas.</p>
-        </div>
 
-        <div
-          class="quick-card purple"
-          onclick="showScreen('projects')"
-        >
-          <div class="quick-number">04</div>
+          <p>
+            Designs, editing, graphics and creative work.
+          </p>
+
+        </button>
+
+
+        <button
+          class="quick-card quick-projects"
+          onclick="goTo('projects')">
+
+          <span class="quick-number">04</span>
+
           <h3>Projects</h3>
-          <p>Websites, apps, PWA and new experiments.</p>
-        </div>
+
+          <p>
+            Websites, apps, PWA and new experiments.
+          </p>
+
+        </button>
 
       </div>
 
 
-      <!-- Profile -->
+      <!-- ABOUT -->
 
       <div class="section-heading">
+
         <div>
           <h2>About the Creator</h2>
+          <p>A little about Jaydeep</p>
         </div>
 
-        <a
-          href="#"
-          onclick="showScreen('about');return false;"
-        >
+        <button
+          class="view-all"
+          onclick="goTo('about')">
           More
-        </a>
+        </button>
+
       </div>
 
 
-      <div class="profile-card">
+      <div class="about-card">
 
         <img
-          class="profile-image"
+          class="about-photo"
           src="profile.jpg"
           alt="Jaydeep Singh"
-          loading="lazy"
-        >
+          loading="lazy">
 
         <div>
-          <h3>Jaydeep Singh</h3>
+
+          <h3>
+            Jaydeep Singh
+          </h3>
 
           <p>
             Author, mentor, creator and student exploring
             learning, writing, technology and creativity.
           </p>
+
         </div>
 
       </div>
 
 
-      <!-- Social -->
+      <!-- CONNECT -->
 
       <div class="section-heading">
+
         <div>
           <h2>Connect</h2>
           <p>Follow or get in touch</p>
         </div>
+
       </div>
 
 
       <div class="social-grid">
 
-        <!-- Instagram -->
+
+        <!-- INSTAGRAM -->
 
         <a
           class="social-card"
           href="https://www.instagram.com/jaydeepsingh._?stkn=dWs4cnU0cnlpd2xt"
           target="_blank"
-          rel="noopener"
-          aria-label="Open Instagram"
-        >
+          rel="noopener">
 
           <div class="social-icon instagram-icon">
 
@@ -1933,22 +2185,32 @@
               viewBox="0 0 24 24"
               fill="none"
               stroke="white"
-              stroke-width="1.9"
-            >
-              <rect x="3" y="3" width="18" height="18" rx="5"/>
-              <circle cx="12" cy="12" r="4"/>
+              stroke-width="2">
+
+              <rect
+                x="3"
+                y="3"
+                width="18"
+                height="18"
+                rx="5"/>
+
+              <circle
+                cx="12"
+                cy="12"
+                r="4"/>
+
               <circle
                 cx="17.5"
                 cy="6.5"
                 r="1"
                 fill="white"
-                stroke="none"
-              />
+                stroke="none"/>
+
             </svg>
 
           </div>
 
-          <div>
+          <div class="social-text">
             <strong>Instagram</strong>
             <span>Follow</span>
           </div>
@@ -1956,32 +2218,28 @@
         </a>
 
 
-        <!-- YouTube -->
+        <!-- YOUTUBE -->
 
         <a
           class="social-card"
           href="https://www.youtube.com/@Jaydeepzx"
           target="_blank"
-          rel="noopener"
-          aria-label="Open YouTube"
-        >
+          rel="noopener">
 
           <div class="social-icon youtube-icon">
 
             <svg
               viewBox="0 0 24 24"
-              fill="white"
-            >
-              <path d="M21.6 7.2a2.9 2.9 0 0 0-2.04-2.05C17.76 4.67 12 4.67 12 4.67s-5.76 0-7.56.48A2.9 2.9 0 0 0 2.4 7.2C1.92 9 1.92 12 1.92 12s0 3 .48 4.8a2.9 2.9 0 0 0 2.04 2.05c1.8.48 7.56.48 7.56.48s5.76 0 7.56-.48a2.9 2.9 0 0 0 2.04-2.05c.48-1.8.48-4.8.48-4.8s0-3-.48-4.8Z"/>
+              fill="white">
+
               <path
-                d="m10 15.5 5-3.5-5-3.5v7Z"
-                fill="#ff0033"
-              />
+                d="M21.6 7.2a2.9 2.9 0 0 0-2.05-2.05C17.74 4.65 12 4.65 12 4.65s-5.74 0-7.55.5A2.9 2.9 0 0 0 2.4 7.2 30 30 0 0 0 1.9 12a30 30 0 0 0 .5 4.8 2.9 2.9 0 0 0 2.05 2.05c1.81.5 7.55.5 7.55.5s5.74 0 7.55-.5a2.9 2.9 0 0 0 2.05-2.05 30 30 0 0 0 .5-4.8 30 30 0 0 0-.5-4.8ZM10 15.5v-7l6 3.5-6 3.5Z"/>
+
             </svg>
 
           </div>
 
-          <div>
+          <div class="social-text">
             <strong>YouTube</strong>
             <span>Watch videos</span>
           </div>
@@ -1989,28 +2247,28 @@
         </a>
 
 
-        <!-- WhatsApp -->
+        <!-- WHATSAPP -->
 
         <a
           class="social-card"
           href="https://wa.me/919525572534"
           target="_blank"
-          rel="noopener"
-          aria-label="Open WhatsApp"
-        >
+          rel="noopener">
 
           <div class="social-icon whatsapp-icon">
 
             <svg
               viewBox="0 0 24 24"
-              fill="white"
-            >
-              <path d="M12 2a9.8 9.8 0 0 0-8.46 14.77L2 22l5.39-1.5A9.8 9.8 0 1 0 12 2Zm0 17.9a8.08 8.08 0 0 1-4.12-1.13l-.3-.18-3.2.89.9-3.11-.2-.32A8.08 8.08 0 1 1 12 19.9Zm4.43-6.08c-.24-.12-1.42-.7-1.64-.78-.22-.08-.38-.12-.54.12-.16.24-.62.78-.76.94-.14.16-.28.18-.52.06-.24-.12-1-.37-1.9-1.18-.7-.62-1.18-1.38-1.32-1.62-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.47-.4-.41-.54-.42h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.33.98 2.49c.12.16 1.69 2.58 4.09 3.62.57.25 1.02.4 1.37.51.58.18 1.1.15 1.51.09.46-.07 1.42-.58 1.62-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"/>
+              fill="white">
+
+              <path
+                d="M20.5 3.5A11.9 11.9 0 0 0 12.03 0C5.45 0 .1 5.35.1 11.93c0 2.1.55 4.15 1.6 5.96L0 24l6.27-1.64a11.9 11.9 0 0 0 5.76 1.47h.01c6.58 0 11.93-5.35 11.93-11.93 0-3.19-1.24-6.18-3.47-8.4ZM12.04 21.8a9.86 9.86 0 0 1-5.03-1.38l-.36-.21-3.72.98.99-3.63-.23-.37a9.86 9.86 0 1 1 8.35 4.61Zm5.42-7.4c-.3-.15-1.77-.87-2.05-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.5s1.07 2.9 1.22 3.1c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.5 1.69.64.71.23 1.35.2 1.86.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35Z"/>
+
             </svg>
 
           </div>
 
-          <div>
+          <div class="social-text">
             <strong>WhatsApp</strong>
             <span>Message directly</span>
           </div>
@@ -2018,13 +2276,11 @@
         </a>
 
 
-        <!-- Email -->
+        <!-- EMAIL -->
 
         <a
           class="social-card"
-          href="mailto:jaydeepsingh3631@gmail.com"
-          aria-label="Send email"
-        >
+          href="mailto:jaydeepsingh3631@gmail.com">
 
           <div class="social-icon email-icon">
 
@@ -2032,22 +2288,23 @@
               viewBox="0 0 24 24"
               fill="none"
               stroke="white"
-              stroke-width="1.7"
-            >
+              stroke-width="1.8">
+
               <rect
                 x="3"
                 y="5"
                 width="18"
                 height="14"
-                rx="2.5"
-              />
+                rx="3"/>
 
-              <path d="m4 7 8 6 8-6"/>
+              <path
+                d="m4 7 8 6 8-6"/>
+
             </svg>
 
           </div>
 
-          <div>
+          <div class="social-text">
             <strong>Email</strong>
             <span>Send a message</span>
           </div>
@@ -2057,13 +2314,15 @@
       </div>
 
 
-      <!-- Install -->
+      <!-- INSTALL -->
 
       <div class="section-heading">
+
         <div>
           <h2>Install the App</h2>
           <p>Keep Jaydeep Singh one tap away</p>
         </div>
+
       </div>
 
 
@@ -2074,17 +2333,24 @@
         </h3>
 
         <p>
-          Install this website as an app for a cleaner,
-          faster experience.
+          Install Jaydeep Singh for a cleaner,
+          faster app-like experience.
         </p>
 
         <button
           id="installBtn"
-          class="button"
-          style="display:none;"
-        >
+          class="install-btn"
+          onclick="installApp()">
           Install App
         </button>
+
+        <div
+          id="installNote"
+          class="install-note">
+          If the install window does not appear,
+          open your browser menu and choose
+          <strong>Add to Home screen</strong>.
+        </div>
 
       </div>
 
@@ -2093,125 +2359,126 @@
 
     <!-- =====================================================
          BOOKS
-         ===================================================== -->
+    ====================================================== -->
 
     <section
       id="books"
-      class="screen"
-    >
+      class="screen">
 
-      <div class="page-title">
+      <div class="screen-top">
 
-        <div class="eyebrow">
-          <span class="eyebrow-dot"></span>
-          Books
+        <button
+          class="back-btn"
+          onclick="goBack()"
+          aria-label="Go back">
+          ‹
+        </button>
+
+        <div class="screen-title">
+          <h1>Books</h1>
+          <p>Writing by Jaydeep Singh</p>
         </div>
-
-        <h1>My Books</h1>
-
-        <p>
-          Writing, experiences and ideas turned into stories.
-        </p>
 
       </div>
 
 
-      <article class="book-card">
+      <div class="content-grid">
 
-        <div class="book-cover-wrap">
+        <div class="book-card">
 
           <img
             class="book-cover"
             src="book-cover.jpg"
-            alt="Echoes of Destiny"
-          >
+            alt="Echoes of Destiny">
+
+          <div class="book-info">
+
+            <span class="badge">
+              DEBUT BOOK
+            </span>
+
+            <h3>
+              Echoes of Destiny
+            </h3>
+
+            <p class="book-subtitle">
+              The Untold Story of Our Generation
+            </p>
+
+            <p class="book-subtitle">
+              A motivational and inspirational journey
+              through childhood, dreams, struggles,
+              emotions, hope and growing up.
+            </p>
+
+            <div class="book-meta">
+
+              <span class="meta-pill">
+                English Edition
+              </span>
+
+              <span class="meta-pill">
+                MRP ₹169
+              </span>
+
+            </div>
+
+            <div class="book-actions">
+
+              <a
+                class="small-btn amazon-btn"
+                href="https://amzn.in/d/03OMX68u"
+                target="_blank"
+                rel="noopener">
+                Buy on Amazon
+              </a>
+
+              <a
+                class="small-btn play-btn"
+                href="https://play.google.com/store/books/details/Jaydeep_Singh_Echoes_Of_Destiny?id=5_0MEgAAQBAJ"
+                target="_blank"
+                rel="noopener">
+                Google Play
+              </a>
+
+            </div>
+
+          </div>
 
         </div>
 
-        <div class="book-content">
 
-          <span class="tag">
-            DEBUT BOOK
+        <div class="content-card">
+
+          <h3>Hindi Edition</h3>
+
+          <p>
+            The Hindi edition of
+            <em>Echoes of Destiny</em>
+            will be available online soon.
+          </p>
+
+          <span class="coming">
+            Coming Soon
           </span>
 
-          <h3>
-            Echoes of Destiny
-          </h3>
-
-          <p class="book-subtitle">
-            The Untold Story of Our Generation
-          </p>
-
-          <p
-            style="
-              margin-top:12px;
-              color:#666a72;
-              font-size:12px;
-              line-height:1.6;
-            "
-          >
-            A motivational and inspirational journey through
-            childhood, family, dreams, struggles, emotions,
-            hope and the experiences that shape a generation.
-          </p>
-
-          <div class="book-meta">
-
-            <span class="meta-pill">
-              English Edition
-            </span>
-
-            <span class="meta-pill">
-              ₹169
-            </span>
-
-          </div>
-
-          <div class="book-buttons">
-
-            <a
-              class="small-button amazon-button"
-              href="https://amzn.in/d/03OMX68u"
-              target="_blank"
-              rel="noopener"
-            >
-              Buy on Amazon
-            </a>
-
-            <a
-              class="small-button play-button"
-              href="https://play.google.com/store/books/details/Jaydeep_Singh_Echoes_Of_Destiny?id=5_0MEgAAQBAJ"
-              target="_blank"
-              rel="noopener"
-            >
-              Google Play
-            </a>
-
-            <span class="small-button coming-button">
-              Hindi · Coming Soon
-            </span>
-
-            <span class="small-button coming-button">
-              Flipkart · Coming Soon
-            </span>
-
-          </div>
-
         </div>
 
-      </article>
 
+        <div class="content-card">
 
-      <div style="height:15px;"></div>
+          <h3>More Books</h3>
 
-      <div class="coming-card">
+          <p>
+            Future books and writing projects by
+            Jaydeep Singh will appear here.
+          </p>
 
-        <h3>More books are coming.</h3>
+          <span class="coming">
+            More Coming Soon
+          </span>
 
-        <p>
-          Future publications will appear here as they become
-          available.
-        </p>
+        </div>
 
       </div>
 
@@ -2220,25 +2487,37 @@
 
     <!-- =====================================================
          LEARNING
-         ===================================================== -->
+    ====================================================== -->
 
     <section
       id="learning"
-      class="screen"
-    >
+      class="screen">
 
-      <div class="page-title">
+      <div class="screen-top">
 
-        <div class="eyebrow">
-          <span class="eyebrow-dot"></span>
-          Mentor
+        <button
+          class="back-btn"
+          onclick="goBack()">
+          ‹
+        </button>
+
+        <div class="screen-title">
+          <h1>Learning</h1>
+          <p>Learn · Understand · Grow</p>
         </div>
 
-        <h1>Learning</h1>
+      </div>
+
+
+      <div class="content-card" style="margin-bottom:15px;">
+
+        <h3>
+          Learning with Jaydeep
+        </h3>
 
         <p>
-          Learning content for Classes 6–12, competitive-exam
-          aspirants and curious learners.
+          Educational content for Classes 6–12,
+          competitive-exam aspirants and general learners.
         </p>
 
       </div>
@@ -2246,63 +2525,59 @@
 
       <div class="subject-grid">
 
-        <div class="info-card gold-card">
-          <div class="card-number">01</div>
+        <div class="subject-card">
+          <span>01</span>
           <h3>English</h3>
-          <p>Grammar, vocabulary, comprehension and communication.</p>
+          <span>Grammar · Vocabulary · Concepts</span>
         </div>
 
-        <div class="info-card blue-card">
-          <div class="card-number">02</div>
+        <div class="subject-card">
+          <span>02</span>
           <h3>Mathematics</h3>
-          <p>Concepts, problem solving and exam-oriented practice.</p>
+          <span>Concepts · Practice · Problem Solving</span>
         </div>
 
-        <div class="info-card green-card">
-          <div class="card-number">03</div>
+        <div class="subject-card">
+          <span>03</span>
           <h3>Science</h3>
-          <p>Clear explanations of important scientific concepts.</p>
+          <span>Physics · Chemistry · Biology</span>
         </div>
 
-        <div class="info-card purple-card">
-          <div class="card-number">04</div>
+        <div class="subject-card">
+          <span>04</span>
           <h3>History</h3>
-          <p>Events, movements, people and historical understanding.</p>
+          <span>Events · Concepts · Analysis</span>
         </div>
 
-        <div class="info-card blue-card">
-          <div class="card-number">05</div>
+        <div class="subject-card">
+          <span>05</span>
           <h3>Political Science</h3>
-          <p>Constitution, institutions, democracy and political ideas.</p>
+          <span>Constitution · Politics · Civics</span>
         </div>
 
-        <div class="info-card gold-card">
-          <div class="card-number">06</div>
+        <div class="subject-card">
+          <span>06</span>
           <h3>Reasoning</h3>
-          <p>Logical thinking, patterns and competitive-exam practice.</p>
+          <span>Logic · Patterns · Practice</span>
         </div>
 
       </div>
 
 
-      <div class="section-heading">
-        <div>
-          <h2>Lecture Structure</h2>
-          <p>Content will grow with the platform.</p>
-        </div>
-      </div>
-
-
-      <div class="coming-card">
+      <div class="content-card" style="margin-top:15px;">
 
         <h3>
-          Chapter → Lecture → Video → Notes → Practice
+          Lecture Structure
         </h3>
 
         <p>
-          New lectures, PDFs, notes and practice questions
-          can be added here as the learning library grows.
+          Chapter → Lecture → Video → Notes →
+          PDF → Practice Questions
         </p>
+
+        <span class="coming">
+          Content Being Built
+        </span>
 
       </div>
 
@@ -2311,111 +2586,95 @@
 
     <!-- =====================================================
          VIDEOS
-         ===================================================== -->
+    ====================================================== -->
 
     <section
       id="videos"
-      class="screen"
-    >
+      class="screen">
 
-      <div class="page-title">
+      <div class="screen-top">
 
-        <div class="eyebrow">
-          <span class="eyebrow-dot"></span>
-          Watch
+        <button
+          class="back-btn"
+          onclick="goBack()">
+          ‹
+        </button>
+
+        <div class="screen-title">
+          <h1>Videos</h1>
+          <p>Teaching · Educational · Creative</p>
         </div>
-
-        <h1>Videos</h1>
-
-        <p>
-          Teaching, educational, book and creative videos.
-        </p>
 
       </div>
 
 
-      <div class="video-card">
+      <div class="content-grid">
 
-        <div class="video-top">
+        <div class="content-card">
 
-          <div class="video-play">
+          <span class="badge">
+            YOUTUBE
+          </span>
 
-            <svg viewBox="0 0 24 24" fill="currentColor">
-              <path d="M8 5v14l11-7L8 5Z"/>
-            </svg>
-
-          </div>
-
-        </div>
-
-        <div class="video-info">
-
-          <h3>
-            Jaydeep Singh on YouTube
+          <h3 style="margin-top:13px;">
+            Jaydeep Singh
           </h3>
 
           <p>
-            Explore teaching, educational, book and creative
-            content on the official channel.
+            Teaching, educational, book,
+            creative and other videos.
           </p>
 
           <a
+            class="small-btn amazon-btn"
+            style="margin-top:15px;"
             href="https://www.youtube.com/@Jaydeepzx"
             target="_blank"
-            rel="noopener"
-          >
-            Open YouTube Channel →
+            rel="noopener">
+            Open YouTube
           </a>
 
         </div>
 
-      </div>
 
+        <div class="subject-grid">
 
-      <div class="section-heading">
-        <div>
-          <h2>Categories</h2>
-          <p>More videos will appear here.</p>
-        </div>
-      </div>
+          <div class="subject-card">
+            <span>01</span>
+            <h3>Teaching</h3>
+            <span>Educational lessons</span>
+          </div>
 
+          <div class="subject-card">
+            <span>02</span>
+            <h3>Educational</h3>
+            <span>Learning content</span>
+          </div>
 
-      <div class="subject-grid">
+          <div class="subject-card">
+            <span>03</span>
+            <h3>Book</h3>
+            <span>Book-related videos</span>
+          </div>
 
-        <div class="info-card blue-card">
-          <div class="card-number">01</div>
-          <h3>Teaching</h3>
-          <p>Lessons and concept-based educational videos.</p>
-        </div>
+          <div class="subject-card">
+            <span>04</span>
+            <h3>Creative</h3>
+            <span>Creative projects</span>
+          </div>
 
-        <div class="info-card gold-card">
-          <div class="card-number">02</div>
-          <h3>Educational</h3>
-          <p>Learning-focused videos for students and aspirants.</p>
-        </div>
+          <div class="subject-card">
+            <span>05</span>
+            <h3>Shorts</h3>
+            <span>Short-form content</span>
+          </div>
 
-        <div class="info-card purple-card">
-          <div class="card-number">03</div>
-          <h3>Book</h3>
-          <p>Echoes of Destiny and author-related content.</p>
-        </div>
+          <div class="subject-card">
+            <span>06</span>
+            <h3>Other</h3>
+            <span>More content</span>
+          </div>
 
-        <div class="info-card green-card">
-          <div class="card-number">04</div>
-          <h3>Creative</h3>
-          <p>Design, editing, technology and creative experiments.</p>
-        </div>
-
-        <div class="info-card gold-card">
-          <div class="card-number">05</div>
-          <h3>Shorts</h3>
-          <p>Short-form ideas, lessons and creative moments.</p>
-        </div>
-
-        <div class="info-card blue-card">
-          <div class="card-number">06</div>
-          <h3>Other</h3>
-          <p>Everything that does not fit another category.</p>
         </div>
 
       </div>
@@ -2425,82 +2684,77 @@
 
     <!-- =====================================================
          CREATIVE
-         ===================================================== -->
+    ====================================================== -->
 
     <section
       id="creative"
-      class="screen"
-    >
+      class="screen">
 
-      <div class="page-title">
+      <div class="screen-top">
 
-        <div class="eyebrow">
-          <span class="eyebrow-dot"></span>
-          Creative
+        <button
+          class="back-btn"
+          onclick="goBack()">
+          ‹
+        </button>
+
+        <div class="screen-title">
+          <h1>Creative</h1>
+          <p>Design · Editing · Graphics</p>
         </div>
-
-        <h1>Creative Work</h1>
-
-        <p>
-          Designs, editing and digital creative work.
-        </p>
 
       </div>
 
 
-      <div class="creative-grid">
+      <div class="content-grid">
 
-        <div class="info-card gold-card">
-          <div class="card-number">01</div>
+        <div class="content-card">
           <h3>Posters</h3>
-          <p>Promotional and social media poster designs.</p>
+          <p>
+            Promotional and social media poster designs.
+          </p>
+          <span class="coming">Coming Soon</span>
         </div>
 
-        <div class="info-card blue-card">
-          <div class="card-number">02</div>
+        <div class="content-card">
           <h3>Thumbnails</h3>
-          <p>Clean, readable and engaging video thumbnails.</p>
+          <p>
+            YouTube and digital content thumbnails.
+          </p>
+          <span class="coming">Coming Soon</span>
         </div>
 
-        <div class="info-card purple-card">
-          <div class="card-number">03</div>
+        <div class="content-card">
           <h3>Video Editing</h3>
-          <p>Short videos, reels and creative edits.</p>
+          <p>
+            Reels, videos and creative edits.
+          </p>
+          <span class="coming">Coming Soon</span>
         </div>
 
-        <div class="info-card green-card">
-          <div class="card-number">04</div>
+        <div class="content-card">
           <h3>Book Promotion</h3>
-          <p>Promotional designs and launch creatives.</p>
+          <p>
+            Creative promotional designs for books.
+          </p>
+          <span class="coming">Coming Soon</span>
         </div>
 
-        <div class="info-card blue-card">
-          <div class="card-number">05</div>
-          <h3>Social Designs</h3>
-          <p>Graphics created for digital platforms.</p>
+        <div class="content-card">
+          <h3>Social Media Designs</h3>
+          <p>
+            Digital graphics and social media content.
+          </p>
+          <span class="coming">Coming Soon</span>
         </div>
 
-        <div class="info-card gold-card">
-          <div class="card-number">06</div>
+        <div class="content-card">
           <h3>UI & Design</h3>
-          <p>Interfaces, layouts and digital experiences.</p>
+          <p>
+            Websites, interfaces and digital experiences.
+          </p>
+          <span class="coming">Coming Soon</span>
         </div>
-
-      </div>
-
-
-      <div style="height:15px;"></div>
-
-      <div class="coming-card">
-
-        <h3>
-          Creative portfolio coming here.
-        </h3>
-
-        <p>
-          Real creative projects and designs will be added
-          as the portfolio grows.
-        </p>
 
       </div>
 
@@ -2509,65 +2763,96 @@
 
     <!-- =====================================================
          PROJECTS
-         ===================================================== -->
+    ====================================================== -->
 
     <section
       id="projects"
-      class="screen"
-    >
+      class="screen">
 
-      <div class="page-title">
+      <div class="screen-top">
 
-        <div class="eyebrow">
-          <span class="eyebrow-dot"></span>
-          Projects
+        <button
+          class="back-btn"
+          onclick="goBack()">
+          ‹
+        </button>
+
+        <div class="screen-title">
+          <h1>Projects</h1>
+          <p>Ideas being built</p>
         </div>
-
-        <h1>Projects</h1>
-
-        <p>
-          Websites, apps, publishing and education projects.
-        </p>
 
       </div>
 
 
-      <div class="project-grid">
+      <div class="content-grid">
 
-        <div class="info-card blue-card">
-          <div class="card-number">01</div>
-          <h3>Websites</h3>
-          <p>Personal, creator and project websites.</p>
+        <div class="content-card project-card">
+
+          <span class="status">
+            Active
+          </span>
+
+          <h3 style="margin-top:12px;">
+            Jaydeep Singh App
+          </h3>
+
+          <p>
+            Official PWA bringing books, learning,
+            videos, creative work and projects together.
+          </p>
+
         </div>
 
-        <div class="info-card gold-card">
-          <div class="card-number">02</div>
-          <h3>Apps</h3>
-          <p>Mobile-first digital applications and experiments.</p>
+
+        <div class="content-card">
+
+          <h3>
+            Websites
+          </h3>
+
+          <p>
+            Personal, educational and creative websites.
+          </p>
+
+          <span class="coming">
+            More Coming Soon
+          </span>
+
         </div>
 
-        <div class="info-card purple-card">
-          <div class="card-number">03</div>
-          <h3>PWA</h3>
-          <p>Installable web applications for modern devices.</p>
+
+        <div class="content-card">
+
+          <h3>
+            Publishing Projects
+          </h3>
+
+          <p>
+            Books, digital editions and related publishing work.
+          </p>
+
+          <span class="coming">
+            More Coming Soon
+          </span>
+
         </div>
 
-        <div class="info-card green-card">
-          <div class="card-number">04</div>
-          <h3>Publishing</h3>
-          <p>Books, digital editions and publishing projects.</p>
-        </div>
 
-        <div class="info-card blue-card">
-          <div class="card-number">05</div>
-          <h3>Education</h3>
-          <p>Learning resources and educational experiments.</p>
-        </div>
+        <div class="content-card">
 
-        <div class="info-card gold-card">
-          <div class="card-number">06</div>
-          <h3>Experiments</h3>
-          <p>New ideas, technology and creative exploration.</p>
+          <h3>
+            Education Projects
+          </h3>
+
+          <p>
+            New ideas for learning and educational content.
+          </p>
+
+          <span class="coming">
+            More Coming Soon
+          </span>
+
         </div>
 
       </div>
@@ -2577,81 +2862,79 @@
 
     <!-- =====================================================
          UPDATES
-         ===================================================== -->
+    ====================================================== -->
 
     <section
       id="updates"
-      class="screen"
-    >
+      class="screen">
 
-      <div class="page-title">
+      <div class="screen-top">
 
-        <div class="eyebrow">
-          <span class="eyebrow-dot"></span>
-          Updates
+        <button
+          class="back-btn"
+          onclick="goBack()">
+          ‹
+        </button>
+
+        <div class="screen-title">
+          <h1>Updates</h1>
+          <p>Latest from Jaydeep Singh</p>
         </div>
-
-        <h1>What's New</h1>
-
-        <p>
-          New videos, lectures, books, projects and announcements.
-        </p>
 
       </div>
 
 
-      <div class="timeline">
+      <div class="content-grid">
 
-        <div class="timeline-item">
+        <div class="content-card update-card">
 
-          <div class="timeline-date">
-            September 2026
-          </div>
+          <span class="date">
+            2026
+          </span>
 
-          <h3>
-            Jaydeep Singh App
-          </h3>
-
-          <p>
-            The new official app is being developed to bring
-            books, learning, videos, creative work and projects
-            together.
-          </p>
-
-        </div>
-
-
-        <div class="timeline-item">
-
-          <div class="timeline-date">
-            September 2026
-          </div>
-
-          <h3>
+          <h3 style="margin-top:10px;">
             Echoes of Destiny
           </h3>
 
           <p>
-            The debut book is available through Amazon and
-            Google Play Books.
+            The debut book is now available in English.
           </p>
 
         </div>
 
 
-        <div class="timeline-item">
+        <div class="content-card">
 
-          <div class="timeline-date">
-            Coming Soon
-          </div>
+          <span class="date">
+            LATEST
+          </span>
 
-          <h3>
-            More Learning Content
+          <h3 style="margin-top:10px;">
+            Official App
           </h3>
 
           <p>
-            New subjects, lectures, notes and practice resources
-            will be added to the learning section.
+            The Jaydeep Singh app is being developed
+            as a central place for books, learning,
+            videos and creative work.
+          </p>
+
+        </div>
+
+
+        <div class="content-card">
+
+          <span class="coming">
+            Future Update
+          </span>
+
+          <h3 style="margin-top:12px;">
+            New Content
+          </h3>
+
+          <p>
+            New lectures, videos, projects and
+            creative work will be added here.
           </p>
 
         </div>
@@ -2663,352 +2946,268 @@
 
     <!-- =====================================================
          SERVICES
-         ===================================================== -->
+    ====================================================== -->
 
     <section
       id="services"
-      class="screen"
-    >
+      class="screen">
 
-      <div class="page-title">
+      <div class="screen-top">
 
-        <div class="eyebrow">
-          <span class="eyebrow-dot"></span>
-          Services
-        </div>
+        <button
+          class="back-btn"
+          onclick="goBack()">
+          ‹
+        </button>
 
-        <h1>Creative Services</h1>
-
-        <p>
-          Digital and creative work for individuals, creators
-          and projects.
-        </p>
-
-      </div>
-
-
-      <div class="service-grid">
-
-        <div class="info-card gold-card">
-          <div class="card-number">01</div>
-          <h3>Reel Editing</h3>
-          <p>Short-form video editing for social media.</p>
-        </div>
-
-        <div class="info-card blue-card">
-          <div class="card-number">02</div>
-          <h3>Video Editing</h3>
-          <p>Editing for educational and creative videos.</p>
-        </div>
-
-        <div class="info-card purple-card">
-          <div class="card-number">03</div>
-          <h3>Poster Design</h3>
-          <p>Promotional and social media graphics.</p>
-        </div>
-
-        <div class="info-card green-card">
-          <div class="card-number">04</div>
-          <h3>Thumbnail</h3>
-          <p>Clean and readable YouTube thumbnails.</p>
-        </div>
-
-        <div class="info-card blue-card">
-          <div class="card-number">05</div>
-          <h3>PDF</h3>
-          <p>PDF creation and document design.</p>
-        </div>
-
-        <div class="info-card gold-card">
-          <div class="card-number">06</div>
-          <h3>PPT</h3>
-          <p>Presentation design for educational and creative use.</p>
-        </div>
-
-        <div class="info-card purple-card">
-          <div class="card-number">07</div>
-          <h3>Website</h3>
-          <p>Modern websites for creators and projects.</p>
-        </div>
-
-        <div class="info-card green-card">
-          <div class="card-number">08</div>
-          <h3>PWA</h3>
-          <p>Installable web applications and digital experiences.</p>
-        </div>
-
-        <div class="info-card blue-card">
-          <div class="card-number">09</div>
-          <h3>Other Creative Work</h3>
-          <p>Custom digital and creative projects.</p>
+        <div class="screen-title">
+          <h1>Services</h1>
+          <p>Creative & digital work</p>
         </div>
 
       </div>
 
 
-      <div style="height:15px;"></div>
+      <div class="content-grid">
 
-      <a
-        class="button button-primary"
-        href="https://wa.me/919525572534"
-        target="_blank"
-        rel="noopener"
-        style="width:100%;"
-      >
-        Request a Service
-      </a>
+        <div class="content-card service-card">
+
+          <div class="service-left">
+            <h3>Reel Editing</h3>
+            <p>Short-form video editing.</p>
+          </div>
+
+          <div class="service-arrow">›</div>
+
+        </div>
+
+
+        <div class="content-card service-card">
+
+          <div class="service-left">
+            <h3>Video Editing</h3>
+            <p>Editing for digital videos.</p>
+          </div>
+
+          <div class="service-arrow">›</div>
+
+        </div>
+
+
+        <div class="content-card service-card">
+
+          <div class="service-left">
+            <h3>Poster Design</h3>
+            <p>Promotional and social designs.</p>
+          </div>
+
+          <div class="service-arrow">›</div>
+
+        </div>
+
+
+        <div class="content-card service-card">
+
+          <div class="service-left">
+            <h3>Thumbnail Design</h3>
+            <p>YouTube and digital thumbnails.</p>
+          </div>
+
+          <div class="service-arrow">›</div>
+
+        </div>
+
+
+        <div class="content-card service-card">
+
+          <div class="service-left">
+            <h3>PDF & PPT</h3>
+            <p>Documents and presentations.</p>
+          </div>
+
+          <div class="service-arrow">›</div>
+
+        </div>
+
+
+        <div class="content-card service-card">
+
+          <div class="service-left">
+            <h3>Website</h3>
+            <p>Personal and creative websites.</p>
+          </div>
+
+          <div class="service-arrow">›</div>
+
+        </div>
+
+
+        <div class="content-card service-card">
+
+          <div class="service-left">
+            <h3>PWA / App</h3>
+            <p>Progressive web app projects.</p>
+          </div>
+
+          <div class="service-arrow">›</div>
+
+        </div>
+
+
+        <div class="content-card service-card">
+
+          <div class="service-left">
+            <h3>Other Creative Work</h3>
+            <p>Custom digital creative projects.</p>
+          </div>
+
+          <div class="service-arrow">›</div>
+
+        </div>
+
+      </div>
 
     </section>
 
 
     <!-- =====================================================
          ABOUT
-         ===================================================== -->
+    ====================================================== -->
 
     <section
       id="about"
-      class="screen"
-    >
+      class="screen">
 
-      <div class="page-title">
+      <div class="screen-top">
 
-        <div class="eyebrow">
-          <span class="eyebrow-dot"></span>
-          About
+        <button
+          class="back-btn"
+          onclick="goBack()">
+          ‹
+        </button>
+
+        <div class="screen-title">
+          <h1>About</h1>
+          <p>Jaydeep Singh</p>
         </div>
-
-        <h1>Jaydeep Singh</h1>
-
-        <p>
-          Author · Mentor · Creator
-        </p>
 
       </div>
 
 
-      <div class="about-card">
+      <div class="about-full">
+
+        <img
+          class="about-full-photo"
+          src="profile.jpg"
+          alt="Jaydeep Singh">
 
         <h2>
           About Jaydeep Singh
         </h2>
 
         <p>
-          Jaydeep Singh is an author, mentor, creator, and a
-          student who believes that learning and growth are
-          lifelong journeys. His work is shaped by curiosity,
-          observation, creativity, and the everyday experiences
-          that quietly influence who we become.
+          Jaydeep Singh is an author, mentor, creator,
+          and a student who believes that learning and
+          growth are lifelong journeys. His work is shaped
+          by curiosity, observation, creativity, and the
+          everyday experiences that quietly influence
+          who we become.
         </p>
 
         <p>
           As an author, Jaydeep made his debut with
           <em>Echoes of Destiny: The Untold Story of Our Generation</em>,
-          a book inspired by childhood, family, dreams, struggles,
-          emotions, hope, and the experiences of growing up.
+          a book inspired by childhood, family, dreams,
+          struggles, emotions, hope, and the experiences
+          of growing up.
         </p>
 
         <p>
-          As a mentor, he is passionate about sharing knowledge
-          with students and learners. His teaching interests
-          include English, Mathematics, Science, History,
-          Political Science, and Reasoning.
+          As a mentor, he is passionate about sharing
+          knowledge with students and learners. His teaching
+          interests include English, Mathematics, Science,
+          History, Political Science, and Reasoning, with
+          content designed for Classes 6–12 as well as
+          competitive-exam aspirants.
         </p>
 
         <p>
-          As a creator, Jaydeep explores videos, digital content,
-          design, technology, websites, apps, and new creative
-          projects. He sees every project as an opportunity to
-          learn something new and create something meaningful.
+          As a creator, Jaydeep explores videos, digital
+          content, design, technology, websites, apps,
+          and new creative projects. He sees every project
+          as an opportunity to learn something new and
+          create something meaningful.
         </p>
 
         <p>
-          His journey is still unfolding — from writing his
-          first book to teaching, creating, experimenting with
-          technology, and building new ideas.
+          His journey is still unfolding—from writing his
+          first book to teaching, creating, experimenting
+          with technology, and building new ideas.
+          This platform brings those different sides of
+          his work together in one place.
         </p>
 
         <div class="quote">
-
-          “Life is full of problems,
-          and only you are its solution.”
-
-          <small>
-            — Jaydeep Singh
-          </small>
-
+          “Life is full of problems, and only you are
+          its solution.”
+          <br><br>
+          — Jaydeep Singh
         </div>
 
       </div>
 
     </section>
 
-
   </main>
 
 
   <!-- =======================================================
-       SIDE MENU
-       ======================================================= -->
-
-  <div
-    id="menuOverlay"
-    class="menu-overlay"
-    onclick="closeMenu(event)"
-  >
-
-    <aside
-      class="side-menu"
-      onclick="event.stopPropagation()"
-    >
-
-      <div class="menu-top">
-
-        <div class="menu-brand">
-
-          <img
-            src="icons/icon-192.png"
-            alt="Jaydeep Singh"
-          >
-
-          <div>
-            <strong>Jaydeep Singh</strong>
-            <span>AUTHOR · MENTOR · CREATOR</span>
-          </div>
-
-        </div>
-
-        <button
-          class="close-menu"
-          onclick="closeMenu()"
-          aria-label="Close menu"
-        >
-          ×
-        </button>
-
-      </div>
-
-
-      <nav class="menu-list">
-
-        <button
-          class="menu-item"
-          onclick="navigateMenu('home')"
-        >
-          <span>Home</span>
-          <span class="menu-arrow">›</span>
-        </button>
-
-        <button
-          class="menu-item"
-          onclick="navigateMenu('books')"
-        >
-          <span>Books</span>
-          <span class="menu-arrow">›</span>
-        </button>
-
-        <button
-          class="menu-item"
-          onclick="navigateMenu('learning')"
-        >
-          <span>Learning</span>
-          <span class="menu-arrow">›</span>
-        </button>
-
-        <button
-          class="menu-item"
-          onclick="navigateMenu('videos')"
-        >
-          <span>Videos</span>
-          <span class="menu-arrow">›</span>
-        </button>
-
-        <button
-          class="menu-item"
-          onclick="navigateMenu('creative')"
-        >
-          <span>Creative</span>
-          <span class="menu-arrow">›</span>
-        </button>
-
-        <button
-          class="menu-item"
-          onclick="navigateMenu('projects')"
-        >
-          <span>Projects</span>
-          <span class="menu-arrow">›</span>
-        </button>
-
-        <button
-          class="menu-item"
-          onclick="navigateMenu('updates')"
-        >
-          <span>Updates</span>
-          <span class="menu-arrow">›</span>
-        </button>
-
-        <button
-          class="menu-item"
-          onclick="navigateMenu('services')"
-        >
-          <span>Services</span>
-          <span class="menu-arrow">›</span>
-        </button>
-
-        <button
-          class="menu-item"
-          onclick="navigateMenu('about')"
-        >
-          <span>About</span>
-          <span class="menu-arrow">›</span>
-        </button>
-
-      </nav>
-
-    </aside>
-
-  </div>
-
-
-  <!-- =======================================================
        BOTTOM NAV
-       ======================================================= -->
+  ======================================================== -->
 
   <nav class="bottom-nav">
 
     <button
-      class="nav-button active"
+      class="nav-item active"
       data-screen="home"
-      onclick="showScreen('home')"
-    >
-      <span class="nav-symbol">⌂</span>
-      <span class="nav-label">Home</span>
+      onclick="goTo('home')">
+
+      <span class="nav-icon">⌂</span>
+      <span>Home</span>
+
     </button>
 
+
     <button
-      class="nav-button"
+      class="nav-item"
       data-screen="books"
-      onclick="showScreen('books')"
-    >
-      <span class="nav-symbol">▤</span>
-      <span class="nav-label">Books</span>
+      onclick="goTo('books')">
+
+      <span class="nav-icon">▤</span>
+      <span>Books</span>
+
     </button>
 
+
     <button
-      class="nav-button"
+      class="nav-item"
       data-screen="learning"
-      onclick="showScreen('learning')"
-    >
-      <span class="nav-symbol">◇</span>
-      <span class="nav-label">Learn</span>
+      onclick="goTo('learning')">
+
+      <span class="nav-icon">◇</span>
+      <span>Learn</span>
+
     </button>
 
+
     <button
-      class="nav-button"
+      class="nav-item"
       data-screen="about"
-      onclick="showScreen('about')"
-    >
-      <span class="nav-symbol">JS</span>
-      <span class="nav-label">About</span>
+      onclick="goTo('about')">
+
+      <span class="nav-icon">JS</span>
+      <span>About</span>
+
     </button>
 
   </nav>
@@ -3016,17 +3215,17 @@
 
   <!-- =======================================================
        JAVASCRIPT
-       ======================================================= -->
+  ======================================================== -->
 
   <script>
 
     /* -------------------------------------------------------
-       Splash
-       ------------------------------------------------------- */
+       SPLASH
+    ------------------------------------------------------- */
 
-    window.addEventListener("load", function () {
+    window.addEventListener("load", function() {
 
-      setTimeout(function () {
+      setTimeout(function() {
 
         const splash = document.getElementById("splash");
 
@@ -3034,116 +3233,127 @@
           splash.classList.add("hide");
         }
 
-      }, 2600);
+      }, 3200);
 
     });
 
 
     /* -------------------------------------------------------
-       Screen Navigation
-       ------------------------------------------------------- */
+       MENU
+    ------------------------------------------------------- */
 
-    function showScreen(screenId) {
+    function openMenu() {
 
-      const screens =
-        document.querySelectorAll(".screen");
+      document
+        .getElementById("sideMenu")
+        .classList.add("open");
 
-      screens.forEach(function (screen) {
+      document
+        .getElementById("menuBackdrop")
+        .classList.add("open");
 
-        screen.classList.remove("active");
+    }
 
-      });
+
+    function closeMenu() {
+
+      document
+        .getElementById("sideMenu")
+        .classList.remove("open");
+
+      document
+        .getElementById("menuBackdrop")
+        .classList.remove("open");
+
+    }
+
+
+    /* -------------------------------------------------------
+       SCREEN NAVIGATION
+    ------------------------------------------------------- */
+
+    let currentScreen = "home";
+    let previousScreen = "home";
+
+
+    function goTo(screenId) {
+
+      closeMenu();
+
+      if (screenId === currentScreen) {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
+        return;
+      }
+
+      previousScreen = currentScreen;
+      currentScreen = screenId;
+
+
+      document
+        .querySelectorAll(".screen")
+        .forEach(function(screen) {
+
+          screen.classList.remove("active");
+
+        });
 
 
       const target =
         document.getElementById(screenId);
 
       if (target) {
-
         target.classList.add("active");
-
       }
 
 
-      const navButtons =
-        document.querySelectorAll(".nav-button");
+      document
+        .querySelectorAll(".nav-item")
+        .forEach(function(item) {
 
-      navButtons.forEach(function (button) {
+          item.classList.remove("active");
 
-        button.classList.remove("active");
+          if (
+            item.dataset.screen === screenId
+          ) {
+            item.classList.add("active");
+          }
 
-        if (
-          button.getAttribute("data-screen")
-          === screenId
-        ) {
-
-          button.classList.add("active");
-
-        }
-
-      });
+        });
 
 
       window.scrollTo({
         top: 0,
-        behavior: "smooth"
+        behavior: "instant"
       });
 
-
-      closeMenu();
     }
 
 
     /* -------------------------------------------------------
-       Side Menu
-       ------------------------------------------------------- */
+       BACK BUTTON
+    ------------------------------------------------------- */
 
-    function openMenu() {
+    function goBack() {
 
-      const overlay =
-        document.getElementById("menuOverlay");
-
-      if (overlay) {
-        overlay.classList.add("open");
-      }
-
-      document.body.style.overflow = "hidden";
-    }
-
-
-    function closeMenu(event) {
-
-      if (
-        event &&
-        event.target &&
-        event.target.id !== "menuOverlay"
-      ) {
+      if (currentScreen === "home") {
         return;
       }
 
-      const overlay =
-        document.getElementById("menuOverlay");
-
-      if (overlay) {
-        overlay.classList.remove("open");
-      }
-
-      document.body.style.overflow = "";
-    }
-
-
-    function navigateMenu(screenId) {
-
-      showScreen(screenId);
-
-      closeMenu();
+      goTo("home");
 
     }
 
+
+    /* -------------------------------------------------------
+       ESCAPE CLOSE MENU
+    ------------------------------------------------------- */
 
     document.addEventListener(
       "keydown",
-      function (event) {
+      function(event) {
 
         if (event.key === "Escape") {
           closeMenu();
@@ -3154,97 +3364,97 @@
 
 
     /* -------------------------------------------------------
-       PWA Install
-       ------------------------------------------------------- */
+       PWA INSTALL
+       manifest + service worker will be connected
+       in the next files.
+    ------------------------------------------------------- */
 
-    let deferredPrompt = null;
-
-    const installBtn =
-      document.getElementById("installBtn");
-
+    let deferredInstallPrompt = null;
 
     window.addEventListener(
       "beforeinstallprompt",
-      function (event) {
+      function(event) {
 
         event.preventDefault();
 
-        deferredPrompt = event;
+        deferredInstallPrompt = event;
 
-        if (installBtn) {
-          installBtn.style.display = "inline-flex";
+        const installButton =
+          document.getElementById("installBtn");
+
+        if (installButton) {
+          installButton.textContent =
+            "Install App";
         }
 
       }
     );
 
 
-    if (installBtn) {
+    async function installApp() {
 
-      installBtn.addEventListener(
-        "click",
-        async function () {
+      const note =
+        document.getElementById("installNote");
 
-          if (!deferredPrompt) {
-            return;
+      if (deferredInstallPrompt) {
+
+        deferredInstallPrompt.prompt();
+
+        const result =
+          await deferredInstallPrompt.userChoice;
+
+        deferredInstallPrompt = null;
+
+        if (result.outcome === "accepted") {
+
+          const installButton =
+            document.getElementById("installBtn");
+
+          if (installButton) {
+            installButton.textContent =
+              "App Installed";
           }
 
-          deferredPrompt.prompt();
-
-          await deferredPrompt.userChoice;
-
-          deferredPrompt = null;
-
-          installBtn.style.display = "none";
-
         }
-      );
+
+        return;
+      }
+
+
+      /* Browser does not currently expose
+         the installation prompt. */
+
+      if (note) {
+        note.classList.add("show");
+      }
 
     }
 
 
-    window.addEventListener(
-      "appinstalled",
-      function () {
-
-        deferredPrompt = null;
-
-        if (installBtn) {
-          installBtn.style.display = "none";
-        }
-
-        console.log(
-          "Jaydeep Singh App installed."
-        );
-
-      }
-    );
-
-
     /* -------------------------------------------------------
-       Service Worker
-       ------------------------------------------------------- */
+       SERVICE WORKER
+       The actual service-worker.js will be finalized next.
+    ------------------------------------------------------- */
 
     if ("serviceWorker" in navigator) {
 
       window.addEventListener(
         "load",
-        function () {
+        function() {
 
           navigator.serviceWorker
-            .register("./service-worker.js")
-            .then(function (registration) {
+            .register("service-worker.js")
+            .then(function() {
 
               console.log(
-                "Service Worker registered:",
-                registration.scope
+                "Jaydeep Singh service worker registered."
               );
 
             })
-            .catch(function (error) {
+            .catch(function(error) {
 
-              console.error(
-                "Service Worker registration failed:",
+              console.log(
+                "Service worker registration pending:",
                 error
               );
 
@@ -3254,6 +3464,28 @@
       );
 
     }
+
+
+    /* -------------------------------------------------------
+       INSTALLED STATE
+    ------------------------------------------------------- */
+
+    window.addEventListener(
+      "appinstalled",
+      function() {
+
+        const installButton =
+          document.getElementById("installBtn");
+
+        if (installButton) {
+          installButton.textContent =
+            "App Installed";
+        }
+
+        deferredInstallPrompt = null;
+
+      }
+    );
 
   </script>
 
