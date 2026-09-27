@@ -10,42 +10,28 @@
   <meta name="description"
         content="Jaydeep Singh — Author, Mentor & Creator">
 
-  <link rel="manifest" href="manifest.json">
-  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <!-- PWA -->
+  <link rel="manifest" href="./manifest.json">
+  <link rel="apple-touch-icon" href="./assets/icon-192.png">
 
   <title>Jaydeep Singh | Author · Mentor · Creator</title>
 
   <style>
-    /* =========================================================
-       JAYDEEP SINGH APP
-       FINAL LIGHT CINEMATIC DESIGN
-    ========================================================= */
-
     :root {
       --bg: #f7f4ed;
       --surface: #fffdf9;
       --surface-2: #f3eee3;
-
       --ink: #17191d;
       --muted: #72757b;
-
       --gold: #b88a3b;
       --gold-dark: #8f6828;
       --gold-soft: #f3e5c8;
-
       --navy: #172b46;
-      --navy-2: #27496f;
-
       --green: #20c86b;
-      --instagram-1: #f9ce34;
-      --instagram-2: #ee2a7b;
-      --instagram-3: #6228d7;
       --youtube: #ff0033;
-
-      --border: rgba(23, 25, 29, 0.08);
-      --shadow: 0 18px 45px rgba(36, 32, 24, 0.09);
-      --shadow-soft: 0 8px 25px rgba(36, 32, 24, 0.07);
-
+      --border: rgba(23,25,29,.08);
+      --shadow: 0 18px 45px rgba(36,32,24,.09);
+      --shadow-soft: 0 8px 25px rgba(36,32,24,.07);
       --radius-xl: 28px;
       --radius-lg: 22px;
       --radius-md: 17px;
@@ -64,25 +50,14 @@
 
     body {
       font-family:
-        Inter,
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        Roboto,
-        Arial,
-        sans-serif;
+        Inter, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", Roboto, Arial, sans-serif;
 
       background:
-        radial-gradient(
-          circle at 10% 0%,
-          rgba(214, 178, 108, 0.10),
-          transparent 28%
-        ),
-        radial-gradient(
-          circle at 100% 20%,
-          rgba(91, 126, 164, 0.08),
-          transparent 28%
-        ),
+        radial-gradient(circle at 10% 0%,
+          rgba(214,178,108,.10), transparent 28%),
+        radial-gradient(circle at 100% 20%,
+          rgba(91,126,164,.08), transparent 28%),
         var(--bg);
 
       color: var(--ink);
@@ -90,8 +65,11 @@
       overflow-x: hidden;
     }
 
-    button,
-    a {
+    body.menu-open {
+      overflow: hidden;
+    }
+
+    button, a {
       font: inherit;
     }
 
@@ -110,9 +88,9 @@
       max-width: 100%;
     }
 
-    /* =========================================================
+    /* =====================================================
        SPLASH
-    ========================================================= */
+    ===================================================== */
 
     #splash {
       position: fixed;
@@ -124,19 +102,17 @@
       justify-content: center;
 
       background:
-        radial-gradient(
-          circle at center,
+        radial-gradient(circle at center,
           #243b58 0%,
           #111c2c 46%,
-          #0a111b 100%
-        );
+          #0a111b 100%);
 
       color: white;
       overflow: hidden;
     }
 
     #splash.hide {
-      animation: splashOut 0.8s ease forwards;
+      animation: splashOut .8s ease forwards;
       pointer-events: none;
     }
 
@@ -152,14 +128,14 @@
       height: 240px;
       left: 50%;
       top: 50%;
+
       transform: translate(-50%, -58%);
 
-      background: radial-gradient(
-        circle,
-        rgba(218, 169, 73, 0.28),
-        rgba(218, 169, 73, 0.08) 38%,
-        transparent 70%
-      );
+      background:
+        radial-gradient(circle,
+          rgba(218,169,73,.28),
+          rgba(218,169,73,.08) 38%,
+          transparent 70%);
 
       filter: blur(8px);
       animation: glowPulse 2.3s ease-in-out infinite;
@@ -181,17 +157,13 @@
       width: 88px;
       height: 42px;
 
-      background: linear-gradient(
-        180deg,
-        #d7a54e,
-        #9c6721
-      );
+      background: linear-gradient(180deg,#d7a54e,#9c6721);
 
       border-radius: 0 0 55px 55px / 0 0 35px 35px;
 
       box-shadow:
-        0 9px 20px rgba(0,0,0,0.35),
-        inset 0 2px 5px rgba(255,255,255,0.28);
+        0 9px 20px rgba(0,0,0,.35),
+        inset 0 2px 5px rgba(255,255,255,.28);
 
       animation: diyaAppear 1s ease both;
     }
@@ -206,12 +178,7 @@
       width: 70px;
       height: 22px;
 
-      background: linear-gradient(
-        180deg,
-        #edc271,
-        #b57928
-      );
-
+      background: linear-gradient(180deg,#edc271,#b57928);
       border-radius: 50%;
     }
 
@@ -219,37 +186,35 @@
       position: absolute;
       left: 50%;
       top: -70px;
-      transform: translateX(-50%);
 
       width: 31px;
       height: 55px;
 
       background:
-        radial-gradient(
-          ellipse at center bottom,
+        radial-gradient(ellipse at center bottom,
           #fff9cf 0%,
           #ffd66d 32%,
           #f39b29 64%,
-          transparent 68%
-        );
+          transparent 68%);
 
       border-radius: 50% 50% 45% 45%;
-      filter: drop-shadow(0 0 17px rgba(255, 188, 67, 0.9));
 
+      filter:
+        drop-shadow(0 0 17px rgba(255,188,67,.9));
+
+      transform: translateX(-50%);
       transform-origin: bottom center;
 
       animation:
-        flameIn 1s 0.25s ease both,
+        flameIn 1s .25s ease both,
         flameMove 1.1s 1.2s ease-in-out infinite;
     }
 
     .flame::after {
       content: "";
       position: absolute;
-
       left: 50%;
       bottom: 6px;
-      transform: translateX(-50%);
 
       width: 11px;
       height: 25px;
@@ -257,42 +222,43 @@
       background: #fffce5;
       border-radius: 50%;
       filter: blur(1px);
+
+      transform: translateX(-50%);
     }
 
     .splash-symbol {
       margin-top: 22px;
       font-size: 20px;
       opacity: 0;
-      animation: fadeUp 0.8s 0.9s ease forwards;
+      animation: fadeUp .8s .9s ease forwards;
     }
 
     .splash-name {
       margin-top: 23px;
-
-      font-size: clamp(25px, 7vw, 36px);
+      font-size: clamp(25px,7vw,36px);
       font-weight: 800;
-      letter-spacing: 0.15em;
+      letter-spacing: .15em;
 
       opacity: 0;
-      animation: fadeUp 0.8s 1.05s ease forwards;
+      animation: fadeUp .8s 1.05s ease forwards;
     }
 
     .splash-role {
       margin-top: 10px;
-
       color: #e1bd77;
+
       font-size: 11px;
       font-weight: 700;
-      letter-spacing: 0.28em;
+      letter-spacing: .28em;
 
       opacity: 0;
-      animation: fadeUp 0.8s 1.25s ease forwards;
+      animation: fadeUp .8s 1.25s ease forwards;
     }
 
     @keyframes diyaAppear {
       from {
         opacity: 0;
-        transform: translateY(18px) scale(0.85);
+        transform: translateY(18px) scale(.85);
       }
       to {
         opacity: 1;
@@ -303,7 +269,7 @@
     @keyframes flameIn {
       from {
         opacity: 0;
-        transform: translateX(-50%) scale(0.25);
+        transform: translateX(-50%) scale(.25);
       }
       to {
         opacity: 1;
@@ -323,11 +289,11 @@
     @keyframes glowPulse {
       0%,100% {
         opacity: .65;
-        transform: translate(-50%, -58%) scale(.9);
+        transform: translate(-50%,-58%) scale(.9);
       }
       50% {
         opacity: 1;
-        transform: translate(-50%, -58%) scale(1.08);
+        transform: translate(-50%,-58%) scale(1.08);
       }
     }
 
@@ -349,9 +315,9 @@
       }
     }
 
-    /* =========================================================
-       APP HEADER
-    ========================================================= */
+    /* =====================================================
+       HEADER
+    ===================================================== */
 
     .app-header {
       position: sticky;
@@ -364,10 +330,9 @@
       align-items: center;
       justify-content: space-between;
 
-      padding:
-        10px 20px;
+      padding: 10px 20px;
 
-      background: rgba(255, 253, 249, 0.92);
+      background: rgba(255,253,249,.92);
       backdrop-filter: blur(18px);
       -webkit-backdrop-filter: blur(18px);
 
@@ -379,21 +344,17 @@
       align-items: center;
       gap: 12px;
       min-width: 0;
+      background: none;
+      text-align: left;
     }
 
     .brand-photo {
       width: 52px;
       height: 52px;
-
       object-fit: cover;
-
       border-radius: 50%;
-
-      border: 2px solid rgba(184, 138, 59, 0.32);
-
-      box-shadow:
-        0 5px 16px rgba(0,0,0,.08);
-
+      border: 2px solid rgba(184,138,59,.32);
+      box-shadow: 0 5px 16px rgba(0,0,0,.08);
       background: #eee7da;
     }
 
@@ -410,9 +371,7 @@
 
     .brand-role {
       margin-top: 3px;
-
       color: var(--gold-dark);
-
       font-size: 10px;
       font-weight: 800;
       letter-spacing: .14em;
@@ -427,10 +386,8 @@
       place-items: center;
 
       border-radius: 17px;
-
       background: rgba(255,255,255,.75);
       border: 1px solid var(--border);
-
       box-shadow: var(--shadow-soft);
 
       transition: .2s ease;
@@ -453,16 +410,16 @@
       border-radius: 4px;
     }
 
-    /* =========================================================
-       MENU
-    ========================================================= */
+    /* =====================================================
+       SIDE MENU
+    ===================================================== */
 
     .menu-backdrop {
       position: fixed;
       inset: 0;
       z-index: 800;
 
-      background: rgba(14, 21, 31, .28);
+      background: rgba(14,21,31,.28);
       backdrop-filter: blur(3px);
 
       opacity: 0;
@@ -484,18 +441,14 @@
 
       z-index: 900;
 
-      width: min(88vw, 370px);
+      width: min(88vw,370px);
 
       padding:
         25px 20px
         calc(25px + env(safe-area-inset-bottom));
 
       background:
-        linear-gradient(
-          150deg,
-          #fffdf9,
-          #f4ead8
-        );
+        linear-gradient(150deg,#fffdf9,#f4ead8);
 
       border-left: 1px solid var(--border);
 
@@ -515,7 +468,6 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-
       margin-bottom: 28px;
     }
 
@@ -529,10 +481,8 @@
       height: 44px;
 
       border-radius: 14px;
-
       background: #fff;
       border: 1px solid var(--border);
-
       font-size: 24px;
     }
 
@@ -551,7 +501,6 @@
       padding: 16px 17px;
 
       background: rgba(255,255,255,.7);
-
       border: 1px solid var(--border);
       border-radius: 16px;
 
@@ -570,9 +519,9 @@
       font-size: 20px;
     }
 
-    /* =========================================================
-       MAIN
-    ========================================================= */
+    /* =====================================================
+       MAIN / SCREENS
+    ===================================================== */
 
     main {
       padding-bottom: 120px;
@@ -580,9 +529,11 @@
 
     .screen {
       display: none;
+
       padding: 22px 18px 30px;
       max-width: 980px;
       margin: 0 auto;
+
       animation: screenIn .3s ease;
     }
 
@@ -595,52 +546,82 @@
         opacity: 0;
         transform: translateY(8px);
       }
-
       to {
         opacity: 1;
         transform: translateY(0);
       }
     }
 
-    /* =========================================================
-       HOME HERO
-    ========================================================= */
+    .screen-top {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      margin-bottom: 22px;
+    }
+
+    .back-btn {
+      width: 46px;
+      height: 46px;
+
+      flex: 0 0 46px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 15px;
+
+      background: white;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-soft);
+
+      color: var(--navy);
+      font-size: 31px;
+      line-height: 1;
+
+      transition: .2s ease;
+    }
+
+    .back-btn:active {
+      transform: scale(.94);
+    }
+
+    .screen-title h1 {
+      font-size: 30px;
+      letter-spacing: -.035em;
+    }
+
+    .screen-title p {
+      margin-top: 3px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* =====================================================
+       HERO
+    ===================================================== */
 
     .hero {
       position: relative;
       overflow: hidden;
 
       padding: 31px 25px;
-
       min-height: 300px;
 
       border-radius: var(--radius-xl);
 
       background:
-        radial-gradient(
-          circle at 90% 5%,
-          rgba(194, 157, 91, .28),
-          transparent 30%
-        ),
-        radial-gradient(
-          circle at 10% 90%,
-          rgba(69, 101, 137, .12),
-          transparent 32%
-        ),
-        linear-gradient(
-          135deg,
-          #fffdf8,
-          #f5eddf
-        );
+        radial-gradient(circle at 90% 5%,
+          rgba(194,157,91,.28), transparent 30%),
+        radial-gradient(circle at 10% 90%,
+          rgba(69,101,137,.12), transparent 32%),
+        linear-gradient(135deg,#fffdf8,#f5eddf);
 
       border: 1px solid rgba(184,138,59,.15);
-
       box-shadow: var(--shadow);
     }
 
     .hero::before {
       content: "";
-
       position: absolute;
       right: -80px;
       bottom: -100px;
@@ -650,23 +631,6 @@
 
       border: 1px solid rgba(184,138,59,.18);
       border-radius: 50%;
-    }
-
-    .hero::after {
-      content: "";
-
-      position: absolute;
-      right: 25px;
-      bottom: 28px;
-
-      width: 90px;
-      height: 1px;
-
-      background: linear-gradient(
-        90deg,
-        transparent,
-        var(--gold)
-      );
     }
 
     .eyebrow {
@@ -689,7 +653,6 @@
       font-size: 10px;
       font-weight: 850;
       letter-spacing: .12em;
-      text-transform: uppercase;
     }
 
     .eyebrow-dot {
@@ -704,10 +667,9 @@
       z-index: 2;
 
       margin-top: 22px;
-
       max-width: 610px;
 
-      font-size: clamp(35px, 9vw, 65px);
+      font-size: clamp(35px,9vw,65px);
       line-height: .98;
       letter-spacing: -.045em;
     }
@@ -721,7 +683,6 @@
       z-index: 2;
 
       margin-top: 20px;
-
       max-width: 600px;
 
       color: var(--muted);
@@ -749,11 +710,9 @@
       justify-content: center;
 
       padding: 0 19px;
-
       border-radius: 15px;
 
       font-weight: 800;
-
       transition: .2s ease;
     }
 
@@ -762,29 +721,20 @@
     }
 
     .btn-gold {
-      background:
-        linear-gradient(
-          135deg,
-          #c99b4b,
-          #a87529
-        );
-
+      background: linear-gradient(135deg,#c99b4b,#a87529);
       color: white;
-
-      box-shadow:
-        0 9px 22px rgba(166,117,41,.22);
+      box-shadow: 0 9px 22px rgba(166,117,41,.22);
     }
 
     .btn-light {
       background: rgba(255,255,255,.86);
       color: var(--navy);
-
       border: 1px solid var(--border);
     }
 
-    /* =========================================================
-       SECTION HEADINGS
-    ========================================================= */
+    /* =====================================================
+       HEADINGS
+    ===================================================== */
 
     .section-heading {
       display: flex;
@@ -792,7 +742,6 @@
       justify-content: space-between;
 
       gap: 15px;
-
       margin: 35px 4px 14px;
     }
 
@@ -812,11 +761,12 @@
       font-size: 13px;
       font-weight: 800;
       white-space: nowrap;
+      background: none;
     }
 
-    /* =========================================================
-       BOOK CARD
-    ========================================================= */
+    /* =====================================================
+       BOOK
+    ===================================================== */
 
     .book-card {
       display: grid;
@@ -831,21 +781,17 @@
       border-radius: var(--radius-xl);
 
       box-shadow: var(--shadow);
-
       overflow: hidden;
     }
 
     .book-cover {
       width: 145px;
-      aspect-ratio: 2 / 3;
+      aspect-ratio: 2/3;
 
       object-fit: cover;
-
       border-radius: 15px;
 
-      box-shadow:
-        0 14px 28px rgba(0,0,0,.18);
-
+      box-shadow: 0 14px 28px rgba(0,0,0,.18);
       background: #e9e1d4;
     }
 
@@ -863,7 +809,6 @@
       padding: 7px 10px;
 
       border-radius: 9px;
-
       background: var(--gold-soft);
 
       color: var(--gold-dark);
@@ -876,16 +821,13 @@
 
     .book-info h3 {
       margin-top: 13px;
-
       font-size: 22px;
       line-height: 1.15;
     }
 
     .book-subtitle {
       margin-top: 6px;
-
       color: var(--muted);
-
       font-size: 13px;
       line-height: 1.5;
     }
@@ -894,7 +836,6 @@
       display: flex;
       flex-wrap: wrap;
       gap: 7px;
-
       margin-top: 13px;
     }
 
@@ -902,7 +843,6 @@
       padding: 6px 9px;
 
       border-radius: 8px;
-
       background: #f2f2f2;
 
       color: #64666b;
@@ -915,7 +855,6 @@
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-
       margin-top: 14px;
     }
 
@@ -923,7 +862,6 @@
       min-height: 40px;
 
       padding: 0 14px;
-
       border-radius: 12px;
 
       display: inline-flex;
@@ -944,13 +882,13 @@
       color: var(--gold-dark);
     }
 
-    /* =========================================================
+    /* =====================================================
        QUICK CARDS
-    ========================================================= */
+    ===================================================== */
 
     .quick-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(2,1fr);
       gap: 12px;
     }
 
@@ -959,17 +897,15 @@
       overflow: hidden;
 
       min-height: 155px;
-
       padding: 20px;
 
       border-radius: 22px;
-
       border: 1px solid var(--border);
 
       box-shadow: var(--shadow-soft);
-
       background: white;
 
+      text-align: left;
       transition: .2s ease;
     }
 
@@ -988,13 +924,11 @@
       bottom: -45px;
 
       border-radius: 50%;
-
       background: rgba(184,138,59,.08);
     }
 
     .quick-number {
       color: var(--gold-dark);
-
       font-size: 11px;
       font-weight: 900;
       letter-spacing: .1em;
@@ -1002,58 +936,35 @@
 
     .quick-card h3 {
       margin-top: 35px;
-
       font-size: 20px;
     }
 
     .quick-card p {
       margin-top: 6px;
-
       color: var(--muted);
-
       font-size: 12px;
       line-height: 1.45;
     }
 
     .quick-learning {
-      background:
-        linear-gradient(
-          135deg,
-          #fffdf9,
-          #eef5f1
-        );
+      background: linear-gradient(135deg,#fffdf9,#eef5f1);
     }
 
     .quick-videos {
-      background:
-        linear-gradient(
-          135deg,
-          #fffdf9,
-          #f4f0e7
-        );
+      background: linear-gradient(135deg,#fffdf9,#f4f0e7);
     }
 
     .quick-creative {
-      background:
-        linear-gradient(
-          135deg,
-          #fffdf9,
-          #eef4f8
-        );
+      background: linear-gradient(135deg,#fffdf9,#eef4f8);
     }
 
     .quick-projects {
-      background:
-        linear-gradient(
-          135deg,
-          #fffdf9,
-          #f4eff9
-        );
+      background: linear-gradient(135deg,#fffdf9,#f4eff9);
     }
 
-    /* =========================================================
-       ABOUT HOME
-    ========================================================= */
+    /* =====================================================
+       ABOUT
+    ===================================================== */
 
     .about-card {
       display: flex;
@@ -1063,7 +974,6 @@
       padding: 20px;
 
       border-radius: var(--radius-xl);
-
       background: white;
       border: 1px solid var(--border);
 
@@ -1077,15 +987,12 @@
       flex: 0 0 105px;
 
       object-fit: cover;
-
       border-radius: 50%;
 
       border: 3px solid white;
-
       outline: 1px solid rgba(184,138,59,.32);
 
       box-shadow: 0 10px 25px rgba(0,0,0,.12);
-
       background: #eee7da;
     }
 
@@ -1095,20 +1002,70 @@
 
     .about-card p {
       margin-top: 7px;
-
       color: var(--muted);
-
       font-size: 14px;
       line-height: 1.55;
     }
 
-    /* =========================================================
-       SOCIAL CARDS
-    ========================================================= */
+    .about-full {
+      padding: 25px;
+
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+
+      box-shadow: var(--shadow);
+    }
+
+    .about-full-photo {
+      width: 130px;
+      height: 130px;
+
+      object-fit: cover;
+      border-radius: 50%;
+
+      margin: 0 auto 22px;
+
+      border: 4px solid white;
+      outline: 1px solid rgba(184,138,59,.3);
+      box-shadow: 0 12px 28px rgba(0,0,0,.12);
+    }
+
+    .about-full h2 {
+      font-size: 28px;
+      margin-bottom: 18px;
+      text-align: center;
+    }
+
+    .about-full p {
+      color: var(--muted);
+      line-height: 1.75;
+      font-size: 15px;
+      margin-top: 15px;
+    }
+
+    .quote {
+      margin-top: 25px;
+      padding: 20px;
+
+      border-left: 3px solid var(--gold);
+
+      background: var(--gold-soft);
+
+      border-radius: 0 17px 17px 0;
+
+      color: var(--gold-dark);
+      font-weight: 700;
+      line-height: 1.6;
+    }
+
+    /* =====================================================
+       SOCIAL
+    ===================================================== */
 
     .social-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(2,1fr);
       gap: 12px;
     }
 
@@ -1122,7 +1079,6 @@
       border-radius: 19px;
 
       background: white;
-
       border: 1px solid var(--border);
 
       box-shadow: var(--shadow-soft);
@@ -1135,32 +1091,24 @@
     }
 
     .social-icon {
-      width: 62px;
-      height: 62px;
+      width: 45px;
+      height: 45px;
 
-      flex: 0 0 62px;
+      flex: 0 0 45px;
 
       display: grid;
       place-items: center;
 
-      border-radius: 17px;
-
-      overflow: hidden;
+      border-radius: 14px;
     }
 
     .social-icon svg {
-      width: 36px;
-      height: 36px;
+      width: 24px;
+      height: 24px;
     }
 
     .instagram-icon {
-      background:
-        linear-gradient(
-          135deg,
-          var(--instagram-1),
-          var(--instagram-2),
-          var(--instagram-3)
-        );
+      background: linear-gradient(135deg,#f9ce34,#ee2a7b,#6228d7);
     }
 
     .youtube-icon {
@@ -1175,258 +1123,138 @@
       background: var(--navy);
     }
 
+    .social-text {
+      display: grid;
+      gap: 4px;
+    }
+
     .social-text strong {
-      display: block;
-      font-size: 15px;
+      font-size: 14px;
     }
 
     .social-text span {
-      display: block;
-
-      margin-top: 3px;
-
       color: var(--muted);
-
       font-size: 11px;
     }
 
-    /* =========================================================
-       INSTALL CARD
-    ========================================================= */
-
-    .install-card {
-      padding: 25px;
-
-      border-radius: 25px;
-
-      background:
-        radial-gradient(
-          circle at 90% 0%,
-          rgba(206,169,96,.23),
-          transparent 30%
-        ),
-        linear-gradient(
-          135deg,
-          #172b46,
-          #294e76
-        );
-
-      color: white;
-
-      box-shadow:
-        0 20px 45px rgba(23,43,70,.18);
-    }
-
-    .install-card h3 {
-      font-size: 23px;
-    }
-
-    .install-card p {
-      margin-top: 7px;
-
-      color: rgba(255,255,255,.72);
-
-      font-size: 13px;
-      line-height: 1.5;
-    }
-
-    .install-btn {
-      margin-top: 17px;
-
-      background: white;
-      color: var(--navy);
-
-      padding: 12px 17px;
-
-      border-radius: 12px;
-
-      font-weight: 850;
-    }
-
-    .install-note {
-      display: none;
-
-      margin-top: 13px;
-
-      padding: 12px;
-
-      border-radius: 12px;
-
-      background: rgba(255,255,255,.09);
-
-      color: rgba(255,255,255,.8);
-
-      font-size: 11px;
-      line-height: 1.5;
-    }
-
-    .install-note.show {
-      display: block;
-    }
-
-    /* =========================================================
-       INTERNAL SCREEN HEADER / BACK
-    ========================================================= */
-
-    .screen-top {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-
-      margin-bottom: 25px;
-    }
-
-    .back-btn {
-      width: 45px;
-      height: 45px;
-
-      flex: 0 0 45px;
-
-      display: grid;
-      place-items: center;
-
-      border-radius: 14px;
-
-      background: white;
-
-      border: 1px solid var(--border);
-
-      box-shadow: var(--shadow-soft);
-
-      color: var(--ink);
-
-      font-size: 24px;
-    }
-
-    .screen-title h1 {
-      font-size: 28px;
-      letter-spacing: -.03em;
-    }
-
-    .screen-title p {
-      margin-top: 4px;
-
-      color: var(--muted);
-
-      font-size: 12px;
-    }
-
-    /* =========================================================
-       INTERNAL CARDS
-    ========================================================= */
+    /* =====================================================
+       GENERIC CONTENT
+    ===================================================== */
 
     .content-grid {
       display: grid;
-      gap: 13px;
+      gap: 14px;
     }
 
     .content-card {
       padding: 20px;
 
-      border-radius: 21px;
-
       background: white;
-
       border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
 
       box-shadow: var(--shadow-soft);
     }
 
     .content-card h3 {
-      font-size: 18px;
+      font-size: 20px;
     }
 
     .content-card p {
-      margin-top: 7px;
+      margin-top: 8px;
 
       color: var(--muted);
 
-      font-size: 13px;
-      line-height: 1.55;
+      font-size: 14px;
+      line-height: 1.65;
     }
 
-    .subject-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-    }
-
-    .subject-card {
-      padding: 18px;
-
-      min-height: 125px;
-
-      border-radius: 19px;
-
-      background:
-        linear-gradient(
-          135deg,
-          #ffffff,
-          #f3eee4
-        );
-
-      border: 1px solid var(--border);
-
-      box-shadow: var(--shadow-soft);
-    }
-
-    .subject-card:nth-child(2n) {
-      background:
-        linear-gradient(
-          135deg,
-          #ffffff,
-          #eef4f8
-        );
-    }
-
-    .subject-card h3 {
-      margin-top: 26px;
-      font-size: 17px;
-    }
-
-    .subject-card span {
-      display: block;
-
-      margin-top: 4px;
-
-      color: var(--muted);
-
-      font-size: 11px;
-    }
-
-    .coming {
+    .coming,
+    .status,
+    .date {
       display: inline-flex;
 
-      margin-top: 12px;
+      margin-top: 14px;
+      padding: 7px 10px;
 
-      padding: 6px 9px;
+      border-radius: 9px;
 
-      border-radius: 8px;
-
-      background: #f2eee6;
-
+      background: var(--gold-soft);
       color: var(--gold-dark);
 
-      font-size: 9px;
+      font-size: 10px;
       font-weight: 850;
       letter-spacing: .06em;
       text-transform: uppercase;
     }
 
-    /* =========================================================
-       SERVICE CARDS
-    ========================================================= */
+    .status {
+      margin-top: 0;
+      background: #e7f5eb;
+      color: #278147;
+    }
+
+    .date {
+      margin-top: 0;
+      background: #edf1f6;
+      color: var(--navy);
+    }
+
+    /* =====================================================
+       SUBJECTS
+    ===================================================== */
+
+    .subject-grid {
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      gap: 12px;
+    }
+
+    .subject-card {
+      min-height: 135px;
+
+      padding: 18px;
+
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 19px;
+
+      box-shadow: var(--shadow-soft);
+    }
+
+    .subject-card > span:first-child {
+      color: var(--gold-dark);
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: .08em;
+    }
+
+    .subject-card h3 {
+      margin-top: 25px;
+      font-size: 18px;
+    }
+
+    .subject-card > span:last-child {
+      display: block;
+      margin-top: 5px;
+
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.4;
+    }
+
+    /* =====================================================
+       SERVICES
+    ===================================================== */
 
     .service-card {
       display: flex;
       align-items: center;
       justify-content: space-between;
-
-      gap: 15px;
     }
 
     .service-left h3 {
-      font-size: 17px;
+      font-size: 18px;
     }
 
     .service-left p {
@@ -1435,187 +1263,165 @@
 
     .service-arrow {
       color: var(--gold-dark);
-      font-size: 23px;
+      font-size: 30px;
     }
 
-    /* =========================================================
-       PROJECT / UPDATE
-    ========================================================= */
+    /* =====================================================
+       INSTALL
+    ===================================================== */
 
-    .project-card,
-    .update-card {
-      position: relative;
-    }
-
-    .status {
-      display: inline-flex;
-
-      padding: 6px 9px;
-
-      border-radius: 8px;
-
-      background: #edf5ee;
-
-      color: #3c7047;
-
-      font-size: 9px;
-      font-weight: 850;
-      text-transform: uppercase;
-      letter-spacing: .06em;
-    }
-
-    .date {
-      color: var(--gold-dark);
-
-      font-size: 10px;
-      font-weight: 800;
-    }
-
-    /* =========================================================
-       ABOUT FULL
-    ========================================================= */
-
-    .about-full {
-      padding: 25px;
-
-      background:
-        linear-gradient(
-          145deg,
-          white,
-          #f4eee2
-        );
-
-      border: 1px solid var(--border);
+    .install-card {
+      padding: 23px;
 
       border-radius: var(--radius-xl);
+
+      background:
+        linear-gradient(135deg,#fffdf9,#eef3f7);
+
+      border: 1px solid rgba(23,43,70,.09);
 
       box-shadow: var(--shadow);
     }
 
-    .about-full-photo {
-      width: 110px;
-      height: 110px;
-
-      object-fit: cover;
-
-      border-radius: 50%;
-
-      margin-bottom: 20px;
-
-      border: 3px solid white;
-      outline: 1px solid rgba(184,138,59,.3);
-
-      box-shadow: 0 12px 28px rgba(0,0,0,.12);
+    .install-card h3 {
+      font-size: 22px;
     }
 
-    .about-full h2 {
-      font-size: 27px;
-    }
-
-    .about-full p {
-      margin-top: 14px;
-
-      color: #65686e;
-
-      font-size: 14px;
-      line-height: 1.75;
-    }
-
-    .quote {
-      margin-top: 22px;
-
-      padding: 18px;
-
-      border-left: 3px solid var(--gold);
-
-      background: rgba(184,138,59,.07);
-
-      border-radius: 0 14px 14px 0;
-
-      color: var(--navy);
-
-      font-weight: 700;
+    .install-card p {
+      margin-top: 8px;
+      color: var(--muted);
       line-height: 1.6;
+      font-size: 14px;
     }
 
-    /* =========================================================
+    .install-btn {
+      margin-top: 18px;
+
+      min-height: 48px;
+
+      padding: 0 20px;
+
+      border-radius: 14px;
+
+      background: var(--navy);
+      color: white;
+
+      font-weight: 800;
+
+      box-shadow: 0 8px 20px rgba(23,43,70,.18);
+
+      transition: .2s ease;
+    }
+
+    .install-btn:active {
+      transform: scale(.97);
+    }
+
+    .install-btn.installed {
+      background: #278147;
+    }
+
+    .install-note {
+      margin-top: 12px;
+
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.5;
+    }
+
+    /* =====================================================
        BOTTOM NAV
-    ========================================================= */
+    ===================================================== */
 
     .bottom-nav {
       position: fixed;
-
-      left: 14px;
-      right: 14px;
-
-      bottom:
-        calc(12px + env(safe-area-inset-bottom));
+      left: 50%;
+      bottom: 12px;
 
       z-index: 600;
 
+      width: min(calc(100% - 24px),560px);
+
+      transform: translateX(-50%);
+
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(4,1fr);
 
       padding: 7px;
 
-      background: rgba(255,255,255,.92);
-
-      border: 1px solid rgba(23,25,29,.08);
-
-      border-radius: 25px;
-
-      box-shadow:
-        0 15px 45px rgba(0,0,0,.12);
-
+      background: rgba(255,253,249,.94);
       backdrop-filter: blur(18px);
       -webkit-backdrop-filter: blur(18px);
+
+      border: 1px solid rgba(23,25,29,.09);
+      border-radius: 23px;
+
+      box-shadow:
+        0 15px 40px rgba(24,25,29,.15);
     }
 
     .nav-item {
-      min-height: 62px;
+      min-height: 58px;
 
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      gap: 4px;
 
-      gap: 5px;
-
-      border-radius: 19px;
+      border-radius: 17px;
 
       background: transparent;
-
-      color: #777a7f;
+      color: #767980;
 
       font-size: 10px;
-      font-weight: 750;
+      font-weight: 800;
 
       transition: .2s ease;
     }
 
     .nav-item.active {
-      background: #f7ead0;
+      background: var(--gold-soft);
       color: var(--gold-dark);
     }
 
     .nav-icon {
       font-size: 19px;
+      font-weight: 800;
       line-height: 1;
     }
 
-    /* =========================================================
+    /* =====================================================
        RESPONSIVE
-    ========================================================= */
+    ===================================================== */
 
     @media (max-width: 620px) {
 
+      .app-header {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+
+      .brand-photo {
+        width: 46px;
+        height: 46px;
+      }
+
+      .brand-name {
+        font-size: 15px;
+      }
+
+      .brand-role {
+        font-size: 8px;
+      }
+
       .book-card {
-        grid-template-columns: 118px 1fr;
-        gap: 15px;
+        grid-template-columns: 105px 1fr;
+        gap: 14px;
       }
 
       .book-cover {
-        width: 118px;
+        width: 105px;
       }
 
       .book-info h3 {
@@ -1627,95 +1433,58 @@
       }
 
       .about-photo {
-        width: 85px;
-        height: 85px;
-        flex-basis: 85px;
+        width: 80px;
+        height: 80px;
+        flex-basis: 80px;
       }
     }
 
-    @media (max-width: 430px) {
-
-      .app-header {
-        padding-left: 15px;
-        padding-right: 15px;
-      }
-
-      .brand-photo {
-        width: 47px;
-        height: 47px;
-      }
-
-      .brand-name {
-        font-size: 15px;
-      }
-
-      .brand-role {
-        font-size: 8px;
-      }
+    @media (max-width: 460px) {
 
       .screen {
-        padding-left: 15px;
-        padding-right: 15px;
+        padding-left: 14px;
+        padding-right: 14px;
       }
 
       .hero {
-        padding: 27px 21px;
+        padding: 26px 20px;
       }
 
       .quick-grid,
+      .subject-grid,
       .social-grid {
-        gap: 9px;
-      }
-
-      .quick-card {
-        min-height: 145px;
-        padding: 17px;
-      }
-
-      .quick-card h3 {
-        font-size: 18px;
-      }
-
-      .social-card {
-        padding: 13px;
-        gap: 10px;
-      }
-
-      .social-icon {
-        width: 53px;
-        height: 53px;
-        flex-basis: 53px;
-      }
-
-      .social-icon svg {
-        width: 31px;
-        height: 31px;
+        grid-template-columns: 1fr 1fr;
       }
 
       .book-card {
-        grid-template-columns: 105px 1fr;
-        padding: 13px;
+        grid-template-columns: 1fr;
       }
 
       .book-cover {
-        width: 105px;
+        width: 145px;
       }
 
-      .book-info h3 {
-        font-size: 17px;
+      .about-card {
+        flex-direction: column;
       }
 
-      .book-subtitle {
-        font-size: 11px;
+      .about-photo {
+        width: 95px;
+        height: 95px;
+        flex-basis: 95px;
+      }
+    }
+
+    @media (max-width: 350px) {
+
+      .quick-grid,
+      .subject-grid,
+      .social-grid {
+        grid-template-columns: 1fr;
       }
 
-      .meta-pill {
-        font-size: 9px;
-      }
-
-      .small-btn {
-        padding: 0 10px;
-        font-size: 10px;
+      .brand-role {
+        display: none;
       }
     }
   </style>
@@ -1723,22 +1492,19 @@
 
 <body>
 
-  <!-- =======================================================
+  <!-- =====================================================
        SPLASH
-  ======================================================== -->
+  ====================================================== -->
 
   <div id="splash">
-
     <div class="splash-inner">
 
       <div class="splash-glow"></div>
 
       <div class="diya-wrap">
-
         <div class="diya">
           <div class="flame"></div>
         </div>
-
       </div>
 
       <div class="splash-symbol">🙏</div>
@@ -1752,26 +1518,25 @@
       </div>
 
     </div>
-
   </div>
 
 
-  <!-- =======================================================
+  <!-- =====================================================
        MENU BACKDROP
-  ======================================================== -->
+  ====================================================== -->
 
   <div
-    class="menu-backdrop"
     id="menuBackdrop"
+    class="menu-backdrop"
     onclick="closeMenu()">
   </div>
 
 
-  <!-- =======================================================
+  <!-- =====================================================
        SIDE MENU
-  ======================================================== -->
+  ====================================================== -->
 
-  <aside class="side-menu" id="sideMenu">
+  <aside id="sideMenu" class="side-menu">
 
     <div class="menu-head">
 
@@ -1790,90 +1555,69 @@
 
     <div class="menu-links">
 
-      <button
-        class="menu-link"
-        onclick="goTo('home')">
+      <button class="menu-link" onclick="goTo('home')">
         <span>Home</span>
         <span class="menu-arrow">›</span>
       </button>
 
-      <button
-        class="menu-link"
-        onclick="goTo('books')">
+      <button class="menu-link" onclick="goTo('books')">
         <span>Books</span>
         <span class="menu-arrow">›</span>
       </button>
 
-      <button
-        class="menu-link"
-        onclick="goTo('learning')">
+      <button class="menu-link" onclick="goTo('learning')">
         <span>Learning</span>
         <span class="menu-arrow">›</span>
       </button>
 
-      <button
-        class="menu-link"
-        onclick="goTo('videos')">
+      <button class="menu-link" onclick="goTo('videos')">
         <span>Videos</span>
         <span class="menu-arrow">›</span>
       </button>
 
-      <button
-        class="menu-link"
-        onclick="goTo('creative')">
+      <button class="menu-link" onclick="goTo('creative')">
         <span>Creative</span>
         <span class="menu-arrow">›</span>
       </button>
 
-      <button
-        class="menu-link"
-        onclick="goTo('projects')">
+      <button class="menu-link" onclick="goTo('projects')">
         <span>Projects</span>
         <span class="menu-arrow">›</span>
       </button>
 
-      <button
-        class="menu-link"
-        onclick="goTo('updates')">
+      <button class="menu-link" onclick="goTo('updates')">
         <span>Updates</span>
         <span class="menu-arrow">›</span>
       </button>
 
-      <button
-        class="menu-link"
-        onclick="goTo('services')">
+      <button class="menu-link" onclick="goTo('services')">
         <span>Services</span>
         <span class="menu-arrow">›</span>
       </button>
 
-      <button
-        class="menu-link"
-        onclick="goTo('about')">
+      <button class="menu-link" onclick="goTo('about')">
         <span>About Jaydeep</span>
         <span class="menu-arrow">›</span>
       </button>
 
     </div>
-
   </aside>
 
 
-  <!-- =======================================================
+  <!-- =====================================================
        HEADER
-  ======================================================== -->
+  ====================================================== -->
 
   <header class="app-header">
 
     <button
       class="brand"
       onclick="goTo('home')"
-      aria-label="Go to home"
-      style="background:none;border:0;text-align:left;">
+      aria-label="Go to home">
 
-      <!-- CURRENT FILE PATH: profile.jpg -->
       <img
         class="brand-photo"
-        src="profile.jpg"
+        src="./profile.jpg"
         alt="Jaydeep Singh"
         onerror="this.style.visibility='hidden';">
 
@@ -1908,20 +1652,18 @@
   </header>
 
 
-  <!-- =======================================================
+  <!-- =====================================================
        MAIN
-  ======================================================== -->
+  ====================================================== -->
 
   <main>
 
 
-    <!-- =====================================================
+    <!-- ===================================================
          HOME
-    ====================================================== -->
+    ==================================================== -->
 
-    <section
-      id="home"
-      class="screen active">
+    <section id="home" class="screen active">
 
       <div class="hero">
 
@@ -1980,10 +1722,9 @@
 
       <div class="book-card">
 
-        <!-- CURRENT FILE PATH: book-cover.jpg -->
         <img
           class="book-cover"
-          src="book-cover.jpg"
+          src="./book-cover.jpg"
           alt="Echoes of Destiny book cover"
           loading="lazy">
 
@@ -2136,7 +1877,7 @@
 
         <img
           class="about-photo"
-          src="profile.jpg"
+          src="./profile.jpg"
           alt="Jaydeep Singh"
           loading="lazy">
 
@@ -2169,7 +1910,6 @@
 
 
       <div class="social-grid">
-
 
         <!-- INSTAGRAM -->
 
@@ -2297,8 +2037,7 @@
                 height="14"
                 rx="3"/>
 
-              <path
-                d="m4 7 8 6 8-6"/>
+              <path d="m4 7 8 6 8-6"/>
 
             </svg>
 
@@ -2347,9 +2086,8 @@
         <div
           id="installNote"
           class="install-note">
-          If the install window does not appear,
-          open your browser menu and choose
-          <strong>Add to Home screen</strong>.
+          Chrome will show the installation window when
+          this website is ready to install.
         </div>
 
       </div>
@@ -2357,13 +2095,11 @@
     </section>
 
 
-    <!-- =====================================================
+    <!-- ===================================================
          BOOKS
-    ====================================================== -->
+    ==================================================== -->
 
-    <section
-      id="books"
-      class="screen">
+    <section id="books" class="screen">
 
       <div class="screen-top">
 
@@ -2388,7 +2124,7 @@
 
           <img
             class="book-cover"
-            src="book-cover.jpg"
+            src="./book-cover.jpg"
             alt="Echoes of Destiny">
 
           <div class="book-info">
@@ -2485,13 +2221,11 @@
     </section>
 
 
-    <!-- =====================================================
+    <!-- ===================================================
          LEARNING
-    ====================================================== -->
+    ==================================================== -->
 
-    <section
-      id="learning"
-      class="screen">
+    <section id="learning" class="screen">
 
       <div class="screen-top">
 
@@ -2584,13 +2318,11 @@
     </section>
 
 
-    <!-- =====================================================
+    <!-- ===================================================
          VIDEOS
-    ====================================================== -->
+    ==================================================== -->
 
-    <section
-      id="videos"
-      class="screen">
+    <section id="videos" class="screen">
 
       <div class="screen-top">
 
@@ -2682,13 +2414,11 @@
     </section>
 
 
-    <!-- =====================================================
+    <!-- ===================================================
          CREATIVE
-    ====================================================== -->
+    ==================================================== -->
 
-    <section
-      id="creative"
-      class="screen">
+    <section id="creative" class="screen">
 
       <div class="screen-top">
 
@@ -2761,13 +2491,11 @@
     </section>
 
 
-    <!-- =====================================================
+    <!-- ===================================================
          PROJECTS
-    ====================================================== -->
+    ==================================================== -->
 
-    <section
-      id="projects"
-      class="screen">
+    <section id="projects" class="screen">
 
       <div class="screen-top">
 
@@ -2787,7 +2515,7 @@
 
       <div class="content-grid">
 
-        <div class="content-card project-card">
+        <div class="content-card">
 
           <span class="status">
             Active
@@ -2807,9 +2535,7 @@
 
         <div class="content-card">
 
-          <h3>
-            Websites
-          </h3>
+          <h3>Websites</h3>
 
           <p>
             Personal, educational and creative websites.
@@ -2824,9 +2550,7 @@
 
         <div class="content-card">
 
-          <h3>
-            Publishing Projects
-          </h3>
+          <h3>Publishing Projects</h3>
 
           <p>
             Books, digital editions and related publishing work.
@@ -2841,9 +2565,7 @@
 
         <div class="content-card">
 
-          <h3>
-            Education Projects
-          </h3>
+          <h3>Education Projects</h3>
 
           <p>
             New ideas for learning and educational content.
@@ -2860,13 +2582,11 @@
     </section>
 
 
-    <!-- =====================================================
+    <!-- ===================================================
          UPDATES
-    ====================================================== -->
+    ==================================================== -->
 
-    <section
-      id="updates"
-      class="screen">
+    <section id="updates" class="screen">
 
       <div class="screen-top">
 
@@ -2886,7 +2606,7 @@
 
       <div class="content-grid">
 
-        <div class="content-card update-card">
+        <div class="content-card">
 
           <span class="date">
             2026
@@ -2944,13 +2664,11 @@
     </section>
 
 
-    <!-- =====================================================
+    <!-- ===================================================
          SERVICES
-    ====================================================== -->
+    ==================================================== -->
 
-    <section
-      id="services"
-      class="screen">
+    <section id="services" class="screen">
 
       <div class="screen-top">
 
@@ -2971,98 +2689,67 @@
       <div class="content-grid">
 
         <div class="content-card service-card">
-
           <div class="service-left">
             <h3>Reel Editing</h3>
             <p>Short-form video editing.</p>
           </div>
-
           <div class="service-arrow">›</div>
-
         </div>
 
-
         <div class="content-card service-card">
-
           <div class="service-left">
             <h3>Video Editing</h3>
             <p>Editing for digital videos.</p>
           </div>
-
           <div class="service-arrow">›</div>
-
         </div>
 
-
         <div class="content-card service-card">
-
           <div class="service-left">
             <h3>Poster Design</h3>
             <p>Promotional and social designs.</p>
           </div>
-
           <div class="service-arrow">›</div>
-
         </div>
 
-
         <div class="content-card service-card">
-
           <div class="service-left">
             <h3>Thumbnail Design</h3>
             <p>YouTube and digital thumbnails.</p>
           </div>
-
           <div class="service-arrow">›</div>
-
         </div>
 
-
         <div class="content-card service-card">
-
           <div class="service-left">
             <h3>PDF & PPT</h3>
             <p>Documents and presentations.</p>
           </div>
-
           <div class="service-arrow">›</div>
-
         </div>
 
-
         <div class="content-card service-card">
-
           <div class="service-left">
             <h3>Website</h3>
             <p>Personal and creative websites.</p>
           </div>
-
           <div class="service-arrow">›</div>
-
         </div>
 
-
         <div class="content-card service-card">
-
           <div class="service-left">
             <h3>PWA / App</h3>
             <p>Progressive web app projects.</p>
           </div>
-
           <div class="service-arrow">›</div>
-
         </div>
 
-
         <div class="content-card service-card">
-
           <div class="service-left">
             <h3>Other Creative Work</h3>
             <p>Custom digital creative projects.</p>
           </div>
-
           <div class="service-arrow">›</div>
-
         </div>
 
       </div>
@@ -3070,13 +2757,11 @@
     </section>
 
 
-    <!-- =====================================================
+    <!-- ===================================================
          ABOUT
-    ====================================================== -->
+    ==================================================== -->
 
-    <section
-      id="about"
-      class="screen">
+    <section id="about" class="screen">
 
       <div class="screen-top">
 
@@ -3098,7 +2783,7 @@
 
         <img
           class="about-full-photo"
-          src="profile.jpg"
+          src="./profile.jpg"
           alt="Jaydeep Singh">
 
         <h2>
@@ -3161,9 +2846,9 @@
   </main>
 
 
-  <!-- =======================================================
+  <!-- =====================================================
        BOTTOM NAV
-  ======================================================== -->
+  ====================================================== -->
 
   <nav class="bottom-nav">
 
@@ -3213,19 +2898,19 @@
   </nav>
 
 
-  <!-- =======================================================
+  <!-- =====================================================
        JAVASCRIPT
-  ======================================================== -->
+  ====================================================== -->
 
   <script>
 
-    /* -------------------------------------------------------
+    /* =====================================================
        SPLASH
-    ------------------------------------------------------- */
+    ====================================================== */
 
-    window.addEventListener("load", function() {
+    window.addEventListener("load", function () {
 
-      setTimeout(function() {
+      setTimeout(function () {
 
         const splash = document.getElementById("splash");
 
@@ -3233,14 +2918,14 @@
           splash.classList.add("hide");
         }
 
-      }, 3200);
+      }, 2600);
 
     });
 
 
-    /* -------------------------------------------------------
+    /* =====================================================
        MENU
-    ------------------------------------------------------- */
+    ====================================================== */
 
     function openMenu() {
 
@@ -3251,6 +2936,8 @@
       document
         .getElementById("menuBackdrop")
         .classList.add("open");
+
+      document.body.classList.add("menu-open");
 
     }
 
@@ -3265,76 +2952,57 @@
         .getElementById("menuBackdrop")
         .classList.remove("open");
 
+      document.body.classList.remove("menu-open");
+
     }
 
 
-    /* -------------------------------------------------------
+    /* =====================================================
        SCREEN NAVIGATION
-    ------------------------------------------------------- */
+    ====================================================== */
 
     let currentScreen = "home";
     let previousScreen = "home";
 
-
     function goTo(screenId) {
-
-      closeMenu();
-
-      if (screenId === currentScreen) {
-        window.scrollTo({
-          top: 0,
-          behavior: "smooth"
-        });
-        return;
-      }
-
-      previousScreen = currentScreen;
-      currentScreen = screenId;
-
-
-      document
-        .querySelectorAll(".screen")
-        .forEach(function(screen) {
-
-          screen.classList.remove("active");
-
-        });
-
 
       const target =
         document.getElementById(screenId);
 
-      if (target) {
-        target.classList.add("active");
+      if (!target) return;
+
+      if (screenId !== currentScreen) {
+        previousScreen = currentScreen;
       }
 
+      document
+        .querySelectorAll(".screen")
+        .forEach(screen => {
+          screen.classList.remove("active");
+        });
+
+      target.classList.add("active");
 
       document
         .querySelectorAll(".nav-item")
-        .forEach(function(item) {
-
-          item.classList.remove("active");
-
-          if (
+        .forEach(item => {
+          item.classList.toggle(
+            "active",
             item.dataset.screen === screenId
-          ) {
-            item.classList.add("active");
-          }
-
+          );
         });
 
+      currentScreen = screenId;
+
+      closeMenu();
 
       window.scrollTo({
         top: 0,
-        behavior: "instant"
+        behavior: "smooth"
       });
 
     }
 
-
-    /* -------------------------------------------------------
-       BACK BUTTON
-    ------------------------------------------------------- */
 
     function goBack() {
 
@@ -3342,49 +3010,44 @@
         return;
       }
 
-      goTo("home");
+      goTo(previousScreen || "home");
 
     }
 
 
-    /* -------------------------------------------------------
-       ESCAPE CLOSE MENU
-    ------------------------------------------------------- */
+    /* =====================================================
+       ANDROID / CHROME PWA INSTALL
+    ====================================================== */
 
-    document.addEventListener(
-      "keydown",
-      function(event) {
+    let deferredPrompt = null;
 
-        if (event.key === "Escape") {
-          closeMenu();
-        }
+    const installBtn =
+      document.getElementById("installBtn");
 
-      }
-    );
+    const installNote =
+      document.getElementById("installNote");
 
-
-    /* -------------------------------------------------------
-       PWA INSTALL
-       manifest + service worker will be connected
-       in the next files.
-    ------------------------------------------------------- */
-
-    let deferredInstallPrompt = null;
 
     window.addEventListener(
       "beforeinstallprompt",
-      function(event) {
+      function (event) {
 
         event.preventDefault();
 
-        deferredInstallPrompt = event;
+        deferredPrompt = event;
 
-        const installButton =
-          document.getElementById("installBtn");
+        if (installBtn) {
 
-        if (installButton) {
-          installButton.textContent =
-            "Install App";
+          installBtn.style.display = "inline-flex";
+          installBtn.textContent = "Install App";
+
+        }
+
+        if (installNote) {
+
+          installNote.textContent =
+            "Tap Install App to install Jaydeep Singh on your phone.";
+
         }
 
       }
@@ -3393,27 +3056,68 @@
 
     async function installApp() {
 
-      const note =
-        document.getElementById("installNote");
+      /* Chrome / Android */
 
-      if (deferredInstallPrompt) {
+      if (deferredPrompt) {
 
-        deferredInstallPrompt.prompt();
+        deferredPrompt.prompt();
 
         const result =
-          await deferredInstallPrompt.userChoice;
-
-        deferredInstallPrompt = null;
+          await deferredPrompt.userChoice;
 
         if (result.outcome === "accepted") {
 
-          const installButton =
-            document.getElementById("installBtn");
-
-          if (installButton) {
-            installButton.textContent =
-              "App Installed";
+          if (installBtn) {
+            installBtn.textContent = "Installed";
+            installBtn.classList.add("installed");
           }
+
+        }
+
+        deferredPrompt = null;
+
+        return;
+      }
+
+
+      /* Already installed */
+
+      if (
+        window.matchMedia &&
+        window.matchMedia(
+          "(display-mode: standalone)"
+        ).matches
+      ) {
+
+        if (installNote) {
+          installNote.textContent =
+            "Jaydeep Singh is already installed on this device.";
+        }
+
+        if (installBtn) {
+          installBtn.textContent = "Already Installed";
+          installBtn.classList.add("installed");
+        }
+
+        return;
+      }
+
+
+      /* iPhone / iPad */
+
+      const isIOS =
+        /iphone|ipad|ipod/i.test(
+          window.navigator.userAgent
+        );
+
+      if (isIOS) {
+
+        if (installNote) {
+
+          installNote.innerHTML =
+            "On iPhone/iPad, tap the browser " +
+            "<strong>Share</strong> button and choose " +
+            "<strong>Add to Home Screen</strong>.";
 
         }
 
@@ -3421,40 +3125,69 @@
       }
 
 
-      /* Browser does not currently expose
-         the installation prompt. */
+      /* Browser not ready for automatic prompt */
 
-      if (note) {
-        note.classList.add("show");
+      if (installNote) {
+
+        installNote.innerHTML =
+          "If Chrome does not show the install window, " +
+          "open Chrome's <strong>⋮ menu</strong> and choose " +
+          "<strong>Install app</strong> or " +
+          "<strong>Add to Home screen</strong>.";
+
       }
 
     }
 
 
-    /* -------------------------------------------------------
+    /* =====================================================
+       INSTALLED EVENT
+    ====================================================== */
+
+    window.addEventListener(
+      "appinstalled",
+      function () {
+
+        deferredPrompt = null;
+
+        if (installBtn) {
+          installBtn.textContent = "Installed";
+          installBtn.classList.add("installed");
+        }
+
+        if (installNote) {
+          installNote.textContent =
+            "Jaydeep Singh has been installed successfully.";
+        }
+
+      }
+    );
+
+
+    /* =====================================================
        SERVICE WORKER
-       The actual service-worker.js will be finalized next.
-    ------------------------------------------------------- */
+    ====================================================== */
 
     if ("serviceWorker" in navigator) {
 
       window.addEventListener(
         "load",
-        function() {
+        function () {
 
           navigator.serviceWorker
-            .register("service-worker.js")
-            .then(function() {
+            .register("./service-worker.js")
+            .then(function (registration) {
 
               console.log(
-                "Jaydeep Singh service worker registered."
+                "Service Worker registered:",
+                registration.scope
               );
 
             })
-            .catch(function(error) {
+            .catch(function (error) {
 
-              console.log(
-                "Service worker registration pending:",
+              console.error(
+                "Service Worker registration failed:",
                 error
               );
 
@@ -3464,28 +3197,6 @@
       );
 
     }
-
-
-    /* -------------------------------------------------------
-       INSTALLED STATE
-    ------------------------------------------------------- */
-
-    window.addEventListener(
-      "appinstalled",
-      function() {
-
-        const installButton =
-          document.getElementById("installBtn");
-
-        if (installButton) {
-          installButton.textContent =
-            "App Installed";
-        }
-
-        deferredInstallPrompt = null;
-
-      }
-    );
 
   </script>
 
