@@ -1,0 +1,1725 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="theme-color" content="#0b5d3b">
+<meta name="description" content="Jaydeep Singh — Author · Mentor · Creator. Books, CBSE learning, mock tests, competitive exams, AI creator studio, videos, design, projects and tools.">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="manifest" href="./manifest.json">
+<link rel="icon" href="./assets/icon-192.png">
+<link rel="apple-touch-icon" href="./assets/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<title>Jaydeep Singh | Author · Mentor · Creator</title>
+<script>
+(function(){try{var p=localStorage.getItem('jd-theme')||'light';var d=p==='dark'||(p==='system'&&matchMedia('(prefers-color-scheme: dark)').matches);document.documentElement.dataset.theme=d?'dark':'light';}catch(e){}})();
+</script>
+<style>
+:root{--bg:#fbfaf6;--surface:#fff;--surface2:#f2f0e8;--ink:#14201a;--muted:#5b675f;--line:#e3e0d4;--brand:#0b5d3b;--on-brand:#fff;--soft:#e4f1ea;--gold:#a8812c;--goldsoft:#f6eed8;--bad:#b3261e;--ok:#1b7f4d;--sh:0 10px 30px rgba(20,32,26,.08);--r:20px;--serif:Georgia,"Times New Roman",serif}
+[data-theme=dark]{--bg:#0b120e;--surface:#121c16;--surface2:#18251d;--ink:#eef3ef;--muted:#9eaea4;--line:#24352b;--brand:#3fb27f;--on-brand:#04130b;--soft:#14301f;--gold:#d6b45f;--goldsoft:#2b2513;--bad:#ff8a80;--ok:#6fdca5;--sh:0 10px 30px rgba(0,0,0,.45)}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth;scroll-padding-top:76px;min-height:100%;overscroll-behavior-y:contain}
+html,body{touch-action:pan-x pan-y; -webkit-text-size-adjust:100%;} body{font-family:"DM Sans",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;overflow-x:clip;overflow-y:auto;min-height:100%;overscroll-behavior-y:contain;padding-bottom:calc(92px + env(safe-area-inset-bottom));transition:background .25s,color .25s}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer;border:0;background:none;touch-action:manipulation} img,svg{ -webkit-user-drag:none; user-select:none } .back-icon{width:42px;height:42px;border-radius:50%;box-shadow:0 4px 14px rgba(0,0,0,.12)} .back-icon i{width:21px;height:21px} .installed-btn{background:#16803c!important;color:#fff!important;border-color:#16803c!important}.installed-label{display:inline-flex;color:#16803c;font-weight:800;margin-left:10px}.install-contact{padding:16px;border:1px solid var(--line);border-radius:16px;background:var(--surface);margin-top:14px}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+[hidden]{display:none!important}
+.i{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+i[data-ic]{display:inline-flex;font-style:normal}
+.wrap{max-width:960px;margin:0 auto;padding:0 16px}
+h1,h2,h3{font-family:var(--serif);letter-spacing:-.01em;line-height:1.25}
+.muted{color:var(--muted)}.small{font-size:13px}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--sh);padding:18px}
+.stack>*+*{margin-top:12px}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.btn{min-height:44px;padding:0 16px;border-radius:14px;display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:700;font-size:14px;border:1px solid var(--line);background:var(--surface);transition:transform .15s,opacity .2s;text-align:center}
+.btn:active{transform:scale(.97)}
+.btn.primary{background:var(--brand);color:var(--on-brand);border-color:var(--brand)}
+.btn.soft{background:var(--soft);border-color:transparent;color:var(--brand)}
+.btn[disabled],.btn.disabled{opacity:.55;cursor:not-allowed}
+.btn.full{width:100%}
+.btn img{width:18px;height:18px}
+.tag{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:4px 9px;border-radius:99px;background:var(--goldsoft);color:var(--gold)}
+.tag.green{background:var(--soft);color:var(--brand)}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:2px 0 8px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;min-height:40px;padding:0 15px;border-radius:99px;border:1px solid var(--line);background:var(--surface);font-weight:600;font-size:13px;color:var(--muted)}
+.chip.active{background:var(--brand);color:var(--on-brand);border-color:var(--brand)}
+label{display:block;font-size:12px;font-weight:700;color:var(--muted);margin:12px 0 5px}
+.field{width:100%;min-height:46px;padding:10px 13px;border-radius:13px;border:1px solid var(--line);background:var(--bg);color:var(--ink)}
+textarea.field{min-height:120px;resize:vertical;line-height:1.6}
+.empty{padding:22px;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:16px;font-size:14px}
+.soon{font-size:13px;color:var(--muted)}
+/* splash (diya) */
+#splash{position:fixed;inset:0;z-index:10000;display:grid;place-items:center;background:radial-gradient(circle at 50% 42%,#174d38,#0a1f16 55%,#06120c);color:#fff;transition:opacity .6s,visibility .6s}
+#splash.hide{opacity:0;visibility:hidden;pointer-events:none}
+.sp{text-align:center;width:min(90%,400px)}
+.lamp{height:140px;width:170px;position:relative;margin:0 auto 14px;display:grid;place-items:end center}
+.lg{position:absolute;width:170px;height:170px;top:-10px;border-radius:50%;background:radial-gradient(circle,rgba(255,201,102,.26),transparent 68%);animation:pulse 2.2s ease-in-out infinite}
+.lb{position:relative;width:100px;height:42px;margin-bottom:12px;border-radius:10% 10% 55% 55%;background:linear-gradient(180deg,#f2d39b,#b77935 60%,#77471e);box-shadow:inset 0 4px 6px #fff6,0 14px 25px #0005}
+.lb:before{content:'';position:absolute;top:-8px;left:4px;width:92px;height:17px;border-radius:50%;background:linear-gradient(#f9e1ad,#c78c45)}
+.lf{position:absolute;left:50%;top:18px;width:27px;height:57px;transform:translateX(-50%);border-radius:80% 15% 70% 50%;background:radial-gradient(ellipse at 65% 70%,#fffce4 0 18%,#ffd56b 42%,#f28a29 72%,transparent 74%);filter:drop-shadow(0 0 17px #ffbd4e);animation:flame 1.3s ease-in-out infinite alternate}
+.spp{width:64px;height:64px;border-radius:50%;object-fit:cover;border:2px solid #d9b869;margin:0 auto 12px;background:#0a4a30}
+.sp-name{font-family:var(--serif);font-size:clamp(24px,7vw,32px);font-weight:700;letter-spacing:.18em}
+.sp-role{margin-top:8px;font-size:11px;letter-spacing:.3em;color:#e6cf8f}
+@keyframes pulse{50%{transform:scale(1.08);opacity:.75}}
+@keyframes flame{to{transform:translateX(-50%) rotate(3deg) scaleY(1.06)}}
+/* header */
+.top{position:sticky;top:0;z-index:300;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.top-in{display:grid;grid-template-columns:44px 1fr auto;align-items:center;gap:8px;min-height:64px}
+.ib{width:44px;height:44px;border-radius:14px;border:1px solid var(--line);background:var(--surface);display:grid;place-items:center}
+.brand{display:flex;align-items:center;gap:10px;min-width:0;justify-content:center}
+.brand img{width:40px;height:40px;border-radius:50%;object-fit:cover;border:2px solid var(--gold);background:var(--soft)}
+.brand b{display:block;font-family:var(--serif);font-size:15px;letter-spacing:.08em;white-space:nowrap}
+.brand small{display:block;font-size:8.5px;letter-spacing:.2em;color:var(--gold);white-space:nowrap;font-weight:700}
+.hact{display:flex;gap:6px}
+.login{min-height:44px;padding:0 13px;border-radius:14px;background:var(--brand);color:var(--on-brand);font-weight:700;font-size:13px;display:flex;align-items:center;gap:6px;max-width:130px}
+#menuBtn{width:44px;height:44px;border:1px solid var(--line);border-radius:14px;background:var(--surface);box-shadow:0 3px 12px rgba(20,32,26,.06)}#menuBtn .i{width:23px;height:23px;stroke-width:2.2}
+.login span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.backrow{padding-top:10px;min-height:52px}
+/* drawer (LEFT) */
+.shade{position:fixed;inset:0;z-index:900;background:rgba(0,0,0,.45);opacity:0;visibility:hidden;transition:.25s}
+.shade.open{opacity:1;visibility:visible}
+.drawer{position:fixed;top:0;bottom:0;left:0;right:auto;z-index:1000;width:min(320px,86vw);background:var(--surface);border-right:1px solid var(--line);transform:translateX(-105%);visibility:hidden;transition:transform .28s ease,visibility .28s;overflow-y:auto;padding:18px 14px calc(24px + env(safe-area-inset-bottom))}
+.drawer.open{transform:none;visibility:visible}
+.d-head{display:flex;align-items:center;gap:12px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.d-head img{width:50px;height:50px;border-radius:50%;object-fit:cover;border:2px solid var(--gold)}
+.d-head b{font-family:var(--serif);font-size:18px;display:block}.d-head small{font-size:9px;letter-spacing:.16em;color:var(--gold);font-weight:700}
+.d-label{font-size:10px;letter-spacing:.18em;font-weight:800;color:var(--muted);margin:16px 8px 4px}
+.d-link{display:flex;align-items:center;gap:13px;width:100%;min-height:46px;padding:0 12px;border-radius:12px;font-weight:600;font-size:14.5px;text-align:left}
+.d-link:hover,.d-link.active{background:var(--soft);color:var(--brand)}
+.d-link .end{margin-left:auto;font-size:11px;color:var(--muted)}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--ok);margin-left:auto}
+/* screens */
+main{padding-bottom:calc(190px + env(safe-area-inset-bottom));min-height:calc(100dvh - 64px)}
+.screen{display:none;padding-top:8px;padding-bottom:calc(90px + env(safe-area-inset-bottom));min-width:0;overflow-wrap:anywhere;scroll-margin-top:76px;animation:fade .3s}
+.screen.active{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.page-h{margin:4px 0 14px}.page-h h1{font-size:clamp(26px,6vw,36px);margin-top:4px}.page-h p{color:var(--muted);font-size:14px;margin-top:6px}
+.sec{margin-top:26px}.sec-h{display:flex;justify-content:space-between;align-items:end;margin-bottom:10px;gap:10px}
+.sec-h h2{font-size:21px}.sec-h p{font-size:12px;color:var(--muted);margin-top:3px}
+.link{font-size:13px;font-weight:700;color:var(--brand);min-height:44px;display:inline-flex;align-items:center;white-space:nowrap}
+.hero{display:flex;gap:16px;align-items:center;background:linear-gradient(135deg,var(--soft),var(--surface))}
+.hero img{width:92px;height:92px;border-radius:50%;object-fit:cover;border:3px solid var(--gold);flex:none;background:var(--soft)}
+.hero h1{font-size:25px}.hero p{color:var(--muted);font-size:13.5px;margin:6px 0 12px}
+.book{display:grid;grid-template-columns:120px 1fr;gap:16px;align-items:start}
+.cover{width:120px;aspect-ratio:2/3;object-fit:cover;border-radius:10px;box-shadow:0 12px 24px rgba(0,0,0,.2);background:var(--soft)}
+.book h3{font-size:22px;margin:6px 0 2px}
+.meta{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.pill{font-size:11px;font-weight:700;padding:5px 10px;border-radius:9px;background:var(--surface2);color:var(--muted)}
+.btns{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.q{min-height:92px;padding:12px 6px;border-radius:18px;border:1px solid var(--line);background:var(--surface);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;font-weight:700;font-size:12.5px;text-align:center}
+.q .i{width:24px;height:24px;color:var(--brand)}
+.upd{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}.upd:last-child{border:0}
+.upd b{display:block;font-size:14px}.upd span{font-size:13px;color:var(--muted)}
+/* tool cards, social cards, brand icons */
+.tg,.sg{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.tc{min-width:0;text-align:left;padding:14px;border:1px solid var(--line);border-radius:18px;background:var(--surface);box-shadow:var(--sh);display:flex;flex-direction:column;align-items:flex-start;min-height:132px}
+.ti{width:42px;height:42px;display:grid;place-items:center;border-radius:13px;background:var(--soft);color:var(--brand);margin-bottom:11px}
+.ti img{width:22px;height:22px}
+.tc h3{font-family:inherit;font-size:14px;font-weight:800}
+.tc p{font-size:11.5px;color:var(--muted);margin-top:4px;line-height:1.5}
+.tc .go{margin-top:auto;padding-top:10px;font-size:11.5px;font-weight:800;color:var(--brand)}
+.sc{display:flex;align-items:center;gap:11px;padding:13px;background:var(--surface);border:1px solid var(--line);border-radius:16px;min-width:0}
+.sc b{display:block;font-size:13px}.sc small{display:block;font-size:11px;color:var(--muted);margin-top:2px}
+.bi{width:42px;height:42px;flex:0 0 42px;border-radius:12px;display:grid;place-items:center;background:var(--surface2);overflow:hidden}
+.bi img{width:25px;height:25px;object-fit:contain}
+.bi .bf{font-size:12px;font-weight:900;color:var(--brand)}
+.store{display:inline-flex;align-items:center;gap:7px;min-height:40px;padding:0 13px;border-radius:12px;background:var(--ink);color:var(--bg);font-size:12px;font-weight:800}
+.store.play{background:var(--brand);color:var(--on-brand)}
+.store.off{background:var(--surface2);color:var(--muted);border:1px solid var(--line);cursor:not-allowed}
+.store img{width:17px;height:17px}
+.contact-row{display:flex;align-items:center;gap:14px;padding:14px;border:1px solid var(--line);border-radius:16px;background:var(--surface);min-height:64px}
+.contact-row .ci{width:44px;height:44px;border-radius:13px;background:var(--soft);color:var(--brand);display:grid;place-items:center;flex:none}
+.contact-row b{display:block;font-size:15px}.contact-row small{color:var(--muted);font-size:12px}
+.sub{padding:16px 10px;border-radius:18px;border:1px solid var(--line);background:var(--surface);text-align:center;min-height:104px}
+.sub .bd{width:42px;height:42px;border-radius:13px;background:var(--soft);color:var(--brand);display:grid;place-items:center;margin:0 auto 8px;font-weight:800;font-family:var(--serif)}
+.sub b{font-size:14px;display:block}.sub small{font-size:11px;color:var(--muted)}
+.out{white-space:pre-wrap;background:var(--surface2);border-radius:14px;padding:14px;font-size:13.5px;line-height:1.7;margin-top:10px}
+details.card{padding:0}details.card>summary{padding:14px 16px;cursor:pointer;min-height:48px;display:flex;align-items:center}
+details.card>div{margin:0 12px 12px}
+/* quiz */
+.opt{display:block;width:100%;text-align:left;min-height:50px;padding:12px 14px;border-radius:14px;border:1.5px solid var(--line);background:var(--surface);margin-top:9px;font-weight:600}
+.opt.sel{border-color:var(--brand);background:var(--soft);color:var(--brand)}
+.qbar{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.timer{font-family:var(--serif);font-weight:700;font-size:18px;padding:6px 12px;border-radius:12px;background:var(--soft);color:var(--brand)}
+.timer.low{background:color-mix(in srgb,var(--bad) 18%,var(--surface));color:var(--bad)}
+.qtext{font-size:19px;margin:6px 0 4px}
+.bar{height:8px;border-radius:9px;background:var(--surface2);overflow:hidden;margin:12px 0}.bar i{display:block;height:100%;background:var(--brand);transition:width .3s}
+.pal{display:grid;grid-template-columns:repeat(auto-fill,minmax(42px,1fr));gap:6px;padding:4px 0}
+.pal button{min-height:42px;border-radius:10px;border:1.5px solid var(--line);font-weight:700;font-size:13px;background:var(--surface)}
+.pal .a{background:var(--brand);color:var(--on-brand);border-color:var(--brand)}
+.pal .m{box-shadow:inset 0 0 0 2px var(--gold)}
+.pal .c{outline:2px solid var(--ink);outline-offset:1px}
+.score{font-family:var(--serif);font-size:48px;color:var(--brand)}
+.rv{padding:10px 0;border-bottom:1px solid var(--line);font-size:14px}.rv:last-child{border:0}
+.okc{color:var(--ok);font-weight:700}.bdc{color:var(--bad);font-weight:700}
+/* tools */
+.calc-disp{background:var(--surface2);border-radius:16px;padding:14px 16px;text-align:right;min-height:84px;overflow:hidden}
+.calc-disp small{display:block;min-height:20px;color:var(--muted);word-break:break-all;font-size:14px}
+.calc-disp b{font-size:32px;font-family:var(--serif);word-break:break-all;line-height:1.2}
+.keys{display:grid;gap:8px;margin-top:12px}
+.key{min-height:52px;border-radius:14px;border:1px solid var(--line);background:var(--surface);font-size:17px;font-weight:700}
+.key.op{background:var(--soft);color:var(--brand)}.key.eq{background:var(--brand);color:var(--on-brand);border-color:var(--brand)}.key.fn{background:var(--surface2)}
+.key:active{transform:scale(.95)}
+.result{margin-top:12px;padding:14px;border-radius:14px;background:var(--soft);color:var(--brand);font-weight:700;font-size:15px;white-space:pre-wrap;line-height:1.7}
+.lib-item{padding:14px;border:1px solid var(--line);border-radius:16px;background:var(--surface);margin-top:10px}
+.lib-item b{font-size:14px}.lib-item p{font-size:13px;color:var(--muted);margin:6px 0 10px;white-space:pre-wrap}
+.tool-item{display:flex;gap:12px;align-items:center;padding:14px;border:1px solid var(--line);border-radius:16px;background:var(--surface);margin-top:10px;min-height:64px}
+.tool-item b{display:block;font-size:14.5px}.tool-item small{color:var(--muted);font-size:12px}
+.sw-time{font-family:var(--serif);font-size:clamp(44px,14vw,72px);text-align:center;margin:10px 0}
+.sw-time small{font-size:.4em;color:var(--muted)}
+.seg{display:flex;gap:6px;background:var(--surface2);padding:5px;border-radius:14px;overflow-x:auto}
+.seg button{flex:1;min-height:42px;padding:0 12px;border-radius:10px;font-weight:700;font-size:13px;color:var(--muted);white-space:nowrap}
+.seg button.on{background:var(--brand);color:var(--on-brand)}
+.quote{border-left:3px solid var(--gold);padding:12px 16px;background:var(--goldsoft);border-radius:0 14px 14px 0;font-family:var(--serif);font-style:italic}
+.dgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.dgrid figure{border-radius:16px;overflow:hidden;border:1px solid var(--line);background:var(--surface)}
+.dgrid img{width:100%;aspect-ratio:4/3;object-fit:cover}.dgrid figcaption{padding:8px 10px;font-size:12px;font-weight:700}
+.vcard{overflow:hidden;padding:0}.vbox{position:relative;aspect-ratio:16/9;background:#000}
+.vbox img,.vbox iframe{position:absolute;inset:0;width:100%;height:100%;border:0;object-fit:cover}
+.vplay{position:absolute;inset:0;display:grid;place-items:center;color:#fff;background:rgba(0,0,0,.25)}
+.vplay .i{width:54px;height:54px;fill:#fff}
+.vmsg{position:absolute;inset:0;display:grid;place-items:center;text-align:center;color:#fff;background:rgba(0,0,0,.7);padding:14px;font-size:13px}
+.vinfo{padding:12px 14px;font-weight:700;font-size:14px}
+/* bottom nav + toast */
+.bnav{position:fixed;z-index:400;left:50%;transform:translateX(-50%);bottom:calc(8px + env(safe-area-inset-bottom));width:min(540px,calc(100% - 16px));max-height:calc(100dvh - 20px);display:grid;grid-template-columns:repeat(6,1fr);padding:5px;background:color-mix(in srgb,var(--surface) 92%,transparent);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--line);border-radius:22px;box-shadow:var(--sh)}
+.bnav button{min-width:0;min-height:52px;border-radius:15px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;font-size:10px;font-weight:700;color:var(--muted)}
+.bnav button.active{background:var(--soft);color:var(--brand)}
+.toast{position:fixed;z-index:20000;left:50%;bottom:96px;transform:translate(-50%,16px);opacity:0;pointer-events:none;background:var(--ink);color:var(--bg);padding:12px 16px;border-radius:13px;font-size:13px;font-weight:600;max-width:calc(100% - 32px);text-align:center;transition:.25s}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+/* login overlay */
+.ao{position:fixed;inset:0;z-index:12000;display:none;align-items:center;justify-content:center;padding:18px;background:rgba(6,21,13,.8);backdrop-filter:blur(8px)}
+.ao.open{display:flex}
+.ac{width:min(100%,420px);max-height:90vh;overflow:auto;background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:24px;padding:22px;box-shadow:0 25px 80px rgba(0,0,0,.35)}
+.ah{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px}
+.ah h2{font-size:23px}
+.am{font-size:12px;line-height:1.5;margin-top:12px;color:var(--muted);overflow-wrap:anywhere}
+.am.error{color:var(--bad)}.am.success{color:var(--ok)}
+.adv{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:11px;margin:14px 0}.adv:before,.adv:after{content:'';height:1px;background:var(--line);flex:1}
+/* supabase compatibility (optional supabase-app.js) */
+#js-auth-entry{display:none!important}
+#js-auth-modal{z-index:12001!important}
+@media(max-width:440px){.brand img{display:none}.bnav{bottom:calc(5px + env(safe-area-inset-bottom));padding:4px}.bnav button{min-height:48px;font-size:9px}main{padding-bottom:calc(205px + env(safe-area-inset-bottom))}}
+@media(max-width:380px){.book{grid-template-columns:96px 1fr}.cover{width:96px}.brand small{display:none}.login span{display:none}.login{padding:0 12px}}
+@media(min-width:760px){.dgrid,.tg,.sg{grid-template-columns:repeat(3,1fr)}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<symbol id="i-dots" viewBox="0 0 24 24"><circle cx="12" cy="5" r="1.7" fill="currentColor"/><circle cx="12" cy="12" r="1.7" fill="currentColor"/><circle cx="12" cy="19" r="1.7" fill="currentColor"/></symbol><symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+<symbol id="i-home" viewBox="0 0 24 24"><path d="M3 11l9-8 9 8"/><path d="M5 9.5V20h14V9.5"/><path d="M10 20v-6h4v6"/></symbol>
+<symbol id="i-book" viewBox="0 0 24 24"><path d="M5 4h11a3 3 0 013 3v13H8a3 3 0 01-3-3z"/><path d="M5 17a3 3 0 013-3h11"/></symbol>
+<symbol id="i-cap" viewBox="0 0 24 24"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11.5V16c3 2.5 9 2.5 12 0v-4.5"/></symbol>
+<symbol id="i-trophy" viewBox="0 0 24 24"><path d="M8 4h8v5a4 4 0 01-8 0z"/><path d="M8 6H4v1a4 4 0 004 4M16 6h4v1a4 4 0 01-4 4"/><path d="M12 13v4M8 21h8M10 17h4"/></symbol>
+<symbol id="i-video" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="4"/><path d="M10.5 9.5l4 2.5-4 2.5z"/></symbol>
+<symbol id="i-palette" viewBox="0 0 24 24"><path d="M12 3a9 9 0 100 18c1.5 0 2-1 1.5-2-.6-1.2.2-2.5 1.6-2.5H17a4 4 0 004-4c0-5-4-9.5-9-9.5z"/><circle cx="7.5" cy="11" r="1" fill="currentColor"/><circle cx="10" cy="7" r="1" fill="currentColor"/><circle cx="15" cy="7.5" r="1" fill="currentColor"/></symbol>
+<symbol id="i-code" viewBox="0 0 24 24"><path d="M8 8l-4 4 4 4"/><path d="M16 8l4 4-4 4"/><path d="M13.5 5l-3 14"/></symbol>
+<symbol id="i-tools" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="3"/><path d="M8 7h8M8 12h2M14 12h2M8 16h2M14 16h2"/></symbol>
+<symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-7 8-7s8 3 8 7"/></symbol>
+<symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5L19 19M19 5l-1.5 1.5M6.5 17.5L5 19"/></symbol>
+<symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 019.5 4 8 8 0 1020 14.5z"/></symbol>
+<symbol id="i-timer" viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2M9 2h6"/></symbol>
+<symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 16l.7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7z"/></symbol>
+<symbol id="i-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 012-2h9"/></symbol>
+<symbol id="i-ext" viewBox="0 0 24 24"><path d="M14 4h6v6"/><path d="M20 4l-9 9"/><path d="M18 14v5a1 1 0 01-1 1H5a1 1 0 01-1-1V7a1 1 0 011-1h5"/></symbol>
+<symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+<symbol id="i-back" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></symbol>
+<symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M4 7l8 6 8-6"/></symbol>
+<symbol id="i-wa" viewBox="0 0 24 24"><path d="M3.5 20.5l1.3-4.4A8.5 8.5 0 1112 20.5a8.4 8.4 0 01-4.1-1.1z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-1 .7a4 4 0 01-1.7-1.7l.7-1-1-2z"/></symbol>
+<symbol id="i-ig" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r="1" fill="currentColor"/></symbol>
+<symbol id="i-download" viewBox="0 0 24 24"><path d="M12 4v11M7 11l5 5 5-5M5 20h14"/></symbol>
+<symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8v.5"/></symbol>
+<symbol id="i-settings" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9L7 7M17 17l2.1 2.1M19.1 4.9L17 7M7 17l-2.1 2.1"/></symbol>
+<symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5l11 7-11 7z"/></symbol>
+<symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 17v-6a6 6 0 1112 0v6l1.5 2h-15z"/><path d="M10 21h4"/></symbol>
+<symbol id="i-brief" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="14" rx="2"/><path d="M8 7V4h8v3M3 12h18"/></symbol>
+<symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></symbol>
+<symbol id="i-wand" viewBox="0 0 24 24"><path d="m15 4 5 5M3 21 16 8M5 3v4M3 5h4M18 15v4m-2-2h4"/></symbol>
+<symbol id="i-film" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 3v18M17 3v18M3 8h4M3 16h4M17 8h4M17 16h4"/></symbol>
+<symbol id="i-msg" viewBox="0 0 24 24"><path d="M21 11.5a8.5 8.5 0 01-8.5 8.5 9 9 0 01-4-.9L3 21l1.9-5.5a9 9 0 01-.9-4A8.5 8.5 0 0112.5 3H13a8.5 8.5 0 018 8z"/></symbol>
+</svg>
+
+<div id="splash" role="status" aria-label="Loading Jaydeep Singh app">
+ <div class="sp">
+  <div class="lamp"><div class="lg"></div><div class="lf"></div><div class="lb"></div></div>
+  <img class="spp" src="./profile.jpg" alt="Jaydeep Singh" onerror="this.onerror=null;this.src=\'./assets/profile-placeholder.svg\'">
+  <div class="sp-name">JAYDEEP SINGH</div>
+  <div class="sp-role">AUTHOR · MENTOR · CREATOR</div>
+ </div>
+</div>
+
+<div class="shade" id="shade"></div>
+
+<!-- SIDE MENU: opens from the LEFT -->
+<aside class="drawer" id="drawer" aria-label="Menu" aria-hidden="true">
+ <div class="d-head"><img src="./profile.jpg" alt="" onerror="this.onerror=null;this.src=\'./assets/profile-placeholder.svg\'"><div><b>Jaydeep Singh</b><small>AUTHOR · MENTOR · CREATOR</small></div></div>
+ <div class="d-label">EXPLORE</div>
+ <button class="d-link" data-go="home" data-nav="home"><i data-ic="home"></i>Home</button>
+ <button class="d-link" data-go="books" data-nav="books"><i data-ic="book"></i>Books</button>
+ <button class="d-link" data-go="learning" data-nav="learning"><i data-ic="cap"></i>Learning · Class 6–12</button>
+ <button class="d-link" data-go="compete" data-nav="compete"><i data-ic="trophy"></i>Competitive Exams</button>
+ <button class="d-link" data-go="videos" data-nav="videos"><i data-ic="video"></i>Videos &amp; YouTube</button>
+ <button class="d-link" data-go="design" data-nav="design"><i data-ic="palette"></i>Design &amp; Creative</button>
+ <button class="d-link" data-go="projects" data-nav="projects"><i data-ic="code"></i>Projects</button>
+ <button class="d-link" data-go="updates" data-nav="updates"><i data-ic="bell"></i>Updates</button>
+ <button class="d-link" data-go="services" data-nav="services"><i data-ic="brief"></i>Services</button>
+ <div class="d-label">AI &amp; TOOLS</div>
+ <button class="d-link" data-go="ai" data-nav="ai"><i data-ic="sparkle"></i>AI Creator Studio</button>
+ <button class="d-link" data-go="tools" data-nav="tools"><i data-ic="tools"></i>Calculators &amp; Tools</button>
+ <button class="d-link" data-go="tools" data-tool="pgen"><i data-ic="wand"></i>Prompt Generator</button>
+ <button class="d-link" data-go="tools" data-tool="lib"><i data-ic="copy"></i>Prompt Library (200+)</button>
+ <button class="d-link" data-go="tools" data-tool="ai"><i data-ic="ext"></i>AI &amp; Editing Apps</button>
+ <button class="d-link" data-go="stopwatch" data-nav="stopwatch"><i data-ic="timer"></i>Study Stopwatch<span class="dot" id="swDot" hidden></span></button>
+ <div class="d-label">APP</div>
+ <button class="d-link" id="dTheme"><i data-ic="moon" id="dThemeIc"></i><span>Dark mode</span><span class="end" id="dThemeState">OFF</span></button>
+ <button class="d-link" data-go="settings" data-nav="settings"><i data-ic="settings"></i>Settings</button>
+ <button class="d-link" data-go="about" data-nav="about"><i data-ic="info"></i>About Jaydeep</button>
+ <button class="d-link" data-go="contact" data-nav="contact"><i data-ic="mail"></i>Contact &amp; Social</button>
+ <button class="d-link" id="dLogin"><i data-ic="user"></i>Login / My Account</button>
+ <button class="d-link" id="dInstall"><i data-ic="download"></i><span id="dInstallLabel">Install app</span><span class="end" id="dInstalledMark" hidden>✓</span></button>
+</aside>
+
+<header class="top">
+ <div class="wrap top-in">
+  <button class="ib" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="drawer"><i data-ic="menu"></i></button>
+  <a class="brand" href="#home" aria-label="Jaydeep Singh — home"><img src="./profile.jpg" alt="" onerror="this.onerror=null;this.src=\'./assets/profile-placeholder.svg\'"><span><b>JAYDEEP SINGH</b><small>AUTHOR · MENTOR · CREATOR</small></span></a>
+  <div class="hact">
+   <button class="ib" id="themeTop" aria-label="Toggle dark mode"><i data-ic="moon"></i></button>
+   <button class="login" id="loginBtn" aria-label="Login or account"><i data-ic="user"></i><span id="loginLabel">Login</span></button>
+  </div>
+ </div>
+</header>
+
+<main class="wrap">
+ <div class="backrow"><button class="ib back-icon" id="backBtn" aria-label="Go back" title="Go back" hidden><i data-ic="back"></i></button></div>
+
+ <!-- HOME -->
+ <section class="screen active" id="s-home">
+  <div class="card hero">
+   <img src="./profile.jpg" alt="Jaydeep Singh" onerror="this.onerror=null;this.src=\'./assets/profile-placeholder.svg\'">
+   <div><div class="eyebrow">Official application</div><h1>Ideas. Learning. Creation.</h1><p>Books, CBSE learning, exam practice, creator tools and AI utilities — all in one place.</p>
+    <div class="row"><button class="btn primary" data-go="books"><i data-ic="book"></i>My Book</button><button class="btn" data-go="ai"><i data-ic="sparkle"></i>AI Studio</button></div></div>
+  </div>
+  <div class="sec">
+   <div class="sec-h"><div><h2>Featured Book</h2><p>The debut book by Jaydeep Singh</p></div><button class="link" data-go="books">All books</button></div>
+   <article class="card book">
+    <img class="cover" src="./book-cover.jpg" alt="Echoes of Destiny book cover" loading="lazy" onerror="this.onerror=null;this.src=\'./assets/book-cover-placeholder.svg\'">
+    <div><span class="tag green">English edition · Available</span><h3>Echoes of Destiny</h3><p class="muted small">The Untold Story of Our Generation</p>
+     <div class="meta"><span class="pill">By Jaydeep Singh</span><span class="pill">MRP ₹169</span></div>
+     <div class="btns"><a class="store" href="https://amzn.in/d/03OMX68u" target="_blank" rel="noopener noreferrer"><img src="https://cdn.simpleicons.org/amazon/ffffff" alt="" onerror="this.style.display='none'">Buy on Amazon</a><a class="store play" href="https://play.google.com/store/books/details/Jaydeep_Singh_Echoes_Of_Destiny?id=5_0MEgAAQBAJ" target="_blank" rel="noopener noreferrer"><img src="https://cdn.simpleicons.org/googleplay/ffffff" alt="" onerror="this.style.display='none'">Google Play</a><a class="store off" id="flipkartHomeBtn" href="#" aria-disabled="true">Buy on Flipkart</a></div></div>
+   </article>
+  </div>
+  <div class="sec">
+   <div class="sec-h"><div><h2>What do you need?</h2><p>Quick access</p></div></div>
+   <div class="grid3">
+    <button class="q" data-go="learning"><i data-ic="cap"></i>Learning<br>Class 6–12</button>
+    <button class="q" data-go="compete"><i data-ic="trophy"></i>Competitive Exams</button>
+    <button class="q" data-go="ai"><i data-ic="sparkle"></i>AI Creator Studio</button>
+    <button class="q" data-go="tools"><i data-ic="tools"></i>Smart Calculators</button>
+    <button class="q" data-go="tools" data-tool="pgen"><i data-ic="wand"></i>Prompt Generator</button>
+    <button class="q" data-go="tools" data-tool="ai"><i data-ic="ext"></i>AI &amp; Apps</button>
+    <button class="q" data-go="videos"><i data-ic="video"></i>Videos</button>
+    <button class="q" data-go="design"><i data-ic="palette"></i>Design</button>
+    <button class="q" data-go="projects"><i data-ic="code"></i>Projects</button>
+    <button class="q" data-go="updates"><i data-ic="bell"></i>Updates</button>
+    <button class="q" data-go="services"><i data-ic="brief"></i>Services</button>
+    <button class="q" data-go="about"><i data-ic="info"></i>About</button>
+   </div>
+  </div>
+  <div class="sec">
+   <div class="sec-h"><div><h2>Creator apps</h2><p>Official services · open in a new tab or installed app</p></div><button class="link" data-go="ai">All tools</button></div>
+   <div class="sg">
+    <a class="sc" href="https://www.capcut.com/" target="_blank" rel="noopener noreferrer"><span class="bi"><img src="https://cdn.simpleicons.org/capcut/0b5d3b" alt="CapCut logo" loading="lazy"></span><span><b>CapCut</b><small>Video editing</small></span></a>
+    <a class="sc" href="https://kling.ai/" target="_blank" rel="noopener noreferrer"><span class="bi"><img src="https://cdn.simpleicons.org/klingai/0b5d3b" alt="Kling AI logo" loading="lazy"></span><span><b>Kling AI</b><small>AI video</small></span></a>
+    <a class="sc" href="https://www.canva.com/" target="_blank" rel="noopener noreferrer"><span class="bi"><img src="https://cdn.simpleicons.org/canva/00C4CC" alt="Canva logo" loading="lazy"></span><span><b>Canva</b><small>Design studio</small></span></a>
+    <a class="sc" href="https://www.leonardo.ai/" target="_blank" rel="noopener noreferrer"><span class="bi"><img src="https://cdn.simpleicons.org/leonardo/0b5d3b" alt="Leonardo AI logo" loading="lazy"></span><span><b>Leonardo AI</b><small>Image creation</small></span></a>
+   </div>
+  </div>
+  <div class="sec"><div class="sec-h"><div><h2>Latest Updates</h2></div><button class="link" data-go="updates">All</button></div><div class="card" id="updates"></div></div>
+  <div class="sec">
+   <div class="sec-h"><div><h2>About the creator</h2><p>Author · Mentor · Creator</p></div><button class="link" data-go="about">Read more</button></div>
+   <div class="card row" style="flex-wrap:nowrap;gap:14px"><img src="./profile.jpg" alt="Jaydeep Singh" loading="lazy" style="width:78px;height:78px;border-radius:50%;object-fit:cover;border:3px solid var(--gold);flex:none" onerror="this.onerror=null;this.src=\'./assets/profile-placeholder.svg\'"><div><h3>Jaydeep Singh</h3><p class="muted small" style="margin-top:5px">Author of <i>Echoes of Destiny</i>, mentor and creator exploring education, technology and creative projects.</p></div></div>
+  </div>
+  <div class="sec">
+   <div class="sec-h"><div><h2>Connect</h2><p>Official channels</p></div><button class="link" data-go="contact">Details</button></div>
+   <div class="sg">
+    <a class="sc" href="https://www.instagram.com/jaydeepsingh._/" target="_blank" rel="noopener noreferrer"><span class="bi"><img src="https://cdn.simpleicons.org/instagram/E4405F" alt="Instagram logo" loading="lazy"></span><span><b>Instagram</b><small>Follow the journey</small></span></a>
+    <a class="sc" href="https://www.youtube.com/@Jaydeepzx" target="_blank" rel="noopener noreferrer"><span class="bi"><img src="https://cdn.simpleicons.org/youtube/FF0033" alt="YouTube logo" loading="lazy"></span><span><b>YouTube</b><small>Watch videos</small></span></a>
+    <a class="sc" href="https://wa.me/919525572534" target="_blank" rel="noopener noreferrer" data-fallback="WhatsApp did not open. Please install WhatsApp or try again."><span class="bi"><img src="https://cdn.simpleicons.org/whatsapp/25D366" alt="WhatsApp logo" loading="lazy"></span><span><b>WhatsApp</b><small>Message directly</small></span></a>
+    <a class="sc" href="mailto:jaydeepsingh3631@gmail.com" data-fallback="No email app opened. Write to jaydeepsingh3631@gmail.com"><span class="bi"><img src="https://cdn.simpleicons.org/gmail/EA4335" alt="Email logo" loading="lazy"></span><span><b>Email</b><small>Get in touch</small></span></a>
+   </div>
+  </div>
+  <div class="sec"><div class="card row" style="justify-content:space-between"><div><b>Install this app</b><div class="muted small">Add it to your home screen.</div></div><button class="btn primary" id="installBtn"><i data-ic="download"></i><span>Install app</span></button></div></div>
+ </section>
+
+ <!-- BOOKS -->
+ <section class="screen" id="s-books">
+  <div class="page-h"><div class="eyebrow">Books</div><h1>Writing by Jaydeep Singh</h1></div>
+  <article class="card book">
+   <img class="cover" src="./book-cover.jpg" alt="Echoes of Destiny book cover" loading="lazy" onerror="this.onerror=null;this.src=\'./assets/book-cover-placeholder.svg\'">
+   <div><span class="tag green">Debut book · English edition</span><h3>Echoes of Destiny</h3><p class="muted small">The Untold Story of Our Generation</p>
+    <div class="meta"><span class="pill">Jaydeep Singh</span><span class="pill">MRP ₹169</span><span class="pill">ISBN 9798173442789</span></div></div>
+  </article>
+  <div class="card stack" style="margin-top:14px">
+   <p class="muted">An inspirational and motivational journey through childhood, family, dreams, struggles, emotions, failures, hope and the courage to stand again.</p>
+   <div class="row">
+    <a class="store" href="https://amzn.in/d/03OMX68u" target="_blank" rel="noopener noreferrer"><img src="https://cdn.simpleicons.org/amazon/ffffff" alt="" onerror="this.style.display='none'">Buy on Amazon</a>
+    <a class="store play" href="https://play.google.com/store/books/details/Jaydeep_Singh_Echoes_Of_Destiny?id=5_0MEgAAQBAJ" target="_blank" rel="noopener noreferrer"><img src="https://cdn.simpleicons.org/googleplay/ffffff" alt="" onerror="this.style.display='none'">Google Play Books</a>
+    <a class="store off" id="flipkartBtn" href="#" aria-disabled="true">Buy on Flipkart</a>
+   </div>
+  </div>
+  <div class="grid2" style="margin-top:14px">
+   <div class="card"><span class="tag">Hindi edition</span><h3 style="margin-top:8px">नियति की गूंज</h3><p class="muted small" style="margin-top:6px">Hindi Edition — Coming Soon. Not yet available online.</p></div>
+   <div class="card"><span class="tag">Future</span><h3 style="margin-top:8px">More books</h3><p class="muted small" style="margin-top:6px">Future books and writing projects will appear here.</p></div>
+  </div>
+ </section>
+
+ <!-- LEARNING / COMPETITIVE / QUIZ -->
+ <section class="screen" id="s-learning">
+  <div class="page-h"><div class="eyebrow">CBSE · Class 6–12</div><h1>Learn · Revise · Test</h1><p>Subject-wise study notes (Hindi + English) and timed mock tests.</p></div>
+  <div id="learnBody"></div>
+ </section>
+ <section class="screen" id="s-compete">
+  <div class="page-h"><div class="eyebrow">Competitive exams</div><h1>Practice &amp; Notes</h1><p>Subject-wise timed tests and revision notes.</p></div>
+  <div id="compBody"></div>
+ </section>
+ <section class="screen" id="s-quiz"><div id="quizBody" class="stack"></div></section>
+
+ <!-- AI CREATOR STUDIO -->
+ <section class="screen" id="s-ai">
+  <div class="page-h"><div class="eyebrow">Your AI toolkit</div><h1>AI Creator Studio</h1><p>Prompt tools, creator apps and ready-to-use ideas</p></div>
+  <div class="card">
+   <input class="field" id="aiSearch" type="search" placeholder="Search tools and prompts…" aria-label="Search AI tools">
+   <div class="chips" id="aiFilters" style="margin-top:10px"><button class="chip active" data-f="all">All tools</button><button class="chip" data-f="prompt">Prompt studio</button><button class="chip" data-f="photo">Photo</button><button class="chip" data-f="video">Video</button><button class="chip" data-f="writing">Writing</button><button class="chip" data-f="apps">AI apps</button></div>
+  </div>
+  <div class="tg" id="aiGrid" style="margin-top:12px"></div>
+  <div class="sec"><div class="sec-h"><div><h2>Prompt tools</h2><p>Generate, browse, copy and save prompts</p></div></div>
+   <div class="grid2">
+    <button class="q" data-go="tools" data-tool="pgen"><i data-ic="wand"></i>Prompt Generator</button>
+    <button class="q" data-go="tools" data-tool="lib"><i data-ic="copy"></i>Prompt Library</button>
+    <button class="q" data-go="tools" data-tool="saved"><i data-ic="bell"></i>Saved prompts</button>
+    <button class="q" data-go="tools" data-tool="helper"><i data-ic="cap"></i>Study Helper</button>
+   </div></div>
+  <div class="sec"><div class="sec-h"><div><h2>Official AI &amp; editing apps</h2><p>Real brand marks · external services</p></div></div><div class="sg" id="aiApps"></div></div>
+  <p class="muted small" style="margin-top:16px">Prompt generation runs inside this app. Actual AI image/video/text generation needs the selected service. AI can make mistakes — verify important facts and respect others' rights when editing images or videos.</p>
+ </section>
+
+ <!-- VIDEOS -->
+ <section class="screen" id="s-videos">
+  <div class="page-h"><div class="eyebrow">Videos</div><h1>Watch &amp; learn</h1><p>Teaching · Educational · Creative</p></div>
+  <div class="card row" style="justify-content:space-between"><div><b>Jaydeep Singh on YouTube</b><div class="muted small">Teaching, educational, book, creative and other videos</div></div><a class="btn primary" href="https://www.youtube.com/@Jaydeepzx" target="_blank" rel="noopener noreferrer"><i data-ic="video"></i>Open YouTube channel</a></div>
+  <div class="chips" id="vChips" style="margin-top:14px"></div>
+  <div id="vList" class="stack"></div>
+  <div class="sec"><div class="sec-h"><div><h2>Video categories</h2></div></div><div class="grid3" id="vCats"></div></div>
+ </section>
+
+ <!-- DESIGN / CREATIVE -->
+ <section class="screen" id="s-design">
+  <div class="page-h"><div class="eyebrow">Design</div><h1>Creative work</h1><p>Photo editing, video editing, graphics, thumbnails and posters.</p></div>
+  <div class="chips" id="dChips"></div><div id="dList"></div>
+  <div class="sec"><div class="sec-h"><div><h2>Make a creative prompt</h2><p>Open the generator with the category preselected</p></div></div><div class="grid2" id="dShort"></div></div>
+  <div class="card stack" style="margin-top:18px"><h3>Creative services</h3><p class="muted small">Reel &amp; video editing · Photo editing · Poster &amp; thumbnail design · PDF &amp; PPT · Websites · PWA / apps</p>
+   <div class="row"><a class="btn primary" href="mailto:jaydeepsingh3631@gmail.com?subject=Service%20Enquiry" data-fallback="No email app opened. Write to jaydeepsingh3631@gmail.com"><i data-ic="mail"></i>Enquire by email</a><button class="btn" data-go="services">All services</button></div></div>
+ </section>
+
+ <!-- PROJECTS / UPDATES / SERVICES -->
+ <section class="screen" id="s-projects"><div class="page-h"><div class="eyebrow">Projects</div><h1>Things I'm building</h1><p>Ideas being built</p></div><div id="pList" class="stack"></div></section>
+ <section class="screen" id="s-updates"><div class="page-h"><div class="eyebrow">The latest</div><h1>Updates</h1><p>Latest from Jaydeep Singh</p></div><div id="updFull" class="stack"></div></section>
+ <section class="screen" id="s-services"><div class="page-h"><div class="eyebrow">How I can help</div><h1>Creative &amp; digital services</h1><p>Tap a card to enquire.</p></div><div id="svList" class="stack"></div></section>
+
+ <!-- TOOLS -->
+ <section class="screen" id="s-tools">
+  <div class="page-h"><div class="eyebrow">Tools</div><h1>Calculators &amp; creative tools</h1></div>
+  <div class="chips" id="tChips"></div>
+  <div id="toolPanels"></div>
+ </section>
+
+ <!-- STOPWATCH -->
+ <section class="screen" id="s-stopwatch">
+  <div class="page-h"><div class="eyebrow">Study</div><h1>Study Stopwatch</h1><p>Time your study sessions and keep a daily total.</p></div>
+  <div class="card">
+   <div class="sw-time" id="swTime">00:00:00<small>.0</small></div>
+   <div class="row" style="justify-content:center"><button class="btn primary" id="swToggle" style="min-width:120px">Start</button><button class="btn" id="swReset">Reset</button><button class="btn soft" id="swSave">Save to today</button></div>
+   <p class="muted small" style="text-align:center;margin-top:14px">Today's study time: <b id="swToday">0m</b></p>
+  </div>
+ </section>
+
+ <!-- ABOUT -->
+ <section class="screen" id="s-about">
+  <div class="page-h"><div class="eyebrow">About</div><h1>About Jaydeep Singh</h1><p>AUTHOR · MENTOR · CREATOR</p></div>
+  <div class="card stack">
+   <img src="./profile.jpg" alt="Jaydeep Singh portrait" loading="lazy" style="width:130px;height:130px;border-radius:50%;object-fit:cover;margin:0 auto;border:3px solid var(--gold)" onerror="this.onerror=null;this.src=\'./assets/profile-placeholder.svg\'">
+   <p>Jaydeep Singh is an author, mentor, creator, and a student who believes that learning and growth are lifelong journeys. His work is shaped by curiosity, observation, creativity, and the everyday experiences that quietly influence who we become.</p>
+   <p>As an author, Jaydeep made his debut with <i>Echoes of Destiny: The Untold Story of Our Generation</i>, a book inspired by childhood, family, dreams, struggles, emotions, hope, and the experiences of growing up.</p>
+   <p>As a mentor, he is passionate about sharing knowledge with students and learners. His teaching interests include English, Mathematics, Science, History, Political Science, and Reasoning, with content designed for Classes 6–12 as well as competitive-exam aspirants.</p>
+   <p>As a creator, Jaydeep explores videos, digital content, design, technology, websites, apps, and new creative projects. He sees every project as an opportunity to learn something new and create something meaningful.</p>
+   <p>His journey is still unfolding—from writing his first book to teaching, creating, experimenting with technology, and building new ideas. This platform brings those different sides of his work together in one place.</p>
+   <div class="quote">“Life is full of problems, and only you are its solution.”<br><br>— Jaydeep Singh</div>
+   <div class="row"><button class="btn primary" data-go="books">My book</button><button class="btn" data-go="contact">Contact</button><a class="btn" href="https://www.instagram.com/jaydeepsingh._/" target="_blank" rel="noopener noreferrer"><img src="https://cdn.simpleicons.org/instagram/0b5d3b" alt="" onerror="this.style.display='none'">Instagram</a><a class="btn" href="https://www.youtube.com/@Jaydeepzx" target="_blank" rel="noopener noreferrer"><img src="https://cdn.simpleicons.org/youtube/FF0033" alt="" onerror="this.style.display='none'">YouTube</a></div>
+  </div>
+ </section>
+
+ <!-- CONTACT -->
+ <section class="screen" id="s-contact">
+  <div class="page-h"><div class="eyebrow">Contact</div><h1>Connect with me</h1></div>
+  <div class="stack">
+   <a class="contact-row" href="mailto:jaydeepsingh3631@gmail.com" data-fallback="No email app opened. Write to jaydeepsingh3631@gmail.com"><span class="ci"><i data-ic="mail"></i></span><span><b>Email</b><small>jaydeepsingh3631@gmail.com</small></span></a>
+   <a class="contact-row" href="https://wa.me/919525572534" target="_blank" rel="noopener noreferrer" data-fallback="WhatsApp did not open. Please install WhatsApp or try again."><span class="ci"><i data-ic="wa"></i></span><span><b>WhatsApp</b><small>Message directly</small></span></a>
+   <a class="contact-row" href="https://www.instagram.com/jaydeepsingh._/" target="_blank" rel="noopener noreferrer"><span class="ci"><i data-ic="ig"></i></span><span><b>Instagram</b><small>@jaydeepsingh._</small></span></a>
+   <a class="contact-row" href="https://www.youtube.com/@Jaydeepzx" target="_blank" rel="noopener noreferrer"><span class="ci"><i data-ic="video"></i></span><span><b>YouTube</b><small>@Jaydeepzx</small></span></a>
+   <a class="contact-row" href="https://jaydeepsinghofficial.github.io/" target="_blank" rel="noopener noreferrer"><span class="ci"><i data-ic="ext"></i></span><span><b>Website</b><small>jaydeepsinghofficial.github.io</small></span></a>
+   <div class="install-contact"><b>Install Jaydeep Singh App</b><div class="muted small" style="margin:4px 0 8px">Add it to your home screen for a full-screen experience.</div><button class="btn primary" id="installBtn3"><i data-ic="download"></i><span>Install app</span></button><span class="installed-label" id="installedContact" hidden>✓ Installed</span></div>
+  </div>
+ </section>
+
+ <!-- SETTINGS -->
+ <section class="screen" id="s-settings">
+  <div class="page-h"><div class="eyebrow">Settings</div><h1>Settings</h1></div>
+  <div class="card stack">
+   <div><b>Theme</b><div class="seg" id="themeSeg" style="margin-top:8px"><button data-th="light">Light</button><button data-th="dark">Dark</button><button data-th="system">System</button></div></div>
+   <div><b>Notes language</b><div class="seg" id="nlSeg" style="margin-top:8px"><button data-nl="both">Hindi + English</button><button data-nl="hi">हिन्दी</button><button data-nl="en">English</button></div></div>
+   <div data-install hidden><b>Install</b><div class="muted small" style="margin:4px 0 8px">Add this app to your home screen.</div><button class="btn primary" id="installBtn2"><i data-ic="download"></i>Install app</button></div>
+   <div id="iosHint" class="small muted" hidden>On iPhone/iPad: tap Share → Add to Home Screen.</div>
+   <div><b>Saved data</b><div class="muted small" style="margin:4px 0 8px">Clears theme, stopwatch, test history, saved prompts and study time stored on this device.</div><button class="btn" id="clearData">Clear saved data</button></div>
+   <p class="small muted">Version 3.0 · Install and offline mode need HTTPS (GitHub Pages is fine) or localhost.</p>
+  </div>
+ </section>
+</main>
+
+<nav class="bnav" aria-label="Main navigation">
+ <button data-go="home" data-nav="home"><i data-ic="home"></i>Home</button>
+ <button data-go="books" data-nav="books"><i data-ic="book"></i>Books</button>
+ <button data-go="learning" data-nav="learning"><i data-ic="cap"></i>Learn</button>
+ <button data-go="compete" data-nav="compete"><i data-ic="trophy"></i>Exams</button>
+ <button data-go="ai" data-nav="ai"><i data-ic="sparkle"></i>AI</button>
+ <button data-go="tools" data-nav="tools"><i data-ic="tools"></i>Tools</button>
+</nav>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<!-- LOGIN OVERLAY (Supabase email/password + Google) -->
+<div id="authOverlay" class="ao" role="dialog" aria-modal="true" aria-labelledby="authTitle">
+ <div class="ac">
+  <div class="ah"><h2 id="authTitle">Welcome back</h2><button class="ib" id="authClose" aria-label="Close login"><i data-ic="close"></i></button></div>
+  <p class="muted small" id="authCopy">Sign in to your Jaydeep Singh account.</p>
+  <form id="authForm" novalidate>
+   <label for="authEmail">Email address</label><input class="field" id="authEmail" type="email" autocomplete="email" placeholder="you@example.com" required>
+   <label for="authPassword">Password</label><input class="field" id="authPassword" type="password" autocomplete="current-password" minlength="6" placeholder="At least 6 characters" required>
+   <button class="btn primary full" id="authSubmit" type="submit" style="margin-top:14px">Sign in</button>
+  </form>
+  <button class="btn full" id="authModeBtn" type="button" style="margin-top:10px">Create a new account</button>
+  <div class="adv" id="authDiv">OR</div>
+  <button class="btn full" id="authGoogle" type="button">Continue with Google</button>
+  <p class="am" id="authMessage" aria-live="polite">Use the email registered with your account.</p>
+ </div>
+</div>
+<noscript><p style="padding:20px;text-align:center">Please enable JavaScript to use this app.</p></noscript>
+
+<script src="./data/syllabus-data.js"></script>
+<script src="./data/question-bank.js"></script>
+<script>
+"use strict";
+/* =====================================================================
+   1. CONFIG — edit here to add content (no other code needs changing)
+===================================================================== */
+const CONFIG={flipkart:""}; // PASTE FLIPKART PRODUCT URL HERE, e.g. "https://www.flipkart.com/..."
+const UPDATES=[
+ {g:"2026",t:"Echoes of Destiny",x:"The debut book is available in English on Amazon and Google Play."},
+ {g:"Soon",t:"Hindi edition — नियति की गूंज",x:"Coming soon. Not yet available online."},
+ {g:"New",t:"Learning & exams",x:"CBSE class indexes and starter practice content are available; syllabus and question coverage is being expanded in phases."},
+ {g:"New",t:"AI Creator Studio",x:"Prompt generator, 200+ ready prompts and links to chat, image and video AI tools."},
+ {g:"Live",t:"Official app",x:"Books, learning, videos, AI utilities and creative work in one place."},
+ {g:"Future",t:"New content",x:"New lectures, videos, projects and creative work will be added here."}];
+const PROJECTS=[
+ {title:"Jaydeep Singh App",desc:"This official installable app: books, learning, exams, AI studio, tools and creative work.",status:"Active",link:"https://jaydeepsinghofficial.github.io/",img:""},
+ {title:"Websites",desc:"Personal, educational and creative websites.",status:"Planned",link:"",img:""},
+ {title:"Publishing projects",desc:"Books, digital editions and related publishing work.",status:"Planned",link:"",img:""},
+ {title:"Education projects",desc:"New ideas, study materials and learning resources for students.",status:"Planned",link:"",img:""}];
+const SERVICES=[
+ ["Reel & Video Editing","Short videos, edits and content preparation.","wa"],
+ ["Photo Editing & Retouching","Portrait retouching, backgrounds, colour grading and restoration.","wa"],
+ ["Poster & Thumbnail Design","Graphics for videos, social platforms and promotions.","wa"],
+ ["PDF & PPT","Documents and presentations.","mail"],
+ ["Website","Personal, educational and creative websites.","mail"],
+ ["PWA / App","Progressive web app projects.","mail"],
+ ["Other Creative Work","Custom digital creative projects.","mail"]];
+const DSHORT=[
+ ["Posters & Social Designs","Promotional and social media poster designs.","Poster design"],
+ ["Thumbnails","YouTube and digital content thumbnails.","YouTube thumbnail"],
+ ["Video Editing","Reels, videos and creative edits.","Instagram Reel"],
+ ["Book Promotion","Creative promotional designs for books.","Book promotion video"],
+ ["UI & Design","Websites, interfaces and digital experiences.","Poster design"]];
+const VCATS=[["Teaching","Educational lessons"],["Educational","Learning content"],["Book","Book-related videos"],["Creative","Creative projects"],["Shorts","Short-form content"],["Other","More content"]];
+const VIDEOS=[];  // {id:"YOUTUBE_ID",title:"...",cat:"Educational"}
+const VIDEO_CATS=["All","Educational","Book","Motivational","Other"];
+const DESIGNS=[]; // {src:"./assets/design/a.jpg",title:"...",cat:"Posters",alt:"..."}
+const DESIGN_CATS=["All","Photo editing","Video editing","Graphic design","Thumbnails","Posters","Other"];
+const RESOURCES={}; // e.g. RESOURCES["9|Mathematics"]=[{t:"Algebra lecture",u:"https://..."}]
+const SCHOOL=["English","Hindi","Mathematics","Science","Social Science","Physical Education"];
+const CLASSES=[6,7,8,9,10,11,12];
+// Chapter index for the main NCERT/CBSE subjects. Subject choices and chapter lists
+// vary by school, language course, elective and the 2026-27 transition; official CBSE links are provided below.
+const SUBJECTS_BY_CLASS={
+ 6:["English","Hindi","Mathematics","Science","Social Science","Sanskrit","Computer Science","Physical Education"],
+ 7:["English","Hindi","Mathematics","Science","Social Science","Sanskrit","Computer Science","Physical Education"],
+ 8:["English","Hindi","Mathematics","Science","Social Science","Sanskrit","Computer Science","Physical Education"],
+ 9:["English","Hindi","Mathematics","Science","Social Science","Computational Thinking & AI","Computer Applications","Physical Education"],
+ 10:["English","Hindi","Mathematics","Science","Social Science","Information Technology","Computer Applications","Physical Education"],
+ 11:["English Core","Hindi Core","Physics","Chemistry","Mathematics","Biology","Accountancy","Business Studies","Economics","History","Geography","Political Science","Psychology","Sociology","Computer Science","Informatics Practices","Physical Education"],
+ 12:["English Core","Hindi Core","Physics","Chemistry","Mathematics","Biology","Accountancy","Business Studies","Economics","History","Geography","Political Science","Psychology","Sociology","Computer Science","Informatics Practices","Physical Education"]
+};
+const STREAMS={Science:["Physics","Chemistry","Mathematics","Biology","Computer Science","Informatics Practices","Physical Education"],Commerce:["Accountancy","Business Studies","Economics","Mathematics","English Core","Hindi Core","Informatics Practices","Physical Education"],Humanities:["History","Geography","Political Science","Psychology","Sociology","Economics","English Core","Hindi Core","Physical Education"]};
+const CHAPTERS=(window.JD_SYLLABUS&&JD_SYLLABUS.chapterIndex)||{};
+function chaptersFor(cls,sub){return CHAPTERS[cls+"|"+sub]||[];}
+function subjectsFor(cls){if(+cls>=11){if(L.stream)return STREAMS[L.stream].filter(s=>(SUBJECTS_BY_CLASS[cls]||[]).includes(s));return SUBJECTS_BY_CLASS[cls]||[];}return SUBJECTS_BY_CLASS[cls]||SCHOOL;}
+const OFFICIAL_CURRICULUM="https://cbseacademic.nic.in/curriculum_2027.html";
+const EXAMS=[["JEE Main","Engineering entrance · Physics, Chemistry, Mathematics"],["JEE Advanced","Advanced engineering entrance · subject-wise practice"],["NEET UG","Medical entrance · Physics, Chemistry, Biology"],["SSC","CGL · CHSL · MTS · GD and similar"],["Banking","IBPS · SBI · RBI and similar"],["Railway","RRB NTPC · Group D · ALP and similar"],["State Exams","State commissions · Police · Patwari and similar"],["Defence","Agniveer · NDA · CDS and similar"],["Teaching","CTET · State TET · KVS/NVS and similar"]];
+const CSUBS=["English","Hindi","Reasoning","Mathematics","GK/GS","Mixed"];
+const CDUR={English:25,Hindi:25,Reasoning:35,Mathematics:40,"GK/GS":25,Mixed:60}; // minutes for 50 questions
+
+/* =====================================================================
+   2. HELPERS
+===================================================================== */
+const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const ic=n=>`<svg class="i" aria-hidden="true"><use href="#i-${n}"/></svg>`;
+const store={get(k,d=null){try{const v=localStorage.getItem(k);return v===null?d:v}catch(e){return d}},set(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
+let toastT;
+function toast(m){const t=$("#toast");t.textContent=m;t.classList.add("show");clearTimeout(toastT);toastT=setTimeout(()=>t.classList.remove("show"),2800)}
+async function copyText(text){
+ try{await navigator.clipboard.writeText(text);toast("Copied to clipboard")}
+ catch(e){const a=document.createElement("textarea");a.value=text;a.setAttribute("readonly","");a.style.cssText="position:fixed;opacity:0";document.body.appendChild(a);a.select();let ok=false;try{ok=document.execCommand("copy")}catch(_){}a.remove();toast(ok?"Copied to clipboard":"Copy failed — select the text and copy manually")}
+}
+$$("[data-ic]").forEach(e=>e.innerHTML=ic(e.dataset.ic));
+/* splash: once per session */
+(function(){const s=$("#splash");let seen=false;try{seen=sessionStorage.getItem("jd-splash")==="1";sessionStorage.setItem("jd-splash","1")}catch(e){}
+ if(seen){s.remove();return}setTimeout(()=>{s.classList.add("hide");setTimeout(()=>s.remove(),700)},1500)})();
+
+/* =====================================================================
+   3. NAVIGATION (hash routing + LEFT drawer)
+===================================================================== */
+const SCREENS=["home","books","learning","compete","quiz","ai","videos","design","projects","updates","services","tools","stopwatch","about","contact","settings"];
+let navCount=0;let lastShownScreen="";
+function show(n){
+ $$(".screen").forEach(s=>s.classList.toggle("active",s.id==="s-"+n));
+ $$("[data-nav]").forEach(b=>{const on=b.dataset.nav===n;b.classList.toggle("active",on);on?b.setAttribute("aria-current","page"):b.removeAttribute("aria-current")});
+ $("#backBtn").hidden=n==="home";
+ closeDrawer();
+ if(lastShownScreen!==n){window.scrollTo({top:0,left:0,behavior:"auto"});lastShownScreen=n;}
+ if(n==="quiz")renderQuiz();
+}
+function route(){let n=location.hash.slice(1);if(!SCREENS.includes(n))n="home";show(n)}
+function go(n){if(location.hash.slice(1)===n)show(n);else{navCount++;location.hash=n}}
+window.addEventListener("hashchange",route);
+document.addEventListener("click",e=>{
+ const t=e.target.closest("[data-tool]");if(t&&typeof openTool==="function")openTool(t.dataset.tool);
+ const g=e.target.closest("[data-go]");if(g){e.preventDefault();go(g.dataset.go)}
+});
+$("#backBtn").addEventListener("click",()=>{if(navCount>0){navCount--;history.back()}else location.hash="home"});
+$("a.brand").addEventListener("click",e=>{e.preventDefault();go("home")});
+const drawer=$("#drawer"),shade=$("#shade");let lastFocus=null;
+function openDrawer(){lastFocus=document.activeElement;drawer.classList.add("open");shade.classList.add("open");drawer.setAttribute("aria-hidden","false");$("#menuBtn").setAttribute("aria-expanded","true");document.body.style.overflow="hidden";const f=$(".d-link",drawer);f&&f.focus()}
+function closeDrawer(){if(!drawer.classList.contains("open"))return;drawer.classList.remove("open");shade.classList.remove("open");drawer.setAttribute("aria-hidden","true");$("#menuBtn").setAttribute("aria-expanded","false");document.body.style.overflow="";lastFocus&&lastFocus.focus&&lastFocus.focus()}
+$("#menuBtn").addEventListener("click",openDrawer);shade.addEventListener("click",closeDrawer);
+document.addEventListener("keydown",e=>{if(e.key==="Escape"){closeDrawer();closeAuth&&closeAuth()}});
+document.addEventListener("click",e=>{const a=e.target.closest("a[data-fallback]");if(!a)return;setTimeout(()=>{if(!document.hidden)toast(a.dataset.fallback)},1600)});
+
+/* THEME */
+function applyTheme(pref){
+ store.set("jd-theme",pref);
+ const dark=pref==="dark"||(pref==="system"&&matchMedia("(prefers-color-scheme: dark)").matches);
+ document.documentElement.dataset.theme=dark?"dark":"light";
+ $('meta[name="theme-color"]').content=dark?"#0b120e":"#0b5d3b";
+ $("#dThemeState").textContent=dark?"ON":"OFF";
+ $("#dThemeIc").innerHTML=ic(dark?"sun":"moon");$("#themeTop").innerHTML=ic(dark?"sun":"moon");
+ $$("#themeSeg button").forEach(b=>b.classList.toggle("on",b.dataset.th===pref));
+}
+applyTheme(store.get("jd-theme","light"));
+const toggleTheme=()=>applyTheme(document.documentElement.dataset.theme==="dark"?"light":"dark");
+$("#dTheme").addEventListener("click",toggleTheme);$("#themeTop").addEventListener("click",toggleTheme);
+$("#themeSeg").addEventListener("click",e=>{const b=e.target.closest("button");if(b)applyTheme(b.dataset.th)});
+function setNL(v){store.set("jd-nl",v);$$("#nlSeg button").forEach(b=>b.classList.toggle("on",b.dataset.nl===v))}
+setNL(store.get("jd-nl","both"));
+$("#nlSeg").addEventListener("click",e=>{const b=e.target.closest("button");if(b){setNL(b.dataset.nl);renderLearn();renderComp()}});
+
+/* =====================================================================
+   4. HOME / BOOKS / UPDATES / SERVICES / PROJECTS / VIDEOS / DESIGN
+===================================================================== */
+$("#updates").innerHTML=UPDATES.slice(0,3).map(u=>`<div class="upd">${ic("bell")}<div><b>${esc(u.t)}</b><span>${esc(u.x)}</span></div></div>`).join("");
+$("#updFull").innerHTML=UPDATES.map(u=>`<article class="card"><span class="tag ${u.g==="Future"||u.g==="Soon"?"":"green"}">${esc(u.g)}</span><h3 style="margin-top:10px">${esc(u.t)}</h3><p class="muted small" style="margin-top:6px">${esc(u.x)}</p></article>`).join("");
+$("#svList").innerHTML=SERVICES.map(s=>{const wa=s[2]==="wa",href=wa?"https://wa.me/919525572534":"mailto:jaydeepsingh3631@gmail.com?subject="+encodeURIComponent(s[0]+" enquiry");
+ return`<a class="card row" style="justify-content:space-between;flex-wrap:nowrap" href="${href}" ${wa?'target="_blank" rel="noopener noreferrer"':""} data-fallback="${wa?"WhatsApp did not open. Please install WhatsApp or try again.":"No email app opened. Write to jaydeepsingh3631@gmail.com"}"><span><b>${esc(s[0])}</b><span class="muted small" style="display:block;margin-top:3px">${esc(s[1])}</span></span><span class="link">${wa?"WhatsApp":"Email"} →</span></a>`}).join("");
+(function(){
+ // Add the real Flipkart listing URL to CONFIG.flipkart when available.
+ [$("#flipkartBtn"),$("#flipkartHomeBtn")].filter(Boolean).forEach(b=>{
+  if(CONFIG.flipkart&&/^https:\/\//i.test(CONFIG.flipkart)){b.href=CONFIG.flipkart;b.target="_blank";b.rel="noopener noreferrer";b.classList.remove("off");b.classList.add("play");b.removeAttribute("aria-disabled")}
+  else{b.href="#";b.setAttribute("aria-disabled","true");b.classList.add("off");b.addEventListener("click",e=>e.preventDefault())}
+ });
+})();
+$("#pList").innerHTML=PROJECTS.map(p=>`<article class="card stack">${p.img?`<img src="${esc(p.img)}" alt="${esc(p.title)} preview" loading="lazy" style="border-radius:14px">`:""}<div class="row" style="justify-content:space-between"><h3>${esc(p.title)}</h3><span class="tag ${p.status==="Active"?"green":""}">${esc(p.status)}</span></div><p class="muted small">${esc(p.desc)}</p>${p.link?`<a class="btn soft" href="${esc(p.link)}" target="_blank" rel="noopener noreferrer">Open ${ic("ext")}</a>`:`<span class="tag">More coming soon</span>`}</article>`).join("");
+$("#vCats").innerHTML=VCATS.map((c,i)=>`<div class="sub"><div class="bd">${String(i+1).padStart(2,"0")}</div><b>${c[0]}</b><small>${c[1]}</small></div>`).join("");
+let vCat="All";
+function renderVideos(){
+ $("#vChips").innerHTML=VIDEO_CATS.map(c=>`<button class="chip ${c===vCat?"active":""}" data-c="${esc(c)}">${esc(c)}</button>`).join("");
+ const l=VIDEOS.filter(v=>vCat==="All"||v.cat===vCat);
+ $("#vList").innerHTML=l.length?l.map(v=>`<article class="card vcard"><div class="vbox" data-id="${esc(v.id)}"><img src="https://i.ytimg.com/vi/${esc(v.id)}/hqdefault.jpg" alt="${esc(v.title)} thumbnail" loading="lazy" onerror="this.style.display='none'"><button class="vplay" aria-label="Play ${esc(v.title)}">${ic("play")}</button></div><div class="vinfo">${esc(v.title)}<div class="row" style="margin-top:8px"><span class="tag">${esc(v.cat)}</span><a class="link" href="https://www.youtube.com/watch?v=${esc(v.id)}" target="_blank" rel="noopener noreferrer">Open on YouTube</a></div></div></article>`).join(""):`<div class="empty">Videos will appear here soon.<br>Watch everything on the YouTube channel above.</div>`;
+}
+$("#vChips").addEventListener("click",e=>{const b=e.target.closest(".chip");if(b){vCat=b.dataset.c;renderVideos()}});
+$("#vList").addEventListener("click",e=>{const p=e.target.closest(".vplay");if(!p)return;const box=p.parentElement,id=box.dataset.id;
+ box.innerHTML=`<div class="vmsg">Loading video…</div>`;const f=document.createElement("iframe");
+ f.src=`https://www.youtube-nocookie.com/embed/${encodeURIComponent(id)}?autoplay=1&rel=0`;f.title="YouTube video";f.allow="autoplay; encrypted-media; picture-in-picture";f.allowFullscreen=true;
+ const to=setTimeout(()=>{box.innerHTML=`<div class="vmsg">Video could not be loaded.<br><a style="text-decoration:underline" href="https://www.youtube.com/watch?v=${esc(id)}" target="_blank" rel="noopener noreferrer">Open it on YouTube</a></div>`},12000);
+ f.addEventListener("load",()=>{clearTimeout(to);const m=$(".vmsg",box);m&&m.remove()});box.appendChild(f)});
+renderVideos();
+let dCat="All";
+function renderDesign(){
+ $("#dChips").innerHTML=DESIGN_CATS.map(c=>`<button class="chip ${c===dCat?"active":""}" data-c="${esc(c)}">${esc(c)}</button>`).join("");
+ const l=DESIGNS.filter(d=>dCat==="All"||d.cat===dCat);
+ $("#dList").innerHTML=l.length?`<div class="dgrid">${l.map(d=>`<figure><img src="${esc(d.src)}" alt="${esc(d.alt||d.title)}" loading="lazy"><figcaption>${esc(d.title)}</figcaption></figure>`).join("")}</div>`:`<div class="empty">Portfolio samples will be added here soon.</div>`;
+}
+$("#dChips").addEventListener("click",e=>{const b=e.target.closest(".chip");if(b){dCat=b.dataset.c;renderDesign()}});
+renderDesign();
+$("#dShort").innerHTML=DSHORT.map(s=>`<div class="card stack"><h3 style="font-size:16px">${esc(s[0])}</h3><p class="muted small">${esc(s[1])}</p><button class="btn soft" data-pf="${esc(s[2])}">Make a prompt</button></div>`).join("");
+$("#dShort").addEventListener("click",e=>{const b=e.target.closest("[data-pf]");if(b)openPromptFor(b.dataset.pf)});
+
+/* /* =====================================================================
+   5. QUESTION DATA  (all original practice material)
+===================================================================== */
+const P=s=>s.split(";").map(x=>x.split(":"));
+// pairs are ordered easy -> hard
+const SYN=P("big:large;small:tiny;happy:glad;quick:fast;begin:start;end:finish;smart:clever;brave:courageous;silent:quiet;rich:wealthy;angry:furious;huge:enormous;strange:odd;tired:weary;shout:yell;help:assist;buy:purchase;choose:select;cold:chilly;difficult:hard;ancient:old;abundant:plentiful;famous:renowned;beautiful:pretty;honest:truthful;meticulous:careful;benevolent:kind;candid:frank;diligent:hardworking;eloquent:fluent;frugal:thrifty;obstinate:stubborn;ephemeral:short-lived;pragmatic:practical;reluctant:unwilling");
+const ANT=P("hot:cold;big:small;happy:sad;up:down;early:late;strong:weak;rich:poor;true:false;hard:soft;light:dark;fast:slow;young:old;love:hate;victory:defeat;ancient:modern;expand:contract;generous:selfish;brave:cowardly;increase:decrease;accept:reject;polite:rude;permanent:temporary;optimist:pessimist;visible:invisible;encourage:discourage;scarce:abundant;arrival:departure;innocent:guilty;benevolent:malevolent;transparent:opaque");
+const PLU=P("man:men;child:children;mouse:mice;foot:feet;tooth:teeth;woman:women;goose:geese;leaf:leaves;knife:knives;wolf:wolves;life:lives;ox:oxen");
+const V2=P("go:went;eat:ate;see:saw;take:took;write:wrote;begin:began;break:broke;buy:bought;bring:brought;catch:caught;drink:drank;fall:fell;give:gave;know:knew;run:ran;sing:sang;speak:spoke;teach:taught;think:thought;swim:swam");
+const V3=P("go:gone;eat:eaten;see:seen;take:taken;write:written;begin:begun;break:broken;give:given;know:known;speak:spoken;fall:fallen;drink:drunk;sing:sung;swim:swum;choose:chosen");
+const OWS=P("one who loves books:Bibliophile;study of birds:Ornithology;fear of heights:Acrophobia;government by the people:Democracy;a person who speaks two languages:Bilingual;one who knows everything:Omniscient;that which cannot be corrected:Incorrigible;a person who walks in sleep:Somnambulist;murder of a king:Regicide;one who does not believe in God:Atheist;that which cannot be avoided:Inevitable;life story written by oneself:Autobiography;a doctor who treats children:Pediatrician;one who is present everywhere:Omnipresent");
+const IDM=P("A piece of cake:Very easy;Break the ice:Start a conversation;Once in a blue moon:Very rarely;Hit the nail on the head:Say exactly the right thing;Under the weather:Feeling unwell;Spill the beans:Reveal a secret;Cost an arm and a leg:Very expensive;Bite the bullet:Face a difficult situation bravely;Burn the midnight oil:Work late at night;Turn a blind eye:Ignore deliberately;Call it a day:Stop working;In hot water:In trouble");
+const BLANKS=`She ___ to school every day.|goes|go|going|gone
+He is taller ___ his brother.|than|then|that|from
+I have lived here ___ 2015.|since|for|from|by
+She is good ___ mathematics.|at|in|on|with
+He has been waiting ___ two hours.|for|since|from|at
+The sun ___ in the east.|rises|rise|rising|rised
+I look forward ___ meeting you.|to|for|at|on
+Each of the students ___ a book.|has|have|are|were
+If I ___ a bird, I would fly.|were|am|is|be
+He gave me ___ useful advice.|some|an|many|a few
+There ___ a lot of water in the glass.|is|are|were|have
+She asked me ___ I was going.|where|whom|which|whose`.split("\n").map(l=>l.split("|"));
+const HPAR=P("सूर्य:रवि;चंद्रमा:शशि;पानी:जल;आग:अनल;हवा:पवन;पृथ्वी:धरा;आकाश:गगन;कमल:पंकज;नदी:सरिता;पर्वत:गिरि;वृक्ष:तरु;फूल:पुष्प;रात्रि:निशा;घर:गृह;सागर:समुद्र;माता:जननी;पुत्र:सुत;सोना:कनक;हाथी:गज;घोड़ा:अश्व");
+const HANT=P("दिन:रात;सुख:दुःख;अच्छा:बुरा;आशा:निराशा;जीत:हार;मित्र:शत्रु;सच:झूठ;गरीब:अमीर;उचित:अनुचित;स्वर्ग:नरक;उत्थान:पतन;प्रकाश:अंधकार;लाभ:हानि;स्वतंत्र:परतंत्र;जन्म:मृत्यु;सज्जन:दुर्जन;शांति:अशांति;ऊँचा:नीचा;मीठा:कड़वा;आदर:अनादर");
+const HIDM=P("आँखों का तारा:बहुत प्यारा;नौ दो ग्यारह होना:भाग जाना;दाँतों तले उँगली दबाना:आश्चर्य करना;ऊँट के मुँह में जीरा:आवश्यकता से बहुत कम;अंगूर खट्टे होना:वस्तु न मिलने पर दोष निकालना;आसमान से बातें करना:बहुत ऊँचा होना;घी के दिये जलाना:खुशी मनाना;कान भरना:चुगली करना;पानी-पानी होना:शर्मिंदा होना;आग बबूला होना:बहुत क्रोधित होना");
+// facts: question|answer|pool|minClass|subject  (S=social sci, C=science, P=phys-ed, G=GK only)
+const FACTS=[];
+(`First Prime Minister of India?|Jawaharlal Nehru|per|6|S
+First President of India?|Dr. Rajendra Prasad|per|6|S
+Who chaired the Drafting Committee of the Constitution?|Dr. B. R. Ambedkar|per|8|S
+Who is called the 'Iron Man of India'?|Sardar Vallabhbhai Patel|per|7|S
+Who led the Azad Hind Fauj (INA)?|Subhas Chandra Bose|per|8|S
+Who led the Dandi (Salt) March?|Mahatma Gandhi|per|7|S
+Who founded the Mughal Empire in India?|Babur|per|7|S
+Who founded the Maurya Empire?|Chandragupta Maurya|per|6|S
+Which emperor adopted Buddhism after the Kalinga war?|Ashoka|per|6|S
+Who built the Taj Mahal?|Shah Jahan|per|6|S
+Who wrote 'Discovery of India'?|Jawaharlal Nehru|per|9|S
+Who wrote 'Gitanjali'?|Rabindranath Tagore|per|7|G
+Who is known as the 'Missile Man of India'?|Dr. A. P. J. Abdul Kalam|per|6|G
+The Indus Valley Civilisation is also called the ___ Civilisation.|Harappan|civ|6|S
+The pyramids were built by which ancient civilisation?|Egyptian|civ|6|S
+The Colosseum belongs to which ancient civilisation?|Roman|civ|7|S
+The Parthenon belongs to which ancient civilisation?|Greek|civ|7|S
+Battle of Plassey was fought in the year?|1757|yr|8|S
+First Battle of Panipat was fought in the year?|1526|yr|7|S
+Battle of Buxar was fought in the year?|1764|yr|9|S
+Indian National Congress was founded in the year?|1885|yr|8|S
+Jallianwala Bagh massacre took place in the year?|1919|yr|8|S
+Dandi March took place in the year?|1930|yr|8|S
+Quit India Movement was launched in the year?|1942|yr|8|S
+India became independent in the year?|1947|yr|6|S
+French Revolution began in the year?|1789|yr|9|S
+Partition of Bengal took place in the year?|1905|yr|9|S
+The Constitution of India came into effect in the year?|1950|yr|7|S
+The Constitution was adopted by the Constituent Assembly in the year?|1949|yr|8|S
+Revolt of 1857 began at which city?|Meerut|cit|8|S
+The Taj Mahal is located in which city?|Agra|cit|6|S
+Gateway of India is in which city?|Mumbai|cit|7|S
+Charminar is in which city?|Hyderabad|cit|7|S
+Red Fort is in which city?|Delhi|cit|6|S
+The first modern Olympic Games (1896) were held in?|Athens|cit|8|P
+Varanasi stands on the banks of which river?|Ganga|riv|6|S
+Hirakud Dam is built on which river?|Mahanadi|riv|10|S
+Bhakra Dam is built on which river?|Sutlej|riv|10|S
+Which river is called the 'Sorrow of Bihar'?|Kosi|riv|9|S
+Longest peninsular river of India?|Godavari|riv|8|S
+Highest peak in India?|Kanchenjunga|pea|7|S
+Highest mountain peak in the world?|Mount Everest|pea|6|S
+Highest peak of South India?|Anamudi|pea|9|S
+Second highest peak in the world?|K2|pea|10|S
+Largest Indian state by area?|Rajasthan|sta|6|S
+Smallest Indian state by area?|Goa|sta|6|S
+Most populous Indian state?|Uttar Pradesh|sta|7|S
+Konark Sun Temple is in which state?|Odisha|sta|8|S
+Sundarbans delta is mainly in which state?|West Bengal|sta|8|S
+Kaziranga National Park is in which state?|Assam|sta|8|S
+Largest ocean in the world?|Pacific Ocean|oce|6|S
+Smallest ocean in the world?|Arctic Ocean|oce|7|S
+The only ocean named after a country is the?|Indian Ocean|oce|6|S
+Ocean between Africa and the Americas?|Atlantic Ocean|oce|7|S
+Largest continent?|Asia|con|6|S
+Smallest continent?|Australia|con|6|S
+Sahara Desert is in which continent?|Africa|con|6|S
+Brazil is in which continent?|South America|con|7|S
+Soil best suited for cotton?|Black soil|soi|8|S
+Most widespread soil of the Northern Plains?|Alluvial soil|soi|8|S
+Soil formed by intense leaching in heavy rainfall areas?|Laterite soil|soi|9|S
+Soil with reddish colour due to iron content?|Red soil|soi|9|S
+Head of State of India?|President|off|6|S
+Head of Government of India?|Prime Minister|off|6|S
+Who presides over the Lok Sabha?|Speaker|off|7|S
+Ex-officio Chairman of the Rajya Sabha?|Vice-President|off|8|S
+Lower house of the Indian Parliament?|Lok Sabha|hou|6|S
+Upper house of the Indian Parliament?|Rajya Sabha|hou|6|S
+State-level legislative assembly is called?|Vidhan Sabha|hou|8|S
+The Parliament of India is called in Hindi?|Sansad|hou|8|S
+Article for equality before law?|Article 14|art|9|S
+Article that abolishes untouchability?|Article 17|art|9|S
+Article for right to life and personal liberty?|Article 21|art|9|S
+Article for Right to Education (6–14 years)?|Article 21A|art|10|S
+Article for right to constitutional remedies?|Article 32|art|10|S
+Article for freedom of speech and expression?|Article 19|art|10|S
+Number of Fundamental Rights in the Constitution?|6|num|9|S
+Minimum voting age in India (years)?|18|num|7|S
+Normal term of the Lok Sabha (years)?|5|num|8|S
+Term of a Rajya Sabha member (years)?|6|num|9|S
+Number of states in India?|28|num|6|S
+Number of Union Territories in India?|8|num|8|S
+National animal of India?|Tiger|sym|6|G
+National bird of India?|Peacock|sym|6|G
+National flower of India?|Lotus|sym|6|G
+National fruit of India?|Mango|sym|6|G
+Gandhi Jayanti is observed on?|2 October|dat|6|G
+Republic Day is celebrated on?|26 January|dat|6|G
+Independence Day is celebrated on?|15 August|dat|6|G
+Teachers' Day is celebrated on?|5 September|dat|6|G
+Children's Day is celebrated on?|14 November|dat|6|G
+National Science Day is celebrated on?|28 February|dat|8|G
+International Yoga Day is observed on?|21 June|dat|6|G
+Constitution Day (Samvidhan Divas) is observed on?|26 November|dat|8|G
+Hindi Diwas is observed on?|14 September|dat|6|G
+Currency of Japan?|Yen|cur|7|G
+Currency of the United Kingdom?|Pound sterling|cur|7|G
+Currency of the United States?|US Dollar|cur|6|G
+Currency of Russia?|Rouble|cur|8|G
+Currency of China?|Yuan (Renminbi)|cur|8|G
+Currency of Bangladesh?|Taka|cur|7|G
+Process by which plants make food?|Photosynthesis|prc|6|C
+Process by which plants lose water vapour through leaves?|Transpiration|prc|7|C
+Process of releasing energy from food in cells?|Respiration|prc|7|C
+Process of conversion of liquid to vapour at its surface?|Evaporation|prc|7|C
+Gas released by plants during photosynthesis?|Oxygen|gas|6|C
+Gas absorbed by plants for photosynthesis?|Carbon dioxide|gas|6|C
+Most abundant gas in Earth's atmosphere?|Nitrogen|gas|7|C
+Lightest gas?|Hydrogen|gas|7|C
+pH of pure water at 25 °C?|7|num|8|C
+Boiling point of water at normal pressure (°C)?|100|num|6|C
+Chemical formula of water?|H₂O|frm|6|C
+Chemical formula of common salt?|NaCl|frm|7|C
+Chemical formula of carbon dioxide?|CO₂|frm|7|C
+Chemical formula of ammonia?|NH₃|frm|9|C
+Chemical symbol of gold?|Au|sy2|8|C
+Chemical symbol of silver?|Ag|sy2|8|C
+Chemical symbol of iron?|Fe|sy2|8|C
+Chemical symbol of sodium?|Na|sy2|8|C
+Chemical symbol of potassium?|K|sy2|8|C
+Chemical symbol of copper?|Cu|sy2|8|C
+SI unit of force?|Newton|uni|8|C
+SI unit of work and energy?|Joule|uni|8|C
+SI unit of power?|Watt|uni|8|C
+SI unit of electric current?|Ampere|uni|8|C
+SI unit of electrical resistance?|Ohm|uni|9|C
+SI unit of pressure?|Pascal|uni|9|C
+SI unit of frequency?|Hertz|uni|9|C
+Powerhouse of the cell?|Mitochondria|cel|8|C
+Site of photosynthesis in a plant cell?|Chloroplast|cel|8|C
+Organelle that controls the cell's activities?|Nucleus|cel|8|C
+Organelle where proteins are made?|Ribosome|cel|9|C
+Organ that pumps blood?|Heart|org|6|C
+Largest organ of the human body?|Skin|org|7|C
+Organ that filters blood to form urine?|Kidney|org|7|C
+Organ used for gas exchange in humans?|Lungs|org|6|C
+Number of bones in an adult human body?|206|num|7|C
+Number of chromosomes in a human body cell?|46|num|9|C
+Deficiency of Vitamin C causes?|Scurvy|dis|7|C
+Deficiency of Vitamin D causes?|Rickets|dis|7|C
+Deficiency of Vitamin A causes?|Night blindness|dis|7|C
+Deficiency of iodine causes?|Goitre|dis|7|C
+Force of attraction between the Earth and objects?|Gravity|frc|6|C
+Force that opposes motion between two surfaces?|Friction|frc|7|C
+Planet known as the Red Planet?|Mars|pla|6|C
+Largest planet of the solar system?|Jupiter|pla|6|C
+Planet closest to the Sun?|Mercury|pla|6|C
+Planet with prominent rings?|Saturn|pla|7|C
+Hardest natural substance?|Diamond|sub|8|C
+Metal that is liquid at room temperature?|Mercury|sub|8|C
+Form of carbon used in pencils?|Graphite|sub|8|C
+Most abundant metal in the Earth's crust?|Aluminium|sub|9|C
+Number of players of one football team on the field?|11|num|6|P
+Number of players of one basketball team on court?|5|num|6|P
+Number of players of one volleyball team on court?|6|num|6|P
+Number of players of one kabaddi team on the mat?|7|num|6|P
+Olympic Games are held after every how many years?|4|num|6|P
+Length of one lap of a standard athletics track?|400 m|dst|7|P
+Length of the sprint race 'half-lap' on a standard track?|200 m|dst|7|P
+The shortest standard sprint race?|100 m|dst|7|P
+Ability of muscles to exert force?|Strength|fit|7|P
+Ability to continue an activity for a long time without tiring?|Endurance|fit|7|P
+Ability to perform movements quickly?|Speed|fit|7|P
+Ability to move joints through a full range of motion?|Flexibility|fit|7|P
+Ability to use senses and body parts together smoothly?|Coordination|fit|7|P
+Yoga posture 'Tadasana' is also called?|Mountain pose|asa|8|P
+Yoga posture 'Vrikshasana' is also called?|Tree pose|asa|8|P
+Yoga posture 'Bhujangasana' is also called?|Cobra pose|asa|8|P
+Yoga posture 'Padmasana' is also called?|Lotus pose|asa|8|P
+Yoga posture 'Shavasana' is also called?|Corpse pose|asa|8|P
+Nutrient mainly needed for growth and repair?|Proteins|nut|7|P
+Main source of energy in food?|Carbohydrates|nut|7|P
+Nutrient giving concentrated stored energy?|Fats|nut|8|P
+Nutrients needed in small amounts to prevent deficiency diseases?|Vitamins|nut|8|P
+National Sports Day (Major Dhyan Chand's birth anniversary) is on?|29 August|dat|8|P`).split("\n").forEach(l=>{const a=l.split("|");FACTS.push({q:a[0],a:a[1],p:a[2],m:+a[3],s:a[4]})});
+("Maharashtra:Mumbai;Gujarat:Gandhinagar;Rajasthan:Jaipur;Uttar Pradesh:Lucknow;Bihar:Patna;West Bengal:Kolkata;Tamil Nadu:Chennai;Karnataka:Bengaluru;Kerala:Thiruvananthapuram;Madhya Pradesh:Bhopal;Punjab:Chandigarh;Odisha:Bhubaneswar;Assam:Dispur;Jharkhand:Ranchi;Chhattisgarh:Raipur;Uttarakhand:Dehradun;Himachal Pradesh:Shimla;Goa:Panaji;Sikkim:Gangtok;Tripura:Agartala;Meghalaya:Shillong;Manipur:Imphal;Nagaland:Kohima;Mizoram:Aizawl;Arunachal Pradesh:Itanagar").split(";").forEach(x=>{const [s,c]=x.split(":");FACTS.push({q:`Capital of ${s}?`,a:c,p:"scap",m:7,s:"S"})});
+("Japan:Tokyo;France:Paris;Germany:Berlin;Italy:Rome;China:Beijing;Russia:Moscow;United Kingdom:London;Egypt:Cairo;Australia:Canberra;Canada:Ottawa;Nepal:Kathmandu;Bangladesh:Dhaka;Bhutan:Thimphu;Pakistan:Islamabad;Afghanistan:Kabul;Spain:Madrid").split(";").forEach(x=>{const [s,c]=x.split(":");FACTS.push({q:`Capital of ${s}?`,a:c,p:"ccap",m:8,s:"S"})});
+const POOLS={},ALLANS=[...new Set(FACTS.map(f=>f.a))];
+FACTS.forEach(f=>{(POOLS[f.p]=POOLS[f.p]||[]);if(!POOLS[f.p].includes(f.a))POOLS[f.p].push(f.a)});
+
+/* =====================================================================
+   6. QUESTION GENERATORS (Maths + Reasoning: new correct questions every time)
+===================================================================== */
+const rI=(a,b)=>Math.floor(Math.random()*(b-a+1))+a;
+const pick=a=>a[rI(0,a.length-1)];
+const shuf=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=rI(0,i);[a[i],a[j]]=[a[j],a[i]]}return a};
+const gcd=(a,b)=>b?gcd(b,a%b):a;
+const nd=(c,s)=>[c+s,c-s,c+2*s,c-2*s,c+3*s,c-3*s,c+4*s,c+5*s].filter(x=>c<0||x>0);
+function mkq(q,c,cands,e){const o=[String(c)];for(const x of cands){const s=String(x);if(o.length<4&&!o.includes(s))o.push(s)}const sh=shuf(o);return{q,o:sh,a:sh.indexOf(String(c)),e:e||""}}
+const PAIRS=[[12,18],[8,12],[15,20],[24,36],[16,24],[21,35],[18,27],[14,21],[30,45],[20,50]];
+const TWP=[[6,12,4],[10,15,6],[12,24,8],[20,30,12],[30,60,20],[12,6,4],[20,5,4],[10,40,8],[15,30,10],[18,9,6]];
+const MG={
+ add:d=>{const m=[30,90,400,2500][d-1],a=rI(m/3|0,m),b=rI(m/3|0,m);return mkq(`${a} + ${b} = ?`,a+b,nd(a+b,pick([1,2,10])),`${a} + ${b} = ${a+b}`)},
+ sub:d=>{const m=[30,90,400,2500][d-1];let a=rI(m/3|0,m),b=rI(m/4|0,m);if(b>a)[a,b]=[b,a];return mkq(`${a} − ${b} = ?`,a-b,nd(a-b,pick([1,2,10])),`${a} − ${b} = ${a-b}`)},
+ mul:d=>{const a=rI(3,[10,15,25,40][d-1]),b=rI(3,[9,12,20,30][d-1]);return mkq(`${a} × ${b} = ?`,a*b,nd(a*b,pick([a,b,10])),`${a} × ${b} = ${a*b}`)},
+ sq:d=>{const n=rI(3,[12,15,20,30][d-1]);return Math.random()<.5?mkq(`√${n*n} = ?`,n,nd(n,pick([1,2])),`${n} × ${n} = ${n*n}`):mkq(`${n}² = ?`,n*n,nd(n*n,pick([n,2,10])),`${n}² = ${n*n}`)},
+ cube:d=>{const n=rI(2,12);return mkq(`${n}³ = ?`,n**3,nd(n**3,pick([n,n*n,10])),`${n}×${n}×${n} = ${n**3}`)},
+ area:d=>{const t=rI(0,3),l=rI(4,10+d*5),w=rI(3,8+d*4);
+  if(t===0)return mkq(`Area of a rectangle with length ${l} cm and breadth ${w} cm (cm²)?`,l*w,nd(l*w,pick([l,w,2])),`l × b = ${l} × ${w} = ${l*w}`);
+  if(t===1)return mkq(`Perimeter of a rectangle with length ${l} cm and breadth ${w} cm (cm)?`,2*(l+w),nd(2*(l+w),pick([2,4])),`2(l + b) = ${2*(l+w)}`);
+  if(t===2)return mkq(`Area of a square of side ${l} cm (cm²)?`,l*l,nd(l*l,pick([l,2,4])),`side² = ${l*l}`);
+  const b=l*2;return mkq(`Area of a triangle with base ${b} cm and height ${w} cm (cm²)?`,b*w/2,nd(b*w/2,pick([w,2,3])),`½ × ${b} × ${w} = ${b*w/2}`)},
+ lh:d=>{const [a,b]=pick(PAIRS),g=gcd(a,b);return Math.random()<.5?mkq(`HCF of ${a} and ${b} = ?`,g,nd(g,pick([1,2])),`HCF(${a}, ${b}) = ${g}`):mkq(`LCM of ${a} and ${b} = ?`,a*b/g,nd(a*b/g,pick([a,b,g])),`LCM = (${a}×${b}) ÷ HCF = ${a*b/g}`)},
+ pct:d=>{const p=pick([5,10,15,20,25,30,40,50]),n=20*rI(2,[20,40,60,60][d-1]),r=p*n/100;return mkq(`What is ${p}% of ${n}?`,r,nd(r,pick([1,2,5])),`${p}% of ${n} = ${p} × ${n} ÷ 100 = ${r}`)},
+ lineq:d=>{const x=rI(2,15),a=rI(2,9),b=rI(1,20);return mkq(`Solve: ${a}x + ${b} = ${a*x+b}. Find x.`,x,nd(x,pick([1,2])),`${a}x = ${a*x}, so x = ${x}`)},
+ ratio:d=>{const a=rI(1,5),b=rI(a+1,9),k=rI(2,12)*(d>2?10:1),t=(a+b)*k;return mkq(`Divide ₹${t} in the ratio ${a}:${b}. Larger share (₹)?`,b*k,nd(b*k,pick([k,10,5])),`One part = ${t} ÷ ${a+b} = ${k}; larger = ${b} × ${k}`)},
+ avg:d=>{const n=[rI(5,30),rI(5,30),rI(5,30),rI(5,30)];let s=n[0]+n[1]+n[2]+n[3];const l=(5-s%5)%5+5*rI(1,6);n.push(l);s+=l;return mkq(`Average of ${n.join(", ")} = ?`,s/5,nd(s/5,pick([1,2])),`Sum ${s} ÷ 5 = ${s/5}`)},
+ unit:d=>{const v=pick([18,36,54,72,90,108]);return mkq(`Convert ${v} km/h into m/s.`,v*5/18,nd(v*5/18,pick([1,2,5])),`${v} × 5/18 = ${v*5/18}`)},
+ si:d=>{const p=rI(1,20)*1000,r=pick([5,8,10,12]),t=rI(1,5),s=p*r*t/100;return mkq(`Simple interest on ₹${p} at ${r}% per annum for ${t} year(s) (₹)?`,s,nd(s,pick([50,100,200])),`SI = P×R×T ÷ 100 = ${s}`)},
+ pl:d=>{const cp=rI(5,50)*100,p=pick([5,10,20,25,40,50]);if(Math.random()<.5){const sp=cp*(100+p)/100;return mkq(`An article bought for ₹${cp} is sold at ${p}% profit. Selling price (₹)?`,sp,nd(sp,pick([10,50,100])),`SP = ${cp} × ${100+p}/100 = ${sp}`)}const sp=cp*(100-p)/100;return mkq(`An article bought for ₹${cp} is sold at ${p}% loss. Selling price (₹)?`,sp,nd(sp,pick([10,50,100])),`SP = ${cp} × ${100-p}/100 = ${sp}`)},
+ sp:d=>{const s=pick([30,40,45,50,60,72,80]),t=rI(2,6);return Math.random()<.5?mkq(`A car runs at ${s} km/h for ${t} hours. Distance covered (km)?`,s*t,nd(s*t,pick([s,10,5])),`Distance = speed × time = ${s*t}`):mkq(`A train covers ${s*t} km at ${s} km/h. Time taken (hours)?`,t,nd(t,1),`Time = distance ÷ speed = ${t}`)},
+ chg:d=>{const x=pick([100,200,400,500,1000]),p=pick([10,20,25,50]),y=x*(100+p)/100;return mkq(`A price rises from ₹${x} to ₹${y}. Percentage increase?`,p+"%",[`${p+5}%`,`${p-5}%`,`${p+10}%`,`${p*2}%`],`(${y} − ${x}) ÷ ${x} × 100 = ${p}%`)},
+ tw:d=>{const [a,b,t]=pick(TWP);return mkq(`A can finish a work in ${a} days and B in ${b} days. Working together, in how many days?`,t,nd(t,pick([1,2])),`Together = (${a}×${b}) ÷ (${a}+${b}) = ${t} days`)},
+ ci:d=>{const p=rI(1,10)*1000,r=pick([10,20]),ci=Math.round(p*(r===10?21:44)/100);return mkq(`Compound interest on ₹${p} at ${r}% p.a. for 2 years (₹)?`,ci,nd(ci,pick([p/100,50,100])),`Amount = P(1+R/100)² ; CI = ${ci}`)}
+};
+const E1=["add","sub","mul","sq","area","lh"],M1=E1.concat(["pct","lineq","ratio","avg","cube","unit"]),H1=M1.concat(["si","pl","sp","chg"]),A1=H1.concat(["tw","ci"]);
+function mathSet(cls){if(!cls)return[A1,3];if(cls<=7)return[E1,1];if(cls===8)return[M1,2];if(cls<=10)return[H1,3];return[A1,3]}
+const DAYS=["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],DIRS=["North","East","South","West"],NAMES=["Ravi","Amit","Sita","Neha","Karan","Pooja","Rahul","Anita"],WORDS=["CAT","DOG","SUN","MAP","BOX","PEN","FAN","BAG","JET","HAT","MILK","BOOK"];
+const ch=i=>String.fromCharCode(65+((i%26)+26)%26),shift=(w,k)=>[...w].map(c=>ch(c.charCodeAt(0)-65+k)).join("");
+const RG={
+ ser:()=>{const a=rI(2,30),d=rI(2,9),t=[0,1,2,3,4].map(i=>a+i*d);return mkq(`Find the next number: ${t.join(", ")}, ?`,a+5*d,nd(a+5*d,pick([1,2,d])),`Common difference = ${d}`)},
+ geo:()=>{const a=rI(1,4),r=rI(2,3),t=[0,1,2,3].map(i=>a*r**i);return mkq(`Find the next number: ${t.join(", ")}, ?`,a*r**4,nd(a*r**4,pick([a*r**3,r,2])),`Each term is multiplied by ${r}`)},
+ sqs:()=>{const n=rI(2,9),t=[0,1,2,3].map(i=>(n+i)**2);return mkq(`Next in series: ${t.join(", ")}, ?`,(n+4)**2,nd((n+4)**2,pick([2,n+4,1])),"Squares of consecutive numbers")},
+ let:()=>{const s=rI(0,10),k=rI(1,4),t=[0,1,2,3].map(i=>ch(s+i*k)),c=ch(s+4*k);return mkq(`Find the next letter: ${t.join(", ")}, ?`,c,[ch(s+4*k+1),ch(s+4*k-1),ch(s+4*k+2),ch(s+3*k+1)],`Each letter moves ${k} step(s) forward`)},
+ code:()=>{const w=pick(WORDS),k=rI(1,4),w2=pick(WORDS.filter(x=>x!==w)),c=shift(w2,k);return mkq(`In a code, every letter is shifted ${k} place(s) forward. If ${w} is written as ${shift(w,k)}, how is ${w2} written?`,c,[shift(w2,k+1),shift(w2,k-1),shift(w2,k+2),[...c].reverse().join("")],`Shift every letter of ${w2} by ${k}`)},
+ pos:()=>{const i=rI(0,25),L=ch(i);return Math.random()<.5?mkq(`What is the position of the letter ${L} from the left in the English alphabet?`,i+1,nd(i+1,1),`${L} is letter number ${i+1}`):mkq(`What is the position of the letter ${L} from the right end of the English alphabet?`,26-i,nd(26-i,1),`27 − ${i+1} = ${26-i}`)},
+ dir:()=>{let i=rI(0,3);const st=i,n=rI(2,4),tx=[];for(let j=0;j<n;j++){const r=Math.random()<.5;tx.push(r?"right":"left");i=(i+(r?1:3))%4}return mkq(`A person facing ${DIRS[st]} turns ${tx.join(", then ")}. Which direction is the person facing now?`,DIRS[i],shuf(DIRS.filter(x=>x!==DIRS[i])),"Right turn = 90° clockwise; left turn = 90° anticlockwise")},
+ day:()=>{const i=rI(0,6),n=rI(8,60),a=DAYS[(i+n)%7];return mkq(`Today is ${DAYS[i]}. What day will it be after ${n} days?`,a,shuf(DAYS.filter(x=>x!==a)),`${n} ÷ 7 leaves remainder ${n%7}`)},
+ odd:()=>{const k=pick([3,4,5,6,7]),s=new Set();while(s.size<3)s.add(k*rI(2,15));const o=k*rI(2,15)+rI(1,k-1);return mkq(`Find the odd one out: ${shuf([...s,o]).join(", ")}`,o,[...s],`The others are multiples of ${k}`)},
+ rank:()=>{const n=shuf(NAMES).slice(0,3),tall=Math.random()<.5;return mkq(`${n[0]} is taller than ${n[1]}, and ${n[1]} is taller than ${n[2]}. Who is the ${tall?"tallest":"shortest"}?`,tall?n[0]:n[2],[n[1],tall?n[2]:n[0],"Cannot be determined"],"Arrange the three in order of height")},
+ clock:()=>{const h=rI(1,12),a=(h%12)*30,an=Math.min(a,360-a);return mkq(`What is the angle between the hour and minute hands at ${h} o'clock?`,an+"°",nd(an,30).map(x=>x+"°"),`Hour hand is ${a}° from 12; angle = ${an}°`)},
+ ana:()=>{const n=rI(2,9),m=rI(2,9),c=Math.random()<.5;return c?mkq(`${n} : ${n*n} :: ${m} : ?`,m*m,nd(m*m,pick([m,2])),"Second number is the square of the first"):mkq(`${n} : ${n**3} :: ${m} : ?`,m**3,nd(m**3,pick([m,m*m])),"Second number is the cube of the first")},
+ row:()=>{const p=rI(3,20),q=rI(3,20);return mkq(`In a row, A is ${p}th from the left and ${q}th from the right. How many people are in the row?`,p+q-1,nd(p+q-1,pick([1,2])),`Total = ${p} + ${q} − 1 = ${p+q-1}`)}
+};
+const RKEYS=Object.keys(RG);
+function genQ(G,keys,n,d){const seen=new Set(),out=[];let t=0;while(out.length<n&&t<n*30){t++;const q=G[pick(keys)](d);if(!seen.has(q.q)){seen.add(q.q);out.push(q)}}return out}
+const pairQ=(l,fn,cut)=>{const n=Math.max(4,Math.ceil(l.length*cut)),all=l.map(x=>x[1]);return l.slice(0,n).map(([w,a])=>mkq(fn(w),a,shuf(all.filter(x=>x!==a))))};
+function factQ(f){const a=f.a;let c;
+ if(/^\d+$/.test(a)){const v=+a;c=nd(v,v>=1000?5:v>=100?4:v>=20?2:1)}
+ else{c=shuf((POOLS[f.p]||[]).filter(x=>x!==a));if(c.length<3)c=c.concat(shuf(ALLANS.filter(x=>x!==a&&!/^\d+$/.test(x))))}
+ return mkq(f.q,a,c,"")}
+const cutOf=cls=>cls?({6:.5,7:.6,8:.7,9:.8,10:.9})[cls]||1:1;
+const SC={Science:["C"],"Social Science":["S"],"Physical Education":["P"],"GK/GS":["G","S","C"]};
+function poolFor(sub,cls){
+ const cut=cutOf(cls);
+ if(sub==="English")return[...pairQ(SYN,w=>`Choose the synonym of "${w}":`,cut),...pairQ(ANT,w=>`Choose the antonym of "${w}":`,cut),...pairQ(PLU,w=>`Plural of "${w}"?`,cut),...pairQ(V2,w=>`Past tense (V2) of "${w}"?`,cut),...pairQ(V3,w=>`Past participle (V3) of "${w}"?`,cut),...pairQ(OWS,w=>`One word for: ${w}`,cut),...pairQ(IDM,w=>`Meaning of the idiom "${w}":`,cut),...BLANKS.slice(0,Math.max(4,Math.ceil(BLANKS.length*cut))).map(b=>mkq("Fill in the blank: "+b[0],b[1],[b[2],b[3],b[4]],""))];
+ if(sub==="Hindi")return[...pairQ(HPAR,w=>`"${w}" का पर्यायवाची शब्द क्या है?`,cut),...pairQ(HANT,w=>`"${w}" का विलोम शब्द क्या है?`,cut),...pairQ(HIDM,w=>`मुहावरे "${w}" का अर्थ क्या है?`,cut)];
+ const sc=SC[sub];if(!sc)return[];
+ return FACTS.filter(f=>sc.includes(f.s)&&(!cls||f.m<=cls)).map(factQ);
+}
+const GENERATED=s=>s==="Mathematics"||s==="Reasoning";
+function bankQs(key,n){const bank=(window.JD_QUESTION_BANK&&JD_QUESTION_BANK.sets&&JD_QUESTION_BANK.sets[key])||[];return shuf(bank.map(x=>({q:x.q,o:x.o.slice(),a:x.a,e:x.e||""}))).slice(0,Math.min(n,bank.length));}
+function buildQs(sub,cls,n){
+ if(sub==="Mixed"){let o=[];["English","Hindi","Reasoning","Mathematics","GK/GS"].forEach(s=>{o=o.concat(buildQs(s,cls,Math.round(n/5)))});return o}
+ if(sub==="Mathematics"){const [k,d]=mathSet(cls);return genQ(MG,k,n,d)}
+ if(sub==="Reasoning")return genQ(RG,RKEYS,n,1);
+ return shuf(poolFor(sub,cls)).slice(0,n);
+}
+function avail(sub,cls){if(sub==="Mixed")return 50;if(GENERATED(sub))return 50;return poolFor(sub,cls).length}
+
+/* =====================================================================
+   7. STUDY NOTES (Hindi + English)  c:[classes] s:subject  |  x:competitive subject
+===================================================================== */
+const NOTES=[
+{c:[6,7,8],s:"Mathematics",t:"Factors, Multiples, HCF & LCM",en:"• A prime number has exactly two factors: 1 and itself (2, 3, 5, 7…).\n• HCF = greatest number that divides all the given numbers.\n• LCM = smallest number that is a multiple of all the given numbers.\n• For two numbers: HCF × LCM = product of the numbers.",hi:"• अभाज्य संख्या के ठीक दो गुणनखंड होते हैं: 1 और वह संख्या स्वयं (2, 3, 5, 7…)।\n• HCF (महत्तम समापवर्तक) = वह सबसे बड़ी संख्या जो सभी दी गई संख्याओं को भाग दे।\n• LCM (लघुत्तम समापवर्त्य) = वह सबसे छोटी संख्या जो सभी का गुणज हो।\n• दो संख्याओं के लिए: HCF × LCM = संख्याओं का गुणनफल।"},
+{c:[7,8,9],s:"Mathematics",t:"Percentage, Ratio & Simple Interest",en:"• x% of N = x × N ÷ 100.\n• Percentage change = (change ÷ original) × 100.\n• Simple Interest SI = P × R × T ÷ 100; Amount = P + SI.\n• Ratio a:b means a/(a+b) and b/(a+b) of the total.",hi:"• N का x% = x × N ÷ 100।\n• प्रतिशत परिवर्तन = (परिवर्तन ÷ मूल मान) × 100।\n• साधारण ब्याज SI = P × R × T ÷ 100; मिश्रधन = P + SI।\n• अनुपात a:b का अर्थ है कुल का a/(a+b) और b/(a+b) भाग।"},
+{c:[9,10],s:"Mathematics",t:"Pythagoras Theorem & Quadratic Equation",en:"• Right triangle: (hypotenuse)² = (base)² + (height)².\n• For ax² + bx + c = 0: x = [−b ± √(b² − 4ac)] ÷ 2a.\n• Discriminant D = b² − 4ac: D>0 two real roots, D=0 equal roots, D<0 no real roots.\n• Sum of roots = −b/a; product of roots = c/a.",hi:"• समकोण त्रिभुज: (कर्ण)² = (आधार)² + (लंब)²।\n• ax² + bx + c = 0 के लिए: x = [−b ± √(b² − 4ac)] ÷ 2a।\n• विविक्तकर D = b² − 4ac: D>0 दो भिन्न वास्तविक मूल, D=0 बराबर मूल, D<0 कोई वास्तविक मूल नहीं।\n• मूलों का योग = −b/a; गुणनफल = c/a।"},
+{c:[11,12],s:"Mathematics",t:"Trigonometry & Calculus basics",en:"• sin²θ + cos²θ = 1; 1 + tan²θ = sec²θ.\n• d/dx (xⁿ) = n·xⁿ⁻¹; d/dx (sin x) = cos x; d/dx (cos x) = −sin x.\n• ∫ xⁿ dx = xⁿ⁺¹ ÷ (n+1) + C, for n ≠ −1.\n• log(ab) = log a + log b.",hi:"• sin²θ + cos²θ = 1; 1 + tan²θ = sec²θ।\n• d/dx (xⁿ) = n·xⁿ⁻¹; d/dx (sin x) = cos x; d/dx (cos x) = −sin x।\n• ∫ xⁿ dx = xⁿ⁺¹ ÷ (n+1) + C, जहाँ n ≠ −1।\n• log(ab) = log a + log b।"},
+{c:[6,7,8],s:"Science",t:"Photosynthesis & Respiration",en:"• Photosynthesis: carbon dioxide + water → glucose + oxygen, in sunlight, using chlorophyll (in chloroplasts).\n• Respiration: glucose + oxygen → carbon dioxide + water + energy.\n• Stomata on leaves allow gas exchange and transpiration.",hi:"• प्रकाश-संश्लेषण: कार्बन डाइऑक्साइड + जल → ग्लूकोज़ + ऑक्सीजन (सूर्य के प्रकाश में, क्लोरोफिल की सहायता से, हरितलवक में)।\n• श्वसन: ग्लूकोज़ + ऑक्सीजन → कार्बन डाइऑक्साइड + जल + ऊर्जा।\n• पत्तियों के रंध्र (स्टोमेटा) गैसों के आदान-प्रदान और वाष्पोत्सर्जन में सहायक हैं।"},
+{c:[7,8,9,10],s:"Science",t:"Acids, Bases & Salts",en:"• Acids turn blue litmus red (sour, pH < 7). Bases turn red litmus blue (bitter, soapy, pH > 7).\n• Neutral substances have pH = 7.\n• Acid + Base → Salt + Water (neutralisation).\n• Examples: HCl, H₂SO₄ (acids); NaOH, KOH (bases).",hi:"• अम्ल नीले लिटमस को लाल करते हैं (खट्टे, pH < 7)। क्षारक लाल लिटमस को नीला करते हैं (कड़वे, साबुन जैसे, pH > 7)।\n• उदासीन पदार्थों का pH = 7 होता है।\n• अम्ल + क्षार → लवण + जल (उदासीनीकरण)।\n• उदाहरण: HCl, H₂SO₄ (अम्ल); NaOH, KOH (क्षार)।"},
+{c:[9,10],s:"Science",t:"Laws of Motion & Ohm's Law",en:"• Newton I: a body stays at rest or in uniform motion unless a net force acts (inertia).\n• Newton II: F = m × a.\n• Newton III: every action has an equal and opposite reaction.\n• Ohm's law: V = I × R (at constant temperature).\n• Speed = distance ÷ time; 1 km/h = 5/18 m/s.",hi:"• न्यूटन का पहला नियम: बाह्य बल न लगे तो वस्तु विरामावस्था या एकसमान गति में रहती है (जड़त्व)।\n• दूसरा नियम: F = m × a।\n• तीसरा नियम: हर क्रिया की समान और विपरीत प्रतिक्रिया होती है।\n• ओम का नियम: V = I × R (स्थिर ताप पर)।\n• चाल = दूरी ÷ समय; 1 km/h = 5/18 m/s।"},
+{c:[6,7,8,9,10,11,12],s:"English",t:"Tenses & Subject–Verb Agreement",en:"• Simple Present: He plays. | Present Continuous: He is playing.\n• Simple Past: He played. | Past Continuous: He was playing.\n• Present Perfect: He has played. | Past Perfect: He had played.\n• Simple Future: He will play.\n• Singular subject takes a singular verb (She goes); plural subject takes a plural verb (They go).",hi:"• Simple Present: वह खेलता है (He plays)। Present Continuous: वह खेल रहा है (He is playing)।\n• Simple Past: उसने खेला (He played)। Past Continuous: वह खेल रहा था (He was playing)।\n• Present Perfect: वह खेल चुका है (He has played)। Past Perfect: वह खेल चुका था (He had played)।\n• Simple Future: वह खेलेगा (He will play)।\n• एकवचन कर्ता के साथ एकवचन क्रिया (She goes), बहुवचन कर्ता के साथ बहुवचन क्रिया (They go)।"},
+{c:[6,7,8,9,10,11,12],s:"English",t:"Parts of Speech",en:"• Noun: name of person, place, thing (Delhi, book).\n• Pronoun replaces a noun (he, they). Verb shows action (run).\n• Adjective describes a noun (tall boy). Adverb describes a verb (runs fast).\n• Preposition shows relation (in, on, at). Conjunction joins words (and, but). Interjection shows emotion (Oh!).",hi:"• संज्ञा (Noun): व्यक्ति, स्थान, वस्तु का नाम (दिल्ली, किताब)।\n• सर्वनाम (Pronoun): संज्ञा की जगह (वह, वे)। क्रिया (Verb): कार्य (दौड़ना)।\n• विशेषण (Adjective): संज्ञा की विशेषता (लंबा लड़का)। क्रिया-विशेषण (Adverb): क्रिया की विशेषता (तेज़ दौड़ता है)।\n• संबंधबोधक (Preposition): in, on, at। समुच्चयबोधक (Conjunction): and, but। विस्मयादिबोधक (Interjection): Oh!"},
+{c:[6,7,8,9,10,11,12],s:"Hindi",t:"संज्ञा, सर्वनाम, विशेषण, क्रिया",en:"• Nouns: proper (Ram, Delhi), common (boy, river), abstract (sweetness, childhood).\n• Pronoun replaces a noun (I, you, he). Adjective describes a noun. Verb shows action.",hi:"• संज्ञा के मुख्य भेद: व्यक्तिवाचक (राम, दिल्ली), जातिवाचक (लड़का, नदी), भाववाचक (मिठास, बचपन)।\n• सर्वनाम: संज्ञा के स्थान पर आने वाला शब्द — मैं, तुम, वह, यह, कौन।\n• विशेषण: संज्ञा या सर्वनाम की विशेषता बताता है — अच्छा लड़का।\n• क्रिया: कार्य का बोध कराती है — पढ़ना, खेलना।"},
+{c:[8,9,10,11,12],s:"Hindi",t:"संधि और समास",en:"• Sandhi: joining of two sounds (विद्या + आलय = विद्यालय).\n• Samas: joining of words — Tatpurush, Dvandva, Bahuvrihi, Dvigu, Karmadharay, Avyayibhav.\n• Examples: नीलकंठ = Bahuvrihi; माता-पिता = Dvandva.",hi:"• संधि: दो वर्णों का मेल — स्वर संधि (विद्या + आलय = विद्यालय), व्यंजन संधि, विसर्ग संधि।\n• समास: दो या अधिक शब्दों का मेल — तत्पुरुष, द्वंद्व, बहुव्रीहि, द्विगु, कर्मधारय, अव्ययीभाव।\n• उदाहरण: नीलकंठ (नीला है कंठ जिसका) — बहुव्रीहि; माता-पिता — द्वंद्व।"},
+{c:[6,7,8],s:"Social Science",t:"Early India: Harappa to Mauryas",en:"• Indus (Harappan) Civilisation: planned cities (Harappa, Mohenjo-daro), drainage, trade and seals.\n• Chandragupta Maurya founded the Maurya Empire; Ashoka adopted Buddhism after the Kalinga war.\n• Babur founded the Mughal Empire after the First Battle of Panipat (1526).",hi:"• सिंधु (हड़प्पा) सभ्यता: नियोजित नगर (हड़प्पा, मोहनजोदड़ो), जल-निकासी, व्यापार और मुहरें।\n• चंद्रगुप्त मौर्य ने मौर्य साम्राज्य की स्थापना की; कलिंग युद्ध के बाद अशोक ने बौद्ध धर्म अपनाया।\n• पानीपत के पहले युद्ध (1526) के बाद बाबर ने मुगल साम्राज्य की नींव रखी।"},
+{c:[6,7,8,9],s:"Social Science",t:"Latitudes, Longitudes & India's Time",en:"• Equator is 0° latitude; Prime Meridian (Greenwich) is 0° longitude.\n• The Tropic of Cancer (23½° N) passes through India.\n• Indian Standard Time is based on 82°30′ E and is UTC + 5:30.",hi:"• विषुवत रेखा 0° अक्षांश है; प्रधान याम्योत्तर (ग्रीनविच) 0° देशांतर है।\n• कर्क रेखा (23½° उत्तर) भारत से होकर गुजरती है।\n• भारतीय मानक समय 82°30′ पूर्व देशांतर पर आधारित है और UTC + 5:30 है।"},
+{c:[8,9,10,11,12],s:"Social Science",t:"Constitution & Freedom Struggle",en:"• The Constitution was adopted on 26 Nov 1949 and came into effect on 26 Jan 1950.\n• Six Fundamental Rights (Articles 12–35): equality, freedom, against exploitation, religion, cultural & educational rights, constitutional remedies.\n• Key dates: Plassey 1757, Revolt 1857, INC 1885, Jallianwala Bagh 1919, Dandi March 1930, Quit India 1942, Independence 1947.",hi:"• संविधान 26 नवंबर 1949 को अपनाया गया और 26 जनवरी 1950 को लागू हुआ।\n• छह मौलिक अधिकार (अनुच्छेद 12–35): समानता, स्वतंत्रता, शोषण के विरुद्ध, धर्म, सांस्कृतिक एवं शैक्षिक अधिकार, संवैधानिक उपचार।\n• प्रमुख वर्ष: प्लासी 1757, विद्रोह 1857, कांग्रेस 1885, जलियाँवाला बाग 1919, दांडी मार्च 1930, भारत छोड़ो 1942, स्वतंत्रता 1947।"},
+{c:[6,7,8,9,10,11,12],s:"Physical Education",t:"Components of Fitness & Healthy Habits",en:"• Components of fitness: strength, endurance, speed, flexibility, coordination.\n• Warm up before exercise and cool down after it.\n• Balanced diet: carbohydrates (energy), proteins (growth and repair), fats, vitamins, minerals, water.\n• Yoga: Tadasana, Vrikshasana, Bhujangasana, Shavasana. International Yoga Day is 21 June.",hi:"• फिटनेस के घटक: शक्ति, सहनशक्ति, गति, लचीलापन, समन्वय।\n• व्यायाम से पहले वार्म-अप और बाद में कूल-डाउन करें।\n• संतुलित आहार: कार्बोहाइड्रेट (ऊर्जा), प्रोटीन (वृद्धि और मरम्मत), वसा, विटामिन, खनिज, जल।\n• योग: ताड़ासन, वृक्षासन, भुजंगासन, शवासन। अंतर्राष्ट्रीय योग दिवस 21 जून को मनाया जाता है।"},
+{c:[6,7,8,9,10,11,12],s:"Physical Education",t:"Sports Basics",en:"• Players on the field/court per side: football 11, basketball 5, volleyball 6, kabaddi 7.\n• Olympic Games are held every 4 years; the first modern Olympics were in Athens in 1896.\n• National Sports Day (29 August) marks Major Dhyan Chand's birth anniversary.",hi:"• प्रति टीम मैदान/कोर्ट पर खिलाड़ी: फुटबॉल 11, बास्केटबॉल 5, वॉलीबॉल 6, कबड्डी 7।\n• ओलंपिक खेल हर 4 वर्ष में होते हैं; पहले आधुनिक ओलंपिक 1896 में एथेंस में हुए।\n• राष्ट्रीय खेल दिवस (29 अगस्त) मेजर ध्यानचंद की जयंती पर मनाया जाता है।"},
+{x:"Mathematics",t:"Percentage, Fractions & Profit–Loss",en:"• 1/2 = 50%, 1/3 = 33.33%, 1/4 = 25%, 1/5 = 20%, 1/6 = 16.67%, 1/8 = 12.5%, 1/10 = 10%, 1/12 = 8.33%.\n• Successive changes a% then b%: net = a + b + ab/100.\n• Profit% = Profit ÷ CP × 100; SP = CP × (100 + P%) ÷ 100.",hi:"• 1/2 = 50%, 1/3 = 33.33%, 1/4 = 25%, 1/5 = 20%, 1/6 = 16.67%, 1/8 = 12.5%, 1/10 = 10%, 1/12 = 8.33%।\n• क्रमिक परिवर्तन a% फिर b%: कुल = a + b + ab/100।\n• लाभ% = लाभ ÷ क्र.मू. × 100; वि.मू. = क्र.मू. × (100 + लाभ%) ÷ 100।"},
+{x:"Mathematics",t:"Interest, Speed & Work",en:"• SI = P×R×T ÷ 100. Compound: A = P(1 + R/100)ᵀ; CI = A − P.\n• For 2 years: CI − SI = P × (R/100)².\n• km/h × 5/18 = m/s. Average speed for equal distances = 2xy ÷ (x + y).\n• If A takes a days and B takes b days, together they take ab ÷ (a + b) days.",hi:"• SI = P×R×T ÷ 100। चक्रवृद्धि: A = P(1 + R/100)ᵀ; CI = A − P।\n• 2 वर्ष के लिए: CI − SI = P × (R/100)²।\n• km/h × 5/18 = m/s। समान दूरी पर औसत चाल = 2xy ÷ (x + y)।\n• A, a दिन में और B, b दिन में काम करे तो साथ में ab ÷ (a + b) दिन लगेंगे।"},
+{x:"Reasoning",t:"Series, Coding & Direction",en:"• Check differences, ratios, squares/cubes in number series.\n• Letter positions: A=1 … Z=26; position from the other end = 27 − position.\n• Coding-decoding: look for a fixed shift, reversal or substitution.\n• Directions: a right turn from North faces East; left turn from North faces West.",hi:"• संख्या श्रेणी में अंतर, अनुपात, वर्ग/घन देखें।\n• अक्षर क्रम: A=1 … Z=26; दूसरे छोर से स्थान = 27 − स्थान।\n• कोडिंग-डिकोडिंग: निश्चित शिफ्ट, उलटा क्रम या प्रतिस्थापन देखें।\n• दिशा: उत्तर की ओर मुख हो तो दाएँ मुड़ने पर पूर्व, बाएँ मुड़ने पर पश्चिम।"},
+{x:"English",t:"Vocabulary & Grammar Essentials",en:"• One-word: Bibliophile (book lover), Omniscient (all-knowing), Regicide (killing of a king).\n• 'a' before a consonant sound (a university), 'an' before a vowel sound (an hour).\n• Each, every, neither, either take a singular verb.\n• Idiom: 'Once in a blue moon' = very rarely.",hi:"• एक शब्द: Bibliophile (पुस्तक-प्रेमी), Omniscient (सर्वज्ञ), Regicide (राजा की हत्या)।\n• 'a' व्यंजन ध्वनि से पहले (a university), 'an' स्वर ध्वनि से पहले (an hour)।\n• Each, every, neither, either के साथ एकवचन क्रिया आती है।\n• मुहावरा: 'Once in a blue moon' = बहुत कम होने वाली बात।"},
+{x:"Hindi",t:"पर्यायवाची, विलोम और मुहावरे",en:"• Synonyms: सूर्य–रवि, जल–पानी, पवन–हवा.\n• Antonyms: सुख–दुःख, उचित–अनुचित, उत्थान–पतन.\n• Idioms: आँखों का तारा = very dear; नौ दो ग्यारह होना = to run away.",hi:"• पर्यायवाची: सूर्य–रवि, जल–पानी, पवन–हवा।\n• विलोम: सुख–दुःख, उचित–अनुचित, उत्थान–पतन।\n• मुहावरे: आँखों का तारा = बहुत प्यारा; नौ दो ग्यारह होना = भाग जाना; आग बबूला होना = बहुत क्रोधित होना।"},
+{x:"GK/GS",t:"Indian Polity — Key Facts",en:"• Constitution came into effect on 26 Jan 1950. Six Fundamental Rights; 11 Fundamental Duties (Article 51A).\n• Article 14 equality; 17 abolishes untouchability; 21 life & liberty; 21A education; 32 constitutional remedies.\n• Lok Sabha term: 5 years. Rajya Sabha member term: 6 years; one-third retire every 2 years.\n• Minimum age of the President: 35 years.",hi:"• संविधान 26 जनवरी 1950 से लागू हुआ। छह मौलिक अधिकार; 11 मौलिक कर्तव्य (अनुच्छेद 51A)।\n• अनुच्छेद 14 समानता; 17 अस्पृश्यता उन्मूलन; 21 जीवन व स्वतंत्रता; 21A शिक्षा; 32 संवैधानिक उपचार।\n• लोकसभा का कार्यकाल: 5 वर्ष। राज्यसभा सदस्य का कार्यकाल: 6 वर्ष; हर 2 वर्ष में एक-तिहाई सदस्य सेवानिवृत्त होते हैं।\n• राष्ट्रपति की न्यूनतम आयु: 35 वर्ष।"},
+{x:"GK/GS",t:"History Timeline & Geography/Science Quick Facts",en:"• 1526 Panipat I · 1757 Plassey · 1764 Buxar · 1857 Revolt · 1885 INC · 1905 Partition of Bengal · 1919 Jallianwala Bagh · 1930 Dandi March · 1942 Quit India · 1947 Independence.\n• Largest state: Rajasthan; smallest: Goa; highest peak in India: Kanchenjunga.\n• SI units: force – Newton, energy – Joule, power – Watt, pressure – Pascal. Vitamin C deficiency – scurvy.",hi:"• 1526 पानीपत-I · 1757 प्लासी · 1764 बक्सर · 1857 विद्रोह · 1885 कांग्रेस · 1905 बंगाल विभाजन · 1919 जलियाँवाला बाग · 1930 दांडी मार्च · 1942 भारत छोड़ो · 1947 स्वतंत्रता।\n• सबसे बड़ा राज्य: राजस्थान; सबसे छोटा: गोवा; भारत की सबसे ऊँची चोटी: कंचनजंघा।\n• SI मात्रक: बल – न्यूटन, ऊर्जा – जूल, शक्ति – वाट, दाब – पास्कल। विटामिन C की कमी – स्कर्वी।"}
+];
+
+/* =====================================================================
+   8. QUIZ ENGINE (timer, palette, mark for review, marking scheme, review)
+===================================================================== */
+let QZ=null;
+const DUROPT=[5,10,15,20,25,30,40,45,60,90,120];
+function startTest(spec){
+ const qs=spec.bankKey?bankQs(spec.bankKey,spec.n):buildQs(spec.sub,spec.cls,spec.n);
+ if(!qs.length){toast("Questions for this test are not available yet.");return}
+ let dur=spec.cls?Math.max(5,Math.ceil(qs.length*.75)):Math.ceil((CDUR[spec.sub]||30)*qs.length/50);
+ dur=DUROPT.find(x=>x>=dur)||120;
+ QZ={spec,title:spec.title,qs,dur,m:1,neg:0,phase:"setup",i:0,ans:qs.map(()=>null),mark:qs.map(()=>false),origin:spec.origin,busy:false,timer:null};
+ go("quiz");
+}
+function histGet(){try{return JSON.parse(store.get("jd-hist","[]"))||[]}catch(e){return[]}}
+function histHtml(){const h=histGet().slice(-5).reverse();if(!h.length)return"";return`<div class="card" style="margin-top:14px"><b>Recent attempts</b>${h.map(x=>`<div class="rv">${esc(x.t)}<br><span class="muted small">${esc(x.d)} · Score ${x.s}/${x.m} · ${x.c}/${x.n} correct</span></div>`).join("")}</div>`}
+function renderQuiz(){
+ const b=$("#quizBody");
+ if(!QZ){b.innerHTML=`<div class="empty">No active test.<div style="margin-top:12px" class="row"><button class="btn primary" data-go="learning">Learning</button><button class="btn" data-go="compete">Competitive exams</button></div></div>`;return}
+ if(QZ.phase==="setup")return quizSetup(b);
+ if(QZ.phase==="run")return quizRun(b);
+ quizResult(b);
+}
+function quizSetup(b){
+ b.innerHTML=`<div class="page-h"><div class="eyebrow">Mock test</div><h1>${esc(QZ.title)}</h1></div>
+ <div class="card stack"><p><b>${QZ.qs.length}</b> questions. Original practice questions — not official papers.</p>
+ <div><label for="qDur">Time limit (minutes)</label><select class="field" id="qDur">${DUROPT.map(x=>`<option ${x===QZ.dur?"selected":""}>${x}</option>`).join("")}</select></div>
+ <div><label for="qMk">Marks per correct answer</label><select class="field" id="qMk"><option>1</option><option>2</option><option>4</option></select></div>
+ <div><label for="qNg">Negative marking (fraction of marks per wrong answer)</label><select class="field" id="qNg"><option value="0">None</option><option value="0.25">¼ (0.25)</option><option value="0.33">⅓ (0.33)</option><option value="0.5">½ (0.5)</option></select></div>
+ <p class="small muted">Check your exam's official marking scheme. Unanswered questions score 0. You can mark questions for review and jump using the palette.</p>
+ <button class="btn primary full" data-q="start">Start test</button><button class="btn full" data-q="quit">Cancel</button></div>`;
+}
+function fmtT(s){return String(Math.floor(s/60)).padStart(2,"0")+":"+String(s%60).padStart(2,"0")}
+function tick(){
+ if(!QZ||QZ.phase!=="run")return;
+ const rem=Math.max(0,Math.round((QZ.end-Date.now())/1000)),t=$("#qTimer");
+ if(t){t.textContent=fmtT(rem);t.classList.toggle("low",rem<60)}
+ if(rem<=0)submitQuiz(true);
+}
+function quizRun(b){
+ const q=QZ.qs[QZ.i],a=QZ.ans[QZ.i],n=QZ.qs.length;
+ b.innerHTML=`<div class="qbar"><span class="tag">${esc(QZ.title)}</span><span class="timer" id="qTimer">--:--</span></div>
+ <div class="bar"><i style="width:${(QZ.i+1)/n*100}%"></i></div>
+ <p class="muted small">Question ${QZ.i+1} of ${n}${QZ.mark[QZ.i]?" · marked for review":""}</p>
+ <h2 class="qtext">${esc(q.q)}</h2>
+ ${q.o.map((o,k)=>`<button class="opt ${a===k?"sel":""}" data-q="pick" data-i="${k}" aria-pressed="${a===k}">${esc(o)}</button>`).join("")}
+ <div class="row" style="margin-top:12px"><button class="btn" data-q="prev" ${QZ.i===0?"disabled":""}>Prev</button><button class="btn" data-q="clear">Clear</button><button class="btn" data-q="mark">${QZ.mark[QZ.i]?"Unmark":"Mark for review"}</button><button class="btn primary" data-q="next" ${QZ.i===n-1?"disabled":""}>Next</button></div>
+ <details class="card" style="margin-top:12px"><summary><b>Question palette</b></summary><div class="pal" style="margin:0 12px 12px">${QZ.qs.map((_,k)=>`<button class="${QZ.ans[k]!=null?"a":""} ${QZ.mark[k]?"m":""} ${k===QZ.i?"c":""}" data-q="jump" data-i="${k}" aria-label="Question ${k+1}">${k+1}</button>`).join("")}</div></details>
+ <button class="btn primary full" data-q="submit" style="margin-top:12px">Submit test</button><button class="btn full" data-q="quit" style="margin-top:8px">Quit</button>`;
+ tick();
+}
+function submitQuiz(auto){
+ if(!QZ||QZ.phase!=="run"||QZ.busy)return;
+ if(!auto){const un=QZ.ans.filter(x=>x==null).length;if(!confirm(`Submit test?\nAnswered: ${QZ.qs.length-un}\nNot answered: ${un}`))return}
+ QZ.busy=true;clearInterval(QZ.timer);
+ let c=0,w=0,s=0;QZ.ans.forEach((a,i)=>{if(a==null)s++;else if(a===QZ.qs[i].a)c++;else w++});
+ const score=Math.round((c*QZ.m-w*QZ.m*QZ.neg)*100)/100,max=QZ.qs.length*QZ.m;
+ QZ.res={c,w,s,score,max,used:Math.min(QZ.dur*60,Math.round((Date.now()-QZ.t0)/1000))};QZ.phase="result";
+ const h=histGet();h.push({t:QZ.title,s:score,m:max,c,n:QZ.qs.length,d:new Date().toLocaleDateString()});store.set("jd-hist",JSON.stringify(h.slice(-30)));
+ if($("#s-quiz").classList.contains("active")){renderQuiz();window.scrollTo(0,0)}
+}
+function quizResult(b){
+ const r=QZ.res,att=r.c+r.w,acc=att?Math.round(r.c/att*100):0,pc=Math.max(0,Math.round(r.score/r.max*100));
+ b.innerHTML=`<div class="card stack" style="text-align:center"><div class="eyebrow">${esc(QZ.title)}</div><div class="score">${r.score}/${r.max}</div><p>${pc}% score · ${acc}% accuracy</p>
+ <div class="grid3"><div class="pill">Correct ${r.c}</div><div class="pill">Wrong ${r.w}</div><div class="pill">Skipped ${r.s}</div></div>
+ <p class="muted small">Time used: ${fmtT(r.used)} of ${QZ.dur} min · Marking: +${QZ.m}, negative ${QZ.neg?QZ.neg*QZ.m:"none"}</p>
+ <div class="row" style="justify-content:center"><button class="btn primary" data-q="retake">Retake (new set)</button><button class="btn" data-q="quit">Back</button></div></div>
+ <div class="card"><b>Review</b>${QZ.qs.map((q,i)=>{const a=QZ.ans[i];return`<div class="rv"><b>${i+1}. ${esc(q.q)}</b><br>${a==null?`<span class="muted">Not answered</span>`:`<span class="${a===q.a?"okc":"bdc"}">Your answer: ${esc(q.o[a])}</span>`}${a===q.a?"":`<br><span class="okc">Correct: ${esc(q.o[q.a])}</span>`}${q.e?`<br><span class="muted small">${esc(q.e)}</span>`:""}</div>`}).join("")}</div>`;
+}
+$("#quizBody").addEventListener("click",e=>{
+ const el=e.target.closest("[data-q]");if(!el||!QZ||el.disabled)return;const a=el.dataset.q;
+ if(a==="start"){QZ.dur=+$("#qDur").value;QZ.m=+$("#qMk").value;QZ.neg=+$("#qNg").value;QZ.phase="run";QZ.t0=Date.now();QZ.end=Date.now()+QZ.dur*60000;QZ.timer=setInterval(tick,500)}
+ else if(a==="pick"){QZ.ans[QZ.i]=+el.dataset.i}
+ else if(a==="clear"){QZ.ans[QZ.i]=null}
+ else if(a==="mark"){QZ.mark[QZ.i]=!QZ.mark[QZ.i]}
+ else if(a==="next"){if(QZ.i<QZ.qs.length-1)QZ.i++}
+ else if(a==="prev"){if(QZ.i>0)QZ.i--}
+ else if(a==="jump"){QZ.i=+el.dataset.i}
+ else if(a==="submit"){submitQuiz(false);return}
+ else if(a==="retake"){const sp=QZ.spec;clearInterval(QZ.timer);QZ=null;startTest(sp);return}
+ else if(a==="quit"){if(QZ.phase==="run"&&!confirm("Quit this test? Your progress will be lost."))return;clearInterval(QZ.timer);const o=QZ.origin||"home";QZ=null;go(o);return}
+ renderQuiz();if(a==="next"||a==="prev"||a==="jump")window.scrollTo(0,0);
+});
+
+/* =====================================================================
+   9. LEARNING (Class 6–12) + COMPETITIVE EXAMS UI
+===================================================================== */
+function notesBlock(list){
+ const lg=store.get("jd-nl","both");
+ return list.length?`<div class="seg">${[["both","Hindi + English"],["hi","हिन्दी"],["en","English"]].map(([v,l])=>`<button class="${lg===v?"on":""}" data-act="nl" data-v="${v}">${l}</button>`).join("")}</div>`+list.map(n=>`<details class="card" style="margin-top:10px"><summary><b>${esc(n.t)}</b></summary><div>${lg!=="hi"?`<div class="out"><b>English</b>\n${esc(n.en)}</div>`:""}${lg!=="en"?`<div class="out"><b>हिन्दी</b>\n${esc(n.hi)}</div>`:""}</div></details>`).join(""):`<div class="empty">Notes will be added soon.</div>`;
+}
+function testBtns(sub,cls){
+ const av=avail(sub,cls);if(!av)return`<p class="soon">Mock tests will be added soon.</p>`;
+ const sz=[10,25,50].filter(x=>x<=av);if(av<50&&!sz.includes(av))sz.push(av);
+ return`<div class="row">${sz.map(n=>`<button class="btn primary" data-act="test" data-n="${n}">${av<50&&n===av?"All "+n:n} Q test</button>`).join("")}</div><p class="small muted">${av>=50?"New question set every time.":`Available questions: ${av} (more will be added).`}</p>`;
+}
+const notesFor=(cls,sub)=>NOTES.filter(n=>n.c&&n.c.includes(cls)&&n.s===sub);
+const L={v:"classes",cls:0,sub:"",stream:"",chapterIndex:0};
+function renderLearn(){
+ const b=$("#learnBody");
+ if(L.v==="classes")b.innerHTML=`<div class="card stack" style="margin-bottom:14px"><b>CBSE / NCERT learning · 2026–27</b><p class="small muted">Choose your class to browse chapter indexes, notes and available practice. Not every subject has complete notes or question banks yet; exact coverage depends on your prescribed course and textbook.</p><a class="btn soft" href="${OFFICIAL_CURRICULUM}" target="_blank" rel="noopener noreferrer">Official CBSE 2026–27 curriculum ↗</a></div><div class="grid3">${CLASSES.map(c=>`<button class="sub" data-act="cls" data-v="${c}"><div class="bd">${c}</div><b>Class ${c}</b><small>${c<11?"School subjects":"Choose stream"}</small></button>`).join("")}</div>${histHtml()}`;
+ else if(L.v==="streams")b.innerHTML=`<button class="btn" data-act="up">${ic("back")}Classes</button><h2 style="margin:14px 0 10px">Class ${L.cls}: choose stream</h2><div class="grid2">${Object.keys(STREAMS).map(s=>`<button class="sub" data-act="stream" data-v="${s}"><div class="bd">${s==="Science"?"⚗":s==="Commerce"?"₹":"✦"}</div><b>${s}</b><small>${STREAMS[s].join(" · ")}</small></button>`).join("")}</div><p class="small muted" style="margin-top:12px">Your school may combine subjects differently. Select the subjects you actually study.</p>`;
+ else if(L.v==="subjects")b.innerHTML=`<button class="btn" data-act="up">${ic("back")} ${L.cls>=11?"Streams":"Classes"}</button><h2 style="margin:14px 0 10px">Class ${L.cls}${L.stream?" · "+L.stream:""}</h2><div class="grid2">${subjectsFor(L.cls).map(s=>`<button class="sub" data-act="sub" data-v="${esc(s)}"><div class="bd">${esc(s.split(" ").map(w=>w[0]).join("").slice(0,2))}</div><b>${esc(s)}</b><small>${chaptersFor(L.cls,s).length} chapters · ${notesFor(L.cls,s).length} notes</small></button>`).join("")}</div>`;
+ else if(L.v==="subject"){const nn=notesFor(L.cls,L.sub),R=RESOURCES[L.cls+"|"+L.sub]||[],chs=chaptersFor(L.cls,L.sub);
+  b.innerHTML=`<button class="btn" data-act="up">${ic("back")}Subjects</button><h2 style="margin:14px 0 10px">Class ${L.cls} · ${esc(L.sub)}</h2><div class="card stack"><b>Chapter-wise syllabus</b>${chs.length?`<p class="small muted">${chs.length} chapter titles in this index. Open a chapter to view the chapter panel.</p><div class="stack">${chs.map((ch,i)=>`<button class="card" style="width:100%;text-align:left;padding:13px;box-shadow:none" data-act="chapter" data-v="${i}"><span class="tag">Chapter ${i+1}</span><div style="margin-top:7px;font-weight:700">${esc(ch)}</div><div class="small muted" style="margin-top:4px">Open chapter details →</div></button>`).join("")}</div>`:`<p class="small muted">A chapter index for this subject is not yet populated. Use the official CBSE curriculum link below rather than assuming a chapter list.</p>`}</div>
+  <div class="card stack" style="margin-top:12px"><b>Study notes (Hindi + English)</b>${nn.length?`<button class="btn soft" data-act="notes">Open ${nn.length} note${nn.length>1?"s":""}</button>`:`<p class="soon">General notes available for this subject are being expanded. Chapter-specific notes are not yet complete.</p>`}</div>
+  <div class="card stack" style="margin-top:12px"><b>Practice tests</b>${testBtns(L.sub,L.cls)}</div>
+  <div class="card stack" style="margin-top:12px"><b>Video lectures &amp; PDFs</b>${R.length?`<ul style="list-style:none">${R.map(x=>`<li><a class="link" href="${esc(x.u)}" target="_blank" rel="noopener noreferrer">${ic("ext")} ${esc(x.t)}</a></li>`).join("")}</ul>`:`<p class="soon">No verified resources have been added for this subject yet.</p>`}<a class="btn" href="${OFFICIAL_CURRICULUM}" target="_blank" rel="noopener noreferrer">Official CBSE syllabus ↗</a></div>`}
+ else if(L.v==="chapter"){const ch=chaptersFor(L.cls,L.sub)[L.chapterIndex]||"Chapter";const bankKey=`cbse|${L.cls}|${L.sub}|${L.chapterIndex}`;const bank=(window.JD_QUESTION_BANK&&JD_QUESTION_BANK.sets&&JD_QUESTION_BANK.sets[bankKey])||[];b.innerHTML=`<button class="btn" data-act="up">${ic("back")}Back to ${esc(L.sub)}</button><div class="page-h" style="margin-top:16px"><div class="eyebrow">Class ${L.cls} · ${esc(L.sub)} · Chapter ${L.chapterIndex+1}</div><h1>${esc(ch)}</h1><p>Use this chapter page to study, practise and track your mistakes. Confirm the exact syllabus and chapter title against your prescribed textbook for 2026–27.</p></div><div class="card stack"><b>Study checklist</b><p>1. Read the prescribed chapter and write key definitions/formulas.</p><p>2. Work through examples without looking at the solution.</p><p>3. Attempt textbook exercises and explain each answer.</p><p>4. Revise incorrect questions before taking the test again.</p></div><div class="card stack" style="margin-top:12px"><b>Chapter practice</b>${bank.length?`<p>${bank.length} original practice questions are available for this chapter. They are starter questions, not official PYQs.</p><button class="btn primary" data-act="chaptertest" data-key="${esc(bankKey)}" data-n="${bank.length}">Start ${bank.length}-question test</button>`:`<p class="small muted">A chapter-specific question bank has not been added for this chapter yet. It is not included in the complete-coverage count.</p>`}<a class="btn" href="${OFFICIAL_CURRICULUM}" target="_blank" rel="noopener noreferrer">Check official syllabus ↗</a></div>`}
+ else b.innerHTML=`<button class="btn" data-act="up">${ic("back")}Back</button><h2 style="margin:14px 0 10px">Class ${L.cls} · ${esc(L.sub)} — Notes</h2>${notesBlock(notesFor(L.cls,L.sub))}`;
+}
+$("#learnBody").addEventListener("click",e=>{
+ const el=e.target.closest("[data-act]");if(!el)return;const a=el.dataset.act;
+ if(a==="cls"){L.cls=+el.dataset.v;L.sub="";L.stream="";L.v=L.cls>=11?"streams":"subjects"}
+ else if(a==="stream"){L.stream=el.dataset.v;L.v="subjects"}
+ else if(a==="sub"){L.sub=el.dataset.v;L.v="subject"}
+ else if(a==="chapter"){L.chapterIndex=+el.dataset.v;L.v="chapter"}
+ else if(a==="notes"){L.v="notes"}
+ else if(a==="up"){L.v=L.v==="notes"?"subject":L.v==="chapter"?"subject":L.v==="subject"?"subjects":L.v==="subjects"&&L.cls>=11?"streams":"classes"}
+ else if(a==="nl"){setNL(el.dataset.v)}
+ else if(a==="test"){startTest({sub:L.sub,cls:L.cls,n:+el.dataset.n,title:`Class ${L.cls} · ${L.sub}`,origin:"learning"});return}
+ else if(a==="chaptertest"){startTest({sub:L.sub,cls:L.cls,n:+el.dataset.n,bankKey:el.dataset.key,title:`Class ${L.cls} · ${L.sub} · Chapter ${L.chapterIndex+1}`,origin:"learning"});return}
+ renderLearn();
+});
+renderLearn();
+
+const cnotes=sub=>NOTES.filter(n=>n.x===sub);
+const C={v:"exams",exam:"",sub:""};
+function renderComp(){
+ const b=$("#compBody");
+ if(C.v==="exams")b.innerHTML=`<div class="card stack" style="margin-bottom:12px"><b>Competitive exam practice</b><p class="small muted">Choose an exam. Starter question banks are labelled as original practice; they are not official PYQs. Coverage is being built in phases.</p></div><div class="stack">${EXAMS.map(x=>`<button class="card" style="width:100%;text-align:left" data-act="exam" data-v="${esc(x[0])}"><b>${esc(x[0])}</b><div class="muted small">${esc(x[1])}</div></button>`).join("")}</div>${histHtml()}<p class="small muted" style="margin-top:12px">Check the official notification for the current syllabus, eligibility, pattern and marking scheme.</p>`;
+ else if(C.v==="exam"){const entrance={"JEE Main":["Physics","Chemistry","Mathematics"],"JEE Advanced":["Physics","Chemistry","Mathematics"],"NEET UG":["Physics","Chemistry","Biology"]};if(entrance[C.exam]){b.innerHTML=`<button class="btn" data-act="up">${ic("back")}Exams</button><h2 style="margin:14px 0 10px">${esc(C.exam)}</h2><p class="small muted" style="margin-bottom:12px">Subject-wise starter practice. The complete official syllabus and full PYQ archive are not yet included.</p><div class="stack">${entrance[C.exam].map(sub=>{const key=`${C.exam}|${sub}`,n=((window.JD_QUESTION_BANK||{}).sets||{})[key]?.length||0;return`<div class="card stack"><b>${esc(sub)}</b><p class="small muted">${n?`${n} original practice questions currently available.`:"Question bank not added yet."}</p><button class="btn primary" data-act="banktest" data-key="${esc(key)}" data-sub="${esc(sub)}" data-n="${n}" ${n?"":"disabled"}>${n?`Start ${n}-question practice`:"Coming in a later content phase"}</button></div>`}).join("")}</div><a class="btn" style="margin-top:12px" href="${C.exam==="JEE Advanced"?"https://jeeadv.ac.in/":C.exam==="NEET UG"?"https://exams.nta.ac.in/NEET/":"https://jeemain.nta.nic.in/"}" target="_blank" rel="noopener noreferrer">Official exam website ↗</a>`}else b.innerHTML=`<button class="btn" data-act="up">${ic("back")}Exams</button><h2 style="margin:14px 0 10px">${esc(C.exam)}</h2><div class="stack">${CSUBS.map(s=>{const av=avail(s,0),nn=cnotes(s).length;return`<div class="card stack"><b>${esc(s==="Mixed"?"Full mock (all subjects)":s)}</b><div class="row"><button class="btn primary" data-act="ctest" data-v="${esc(s)}">${av>=50?"50 Q test":"All "+av+" Q"} · ${CDUR[s]} min</button>${s!=="Mixed"?`<button class="btn soft" data-act="cnotes" data-v="${esc(s)}">Notes (${nn})</button>`:""}</div></div>`}).join("")}</div>`}
+ else if(C.v==="notes")b.innerHTML=`<button class="btn" data-act="up">${ic("back")}Back</button><h2 style="margin:14px 0 10px">${esc(C.sub)} — Notes</h2>${notesBlock(cnotes(C.sub))}`;
+ else b.innerHTML=`<button class="btn" data-act="up">${ic("back")}Back</button><h2 style="margin:14px 0 10px">${esc(C.sub)} — Notes</h2>${notesBlock(cnotes(C.sub))}`;
+}
+$("#compBody").addEventListener("click",e=>{
+ const el=e.target.closest("[data-act]");if(!el)return;const a=el.dataset.act;
+ if(a==="exam"){C.exam=el.dataset.v;C.v="exam"}
+ else if(a==="banktest"){const n=+el.dataset.n;if(n>0){startTest({sub:el.dataset.sub,cls:0,n,bankKey:el.dataset.key,title:`${C.exam} · ${el.dataset.sub}`,origin:"compete"});return}}
+ else if(a==="cnotes"){C.sub=el.dataset.v;C.v="notes"}
+ else if(a==="up"){C.v=C.v==="notes"?"exam":"exams"}
+ else if(a==="nl"){setNL(el.dataset.v)}
+ else if(a==="ctest"){const s=el.dataset.v;startTest({sub:s,cls:0,n:50,title:`${C.exam} · ${s==="Mixed"?"Full mock":s}`,origin:"compete"});return}
+ renderComp();
+});
+renderComp();
+
+/* /* =====================================================================
+   10. TOOLS  (calculators, helper, prompt generator, library, saved, AI links)
+===================================================================== */
+const TOOLS=[["calc","Calculator"],["sci","Scientific"],["age","Age"],["ptile","Percentile"],["pct","Percentage"],["si","Simple Interest"],["ci","Compound Interest"],["avg","Average"],["tw","Time & Work"],["helper","Study Helper"],["pgen","Prompt Generator"],["lib","Prompt Library"],["saved","Saved Prompts"],["ai","AI & Apps"]];
+let activeCalc=null;
+$("#tChips").innerHTML=TOOLS.map(([k,l],i)=>`<button class="chip ${i?"":"active"}" data-t="${k}">${l}</button>`).join("");
+function openTool(k){
+ if(!TOOLS.some(t=>t[0]===k))return;
+ $$("#tChips .chip").forEach(c=>c.classList.toggle("active",c.dataset.t===k));
+ $$(".tp").forEach(p=>p.hidden=p.id!=="t-"+k);
+ activeCalc=k==="calc"?CALC1:k==="sci"?CALC2:null;
+ if(k==="saved")renderSaved();
+}
+$("#tChips").addEventListener("click",e=>{const b=e.target.closest(".chip");if(b)openTool(b.dataset.t)});
+function panel(k,html){const d=document.createElement("div");d.className="card tp stack";d.id="t-"+k;d.style.marginTop="12px";d.hidden=k!=="calc";d.innerHTML=html;$("#toolPanels").appendChild(d)}
+const inp=(id,l,a="")=>`<div><label for="${id}">${l}</label><input class="field" id="${id}" type="number" inputmode="decimal" step="any" ${a}></div>`;
+const sel=(id,l,o)=>`<div><label for="${id}">${l}</label><select class="field" id="${id}">${o.map(x=>`<option>${esc(x)}</option>`).join("")}</select></div>`;
+const num=id=>{const v=$("#"+id).value;return v===""?NaN:parseFloat(v)};
+const f2=v=>String(parseFloat(v.toFixed(2)));
+const fx=v=>{if(!isFinite(v))throw new Error("Math error");if(Math.abs(v)<1e-12)return"0";return String(parseFloat(v.toPrecision(12)))};
+
+/* ---- Expression evaluator (no eval) ---- */
+function calcEval(src,deg){
+ let s=src;const o=(s.match(/\(/g)||[]).length-(s.match(/\)/g)||[]).length;for(let i=0;i<o;i++)s+=")";
+ const T=[],re=/\s*(\d+\.?\d*|\.\d+|[a-z]+|[+−\-×÷*\/^!%()π√])/y;let last=0;
+ while(last<s.length){re.lastIndex=last;const m=re.exec(s);if(!m||m.index!==last){if(/^\s*$/.test(s.slice(last)))break;throw new Error("Invalid input")}let t=m[1];if(t==="-")t="−";if(t==="*")t="×";if(t==="/")t="÷";T.push(t);last=re.lastIndex}
+ const r=deg?Math.PI/180:1,inv=deg?180/Math.PI:1;
+ const F={sin:x=>Math.sin(x*r),cos:x=>Math.cos(x*r),tan:x=>{if(deg&&Math.abs(((x%180)+180)%180-90)<1e-9)throw new Error("Math error");return Math.tan(x*r)},
+  asin:x=>{if(Math.abs(x)>1)throw new Error("Invalid input");return Math.asin(x)*inv},acos:x=>{if(Math.abs(x)>1)throw new Error("Invalid input");return Math.acos(x)*inv},atan:x=>Math.atan(x)*inv,
+  log:x=>{if(x<=0)throw new Error("Invalid input");return Math.log10(x)},ln:x=>{if(x<=0)throw new Error("Invalid input");return Math.log(x)},
+  sqrt:x=>{if(x<0)throw new Error("Invalid input");return Math.sqrt(x)},cbrt:Math.cbrt,abs:Math.abs};
+ let p=0;const peek=()=>T[p],nx=()=>T[p++],isNum=t=>t&&/^[\d.]/.test(t),isId=t=>t&&(/^[a-z]+$/.test(t)||t==="π"||t==="√");
+ const fact=v=>{if(v<0||v!==Math.floor(v)||v>170)throw new Error("Invalid input");let f=1;for(let i=2;i<=v;i++)f*=i;return f};
+ function expr(){let v=term();while(peek()==="+"||peek()==="−"){const o=nx(),q=term();v=o==="+"?v+q:v-q}return v}
+ function term(){let v=unary();for(;;){const t=peek();if(t==="×"||t==="÷"){nx();const q=unary();if(t==="÷"){if(q===0)throw new Error("Cannot divide by 0");v/=q}else v*=q}else if(isNum(t)||isId(t)||t==="("){v*=unary()}else break}return v}
+ function unary(){if(peek()==="−"){nx();return-unary()}if(peek()==="+"){nx();return unary()}return pw()}
+ function pw(){const b=post();if(peek()==="^"){nx();return Math.pow(b,unary())}return b}
+ function post(){let v=prim();for(;;){if(peek()==="!"){nx();v=fact(v)}else if(peek()==="%"){nx();v/=100}else break}return v}
+ function prim(){const t=nx();if(t===undefined)throw new Error("Incomplete expression");
+  if(isNum(t)){const v=parseFloat(t);if(isNaN(v))throw new Error("Invalid input");return v}
+  if(t==="("){const v=expr();if(nx()!==")")throw new Error("Invalid input");return v}
+  if(t==="π")return Math.PI;if(t==="e")return Math.E;
+  const nm=t==="√"?"sqrt":t;if(F[nm]){if(nx()!=="(")throw new Error("Invalid input");const a=expr();if(nx()!==")")throw new Error("Invalid input");return F[nm](a)}
+  throw new Error("Invalid input")}
+ const v=expr();if(p<T.length)throw new Error("Invalid input");return v;
+}
+function makeCalc(pf,layout,cols){
+ const S={ex:"",rs:"0",done:false,ans:"",deg:true},keys=$("#"+pf+"-keys");keys.style.gridTemplateColumns=`repeat(${cols},1fr)`;
+ keys.innerHTML=layout.map(([k,cls,span,ins])=>`<button class="key ${cls||""}" ${span?`style="grid-column:span ${span}"`:""} data-k="${esc(k)}" data-i="${esc(ins||k)}">${esc(k)}</button>`).join("");
+ const draw=()=>{$("#"+pf+"-ex").textContent=S.ex;$("#"+pf+"-rs").textContent=S.rs};
+ const prev=()=>{if(!S.ex){S.rs="0";return}try{S.rs=fx(calcEval(S.ex,S.deg))}catch(e){}};
+ function press(k,ins){
+  if(k==="C"){S.ex="";S.rs="0";S.done=false}
+  else if(k==="⌫"){S.ex=S.ex.slice(0,-1);S.done=false;prev()}
+  else if(k==="DEG"){S.deg=!S.deg;keys.querySelector('[data-k="DEG"]').textContent=S.deg?"DEG":"RAD";prev()}
+  else if(k==="="){if(!S.ex)return;try{const v=fx(calcEval(S.ex,S.deg));S.rs=v;S.ans=v}catch(e){S.rs=e.message}S.done=true}
+  else{if(k==="Ans")ins=S.ans||"0";
+   if(S.done){S.done=false;S.ex=(/^[+−×÷^!%]$/.test(ins)&&S.ans&&!isNaN(+S.ans))?S.ans:""}
+   S.ex+=ins;prev()}
+  draw();
+ }
+ keys.addEventListener("click",e=>{const b=e.target.closest(".key");if(b)press(b.dataset.k,b.dataset.i)});
+ return{press};
+}
+panel("calc",`<div class="calc-disp"><small id="c1-ex"></small><b id="c1-rs">0</b></div><div class="keys" id="c1-keys"></div>`);
+panel("sci",`<div class="calc-disp"><small id="c2-ex"></small><b id="c2-rs">0</b></div><div class="keys" id="c2-keys"></div><p class="small muted">DEG/RAD switches the angle mode. Brackets close automatically.</p>`);
+const CALC1=makeCalc("c1",[["C","fn"],["⌫","fn"],["%","op"],["÷","op"],["7"],["8"],["9"],["×","op"],["4"],["5"],["6"],["−","op"],["1"],["2"],["3"],["+","op"],["0"],["."],["=","eq",2]],4);
+const CALC2=makeCalc("c2",[["DEG","fn"],["(","op"],[")","op"],["⌫","fn"],["C","fn"],["sin","op","","sin("],["cos","op","","cos("],["tan","op","","tan("],["π","op"],["e","op"],["asin","op","","asin("],["acos","op","","acos("],["atan","op","","atan("],["x²","op","","^2"],["xʸ","op","","^"],["log","op","","log("],["ln","op","","ln("],["√","op","","√("],["n!","op","","!"],["%","op"],["7"],["8"],["9"],["÷","op"],["×","op"],["4"],["5"],["6"],["−","op"],["+","op"],["1"],["2"],["3"],[".","fn"],["Ans","fn"],["0","",2],["=","eq",3]],5);
+activeCalc=CALC1;
+document.addEventListener("keydown",e=>{
+ if(!activeCalc||!$("#s-tools").classList.contains("active")||/INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName))return;
+ const m={"*":"×","/":"÷","-":"−",Enter:"=","=":"=",Backspace:"⌫",Escape:"C"},k=m[e.key]||e.key;
+ if(/^[0-9.+%()^!]$/.test(k)||"×÷−=⌫C".includes(k)){e.preventDefault();activeCalc.press(k,k)}
+});
+
+/* ---- Age ---- */
+panel("age",`<h3>Age Calculator</h3><div class="grid2"><div><label for="ag1">Date of birth</label><input class="field" id="ag1" type="date"></div><div><label for="ag2">Age as on</label><input class="field" id="ag2" type="date"></div></div><div class="result" id="agr">Enter date of birth</div>`);
+(function(){const t=new Date();$("#ag2").value=`${t.getFullYear()}-${String(t.getMonth()+1).padStart(2,"0")}-${String(t.getDate()).padStart(2,"0")}`;
+ const pd=v=>{const a=v.split("-");return a.length===3&&a[0]?new Date(+a[0],+a[1]-1,+a[2]):null};
+ function calc(){const a=pd($("#ag1").value),b=pd($("#ag2").value),r=$("#agr");if(!a||!b){r.textContent="Enter date of birth";return}
+  if(a>b){r.textContent="Date of birth must be on or before the 'as on' date";return}
+  let y=b.getFullYear()-a.getFullYear(),m=b.getMonth()-a.getMonth(),d=b.getDate()-a.getDate();
+  if(d<0){m--;d+=new Date(b.getFullYear(),b.getMonth(),0).getDate()}if(m<0){y--;m+=12}
+  const days=Math.round((b-a)/864e5);let nb=new Date(b.getFullYear(),a.getMonth(),a.getDate());if(nb<b)nb.setFullYear(nb.getFullYear()+1);
+  r.textContent=`Age: ${y} years, ${m} months, ${d} days\nTotal days lived: ${days.toLocaleString()}\nTotal months: ${y*12+m}\nNext birthday in: ${Math.round((nb-b)/864e5)} days`}
+ $("#ag1").addEventListener("input",calc);$("#ag2").addEventListener("input",calc)})();
+
+/* ---- Percentile ---- */
+panel("ptile",`<h3>Percentile Calculator</h3>${sel("pt0","Method",["From rank","From number of candidates scoring lower"])}<div class="grid2">${inp("pt1","Total candidates (N)","min=1")}<div><label for="pt2" id="pt2l">Your rank (R)</label><input class="field" id="pt2" type="number" inputmode="decimal" step="any"></div></div><div id="pt3w" hidden>${inp("pt3","Candidates with the same score as you (incl. you)","min=0")}</div><div class="result" id="ptr">Enter values</div><p class="small muted">Rank method: (N − R) ÷ N × 100. Lower-count method: (lower + ½ × equal) ÷ N × 100. Official bodies may use their own formula.</p>`);
+function ptileCalc(){const m=$("#pt0").selectedIndex,N=num("pt1"),x=num("pt2"),r=$("#ptr");$("#pt2l").textContent=m?"Candidates scoring lower":"Your rank (R)";$("#pt3w").hidden=!m;
+ if(isNaN(N)||isNaN(x)){r.textContent="Enter values";return}if(N<1){r.textContent="Total candidates must be at least 1";return}
+ if(!m){if(x<1||x>N){r.textContent="Rank must be between 1 and N";return}r.textContent=`Percentile = (${N} − ${x}) ÷ ${N} × 100 = ${f2((N-x)/N*100)}`}
+ else{const q=isNaN(num("pt3"))?0:num("pt3");if(x<0||x+q>N){r.textContent="Lower + equal cannot exceed N";return}r.textContent=`Percentile = (${x} + ½×${q}) ÷ ${N} × 100 = ${f2((x+q/2)/N*100)}`}}
+["pt0","pt1","pt2","pt3"].forEach(id=>$("#"+id).addEventListener("input",ptileCalc));
+
+/* ---- Percentage ---- */
+const PM=[["X% of Y",["Percent (X)","Number (Y)"]],["X is what % of Y",["X","Y"]],["Percentage increase (old → new)",["Old value","New value"]],["Percentage decrease (old → new)",["Old value","New value"]],["Marks percentage",["Marks obtained","Total marks"]],["Difference between two values",["Value 1","Value 2"]]];
+panel("pct",`<h3>Percentage Calculator</h3>${sel("pc0","What do you want to find?",PM.map(x=>x[0]))}<div class="grid2"><div><label for="pc1" id="pc1l"></label><input class="field" id="pc1" type="number" inputmode="decimal" step="any"></div><div><label for="pc2" id="pc2l"></label><input class="field" id="pc2" type="number" inputmode="decimal" step="any"></div></div><div class="result" id="pcr">Enter values</div>`);
+function pctCalc(){const m=$("#pc0").selectedIndex;$("#pc1l").textContent=PM[m][1][0];$("#pc2l").textContent=PM[m][1][1];const a=num("pc1"),b=num("pc2"),r=$("#pcr");
+ if(isNaN(a)||isNaN(b)){r.textContent="Enter values";return}let t;
+ if(m===0)t=`${f2(a)}% of ${f2(b)} = ${f2(a*b/100)}\nFormula: X × Y ÷ 100`;
+ else if(m===1)t=b===0?"Y cannot be 0":`${f2(a)} is ${f2(a/b*100)}% of ${f2(b)}\nFormula: X ÷ Y × 100`;
+ else if(m===2)t=a===0?"Old value cannot be 0":b<a?"New value is smaller — use 'Percentage decrease'":`Increase = ${f2((b-a)/a*100)}%\nFormula: (new − old) ÷ old × 100`;
+ else if(m===3)t=a===0?"Old value cannot be 0":b>a?"New value is larger — use 'Percentage increase'":`Decrease = ${f2((a-b)/a*100)}%\nFormula: (old − new) ÷ old × 100`;
+ else if(m===4)t=b<=0?"Total marks must be greater than 0":a<0?"Marks cannot be negative":a>b?"Marks obtained cannot exceed total marks":`Percentage = ${f2(a/b*100)}%\nFormula: obtained ÷ total × 100`;
+ else{const av=(a+b)/2;t=`Difference = ${f2(Math.abs(a-b))}\n`+(av===0?"Percentage difference not defined":`Percentage difference = ${f2(Math.abs(a-b)/Math.abs(av)*100)}% (of the average)`)}
+ r.textContent=t}
+["pc0","pc1","pc2"].forEach(id=>$("#"+id).addEventListener("input",pctCalc));pctCalc();
+
+/* ---- Simple & Compound interest ---- */
+panel("si",`<h3>Simple Interest</h3><div class="grid2">${inp("s1","Principal (₹)","min=0")}${inp("s2","Rate (% per year)","min=0")}${inp("s3","Time (years)","min=0")}</div><div class="result" id="sr">Enter values</div><p class="small muted">SI = P × R × T ÷ 100 · Amount = P + SI</p>`);
+function siCalc(){const p=num("s1"),r=num("s2"),t=num("s3"),o=$("#sr");
+ if(isNaN(p)||isNaN(r)||isNaN(t)){o.textContent="Enter values";return}
+ if(p<0||r<0||t<0){o.textContent="Values cannot be negative";return}
+ const si=p*r*t/100;o.textContent=`Simple interest = ₹${f2(si)}\nTotal amount = ₹${f2(p+si)}`}
+["s1","s2","s3"].forEach(id=>$("#"+id).addEventListener("input",siCalc));
+panel("ci",`<h3>Compound Interest</h3><div class="grid2">${inp("k1","Principal (₹)","min=0")}${inp("k2","Rate (% per year)","min=0")}${inp("k3","Time (years)","min=0")}${sel("k4","Compounded",["Yearly","Half-yearly","Quarterly","Monthly","Daily"])}</div><div class="result" id="kr">Enter values</div><p class="small muted">A = P (1 + R ÷ 100n)^(nT) · CI = A − P</p>`);
+function ciCalc(){const p=num("k1"),r=num("k2"),t=num("k3"),n=[1,2,4,12,365][$("#k4").selectedIndex],o=$("#kr");
+ if(isNaN(p)||isNaN(r)||isNaN(t)){o.textContent="Enter values";return}
+ if(p<0||r<0||t<0){o.textContent="Values cannot be negative";return}
+ const a=p*Math.pow(1+r/(100*n),n*t);if(!isFinite(a)){o.textContent="Values are too large";return}
+ o.textContent=`Amount = ₹${f2(a)}\nCompound interest = ₹${f2(a-p)}`}
+["k1","k2","k3","k4"].forEach(id=>$("#"+id).addEventListener("input",ciCalc));
+
+/* ---- Average ---- */
+panel("avg",`<h3>Average Calculator</h3><label for="av1">Numbers (separate with comma, space or new line)</label><textarea class="field" id="av1" placeholder="e.g. 12, 18, 25, 30"></textarea><div class="result" id="avr">Enter numbers</div>`);
+$("#av1").addEventListener("input",()=>{const raw=$("#av1").value.split(/[\s,;]+/).filter(Boolean),o=$("#avr");
+ if(!raw.length){o.textContent="Enter numbers";return}
+ const a=raw.map(Number);if(a.some(x=>isNaN(x))){o.textContent="Please enter valid numbers only";return}
+ const s=a.reduce((x,y)=>x+y,0),so=a.slice().sort((x,y)=>x-y),m=so.length%2?so[(so.length-1)/2]:(so[so.length/2-1]+so[so.length/2])/2;
+ o.textContent=`Count = ${a.length}\nSum = ${f2(s)}\nAverage = ${f2(s/a.length)}\nMedian = ${f2(m)}\nMin = ${f2(so[0])} · Max = ${f2(so[so.length-1])}`});
+
+/* ---- Time & Work ---- */
+panel("tw",`<h3>Time &amp; Work</h3>${sel("w0","Find",["Time taken together","Time taken by B alone"])}<div class="grid2">${inp("w1","Person A alone (days)","min=0")}<div><label for="w2" id="w2l">Person B alone (days)</label><input class="field" id="w2" type="number" inputmode="decimal" step="any" min="0"></div></div><div id="w3w">${inp("w3","Person C alone (days) — optional","min=0")}</div><div class="result" id="wr">Enter values</div><p class="small muted">Work per day = 1 ÷ days. Together: 1 ÷ (1/A + 1/B + 1/C)</p>`);
+function twCalc(){const m=$("#w0").selectedIndex,o=$("#wr");$("#w2l").textContent=m?"A and B together (days)":"Person B alone (days)";$("#w3w").hidden=!!m;
+ const a=num("w1"),b=num("w2");if(isNaN(a)||isNaN(b)){o.textContent="Enter values";return}
+ if(a<=0||b<=0){o.textContent="Days must be greater than 0";return}
+ if(!m){let rate=1/a+1/b;const c3=num("w3");if(!isNaN(c3)){if(c3<=0){o.textContent="Days must be greater than 0";return}rate+=1/c3}
+  o.textContent=`Together they finish in ${f2(1/rate)} days\nCombined work per day = ${f2(rate*100)}% of the work`}
+ else{if(b>=a){o.textContent="Together time must be less than A's time alone";return}o.textContent=`Person B alone takes ${f2(1/(1/b-1/a))} days`}}
+["w0","w1","w2","w3"].forEach(id=>$("#"+id).addEventListener("input",twCalc));twCalc();
+
+/* ---- Study Helper (prompt template — NOT an AI service) ---- */
+const SHK={"Simple explanation":"Explain it in very simple language with 2 real-life examples and a one-line takeaway.","Revision notes":"Write concise revision notes: definitions, key points, formulas/dates, common mistakes and a 5-line recap.","Practice questions":"Create 10 practice questions (easy to hard) with an answer key at the end. Do not show answers until I ask.","Flashcards":"Create 15 flashcards in 'Front | Back' format.","Study timetable":"Create a realistic study timetable with study blocks, short breaks, practice and revision.","Chapter summary":"Summarise the chapter in 10 bullet points, then list 5 important questions.","Exam preparation plan":"Create an exam preparation plan with weekly targets, revision cycles, a mock test and error analysis."};
+panel("helper",`<h3>Study Helper</h3><p class="muted small">Builds a structured study <b>prompt template</b>. It is not an AI service and does not generate answers itself — paste it into an assistant to get a response.</p>
+<label for="sh1">Topic</label><input class="field" id="sh1" placeholder="e.g. Quadratic equations">
+<div class="grid2">${sel("sh2","Class / level",["Class 6","Class 7","Class 8","Class 9","Class 10","Class 11","Class 12","Competitive exam"])}${sel("sh3","Subject",["English","Hindi","Mathematics","Science","Social Science","Physical Education","Reasoning","GK/GS","Other"])}${sel("sh4","What do you need?",Object.keys(SHK))}${sel("sh5","Language",["Hindi + English","English","Hindi"])}${inp("sh6","Days available","min=1 value=3")}${inp("sh7","Minutes per day","min=10 value=45")}</div>
+<button class="btn primary full" id="shGo">Create prompt</button><div class="out" id="shOut" hidden></div>
+<div class="row" id="shAct" hidden><button class="btn soft" id="shCopy">${ic("copy")}Copy prompt</button><button class="btn" id="shSave">Save</button><a class="btn" href="https://chatgpt.com/" target="_blank" rel="noopener noreferrer">ChatGPT</a><a class="btn" href="https://gemini.google.com/" target="_blank" rel="noopener noreferrer">Gemini</a><a class="btn" href="https://claude.ai/" target="_blank" rel="noopener noreferrer">Claude</a><a class="btn" href="https://www.perplexity.ai/" target="_blank" rel="noopener noreferrer">Perplexity</a></div>`);
+$("#shGo").addEventListener("click",()=>{const t=$("#sh1").value.trim();if(!t){toast("Please enter a topic");$("#sh1").focus();return}
+ const k=$("#sh4").value,d=Math.max(1,parseInt($("#sh6").value)||1),m=Math.max(10,parseInt($("#sh7").value)||30);
+ const plan=/timetable|plan/i.test(k)?` I can study ${d} day(s), ${m} minutes per day.`:"";
+ const p=`Act as an expert ${$("#sh3").value} teacher for ${$("#sh2").value}.\nTopic: "${t}"\nLanguage: ${$("#sh5").value}\nTask: ${SHK[k]}${plan}\n\nRules: be accurate, follow the CBSE syllabus where relevant, do not invent facts, and say so if you are unsure.`;
+ const o=$("#shOut");o.textContent=p;o.hidden=false;$("#shAct").hidden=false});
+$("#shCopy").addEventListener("click",()=>copyText($("#shOut").textContent));
+$("#shSave").addEventListener("click",()=>savePrompt($("#shOut").textContent));
+
+/* ---- Saved prompts (stored on this device only) ---- */
+function savedGet(){try{return JSON.parse(store.get("jd-saved","[]"))||[]}catch(e){return[]}}
+function savePrompt(t){t=(t||"").trim();if(!t){toast("Nothing to save yet");return}const a=savedGet();if(!a.includes(t))a.unshift(t);store.set("jd-saved",JSON.stringify(a.slice(0,50)));renderSaved();toast("Saved on this device")}
+panel("saved",`<div class="row" style="justify-content:space-between"><h3>Saved prompts</h3><button class="btn" id="svClear">Clear all</button></div><p class="muted small">Saved only on this device.</p><div id="svBox"></div>`);
+function renderSaved(){const a=savedGet();$("#svBox").innerHTML=a.length?a.map((p,i)=>`<div class="lib-item"><p style="margin-top:0">${esc(p)}</p><div class="row"><button class="btn soft" data-sv="c" data-i="${i}">${ic("copy")}Copy</button><button class="btn" data-sv="d" data-i="${i}">Remove</button></div></div>`).join(""):`<div class="empty">Your saved prompts will appear here.</div>`}
+$("#svBox").addEventListener("click",e=>{const b=e.target.closest("[data-sv]");if(!b)return;const a=savedGet(),i=+b.dataset.i;if(b.dataset.sv==="c")copyText(a[i]||"");else{a.splice(i,1);store.set("jd-saved",JSON.stringify(a));renderSaved()}});
+$("#svClear").addEventListener("click",()=>{if(!savedGet().length)return;if(confirm("Remove all saved prompts?")){store.set("jd-saved","[]");renderSaved()}});
+renderSaved();
+
+/* ---- Creative Prompt Generator (prompt only — does not create images/videos) ---- */
+const PG={cat:["Photo editing","Image enhancement","AI video generation","Image-to-video concept","Video editing","Instagram Reel","YouTube Short","YouTube thumbnail","Poster design","Logo animation","Book promotion video","Educational explainer","Motivational cinematic scene","Script and voice-over","Social media post"],
+ purpose:["Promotion","Education","Personal use","Business","Entertainment","Motivation"],platform:["Universal AI tool","ChatGPT","Gemini","Claude","CapCut","Kling AI","Runway","Leonardo AI","Canva","Instagram","YouTube","WhatsApp","Print"],
+ style:["Realistic cinematic","Premium editorial","Clean minimal","Documentary realism","3D animation","Anime","Luxury commercial","Vintage","Flat design"],mood:["Inspiring","Calm","Energetic","Emotional","Professional","Dramatic"],
+ ratio:["9:16 vertical","16:9 landscape","1:1 square","4:5 portrait","3:2","A4 print"],out:["Prompt for an AI image/video generator","Editing instructions for an AI editor","Step-by-step manual editing plan","Script and shot list"]};
+const PGH={"Photo editing":"Edit the uploaded photo","Image enhancement":"Enhance the uploaded image","AI video generation":"Generate a video","Image-to-video concept":"Animate the uploaded image into a short video","Video editing":"Edit a video","Instagram Reel":"Create an Instagram Reel","YouTube Short":"Create a YouTube Short","YouTube thumbnail":"Design a YouTube thumbnail","Poster design":"Design a poster","Logo animation":"Create a logo animation","Book promotion video":"Create a book-promotion video","Educational explainer":"Create an educational explainer","Motivational cinematic scene":"Create a motivational cinematic scene","Script and voice-over":"Write a script and voice-over","Social media post":"Design a social media post"};
+const PGI=["A cinematic motivational reel about rising after failure","A premium book launch teaser for Echoes of Destiny","A realistic portrait with soft cinematic lighting","A clean educational thumbnail about mathematics","A glowing diya logo reveal with elegant camera movement","A dramatic sunrise scene representing a new beginning"];
+panel("pgen",`<h3>Prompt Generator</h3><p class="muted small">Generates a copyable prompt. It does not create images or videos itself — paste it into an AI tool or editing app.</p>
+<label for="pg1">Your idea / topic</label><textarea class="field" id="pg1" style="min-height:80px" placeholder="Example: A cinematic book launch reel for Echoes of Destiny, emotional and realistic…"></textarea>
+<div class="grid2">${sel("pg2","What do you want to create?",PG.cat)}${sel("pg3","Purpose",PG.purpose)}${sel("pg4","Target tool / platform",PG.platform)}${sel("pg5","Visual style",PG.style)}${sel("pg6","Mood",PG.mood)}${sel("pg7","Format",PG.ratio)}</div>${sel("pg8","Output type",PG.out)}
+<label for="pg9">Additional requirements (optional)</label><textarea class="field" id="pg9" style="min-height:70px"></textarea>
+<div class="row"><button class="btn primary" id="pgGo">${ic("wand")}Generate</button><button class="btn" id="pgRnd">Surprise me</button><button class="btn" id="pgReset">Reset</button></div>
+<label for="pgOut" id="pgOutL" hidden>Generated prompt (you can edit it)</label><textarea class="field" id="pgOut" hidden style="min-height:170px"></textarea>
+<div class="row" id="pgAct" hidden><button class="btn soft" id="pgCopy">${ic("copy")}Copy</button><button class="btn" id="pgSave">Save</button><button class="btn" id="pgImp">Improve with ChatGPT</button></div>`);
+function pgMake(){const idea=$("#pg1").value.trim();if(!idea){toast("Please describe your idea first");$("#pg1").focus();return}
+ const g=id=>$("#"+id).value,x=$("#pg9").value.trim();
+ const p=`${PGH[g("pg2")]||g("pg2")} about: ${idea}.\n\nPurpose: ${g("pg3")}\nTarget: ${g("pg4")}\nVisual style: ${g("pg5")}\nMood: ${g("pg6")}\nFormat: ${g("pg7")}\nDeliverable: ${g("pg8")}${x?`\nExtra requirements: ${x}`:""}\n\nQuality direction: professional, intentional composition, clear subject hierarchy, polished detail and consistent visual language. Keep the result original and suitable for the platform. Preserve the identity of any reference subject; avoid distorted faces, artifacts, random text and watermarks. Do not use copyrighted characters, logos or a real person's likeness without permission.`;
+ $("#pgOut").value=p;["pgOut","pgOutL","pgAct"].forEach(id=>$("#"+id).hidden=false)}
+$("#pgGo").addEventListener("click",pgMake);
+$("#pgRnd").addEventListener("click",()=>{$("#pg1").value=pick(PGI);pgMake()});
+$("#pgCopy").addEventListener("click",()=>{const v=$("#pgOut").value.trim();if(!v){toast("Nothing to copy yet");return}copyText(v)});
+$("#pgSave").addEventListener("click",()=>savePrompt($("#pgOut").value));
+$("#pgImp").addEventListener("click",()=>{const v=$("#pgOut").value.trim();if(!v){toast("Generate a prompt first");return}window.open("https://chatgpt.com/?q="+encodeURIComponent("Improve this prompt with detailed professional instructions, preserving its intent:\n\n"+v).slice(0,1800),"_blank","noopener")});
+$("#pgReset").addEventListener("click",()=>{["pg1","pg9","pgOut"].forEach(id=>$("#"+id).value="");["pgOut","pgOutL","pgAct"].forEach(id=>$("#"+id).hidden=true)});
+function openPromptFor(type){go("tools");openTool("pgen");const s=$("#pg2"),o=[...s.options].find(x=>x.text===type||x.text.toLowerCase().includes(String(type).toLowerCase()));if(o)s.value=o.value;setTimeout(()=>$("#pg1").focus({preventScroll:true}),300)}
+
+/* ---- Prompt library data ---- */
+const SUBJ8=["English","Hindi","Mathematics","Science","Social Science","Reasoning","GK/GS","Physical Education"];
+const ST=[
+ ["Explain simply",s=>`Explain [TOPIC] from ${s} in very simple language for a [CLASS] student with 2 real-life examples. Use Hindi + English where helpful.`],
+ ["Short notes",s=>`Write concise revision notes on [TOPIC] (${s}) for [CLASS]: definitions, key points, formulas/dates and common mistakes. Do not invent facts.`],
+ ["Practice questions",s=>`Create 10 practice questions on [TOPIC] (${s}) from easy to hard. Give the answer key separately at the end and wait for my attempt first.`],
+ ["Flashcards",s=>`Create 15 flashcards for [TOPIC] (${s}) in 'Front | Back' format. Keep each answer short.`],
+ ["Find my mistakes",s=>`Check my answer to this ${s} question: [PASTE QUESTION AND YOUR ANSWER]. Find the first mistake, explain it kindly and show the correct method.`],
+ ["7-day revision plan",s=>`Make a 7-day revision plan for [TOPIC] (${s}). I can study [MINUTES] minutes daily. Include notes, practice, a quiz and a final self-test.`],
+ ["Quiz me",s=>`Quiz me on [TOPIC] (${s}) one question at a time. Wait for my answer, explain mistakes, and adjust difficulty from my performance.`],
+ ["Important questions",s=>`List the 15 most important exam questions on [TOPIC] (${s}) for [CLASS/EXAM], with short model answers. Do not claim they are official.`],
+ ["Memory tricks",s=>`Give mnemonics, associations and a short story to remember [TOPIC] from ${s}. Then test me with 5 recall questions.`],
+ ["Chapter summary",s=>`Summarise the chapter [CHAPTER] of ${s} in 10 bullet points, then list 5 questions I should be able to answer.`]];
+const STUDY=SUBJ8.flatMap(s=>ST.map(([t,f])=>({c:s,t:`${s} · ${t}`,p:f(s)}))).concat([
+ {c:"Study skills",t:"Daily study timetable",p:"Act as my study planner. Ask my class/exam, subjects, free hours, strong and weak topics, then create a realistic daily timetable with breaks, practice and revision."},
+ {c:"Study skills",t:"Memory techniques",p:"Teach me memory techniques (mnemonics, spaced repetition, active recall) for [TOPIC] and show one example of each."},
+ {c:"Study skills",t:"Weak-area diagnostic",p:"Give me a short diagnostic quiz on [SUBJECT] at [LEVEL], one question at a time, then list my weak concepts and an improvement plan."},
+ {c:"Study skills",t:"Exam-day plan",p:"Make a realistic final-day revision and exam-day plan for [EXAM]: what to revise, sleep, time management and a calm checklist."},
+ {c:"Study skills",t:"Doubt solver",p:"Explain this doubt step by step: [PASTE DOUBT]. First ask me one question to check what I already know, then explain simply."},
+ {c:"Study skills",t:"Focus & motivation",p:"Suggest a 2-week plan to improve my focus while studying [SUBJECT], with small daily habits and a weekly review."}]);
+const prs=s=>s.split("\n").map(l=>{const a=l.split("|");return{c:a[0],t:a[1],p:a[2]}});
+const PHOTO=prs(`Portrait|Natural skin retouch|Retouch this portrait naturally: keep skin texture, remove temporary blemishes, even the tone. Do not change the face, identity or proportions.
+Portrait|Studio headshot|Turn this photo into a professional studio headshot: soft key light, neutral grey background, sharp eyes, natural skin. Keep face and clothing unchanged.
+Portrait|Brighten eyes & smile|Subtly enhance eye sharpness and whiten teeth slightly. Keep everything else unchanged and realistic.
+Portrait|Clean flyaway hair|Clean stray hairs and flyaways while keeping the natural hairstyle, colour and texture.
+Portrait|Black & white portrait|Convert to a high-quality black and white portrait with rich contrast, deep blacks and fine grain. Keep facial detail natural.
+Portrait|Passport / ID photo|Prepare for an ID photo: plain white background, even front light, no face shadows, head centred and straight. Do not alter facial features.
+Background|Remove background|Remove the background with clean natural edges including hair and output the subject on a transparent background.
+Background|Blurred city background|Replace the background with a softly blurred city street at golden hour; match light and shadows on the subject.
+Background|Studio gradient|Place the subject on a smooth dark-to-light grey studio gradient with a soft shadow beneath.
+Background|Extend canvas|Extend this image to [16:9 / 9:16 / 4:5] with a natural continuation of the background. Do not alter the subject.
+Background|Remove object|Remove [OBJECT/PERSON] and fill the area to match the surrounding texture and lighting. Change nothing else.
+Background|Replace sky|Replace the sky with [dramatic sunset / clear blue / soft clouds]; match exposure and colour tone.
+Colour|Cinematic teal & orange|Apply a cinematic teal-and-orange grade with gentle contrast and subtle grain. Keep skin tones natural.
+Colour|Moody dark look|Give a moody look: deeper shadows, muted colours, soft vignette, warm highlights; keep shadow detail.
+Colour|Bright & airy|Edit to look bright and airy: lifted exposure, soft contrast, clean whites, pastel colours; avoid blown highlights.
+Colour|Vintage film|Apply a vintage 35mm film look: warm faded tones, lifted blacks, soft grain, subtle halation.
+Colour|Golden hour warmth|Make the light feel like golden hour: warm directional glow and natural shadow detail without oversaturation.
+Colour|Match reference tone|Match the colour grading and mood of [REFERENCE] without changing subject or composition.
+Restore|Restore old photo|Restore this old photograph: remove scratches, dust and creases, repair tears, improve contrast. Keep faces authentic; do not invent features.
+Restore|Colourise B&W photo|Colourise this black and white photo with realistic, historically plausible colours and natural skin tones.
+Restore|Upscale low-res image|Upscale to higher resolution, enhance detail realistically and reduce noise without changing faces.
+Restore|Fix blur & noise|Reduce motion blur and noise, sharpen eyes and text, preserve natural texture, avoid a waxy look.
+Product|White background|Place this product on pure white with a soft natural shadow, true colours and sharp edges for an online store.
+Product|Lifestyle scene|Place this product in a [kitchen / desk / outdoor] scene with natural window light. Keep the product unchanged.
+Product|Food photo boost|Enhance this food photo: warm natural light, richer colours, crisp texture, clean blurred background.
+Design|YouTube thumbnail|Design a 16:9 YouTube thumbnail: subject cut-out left, bold readable text "[TITLE]" right (max 5 words), high contrast, clean background.
+Design|Book promotion poster|Premium poster for the book "[TITLE]" by [AUTHOR]: elegant dark background, book cover centred and unchanged, tagline "[TAGLINE]", "Available now".
+Design|Quote card|Minimalist quote card with “[QUOTE]” and [AUTHOR]: dark background, white serif type, generous margins.
+Design|Profile picture|Crop to a centred square with the face in the upper third, soft balanced light and a simple neutral background.
+AI image|Photorealistic portrait|Photorealistic portrait of [PERSON], [AGE], [CLOTHING], soft window light, 85mm lens, shallow depth of field, natural skin texture.
+AI image|Cinematic scene|Cinematic wide shot of [SCENE], [TIME OF DAY], dramatic light, volumetric rays, subtle film grain, 16:9.
+AI image|Logo concept|Minimalist logo concept for [BRAND], a [INDUSTRY] brand: simple geometric mark, flat vector style, white background; original design.
+AI image|Book cover concept|Original book cover concept for a motivational book "[TITLE]": symbolic image of [CONCEPT], dramatic lighting, elegant serif title, vertical 2:3.`);
+const VIDEO=prs(`Hooks|Scroll-stopping hooks|Write 10 hooks (under 12 words) for a short video about [TOPIC] for [AUDIENCE]: mix question, surprising fact, bold claim and story hooks.
+Hooks|30-second reel script|Write a 30-second reel script on [TOPIC]: hook (0–3s), problem, 3 quick points, call to action, with on-screen text and visuals.
+Hooks|YouTube script|Write a YouTube script for "[TITLE]": hook, promise, sections with timestamps, retention hooks, outro with call to action. Conversational tone.
+Hooks|Story structure|Turn this idea into a short story video: [IDEA]. Structure: situation, challenge, turning point, result, lesson. Suggest shots and b-roll.
+Hooks|Book promo video|Write a 45-second promo script for the book "[TITLE]": hook, what it is about, who it is for, one emotional line, call to action. No exaggerated claims.
+Hooks|Study-tips short|Write a 40-second script with 3 study tips on [TOPIC]: simple language, short on-screen text and a motivating last line.
+Reels|14-day content plan|Create a 14-day Reels/Shorts plan for [NICHE]: idea, hook, format and call to action per day. Mix educational, personal and entertaining posts.
+Reels|Editing style ideas|Suggest 5 original editing styles for a short video on [TOPIC]: pacing, transitions, text style, music type and a sample shot list.
+Reels|Caption & hashtags|Write 5 caption options and 15 relevant hashtags for a reel about [TOPIC], with a hook line, value line and call to action.
+Reels|Repurpose a long video|Turn a long video about [TOPIC] into 6 short clips: moments to pick, a hook line for each, ideal length and caption.
+Reels|Motivational reel|Write a 25-second motivational reel script about [THEME] with a strong opening line, 3 short beats and a memorable closing line.
+CapCut|Beginner workflow|Give a step-by-step [APP] workflow for a [9:16 / 16:9] video from raw clips to export: trimming, speed, transitions, captions, music, volume, export settings.
+CapCut|Smooth transitions|Explain clean transitions in [APP]: match cuts, zoom transitions, whip pans, J-cut and L-cut, with exact steps and when to use each.
+CapCut|Speed ramp & zoom|Teach me smooth speed ramps and punch-in zooms in [APP] with exact settings, timing tips and common mistakes.
+CapCut|Fix shaky or dark footage|My footage is [shaky / dark / noisy]. Give practical steps in [APP] and say what cannot be fixed.
+CapCut|Pre-export checklist|Give a final checklist for a [REEL / YOUTUBE] video: cuts, audio levels, captions, colour, safe zones, thumbnail, export settings.
+CapCut|Learn DaVinci Resolve|Make a 7-day plan to learn DaVinci Resolve from zero: goal, tools, a small task and a checklist per day.
+Captions|Caption style guide|Suggest a readable caption style for [REEL/YOUTUBE]: font, size, colour, outline, position and highlight style, matching an emerald-and-gold brand.
+Captions|Clean auto-captions|Clean these auto-generated captions: [PASTE]. Fix spelling and punctuation, split into short lines, keep the meaning.
+Captions|Hinglish to English subtitles|Translate this Hinglish/Hindi script into natural English subtitles: [PASTE]. Max 42 characters per line.
+YouTube|Titles & thumbnails|Give 10 accurate, curiosity-driven title ideas (no clickbait) and 5 thumbnail concepts for a video about [TOPIC].
+YouTube|Description & tags|Write a YouTube description for "[TITLE]": 2-line summary, timestamps, links placeholder, short about-me line, plus 10 tags.
+YouTube|Improve retention|Review this script for viewer retention: [PASTE]. Point out slow parts, suggest pattern interrupts and where to add hooks.
+YouTube|30-day channel plan|Create a 30-day YouTube plan for a channel about [NICHE]: video ideas, titles, formats and one Shorts idea per video.
+Colour & audio|Colour grade routine|Give a simple colour-grading routine in [APP]: exposure, white balance, contrast, saturation, skin tones, consistent look across clips.
+Colour & audio|Clean voice audio|Explain how to clean voice audio in [APP]: noise reduction, EQ, compression, normalising and target loudness for YouTube and Reels.
+Colour & audio|Music & sound design|Suggest how to choose and mix background music and effects for a [TYPE] video: mood, volume under voice, risers, whooshes, royalty-free sources.
+AI video|Text-to-video prompt|Cinematic [SHOT TYPE] of [SUBJECT] [ACTION] in [LOCATION], [TIME OF DAY], smooth [dolly / pan / drone] movement, natural lighting, realistic motion, 5 seconds.
+AI video|Image-to-video|Animate this image with subtle realistic motion: gentle camera push-in, soft movement in [hair / clouds / water / fabric]. Keep the subject's face unchanged.
+AI video|B-roll list|Generate 8 b-roll shot descriptions for a video about [TOPIC]: camera angle, movement, lighting and duration, ready for an AI video tool.
+AI video|Storyboard|Create a 6-scene storyboard for a [DURATION] video about [IDEA]: visual, camera movement, on-screen text, voiceover line and an AI video prompt per scene.`);
+const CREATIVE=`Cinematic portrait|Realistic cinematic portrait from the reference photo; preserve identity and skin texture; soft directional light, subtle depth of field, premium grading.
+Professional profile photo|Polished professional profile image from my portrait: balanced studio light, neutral background, realistic detail, identity preserved.
+Golden-hour portrait|Natural golden-hour portrait with warm rim light, gentle shadows, realistic skin and softly blurred background.
+Background replacement|Replace only the background with a realistic location matching the lighting and perspective; keep subject, face, clothing and pose unchanged.
+Premium editorial portrait|Luxury editorial portrait with understated styling, elegant framing, soft contrast and authentic photographic texture.
+Photo restoration|Restore this old or damaged photograph; improve clarity, remove scratches, preserve the original person and expression.
+Product photo|Premium commercial product photograph: realistic material, softbox lighting, crisp focus, subtle shadows, clean studio background.
+Book cover mockup|Present the supplied book cover as a realistic physical book mockup; keep cover art and text exactly unchanged; controlled studio light.
+Educational thumbnail|Professional educational thumbnail for [SUBJECT/TOPIC]: strong hierarchy, one clear concept, legible typography, uncluttered.
+Motivational poster|Premium motivational poster about resilience: realistic cinematic scene, space for typography, strong contrast, no spelling errors.
+Minimal poster|Modern minimal poster for [EVENT/TOPIC]: generous whitespace, balanced alignment, limited colours, clear headline hierarchy.
+Book launch poster|Polished launch poster for Echoes of Destiny by Jaydeep Singh using the provided cover unchanged, cinematic light and space for launch details.
+Logo reveal|Refined logo reveal animation using the supplied logo unchanged; controlled light, smooth camera movement, clean final hold.
+Diya animation|Realistic brass diya lighting scene: natural flame, warm reflections, dark elegant background, cinematic macro detail.
+Cinematic intro|Cinematic 5-second intro: strong opening frame, smooth reveal, deliberate camera motion, clean final composition, no random text.
+Book teaser reel|Suspenseful teaser for Echoes of Destiny using the original cover, close-up details, slow cinematic movement. Do not invent reviews or awards.
+Educational reel|30-second educational short explaining [CONCEPT] in simple Hindi-English: start with a question, three clear steps, end with a practice question.
+History explainer|Concise, accurate explainer about [HISTORICAL EVENT]; separate verified facts from interpretation; include a simple timeline.
+Maths lesson|Explain [MATHS TOPIC] for a beginner: simple language, one worked example, common mistakes, five practice questions with answers.
+Science explainer|Explain [SCIENCE CONCEPT] at Class [GRADE] level with an everyday example, correct terminology and a short recap quiz.
+Reasoning practice|Generate 10 original reasoning questions on [TOPIC], increasing difficulty, four options each, answer key and short explanations.
+English grammar lesson|Teach [GRAMMAR TOPIC] in simple English: rules, examples, common errors, short practice set with answers.
+Study timetable|Realistic weekly study timetable for [EXAM]: daily subjects, focused blocks, revision, breaks and a weekly mock test.
+Revision notes|Turn the supplied lesson into concise revision notes with headings, definitions, key facts and a quick-recall checklist; add nothing not in the source.
+Quiz maker|Create 15 multiple-choice questions on [TOPIC] for [GRADE/EXAM] with four options, answer key and explanations.
+Voice-over script|Natural Hindi-English voice-over for a [DURATION] video about [TOPIC] with pauses, emphasis and a memorable closing line.
+YouTube title ideas|Generate 15 honest, engaging YouTube titles about [TOPIC]; avoid misleading clickbait.
+Caption generator|Write 10 caption options for [POST/VIDEO] in a natural tone: short, medium and thoughtful, with relevant hashtags.
+Hashtag strategy|Suggest relevant, non-spammy hashtags for a post about [TOPIC] aimed at [AUDIENCE], grouped broad, niche and community.
+Content calendar|30-day content calendar for a creator focused on education, motivation and books: format, topic, hook and call to action.
+Podcast outline|Structured podcast outline about [TOPIC]: opening, five discussion points, transitions and a concise closing.
+Presentation outline|Slide-by-slide presentation outline about [TOPIC] for [AUDIENCE], one main idea per slide.
+Infographic|Clean educational infographic explaining [TOPIC] with accurate labels, clear reading order and concise text.
+Resume photo background|Replace the portrait background with a neutral professional one; preserve face, hair, clothing and proportions.
+Wedding invitation concept|Elegant Indian wedding invitation layout with clear hierarchy and readable typography; copy supplied details exactly, invent no names or dates.
+Instagram carousel|Plan a 7-slide Instagram carousel about [TOPIC]: one takeaway per slide, consistent typography, strong opening slide.
+App UI concept|Polished mobile-first app screen for [PURPOSE]: readable text, consistent spacing, accessible contrast, clear primary action.
+Website hero concept|Premium website hero for [BRAND]: concise copy, strong hierarchy, realistic imagery, clear call to action.
+Thumbnail background|Cinematic background for a YouTube thumbnail about [TOPIC], leaving clean negative space for text.
+Travel cinematic video|Realistic travel video concept of [LOCATION]: natural movement, accurate architecture, consistent lighting across shots.
+Nature scene|Realistic cinematic nature scene with physically plausible lighting, detailed textures and restrained colour grading.
+Product ad video|Short commercial concept for [PRODUCT]: useful details, smooth camera movement, realistic materials; no unsupported claims.
+Logo social animation|Animate the supplied logo for a social outro; preserve proportions and lettering, smooth reveal, clear final hold.
+Before-after edit|Clean before-and-after presentation using the supplied images, matching framing, no misleading changes.
+Photo collage|Arrange the supplied photos into a balanced editorial collage; keep identities unchanged; consistent spacing.
+Dark luxury poster|Sophisticated dark editorial poster: restrained highlights, deep charcoal tones, elegant typography, balanced negative space.
+Green brand poster|Modern emerald-green and white poster with clear hierarchy, crisp typography and subtle premium details.
+YouTube outro|Clean YouTube outro with space for subscribe and next-video elements, consistent brand colours, no clutter.
+AI scene storyboard|Six-shot storyboard for [IDEA]: shot size, camera movement, action, lighting and continuity between shots.
+Book quote visual|Refined quote graphic for the supplied quote; copy it exactly, readable typography, add no attribution unless supplied.
+Personal brand bio|Concise creator bio for someone working across education, writing and digital creativity; keep claims grounded in supplied information.
+Short video hook|Generate 20 short opening hooks for a video about [TOPIC]: honest, specific, easy to speak aloud.
+Exam motivation short|Supportive 30-second exam-motivation script with realistic advice, no false guarantees and a practical final action.
+Photo colour correction|Correct exposure, white balance and contrast while keeping natural skin tones and realistic colours.
+Cinematic rain scene|Realistic cinematic rainy-night scene with plausible reflections, soft highlights and consistent perspective.
+Classroom scene|Realistic educational classroom scene with natural light, believable objects and documentary photography style.
+Personalised learning plan|Learning plan for [SUBJECT] and [GOAL] with weekly milestones, practice tasks and spaced revision.
+Prompt improver|Improve this prompt by clarifying subject, action, style, composition, lighting, format and constraints without changing intent: [PASTE PROMPT].`.split("\n").map(l=>{const a=l.split("|");return{c:"Creative",t:a[0],p:a[1]}});
+
+/* ---- Prompt Library UI ---- */
+const LIBS={Study:STUDY,Photo:PHOTO,Video:VIDEO,Creative:CREATIVE},Lb={d:"Study",c:"all",n:12};
+panel("lib",`<div class="seg" id="libSeg">${Object.keys(LIBS).map((k,i)=>`<button class="${i?"":"on"}" data-d="${k}">${k} (${LIBS[k].length})</button>`).join("")}</div><div class="grid2"><input class="field" id="libQ" type="search" placeholder="Search prompts…" aria-label="Search prompts"><select class="field" id="libC" aria-label="Category"></select></div><p class="muted small" id="libN"></p><div id="libList"></div><button class="btn full" id="libMore" hidden>Show more</button>`);
+function renderLib(){
+ const data=LIBS[Lb.d],q=$("#libQ").value.trim().toLowerCase(),cs=$("#libC");
+ if(cs.dataset.d!==Lb.d){cs.innerHTML=["all",...new Set(data.map(x=>x.c))].map(c=>`<option value="${esc(c)}">${c==="all"?"All categories":esc(c)}</option>`).join("");cs.dataset.d=Lb.d;Lb.c="all"}
+ const f=data.filter(x=>(Lb.c==="all"||x.c===Lb.c)&&(x.t+" "+x.p+" "+x.c).toLowerCase().includes(q));
+ $("#libN").textContent=`${Math.min(Lb.n,f.length)} of ${f.length} prompts · replace [BRACKETS] with your details`;
+ $("#libList").innerHTML=f.slice(0,Lb.n).map(x=>`<div class="lib-item"><b>${esc(x.t)}</b> <span class="tag" style="margin-left:6px">${esc(x.c)}</span><p>${esc(x.p)}</p><div class="row"><button class="btn soft" data-lc="${data.indexOf(x)}">${ic("copy")}Copy</button><button class="btn" data-ls="${data.indexOf(x)}">Save</button></div></div>`).join("")||`<div class="empty">No prompts found.</div>`;
+ $("#libMore").hidden=f.length<=Lb.n;
+}
+$("#libSeg").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;Lb.d=b.dataset.d;Lb.n=12;$$("#libSeg button").forEach(x=>x.classList.toggle("on",x===b));renderLib()});
+$("#libQ").addEventListener("input",()=>{Lb.n=12;renderLib()});
+$("#libC").addEventListener("change",e=>{Lb.c=e.target.value;Lb.n=12;renderLib()});
+$("#libMore").addEventListener("click",()=>{Lb.n+=12;renderLib()});
+$("#libList").addEventListener("click",e=>{const c=e.target.closest("[data-lc]"),s=e.target.closest("[data-ls]");if(c)copyText(LIBS[Lb.d][+c.dataset.lc].p);if(s)savePrompt(LIBS[Lb.d][+s.dataset.ls].p)});
+renderLib();
+
+/* ---- AI & editing apps (external links) ---- */
+const LNK=`chat|ChatGPT|https://chatgpt.com/|Explain concepts, solve problems, plan study and write.
+chat|Google Gemini|https://gemini.google.com/|Brainstorming, explanations and Google-connected help.
+chat|Claude|https://claude.ai/|Long documents, writing, coding and careful reasoning.
+chat|Perplexity|https://www.perplexity.ai/|AI search with sources — good for research.
+chat|Microsoft Copilot|https://copilot.microsoft.com/|AI assistant with image creation built in.
+chat|NotebookLM|https://notebooklm.google.com/|Turn your own notes and PDFs into summaries and quizzes.
+chat|Google Search|https://www.google.com/|Search the web.
+image|Adobe Firefly|https://firefly.adobe.com/|Generate and edit images, expand backgrounds, remove objects.
+image|Ideogram|https://ideogram.ai/|Strong at images that contain readable text.
+image|Leonardo AI|https://www.leonardo.ai/|Create art and concept images with style control.
+image|Microsoft Designer|https://designer.microsoft.com/|Quick AI images and social media designs.
+image|Canva|https://www.canva.com/|Design, posters, thumbnails and background remover.
+image|remove.bg|https://www.remove.bg/|Remove an image background in seconds.
+image|Upscayl|https://www.upscayl.org/|Free AI upscaler to make small images sharper.
+video|Runway|https://app.runwayml.com/|AI video generation and editing tools.
+video|Pika|https://pika.art/|Turn text or images into short AI video clips.
+video|Luma Dream Machine|https://lumalabs.ai/|Cinematic AI video from text and images.
+video|Kling AI|https://kling.ai/|Text-to-video and image-to-video generation.
+video|HeyGen|https://www.heygen.com/|AI avatar and presenter videos.
+video|Descript|https://www.descript.com/|Edit video by editing the transcript.
+video|ElevenLabs|https://elevenlabs.io/|AI voiceovers — use only your own or licensed voices.
+photo|Adobe Photoshop|https://www.adobe.com/products/photoshop.html|Retouching, compositing and design.
+photo|Adobe Lightroom|https://www.adobe.com/products/photoshop-lightroom.html|Colour grading and batch editing.
+photo|Snapseed|https://play.google.com/store/apps/details?id=com.niksoftware.snapseed|Free, powerful mobile editor by Google.
+photo|Photopea|https://www.photopea.com/|Free Photoshop-like editor in your browser.
+photo|Pixlr|https://pixlr.com/|Quick browser-based editor with AI tools.
+photo|GIMP|https://www.gimp.org/|Free open-source desktop image editor.
+photo|Figma|https://www.figma.com/|UI, posters and collaborative design.
+vedit|CapCut|https://www.capcut.com/|Beginner-friendly editing with captions and templates.
+vedit|DaVinci Resolve|https://www.blackmagicdesign.com/products/davinciresolve|Free professional editing, colour and audio.
+vedit|Adobe Premiere Pro|https://www.adobe.com/products/premiere.html|Professional editing for YouTube and film.
+vedit|VN Video Editor|https://www.vlognow.me/|Free mobile editor with multi-track timeline.
+vedit|Clipchamp|https://clipchamp.com/|Simple browser-based editor from Microsoft.
+vedit|InShot|https://inshot.com/|Quick mobile edits and social formats.
+vedit|Kdenlive|https://kdenlive.org/|Free open-source desktop editor.`.split("\n").map(l=>{const a=l.split("|");return{k:a[0],n:a[1],u:a[2],d:a[3]}});
+const LK={chat:"Chat AI",image:"Image AI",video:"Video AI",photo:"Photo apps",vedit:"Video apps"};let lk="chat";
+panel("ai",`<div class="seg" id="aiSeg"></div><p class="muted small">These open the official website or app page in a new tab (on Android an installed app may open directly). They are links, not embedded chats. AI can make mistakes — verify important facts and respect others' rights when editing images or videos.</p><div id="aiList"></div>`);
+function renderAI(){
+ $("#aiSeg").innerHTML=Object.keys(LK).map(k=>`<button class="${k===lk?"on":""}" data-k="${k}">${LK[k]}</button>`).join("");
+ $("#aiList").innerHTML=LNK.filter(x=>x.k===lk&&/^https:\/\//.test(x.u)).map(x=>`<a class="tool-item" href="${esc(x.u)}" target="_blank" rel="noopener noreferrer"><span style="flex:1"><b>${esc(x.n)}</b><small>${esc(x.d)}</small></span>${ic("ext")}</a>`).join("");
+}
+$("#aiSeg").addEventListener("click",e=>{const b=e.target.closest("button");if(b){lk=b.dataset.k;renderAI()}});
+renderAI();
+
+/* =====================================================================
+   11. AI CREATOR STUDIO screen
+===================================================================== */
+// [name, description, icon (svg id or simpleicons slug), category, kind, target]
+const AIT=[
+ ["Photo Prompt Builder","Build realistic photo-editing prompts","image","photo","prompt","Photo editing"],
+ ["AI Video Prompt Builder","Text-to-video and image-to-video scenes","video","video","prompt","AI video generation"],
+ ["Reel & Shorts Ideas","Hooks, scenes and short-form concepts","film","video","prompt","Instagram Reel"],
+ ["Thumbnail Prompt Maker","YouTube thumbnail prompts","image","photo","prompt","YouTube thumbnail"],
+ ["Poster & Social Design","Posters, banners and social creatives","palette","photo","prompt","Poster design"],
+ ["Logo Animation Prompt","Motion and logo-reveal concepts","wand","video","prompt","Logo animation"],
+ ["Book Promotion Studio","Launch reels for Echoes of Destiny","book","video","prompt","Book promotion video"],
+ ["Script Writer","Video scripts and voice-over drafts","msg","writing","prompt","Script and voice-over"],
+ ["Caption & Hashtags","Captions, titles and hashtags","msg","writing","prompt","Social media post"],
+ ["AI Study Prompt Maker","Explanations, notes and practice sets","cap","writing","prompt","@helper"],
+ ["ChatGPT","Open the ChatGPT assistant","chatgpt","writing","apps","https://chatgpt.com/"],
+ ["Gemini","AI assistant and creative support","googlegemini","writing","apps","https://gemini.google.com/"],
+ ["Claude","Writing, analysis and long documents","claude","writing","apps","https://claude.ai/"],
+ ["Perplexity","AI search with sources","perplexity","writing","apps","https://www.perplexity.ai/"],
+ ["CapCut","Reels, captions and video editing","capcut","video","apps","https://www.capcut.com/"],
+ ["Kling AI","AI video generation","klingai","video","apps","https://kling.ai/"],
+ ["Runway","AI video generation and editing","runway","video","apps","https://app.runwayml.com/"],
+ ["Leonardo AI","AI images and image editing","leonardo","photo","apps","https://www.leonardo.ai/"],
+ ["Canva","Design, thumbnails and presentations","canva","photo","apps","https://www.canva.com/"]];
+let aiF="all";
+function renderAIGrid(){
+ const q=($("#aiSearch").value||"").toLowerCase();
+ const l=AIT.filter(t=>(aiF==="all"||t[4]===aiF||t[3]===aiF)&&(t[0]+" "+t[1]).toLowerCase().includes(q));
+ $("#aiGrid").innerHTML=l.map((t,i)=>{
+  const isApp=t[4]==="apps",icon=isApp?`<img src="https://cdn.simpleicons.org/${t[2]}/0b5d3b" alt="" loading="lazy">`:ic(t[2]);
+  const inner=`<span class="ti">${icon}</span><h3>${esc(t[0])}</h3><p>${esc(t[1])}</p><span class="go">${isApp?"Open app ↗":"Build prompt →"}</span>`;
+  return isApp?`<a class="tc" href="${esc(t[5])}" target="_blank" rel="noopener noreferrer">${inner}</a>`:`<button class="tc" data-ai="${esc(t[5])}">${inner}</button>`}).join("")||`<div class="empty" style="grid-column:1/-1">No tools match your search.</div>`;
+}
+$("#aiGrid").addEventListener("click",e=>{const b=e.target.closest("[data-ai]");if(!b)return;const v=b.dataset.ai;if(v.startsWith("@")){go("tools");openTool(v.slice(1))}else openPromptFor(v)});
+$("#aiFilters").addEventListener("click",e=>{const b=e.target.closest(".chip");if(!b)return;aiF=b.dataset.f;$$("#aiFilters .chip").forEach(c=>c.classList.toggle("active",c===b));renderAIGrid()});
+$("#aiSearch").addEventListener("input",renderAIGrid);
+renderAIGrid();
+$("#aiApps").innerHTML=AIT.filter(t=>t[4]==="apps").map(t=>`<a class="sc" href="${esc(t[5])}" target="_blank" rel="noopener noreferrer"><span class="bi"><img src="https://cdn.simpleicons.org/${t[2]}/0b5d3b" alt="${esc(t[0])} logo" loading="lazy"></span><span><b>${esc(t[0])}</b><small>${esc(t[1])}</small></span></a>`).join("");
+/* broken remote logo -> clean text mark */
+document.addEventListener("error",e=>{const im=e.target;if(!(im instanceof HTMLImageElement))return;const h=im.closest(".bi,.ti");if(!h)return;
+ const lab=(im.alt||h.parentElement.textContent||"").replace(/ logo/i,"").trim(),f=document.createElement("span");f.className="bf";f.style.cssText="font-weight:900;font-size:12px";
+ f.textContent=lab.split(/\s+/).map(x=>x[0]||"").join("").slice(0,2).toUpperCase();im.remove();h.appendChild(f)},true);
+
+/* =====================================================================
+   12. STUDY STOPWATCH
+===================================================================== */
+const p2=n=>String(n).padStart(2,"0"),dayKey=()=>{const d=new Date();return`jd-study-${d.getFullYear()}-${p2(d.getMonth()+1)}-${p2(d.getDate())}`};
+let sw={el:0,st:null};try{const s=JSON.parse(store.get("jd-sw","null"));if(s&&typeof s.el==="number")sw={el:s.el,st:typeof s.st==="number"?s.st:null}}catch(e){}
+const swStore=()=>store.set("jd-sw",JSON.stringify(sw)),swMs=()=>sw.el+(sw.st?Date.now()-sw.st:0);
+const fmtDur=s=>{const h=Math.floor(s/3600),m=Math.floor(s%3600/60);return h?`${h}h ${p2(m)}m`:`${m}m`};
+function swRender(){const ms=swMs(),t=Math.floor(ms/1000);
+ $("#swTime").innerHTML=`${p2(Math.floor(t/3600))}:${p2(Math.floor(t%3600/60))}:${p2(t%60)}<small>.${Math.floor(ms%1000/100)}</small>`;
+ $("#swToggle").textContent=sw.st?"Pause":(sw.el?"Resume":"Start");$("#swDot").hidden=!sw.st;
+ $("#swToday").textContent=fmtDur(parseInt(store.get(dayKey(),"0"))||0)}
+$("#swToggle").addEventListener("click",()=>{if(sw.st){sw.el+=Date.now()-sw.st;sw.st=null}else sw.st=Date.now();swStore();swRender()});
+$("#swReset").addEventListener("click",()=>{sw={el:0,st:null};swStore();swRender()});
+$("#swSave").addEventListener("click",()=>{const s=Math.floor(swMs()/1000);if(s<1){toast("Nothing to save yet");return}
+ store.set(dayKey(),String((parseInt(store.get(dayKey(),"0"))||0)+s));sw={el:0,st:null};swStore();swRender();toast("Saved to today's study time")});
+setInterval(()=>{if(!sw.st)return;if($("#s-stopwatch").classList.contains("active"))swRender();else $("#swDot").hidden=false},100);
+swRender();
+
+/* =====================================================================
+   13. LOGIN (Supabase email/password + Google). Publishable key only —
+       NEVER put a service-role key in this file.
+===================================================================== */
+const SUPA_URL="https://pvzlajiauarmrzsfscbm.supabase.co",SUPA_KEY="sb_publishable_oVhywVo1nK0OQPo3bEtrOA_95mmyVmL";
+let authClient=null,authMode="signin",authUser=null;
+function authMsg(m,t=""){const e=$("#authMessage");e.textContent=m;e.className="am "+t}
+function renderAuth(){
+ const u=!!authUser;
+ $("#authTitle").textContent=u?"Your account":authMode==="signin"?"Welcome back":"Create your account";
+ $("#authCopy").textContent=u?(authUser.email||"You are signed in."):authMode==="signin"?"Sign in to your Jaydeep Singh account.":"Create an account with a valid email and password.";
+ $("#authForm").hidden=u;$("#authGoogle").hidden=u;$("#authDiv").hidden=u;
+ $("#authSubmit").textContent=authMode==="signin"?"Sign in":"Create account";
+ $("#authModeBtn").textContent=u?"Sign out":authMode==="signin"?"Create a new account":"I already have an account";
+ $("#authPassword").autocomplete=authMode==="signin"?"current-password":"new-password";
+}
+function setAuthUser(u){
+ authUser=u||null;
+ const n=u?(u.email?u.email.split("@")[0]:"Account"):"Login";
+ $("#loginLabel").textContent=n;$("#dLogin").lastChild.textContent=u?"My account ("+n+")":"Login / My Account";
+ renderAuth();
+}
+function openAuth(){closeDrawer();authMsg(authUser?"You are signed in.":"Use the email registered with your account.");renderAuth();$("#authOverlay").classList.add("open");document.body.style.overflow="hidden"}
+function closeAuth(){const o=$("#authOverlay");if(!o||!o.classList.contains("open"))return;o.classList.remove("open");document.body.style.overflow=""}
+$("#loginBtn").addEventListener("click",openAuth);$("#dLogin").addEventListener("click",openAuth);
+$("#authClose").addEventListener("click",closeAuth);
+$("#authOverlay").addEventListener("click",e=>{if(e.target.id==="authOverlay")closeAuth()});
+function initAuth(){
+ try{
+  if(window.supabase&&window.supabase.createClient){
+   authClient=window.supabase.createClient(SUPA_URL,SUPA_KEY);
+   authClient.auth.getSession().then(({data})=>setAuthUser(data&&data.session?data.session.user:null)).catch(()=>{});
+   authClient.auth.onAuthStateChange((_ev,s)=>setAuthUser(s?s.user:null));
+  }else authMsg("Login service did not load. Check your internet connection and reload.","error");
+ }catch(err){console.error(err);authMsg("Could not start login. Check the Supabase configuration.","error")}
+}
+window.addEventListener("load",()=>setTimeout(initAuth,200));
+$("#authModeBtn").addEventListener("click",async()=>{
+ if(authUser){
+  if(!authClient)return;
+  const {error}=await authClient.auth.signOut();
+  if(error){authMsg(error.message,"error");return}
+  setAuthUser(null);authMode="signin";authMsg("You have signed out.","success");return;
+ }
+ authMode=authMode==="signin"?"signup":"signin";renderAuth();authMsg(authMode==="signup"?"Create your account with a valid email and password.":"Sign in using your registered email.");
+});
+$("#authForm").addEventListener("submit",async e=>{
+ e.preventDefault();
+ if(!authClient){authMsg("Login is unavailable because the login service did not load.","error");return}
+ const em=$("#authEmail").value.trim(),pw=$("#authPassword").value;
+ if(!/^\S+@\S+\.\S+$/.test(em)){authMsg("Enter a valid email address.","error");return}
+ if(pw.length<6){authMsg("Password must be at least 6 characters.","error");return}
+ const b=$("#authSubmit");b.disabled=true;b.textContent="Please wait…";authMsg("Connecting securely…");
+ try{
+  const r=authMode==="signup"?await authClient.auth.signUp({email:em,password:pw,options:{emailRedirectTo:location.origin+location.pathname}}):await authClient.auth.signInWithPassword({email:em,password:pw});
+  if(r.error)throw r.error;
+  if(authMode==="signup"&&!(r.data&&r.data.session))authMsg("Account created. Check your email for a confirmation link, then sign in.","success");
+  else{authMsg("Signed in successfully.","success");setAuthUser((r.data&&(r.data.user||(r.data.session&&r.data.session.user)))||null);setTimeout(closeAuth,700)}
+ }catch(err){authMsg((err&&err.message)||"Could not sign in. Please try again.","error")}
+ finally{b.disabled=false;b.textContent=authMode==="signin"?"Sign in":"Create account"}
+});
+$("#authGoogle").addEventListener("click",async()=>{
+ if(!authClient){authMsg("Login service is not ready.","error");return}
+ try{const {error}=await authClient.auth.signInWithOAuth({provider:"google",options:{redirectTo:location.origin+location.pathname}});if(error)throw error}
+ catch(err){authMsg((err&&err.message)||"Google sign-in failed. Enable the Google provider in Supabase Authentication settings.","error")}
+});
+
+/* =====================================================================
+   14. PWA INSTALL, SETTINGS, SERVICE WORKER, ANDROID APP LINKS
+===================================================================== */
+let dip=null;
+let installAccepted=false;
+const standalone=()=>matchMedia("(display-mode: standalone)").matches||navigator.standalone===true||installAccepted;
+const showInstall=on=>{$$('[data-install]').forEach(e=>{if(e.id!=="dInstall")e.hidden=false});const d=$("#dInstall");if(d)d.hidden=false;};
+function setInstalledUI(){const yes=standalone();document.body.classList.toggle('is-installed',yes);['installBtn','installBtn2','installBtn3','dInstall'].forEach(id=>{const b=$('#'+id);if(b){b.disabled=yes;b.classList.toggle('installed-btn',yes);if(id==='dInstall'){const t=$('#dInstallLabel');if(t)t.textContent=yes?'Installed':'Install app';const mark=$('#dInstalledMark');if(mark)mark.hidden=!yes;}else{const t=b.querySelector('span');if(t)t.textContent=yes?'Installed':'Install app';else b.innerHTML=yes?'<i data-ic="check"></i><span>Installed</span>':'<i data-ic="download"></i><span>Install app</span>';}}});const label=$('#installedContact');if(label)label.hidden=!yes;showInstall(true)}
+window.addEventListener("beforeinstallprompt",e=>{e.preventDefault();dip=e;setInstalledUI()});
+window.addEventListener("appinstalled",()=>{dip=null;installAccepted=true;setInstalledUI();toast("App installed")});
+async function doInstall(){closeDrawer();if(standalone()){setInstalledUI();toast("App is already installed");return}if(!dip){toast("To install: open this page in Chrome, tap ⋮, then choose ‘Install app’ or ‘Add to Home screen’. If the option is missing, check that the site is open over HTTPS.");return}const promptEvent=dip;try{promptEvent.prompt();const choice=await promptEvent.userChoice;if(choice&&choice.outcome==="accepted"){installAccepted=true;toast("Installation accepted")}else{toast("Installation cancelled")}}catch(e){toast("Use Chrome ⋮ → Install app / Add to Home screen")};dip=null;setInstalledUI()}
+["installBtn","installBtn2","installBtn3","dInstall"].forEach(id=>{const el=$("#"+id);if(el)el.addEventListener("click",doInstall)});setInstalledUI();window.addEventListener("pageshow",setInstalledUI);
+if(/iphone|ipad|ipod/i.test(navigator.userAgent)&&!standalone())$("#iosHint").hidden=false;
+$("#clearData").addEventListener("click",()=>{
+ if(!confirm("Clear theme, stopwatch, test history, saved prompts and study time saved on this device?"))return;
+ try{Object.keys(localStorage).filter(k=>k.startsWith("jd-")).forEach(k=>localStorage.removeItem(k))}catch(e){}
+ sw={el:0,st:null};applyTheme("light");setNL("both");swRender();renderLearn();renderComp();renderSaved();toast("Saved data cleared")});
+if("serviceWorker" in navigator&&(location.protocol==="https:"||location.hostname==="localhost"||location.hostname==="127.0.0.1")){
+ window.addEventListener("load",()=>{navigator.serviceWorker.register("./service-worker.js").then(reg=>{
+  reg.addEventListener("updatefound",()=>{const w=reg.installing;w&&w.addEventListener("statechange",()=>{if(w.state==="installed"&&navigator.serviceWorker.controller)toast("App updated — reload to see the latest version")})})
+ }).catch(err=>console.warn("Service worker registration failed:",err))})}
+/* On Android, open known services in their installed app; falls back to the website if the app is missing. */
+(function(){
+ const routes=[["instagram.com","com.instagram.android"],["youtube.com","com.google.android.youtube"],["youtu.be","com.google.android.youtube"],["wa.me","com.whatsapp"],["amzn.in","in.amazon.mShop.android.shopping"],["amazon.in","in.amazon.mShop.android.shopping"],["play.google.com","com.android.vending"],["chatgpt.com","com.openai.chatgpt"],["capcut.com","com.lemon.lvoverseas"],["canva.com","com.canva.editor"],["gemini.google.com","com.google.android.apps.bard"]];
+ if(!/android/i.test(navigator.userAgent))return;
+ document.addEventListener("click",e=>{
+  const a=e.target.closest("a[href]");if(!a)return;let u;try{u=new URL(a.href,location.href)}catch(_){return}
+  if(u.protocol!=="https:")return;
+  const m=routes.find(r=>u.hostname===r[0]||u.hostname.endsWith("."+r[0]));if(!m)return;
+  e.preventDefault();
+  location.href="intent://"+u.host+u.pathname+u.search+"#Intent;scheme=https;package="+m[1]+";S.browser_fallback_url="+encodeURIComponent(a.href)+";end";
+ },true);
+})();
+
+route();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+ <script src="./supabase-config.js"></script>
+<script src="./supabase-app.js"></script>
+</body>
+</html>
