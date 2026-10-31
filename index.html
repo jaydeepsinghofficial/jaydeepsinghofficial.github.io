@@ -237,7 +237,7 @@ details.card>div{margin:0 12px 12px}
 <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M4 7l8 6 8-6"/></symbol>
 <symbol id="i-wa" viewBox="0 0 24 24"><path d="M3.5 20.5l1.3-4.4A8.5 8.5 0 1112 20.5a8.4 8.4 0 01-4.1-1.1z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-1 .7a4 4 0 01-1.7-1.7l.7-1-1-2z"/></symbol>
 <symbol id="i-ig" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r="1" fill="currentColor"/></symbol>
-<symbol id="i-download" viewBox="0 0 24 24"><path d="M12 4v11M7 11l5 5 5-5M5 20h14"/></symbol>
+<symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 16V4M7 9l5-5 5 5M5 20h14"/></symbol><symbol id="i-download" viewBox="0 0 24 24"><path d="M12 4v11M7 11l5 5 5-5M5 20h14"/></symbol>
 <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8v.5"/></symbol>
 <symbol id="i-settings" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9L7 7M17 17l2.1 2.1M19.1 4.9L17 7M7 17l-2.1 2.1"/></symbol>
 <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5l11 7-11 7z"/></symbol>
@@ -281,6 +281,7 @@ details.card>div{margin:0 12px 12px}
  <button class="d-link" data-go="tools" data-tool="ai"><i data-ic="ext"></i>AI &amp; Editing Apps</button>
  <button class="d-link" data-go="stopwatch" data-nav="stopwatch"><i data-ic="timer"></i>Study Stopwatch<span class="dot" id="swDot" hidden></span></button>
  <div class="d-label">APP</div>
+  <button class="d-link" data-go="admin" id="adminMenuLink" hidden><i data-ic="upload"></i>Admin · Upload Content</button>
  <button class="d-link" id="dTheme"><i data-ic="moon" id="dThemeIc"></i><span>Dark mode</span><span class="end" id="dThemeState">OFF</span></button>
  <button class="d-link" data-go="settings" data-nav="settings"><i data-ic="settings"></i>Settings</button>
  <button class="d-link" data-go="about" data-nav="about"><i data-ic="info"></i>About Jaydeep</button>
@@ -387,11 +388,11 @@ details.card>div{margin:0 12px 12px}
  <!-- LEARNING / COMPETITIVE / QUIZ -->
  <section class="screen" id="s-learning">
   <div class="page-h"><div class="eyebrow">CBSE · Class 6–12</div><h1>Learn · Revise · Test</h1><p>Subject-wise study notes (Hindi + English) and timed mock tests.</p></div>
-  <div id="learnBody"></div>
+  <div id="learnBody"></div><div class="sec"><div class="sec-h"><div><h2>Uploaded PDFs &amp; Notes</h2><p>Study resources published by the admin</p></div></div><div id="studentStudyLibrary" class="stack"><div class="empty">Loading study resources…</div></div></div>
  </section>
  <section class="screen" id="s-compete">
   <div class="page-h"><div class="eyebrow">Competitive exams</div><h1>Practice &amp; Notes</h1><p>Subject-wise timed tests and revision notes.</p></div>
-  <div id="compBody"></div>
+  <div id="compBody"></div><div class="sec"><div class="sec-h"><div><h2>Uploaded PDFs &amp; Notes</h2><p>Exam-wise study resources</p></div></div><div id="studentCompLibrary" class="stack"><div class="empty">Loading study resources…</div></div></div>
  </section>
  <section class="screen" id="s-quiz"><div id="quizBody" class="stack"></div></section>
 
@@ -494,6 +495,38 @@ details.card>div{margin:0 12px 12px}
    <p class="small muted">Version 3.0 · Install and offline mode need HTTPS (GitHub Pages is fine) or localhost.</p>
   </div>
  </section>
+
+ <!-- ADMIN CONTENT UPLOAD -->
+ <section class="screen" id="s-admin">
+  <div class="page-h"><div class="eyebrow">Private workspace</div><h1>Upload study content</h1><p>Upload PDFs and publish notes directly from your phone.</p></div>
+  <div id="adminDenied" class="card empty">Sign in with the administrator account to manage study content.</div>
+  <div id="adminPanel" hidden>
+   <form id="pdfUploadForm" class="card stack">
+    <h3>Upload PDF</h3>
+    <label for="pdfTitle">PDF title</label><input class="field" id="pdfTitle" required maxlength="120" placeholder="e.g. Class 10 Maths – Chapter 1 Notes">
+    <div class="grid2">
+     <div><label for="pdfAudience">Category</label><select class="field" id="pdfAudience"><option>CBSE Class 6</option><option>CBSE Class 7</option><option>CBSE Class 8</option><option>CBSE Class 9</option><option>CBSE Class 10</option><option>CBSE Class 11</option><option>CBSE Class 12</option><option>JEE Main</option><option>JEE Advanced</option><option>NEET</option><option>SSC</option><option>Railway</option><option>Banking</option><option>Defence</option><option>Other</option></select></div>
+     <div><label for="pdfSubject">Subject</label><input class="field" id="pdfSubject" required placeholder="Mathematics / Physics..."></div>
+    </div>
+    <label for="pdfChapter">Chapter / topic (optional)</label><input class="field" id="pdfChapter" maxlength="120" placeholder="Chapter name">
+    <label for="pdfType">Content type</label><select class="field" id="pdfType"><option>Notes</option><option>Question Bank</option><option>Sample Paper</option><option>Mock Test</option><option>Formula Sheet</option><option>Other</option></select>
+    <label for="pdfFile">Choose PDF from phone</label><input class="field" id="pdfFile" type="file" accept="application/pdf,.pdf" required>
+    <small class="muted">PDF only · Maximum 25 MB per file.</small>
+    <button class="btn primary full" id="pdfUploadSubmit" type="submit">Upload and publish</button>
+    <p class="small muted" id="pdfUploadStatus" aria-live="polite"></p>
+   </form>
+   <form id="notesPublishForm" class="card stack" style="margin-top:14px">
+    <h3>Write notes directly</h3>
+    <label for="noteTitle">Notes title</label><input class="field" id="noteTitle" required maxlength="120" placeholder="Notes title">
+    <label for="noteAudience">Class / exam</label><select class="field" id="noteAudience"><option>CBSE Class 6</option><option>CBSE Class 7</option><option>CBSE Class 8</option><option>CBSE Class 9</option><option>CBSE Class 10</option><option>CBSE Class 11</option><option>CBSE Class 12</option><option>JEE Main</option><option>JEE Advanced</option><option>NEET</option><option>SSC</option><option>Railway</option><option>Banking</option><option>Defence</option><option>Other</option></select>
+    <label for="noteSubject">Subject</label><input class="field" id="noteSubject" required placeholder="Subject">
+    <label for="noteBody">Notes content</label><textarea class="field" id="noteBody" required rows="8" placeholder="Write or paste notes here..."></textarea>
+    <button class="btn primary full" type="submit">Publish notes</button><p class="small muted" id="notesStatus" aria-live="polite"></p>
+   </form>
+   <div class="card" style="margin-top:14px"><div class="row" style="justify-content:space-between"><h3>Published content</h3><button class="btn" type="button" id="refreshStudyDocs">Refresh</button></div><div id="adminDocList" class="stack" style="margin-top:12px"></div></div>
+  </div>
+ </section>
+
 </main>
 
 <nav class="bnav" aria-label="Main navigation">
@@ -607,7 +640,7 @@ $$("[data-ic]").forEach(e=>e.innerHTML=ic(e.dataset.ic));
 /* =====================================================================
    3. NAVIGATION (hash routing + LEFT drawer)
 ===================================================================== */
-const SCREENS=["home","books","learning","compete","quiz","ai","videos","design","projects","updates","services","tools","stopwatch","about","contact","settings"];
+const SCREENS=["home","books","learning","compete","quiz","admin","ai","videos","design","projects","updates","services","tools","stopwatch","about","contact","settings"];
 let navCount=0;let lastShownScreen="";
 function show(n){
  $$(".screen").forEach(s=>s.classList.toggle("active",s.id==="s-"+n));
@@ -1635,7 +1668,7 @@ function setAuthUser(u){
  authUser=u||null;
  const n=u?(u.email?u.email.split("@")[0]:"Account"):"Login";
  $("#loginLabel").textContent=n;$("#dLogin").lastChild.textContent=u?"My account ("+n+")":"Login / My Account";
- renderAuth();
+ renderAuth();syncAdminAccess();
 }
 function openAuth(){closeDrawer();authMsg(authUser?"You are signed in.":"Use the email registered with your account.");renderAuth();$("#authOverlay").classList.add("open");document.body.style.overflow="hidden"}
 function closeAuth(){const o=$("#authOverlay");if(!o||!o.classList.contains("open"))return;o.classList.remove("open");document.body.style.overflow=""}
@@ -1646,12 +1679,13 @@ function initAuth(){
  try{
   if(window.supabase&&window.supabase.createClient){
    authClient=window.supabase.createClient(SUPA_URL,SUPA_KEY);
-   authClient.auth.getSession().then(({data})=>setAuthUser(data&&data.session?data.session.user:null)).catch(()=>{});
-   authClient.auth.onAuthStateChange((_ev,s)=>setAuthUser(s?s.user:null));
+   authClient.auth.getSession().then(({data})=>{setAuthUser(data&&data.session?data.session.user:null);loadStudentStudyDocs()}).catch(()=>{});
+   authClient.auth.onAuthStateChange((_ev,s)=>{setAuthUser(s?s.user:null);loadStudentStudyDocs()});
   }else authMsg("Login service did not load. Check your internet connection and reload.","error");
  }catch(err){console.error(err);authMsg("Could not start login. Check the Supabase configuration.","error")}
 }
 window.addEventListener("load",()=>setTimeout(initAuth,200));
+syncAdminAccess();
 $("#authModeBtn").addEventListener("click",async()=>{
  if(authUser){
   if(!authClient)return;
@@ -1680,6 +1714,72 @@ $("#authGoogle").addEventListener("click",async()=>{
  if(!authClient){authMsg("Login service is not ready.","error");return}
  try{const {error}=await authClient.auth.signInWithOAuth({provider:"google",options:{redirectTo:location.origin+location.pathname}});if(error)throw error}
  catch(err){authMsg((err&&err.message)||"Google sign-in failed. Enable the Google provider in Supabase Authentication settings.","error")}
+});
+
+
+/* =====================================================================
+   13A. ADMIN PDF + NOTES PUBLISHING (Supabase Storage + table)
+   Configure the matching SQL policies before using this panel.
+===================================================================== */
+const ADMIN_EMAIL="jaydeepsingh3631@gmail.com",STUDY_BUCKET="study-pdfs";
+function isStudyAdmin(){return !!(authUser&&String(authUser.email||"").toLowerCase()===ADMIN_EMAIL)}
+function syncAdminAccess(){
+ const ok=isStudyAdmin(),link=$("#adminMenuLink");
+ if(link)link.hidden=!ok;
+ const denied=$("#adminDenied"),panel=$("#adminPanel");
+ if(denied)denied.hidden=ok;if(panel)panel.hidden=!ok;
+}
+function adminStatus(id,msg,error=false){const el=$("#"+id);if(el){el.textContent=msg;el.style.color=error?"var(--bad)":"var(--ok)"}}
+async function loadStudentStudyDocs(){
+ if(!authClient)return;
+ const targets=[["studentStudyLibrary",["CBSE Class 6","CBSE Class 7","CBSE Class 8","CBSE Class 9","CBSE Class 10","CBSE Class 11","CBSE Class 12"]],["studentCompLibrary",["JEE Main","JEE Advanced","NEET","SSC","Railway","Banking","Defence","Other"]]];
+ const {data,error}=await authClient.from("study_documents").select("id,title,audience,subject,chapter,content_type,body,file_path,created_at").order("created_at",{ascending:false}).limit(300);
+ targets.forEach(([id,groups])=>{const box=$("#"+id);if(!box)return;if(error){box.innerHTML='<div class="empty">Study library is not configured yet.</div>';return}
+ const rows=(data||[]).filter(d=>groups.includes(d.audience));
+ box.innerHTML=rows.length?rows.map(d=>`<article class="lib-item"><b>${esc(d.title)}</b><p>${esc(d.audience)} · ${esc(d.subject)} · ${esc(d.content_type||"Notes")}${d.chapter?" · "+esc(d.chapter):""}</p>${d.file_path?`<div class="row"><a class="btn soft" href="${esc(authClient.storage.from(STUDY_BUCKET).getPublicUrl(d.file_path).data.publicUrl)}" target="_blank" rel="noopener noreferrer">Read PDF</a><a class="btn" href="${esc(authClient.storage.from(STUDY_BUCKET).getPublicUrl(d.file_path).data.publicUrl)}" download>Download</a></div>`:`<details><summary class="btn soft">Read notes</summary><p>${esc(d.body||"").replace(/\n/g,"<br>")}</p></details>`}</article>`).join(""):'<div class="empty">No resources uploaded here yet.</div>'});
+}
+async function loadStudyDocs(){
+ if(!isStudyAdmin()||!authClient)return;
+ const box=$("#adminDocList");box.innerHTML='<p class="muted small">Loading…</p>';
+ const {data,error}=await authClient.from("study_documents").select("*").order("created_at",{ascending:false}).limit(200);
+ if(error){box.innerHTML='<p class="small" style="color:var(--bad)">Could not load list: '+esc(error.message)+'</p>';return}
+ if(!data||!data.length){box.innerHTML='<div class="empty">No content published yet.</div>';return}
+ box.innerHTML=data.map(d=>`<div class="lib-item"><b>${esc(d.title)}</b><p>${esc(d.audience)} · ${esc(d.subject)} · ${esc(d.content_type||"Notes")}${d.chapter?" · "+esc(d.chapter):""}</p><div class="row"><a class="btn soft" href="${d.file_path?esc(authClient.storage.from(STUDY_BUCKET).getPublicUrl(d.file_path).data.publicUrl):"#"}" target="_blank" rel="noopener noreferrer">${d.file_path?"Open PDF":"Text notes"}</a><button class="btn" type="button" data-delete-doc="${esc(d.id)}">Delete</button></div>${d.body?'<p>'+esc(d.body).replace(/\n/g,"<br>")+'</p>':""}</div>`).join("");
+}
+$("#refreshStudyDocs").addEventListener("click",loadStudyDocs);
+$("#adminDocList").addEventListener("click",async e=>{
+ const b=e.target.closest("[data-delete-doc]");if(!b||!isStudyAdmin()||!authClient)return;
+ if(!confirm("Delete this published content?"))return;
+ const {data,error}=await authClient.from("study_documents").select("file_path").eq("id",b.dataset.deleteDoc).maybeSingle();
+ if(error){toast(error.message);return}
+ if(data&&data.file_path){const r=await authClient.storage.from(STUDY_BUCKET).remove([data.file_path]);if(r.error){toast("File delete failed: "+r.error.message);return}}
+ const r=await authClient.from("study_documents").delete().eq("id",b.dataset.deleteDoc);
+ if(r.error){toast("Delete failed: "+r.error.message);return}toast("Content deleted");loadStudyDocs();
+});
+$("#pdfUploadForm").addEventListener("submit",async e=>{
+ e.preventDefault();if(!isStudyAdmin()||!authClient){adminStatus("pdfUploadStatus","Please sign in with the admin account.",true);return}
+ const file=$("#pdfFile").files[0];if(!file)return;
+ if(file.type!=="application/pdf"&&!file.name.toLowerCase().endsWith(".pdf")){adminStatus("pdfUploadStatus","Please select a PDF file.",true);return}
+ if(file.size>25*1024*1024){adminStatus("pdfUploadStatus","File is larger than 25 MB. Please compress it first.",true);return}
+ const btn=$("#pdfUploadSubmit");btn.disabled=true;adminStatus("pdfUploadStatus","Uploading PDF…");
+ try{
+  const safe=file.name.replace(/[^a-zA-Z0-9._-]/g,"_"),path=`${Date.now()}-${crypto.randomUUID()}-${safe}`;
+  const up=await authClient.storage.from(STUDY_BUCKET).upload(path,file,{contentType:"application/pdf",upsert:false});
+  if(up.error)throw up.error;
+  const row={title:$("#pdfTitle").value.trim(),audience:$("#pdfAudience").value,subject:$("#pdfSubject").value.trim(),chapter:$("#pdfChapter").value.trim(),content_type:$("#pdfType").value,file_path:path,created_by:authUser.id};
+  const ins=await authClient.from("study_documents").insert(row);
+  if(ins.error){await authClient.storage.from(STUDY_BUCKET).remove([path]);throw ins.error}
+  e.target.reset();adminStatus("pdfUploadStatus","PDF uploaded and published successfully.");loadStudyDocs();
+ }catch(err){adminStatus("pdfUploadStatus",err.message||"Upload failed. Check Supabase setup.",true)}
+ finally{btn.disabled=false}
+});
+$("#notesPublishForm").addEventListener("submit",async e=>{
+ e.preventDefault();if(!isStudyAdmin()||!authClient){adminStatus("notesStatus","Please sign in with the admin account.",true);return}
+ try{
+  const row={title:$("#noteTitle").value.trim(),audience:$("#noteAudience").value,subject:$("#noteSubject").value.trim(),content_type:"Notes",body:$("#noteBody").value.trim(),created_by:authUser.id};
+  const {error}=await authClient.from("study_documents").insert(row);if(error)throw error;
+  e.target.reset();adminStatus("notesStatus","Notes published successfully.");loadStudyDocs();
+ }catch(err){adminStatus("notesStatus",err.message||"Could not publish notes.",true)}
 });
 
 /* =====================================================================
