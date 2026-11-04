@@ -1,1 +1,1 @@
-# jaydeepsinghofficial.github.jk
+# jaydeepsinghofficial.github.io
